@@ -1,0 +1,123 @@
+---
+title: 'ASC 842 Transition Checklist: What Finance Teams Need From Lease Abstracts'
+slug: asc-842-transition-checklist
+description: >-
+  What ASC 842 requires from lease abstracts: commencement dates, rent
+  schedules, renewal options, discount rates, and embedded lease identification.
+publishedAt: '2026-03-18'
+updatedAt: '2026-03-18'
+author: 'Angel Campa, Founder'
+category: articles
+silo: compliance
+tags:
+  - ASC 842
+  - lease accounting
+  - lease abstraction
+  - compliance
+  - right-of-use asset
+readingTime: 8
+featured: false
+funnelStage: mofu
+faq:
+  - question: What is the main takeaway from ASC 842 Transition Checklist?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: How does Lextract help with ASC 842 Transition Checklist?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+ASC 842 changed how companies account for leases, but the standard itself did not create the data required to comply with it. That data lives in lease documents, and extracting it accurately is the prerequisite for everything else: right-of-use asset calculations, lease liability amortization schedules, disclosure footnotes, and audit support.
+
+Finance teams that underestimated the data extraction challenge during their ASC 842 transition discovered it the hard way -- either by delaying adoption, restating prior-period numbers, or spending disproportionate resources on manual lease review. This checklist identifies what data ASC 842 requires from each lease and how to audit existing abstracts for completeness.
+
+## What ASC 842 Requires Per Lease
+
+The standard requires companies to recognize a right-of-use (ROU) asset and a corresponding lease liability for virtually all leases with terms exceeding 12 months. Computing those balances requires specific data from each lease document.
+
+**Lease commencement date.** The date on which the lessee obtains the right to use the underlying asset. This is the starting point for the lease liability calculation. Commencement may be the date the lease is signed, the date the tenant takes possession, or the date the landlord delivers a tenant improvement-complete space -- and these three dates are frequently different. The ASC 842 commencement date is the possession date, not the signing date.
+
+**Lease term.** The non-cancelable lease term plus renewal periods that are reasonably certain to be exercised. This is where many companies get ASC 842 wrong. The lease term for accounting purposes is not simply the stated term in the lease -- it includes renewal options if it is reasonably certain the tenant will exercise them, and it excludes termination options if it is reasonably certain the tenant will exercise those. Reasonable certainty is a high threshold under ASC 842, roughly equivalent to "virtually certain" in IFRS 16 terms.
+
+**Rent schedule.** The complete payment stream over the lease term: base rent for each period, any escalations (stated percentage increases, CPI adjustments, or fair market value resets), free rent periods, and any variable rent components. Variable rent based on a rate or index (CPI escalations) is included in the initial measurement; variable rent based on sales performance is not.
+
+**Lease incentives.** Tenant improvement allowances received or receivable reduce the initial ROU asset. The timing and amount of TI allowances must be captured precisely.
+
+**Initial direct costs.** Incremental costs directly attributable to obtaining the lease (broker commissions, legal fees paid by the lessee) are added to the initial ROU asset.
+
+**Renewal and termination options.** Every option period must be captured with its terms and the notice requirements. The lease accounting team must then apply the "reasonably certain" judgment to each option.
+
+**Purchase options.** If the lease includes an option to purchase the underlying asset and exercise is reasonably certain, the option price is included in the lease liability measurement.
+
+**Discount rate.** The rate used to present-value the future lease payments. Under ASC 842, lessees use the rate implicit in the lease if determinable, or the incremental borrowing rate (IBR) if not. The implicit rate is rarely determinable in real estate leases, so most companies use an IBR specific to the lease term, currency, and credit profile.
+
+## Auditing Existing Abstracts for ASC 842 Completeness
+
+If your company went through ASC 842 adoption and built lease schedules from abstracts prepared at that time, those abstracts need to be audited periodically for completeness and accuracy. Amendments, lease renewals, and new leases frequently occur without triggering an abstract update.
+
+For each lease in your population, verify:
+
+- Commencement date matches the possession date documented in any commencement date agreement or landlord delivery notice
+- Lease term reflects the current status of renewal options (were any options exercised since adoption?)
+- Rent schedule in the abstract matches the current amendment set -- not just the original lease
+- Free rent periods are identified and their exact dates are specified
+- TI allowance amounts, timing, and any conditions on disbursement are captured
+- All amendments are reflected in the abstract with effective dates
+
+## Common Data Gaps in Legacy Abstracts
+
+Abstracts prepared for purposes other than ASC 842 (property management, critical date tracking, or deal evaluation) frequently omit data fields required by the standard.
+
+**Escalation details.** Many property management abstracts note that rent escalates annually but do not specify the base year for CPI calculations, the index used, or the floor and ceiling on CPI adjustments. These details are required to project future payment streams.
+
+**Renewal option terms.** Legacy abstracts often note that a renewal option exists without specifying the renewal rent (fair market value vs. fixed rate), the notice requirement, or whether multiple renewals must be exercised consecutively or independently.
+
+**Free rent periods.** Free rent during the buildout phase is easily overlooked if the abstract was prepared before the tenant took possession. Failure to capture free rent results in an overstated initial lease liability.
+
+**TI allowance conditions.** TI allowances that are conditional on satisfying certain milestones, subject to landlord approval, or limited to specific improvement categories may not qualify as lease incentives under ASC 842 if the conditions are not met. The conditions must be in the abstract.
+
+**Embedded leases.** Many service contracts (IT infrastructure, data center colocation, manufacturing equipment leases embedded in supply agreements) contain embedded leases that must be identified and accounted for separately. Legacy abstracts typically do not address non-real-estate leases.
+
+## The Right-of-Use Asset Calculation Inputs
+
+The initial ROU asset is calculated as:
+
+- Present value of future lease payments (the lease liability), plus
+- Initial direct costs paid by the lessee, plus
+- Prepaid lease payments (rent paid before or at commencement), minus
+- Lease incentives received from the lessor (TI allowances, free rent)
+
+Each of these inputs must come from the lease data. Errors in any one of them flow through to both the balance sheet (ROU asset and lease liability) and the income statement (amortization of the ROU asset and interest on the lease liability).
+
+## Lease Classification: Operating vs. Finance
+
+ASC 842 retains the distinction between operating and finance leases for lessees, using five classification criteria:
+
+1. Does the lease transfer ownership of the asset to the lessee by the end of the term?
+2. Does the lessee have a purchase option reasonably certain to be exercised?
+3. Does the lease term cover the major part of the remaining economic life of the asset (generally 75% or more)?
+4. Does the present value of lease payments equal substantially all of the fair value of the asset (generally 90% or more)?
+5. Is the underlying asset of such a specialized nature that it has no alternative use to the lessor at the end of the term?
+
+If any criterion is met, the lease is classified as a finance lease. Most real estate leases are classified as operating leases because they do not meet any of the criteria, but ground leases, long-term leases approaching the end of a building's economic life, and leases with likely-to-be-exercised purchase options may require closer analysis.
+
+## Identifying Embedded Leases
+
+A contract contains an embedded lease if it conveys the right to control the use of an identified asset for a period of time in exchange for consideration. Many contracts that are structured as service agreements actually contain embedded leases -- colocation agreements for dedicated server space, contracts for dedicated vehicles or equipment, and certain manufacturing or processing agreements.
+
+The practical screen: does the contract give the customer the right to use a specifically identified asset (not fungible capacity from a pool) and control how and for what purpose that asset is used? If yes, the contract likely contains an embedded lease that must be extracted from the broader service contract and accounted for separately.
+
+## Populating a Lease Accounting System
+
+Lease accounting systems (LeaseQuery, CoStar Lease Accounting, Yardi) require structured input data for each lease. The data extraction workflow should produce:
+
+1. A validated abstract for each lease with every required ASC 842 field populated
+2. A review certification that the abstract was verified against the original document
+3. Version control that tracks amendments and records which abstract version corresponds to which lease version
+4. A classification memo documenting the finance vs. operating lease determination
+
+Manual extraction of ASC 842-required fields from lease documents is time-consuming and error-prone. Structured extraction with AI assistance reduces both the time and the error rate -- but any automated extraction requires human review of the output before the data is loaded into a lease accounting system. The cost of a balance sheet error attributable to bad lease data exceeds the cost of thorough data validation by a significant margin.

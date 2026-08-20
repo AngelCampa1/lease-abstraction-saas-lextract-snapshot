@@ -1,0 +1,342 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-09",
+  "marketing": {
+    "product": {
+      "name": "Lextract",
+      "category": "AI-powered commercial lease abstraction",
+      "oneLine": "Upload a commercial lease PDF and receive structured fields, confidence scores, red flags, and export-ready reports.",
+      "fieldCount": 126,
+      "redFlagCount": 20,
+      "categoryCount": 16,
+      "confidenceScoring": true,
+      "exports": [
+        "JSON",
+        "Excel",
+        "Word",
+        "PDF"
+      ],
+      "disclaimers": [
+        "Lextract output is informational only and is not legal, tax, or accounting advice.",
+        "Users should verify extracted data against the original lease document before relying on it.",
+        "Confidence scores indicate review priority, not a guarantee of accuracy."
+      ]
+    },
+    "pricing": {
+      "single": {
+        "price": 15,
+        "credits": 1,
+        "label": "Single Lease",
+        "perLease": 15
+      },
+      "pack5": {
+        "price": 65,
+        "credits": 5,
+        "label": "5-Pack",
+        "savings": "13% off",
+        "perLease": 13
+      },
+      "pack10": {
+        "price": 120,
+        "credits": 10,
+        "label": "10-Pack",
+        "savings": "20% off",
+        "perLease": 12
+      },
+      "competitorRange": "$90-$250",
+      "supportPolicy": "If an extraction looks wrong, email support and we will review it.",
+      "creditsExpire": false,
+      "subscriptionRequired": false
+    },
+    "processing": {
+      "canonicalRange": "5-15 minutes",
+      "headline": "Results in minutes, not hours",
+      "detailed": "typically in 5-15 minutes depending on document length and complexity",
+      "vsManual": "5-15 minutes vs. 4-8 hours manually"
+    },
+    "contacts": {
+      "founderSales": {
+        "email": "angel.campa@lextract.io",
+        "purpose": "Founder, sales, partnerships, and commercial inquiries"
+      },
+      "support": {
+        "email": "angel.campa@lextract.io",
+        "purpose": "Product support and customer help"
+      },
+      "legal": {
+        "email": "angel.campa@lextract.io",
+        "purpose": "Legal notices and terms questions"
+      },
+      "privacy": {
+        "email": "angel.campa@lextract.io",
+        "purpose": "Privacy and data rights requests"
+      }
+    },
+    "personas": [
+      {
+        "id": "tenant-rep",
+        "label": "Tenant representatives",
+        "useCase": "Abstract leases during portfolio reviews and surface CAM exposure before deadlines."
+      },
+      {
+        "id": "corporate-real-estate",
+        "label": "Corporate real estate teams",
+        "useCase": "Standardize lease data across locations for reporting, critical dates, and accounting."
+      },
+      {
+        "id": "broker",
+        "label": "Commercial brokers",
+        "useCase": "Create quick lease summaries for deal evaluation without reading every clause manually."
+      },
+      {
+        "id": "attorney",
+        "label": "Real estate attorneys",
+        "useCase": "Extract terms before review so legal analysis starts from structured facts."
+      },
+      {
+        "id": "property-manager",
+        "label": "Property managers and landlords",
+        "useCase": "Digitize lease portfolios and prepare CAM reconciliation workflows."
+      },
+      {
+        "id": "investor",
+        "label": "Lenders and investors",
+        "useCase": "Normalize lease data during acquisition, financing, and due diligence."
+      }
+    ],
+    "competitors": [
+      {
+        "name": "LeaseLens",
+        "positioning": "Free analysis with paid export",
+        "comparisonNote": "Useful for ad hoc viewing; Lextract focuses on structured output, confidence, and CAM risk."
+      },
+      {
+        "name": "Prophia",
+        "positioning": "Enterprise CRE portfolio intelligence",
+        "comparisonNote": "Built for larger portfolios; Lextract is self-serve and per-lease."
+      },
+      {
+        "name": "Re-Leased Credia AI",
+        "positioning": "Lease management platform AI feature",
+        "comparisonNote": "Tied to a broader platform; Lextract is abstraction-first."
+      },
+      {
+        "name": "Outsourced abstraction services",
+        "positioning": "Human-reviewed lease abstracts",
+        "comparisonNote": "Appropriate when certified human review is required; Lextract prioritizes speed and cost."
+      }
+    ],
+    "faqs": [
+      {
+        "slug": "what-is-lease-abstraction",
+        "question": "What is lease abstraction?",
+        "shortAnswer": "Lease abstraction extracts key lease terms into a structured summary for review, reporting, and system import."
+      },
+      {
+        "slug": "how-long-does-lease-abstraction-take",
+        "question": "How long does lease abstraction take?",
+        "shortAnswer": "Lextract typically processes commercial leases in 5-15 minutes depending on document length and complexity."
+      },
+      {
+        "slug": "what-fields-are-in-a-lease-abstract",
+        "question": "What fields are in a lease abstract?",
+        "shortAnswer": "Lextract extracts 126 structured fields covering parties, dates, rent, CAM, options, insurance, defaults, and operational clauses."
+      },
+      {
+        "slug": "how-much-does-lease-abstraction-cost",
+        "question": "How much does lease abstraction cost?",
+        "shortAnswer": "Lextract costs $15 for a single lease, $65 for 5 credits, or $120 for 10 credits with no subscription."
+      }
+    ],
+    "leadMagnets": [
+      {
+        "slug": "lease-abstraction-checklist",
+        "title": "Lease Abstraction Checklist",
+        "fileFormat": "PDF",
+        "contentType": "application/pdf"
+      },
+      {
+        "slug": "cam-reconciliation-checklist",
+        "title": "CAM Reconciliation Audit Checklist",
+        "fileFormat": "PDF",
+        "contentType": "application/pdf"
+      },
+      {
+        "slug": "due-diligence-checklist",
+        "title": "Due Diligence Checklist",
+        "fileFormat": "PDF",
+        "contentType": "application/pdf"
+      },
+      {
+        "slug": "lease-audit-workbook",
+        "title": "Lease Audit Workbook",
+        "fileFormat": "XLSX",
+        "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "upload",
+        "label": "Upload Your First Lease",
+        "href": "/upload",
+        "context": "Primary product CTA"
+      },
+      {
+        "id": "sample-output",
+        "label": "See Sample Output",
+        "href": "/sample-report",
+        "context": "Evaluation CTA"
+      },
+      {
+        "id": "pricing",
+        "label": "View Pricing",
+        "href": "/pricing",
+        "context": "Commercial CTA"
+      }
+    ]
+  },
+  "app": {
+    "upload": {
+      "acceptedFormats": [
+        "PDF"
+      ],
+      "maxFileSizeMb": 50,
+      "guidance": "Upload the signed commercial lease PDF if you have it. Amendments, exhibits, and scanned PDFs are okay as long as they are in one PDF under 50 MB."
+    },
+    "processing": {
+      "statusMessages": {
+        "uploading": "Uploading document...",
+        "extracting": "Extracting lease terms...",
+        "scoring": "Scoring confidence...",
+        "complete": "Complete!",
+        "failed": "Extraction failed. Please try again or contact support."
+      },
+      "estimates": {
+        "withPageCountTemplate": "Reading {pages} pages of your lease document. This typically takes 5-15 minutes.",
+        "fallback": "Reading the lease document. This typically takes 5-15 minutes depending on document length."
+      }
+    },
+    "teaser": {
+      "visibleFieldCount": "3-5 sample extracted fields",
+      "unlockCta": "Unlock full extraction for $15",
+      "creditPackCta": "Buy 5 credits for $65"
+    },
+    "payment": {
+      "singleUnlock": "Payment unlocks the complete report for this lease: all extracted fields, red flag details, source text, editing, PDF review, and exports.",
+      "useCredit": "Unlock with 1 credit",
+      "noSubscription": "It is not a subscription."
+    },
+    "results": {
+      "confidenceHelp": "This shows how sure Lextract is about an answer. High is usually clear, medium deserves a quick review, and low should be checked against the lease.",
+      "redFlagsHelp": "Red flags are lease terms worth reviewing before you rely on the report. They are not legal advice, but they point you to areas that may need attention.",
+      "sourceTextHelp": "Source text is the exact lease language Lextract used for this field. Use it when you want to verify an answer quickly.",
+      "fieldEditHelp": "Click a field value to correct it. Lextract keeps the original AI value and updates red flags after your edit."
+    },
+    "exports": {
+      "formats": [
+        {
+          "id": "docx",
+          "label": "Word",
+          "bestFor": "Sharing an editable lease abstract."
+        },
+        {
+          "id": "pdf",
+          "label": "PDF",
+          "bestFor": "Sharing a read-only report."
+        },
+        {
+          "id": "xlsx",
+          "label": "Excel",
+          "bestFor": "Data work, imports, and portfolio analysis."
+        }
+      ],
+      "templates": [
+        {
+          "id": "commercial",
+          "label": "Commercial",
+          "guidance": "Use this default when you are not sure which property-specific template fits."
+        },
+        {
+          "id": "office",
+          "label": "Office",
+          "guidance": "Emphasizes rent, base year stops, TI allowance, and parking."
+        },
+        {
+          "id": "industrial",
+          "label": "Industrial",
+          "guidance": "Emphasizes utilities, clear height, loading, power, and parking."
+        },
+        {
+          "id": "retail",
+          "label": "Retail",
+          "guidance": "Emphasizes percentage rent, exclusivity, co-tenancy, and signage."
+        }
+      ]
+    },
+    "camaudit": {
+      "triggerSummary": "The CamAudit handoff appears when audit rights, CAM-sensitive red flags, NNN or modified gross structure, or low-confidence CAM fields indicate audit relevance.",
+      "handoffCta": "Run a tenant audit handoff"
+    },
+    "accountSupport": {
+      "firstRun": "After upload, Lextract reads the lease, shows a free preview, then lets you unlock the full report and export it.",
+      "supportGuidance": "For product help, contact angel.campa@lextract.io."
+    }
+  },
+  "emails": {
+    "senderIdentities": [
+      {
+        "id": "founder",
+        "from": "Angel Campa <angel.campa@lextract.io>",
+        "purpose": "Founder-led transactional and sales emails."
+      },
+      {
+        "id": "support",
+        "from": "Angel Campa <angel.campa@lextract.io>",
+        "purpose": "Support follow-up when a user asks for help."
+      }
+    ],
+    "transactional": [
+      {
+        "id": "extraction-complete",
+        "subjectTemplate": "Your lease extraction is ready - {document_name}",
+        "purpose": "Notify a signed-in user when extraction results are ready.",
+        "plainTextSummary": "Includes document name, field count, confidence summary, results link, and notification preferences link."
+      },
+      {
+        "id": "cam-flags-found",
+        "subjectTemplate": "{flag_count} potential issues found in {document_name}",
+        "purpose": "Notify a signed-in user when CAM-sensitive red flags were found.",
+        "plainTextSummary": "Lists detected red flags and routes the user to the CamAudit partner workflow."
+      },
+      {
+        "id": "guest-account-setup",
+        "subjectTemplate": "Complete your Lextract account",
+        "purpose": "Help a guest checkout user finish account setup after payment.",
+        "plainTextSummary": "Includes results URL and account setup URL."
+      },
+      {
+        "id": "anonymous-notification",
+        "subjectTemplate": "Your Lextract preview is ready",
+        "purpose": "Notify anonymous upload users when a preview can be viewed.",
+        "plainTextSummary": "Points anonymous users back to their preview and account creation path.",
+        "bodyTemplates": {
+          "htmlTemplate": "Your lease extraction for <strong>{document_name}</strong> is complete.",
+          "textTemplate": "Your lease extraction for {document_name} is complete."
+        }
+      },
+      {
+        "id": "lead-magnet-delivery",
+        "subjectTemplate": "Your {magnet_name} is ready - download it here",
+        "purpose": "Deliver requested lead magnets immediately after capture.",
+        "plainTextSummary": "Includes direct download URL and unsubscribe link.",
+        "bodyTemplates": {
+          "htmlTemplate": "You can download it here: <a href=\"{download_url}\">{download_url}</a>."
+        }
+      }
+    ],
+    "footer": {
+      "unsubscribe": "Unsubscribe or manage email preferences from the footer link.",
+      "support": "For help, contact angel.campa@lextract.io."
+    }
+  }
+}

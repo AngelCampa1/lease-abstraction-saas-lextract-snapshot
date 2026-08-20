@@ -1,0 +1,1477 @@
+[
+  {
+    "field_name": "landlord_legal_name",
+    "category": "Parties & Property",
+    "display_label": "Landlord Name",
+    "description": "The legal corporate name of the landlord/lessor direct lease counterparty. Prefer role-labeled caption, between clause, signature block, or notice evidence; do not use a property manager, broker, lender, platform, or DBA when a legal landlord entity is available.",
+    "aliases": [
+      "Lessor",
+      "Landlord",
+      "Owner",
+      "Property Owner"
+    ],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false,
+    "weight": 1,
+    "critical": false
+  },
+  {
+    "field_name": "tenant_legal_name",
+    "category": "Parties & Property",
+    "display_label": "Tenant Name",
+    "description": "The legal corporate entity that is the tenant/lessee direct lease counterparty. Prefer role-labeled caption, between clause, signature block, notice block, or referenced member account/profile evidence; when the lease says to see a Cobot Member Account, billing profile, subscription profile, or similar tenant-information source, resolve the tenant from that member account instead of a placeholder platform label.",
+    "aliases": [
+      "Lessee",
+      "Occupant"
+    ],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "guarantor_name",
+    "category": "Parties & Property",
+    "display_label": "Guarantor Name",
+    "description": "The entity or individual providing financial backing for the tenant.",
+    "aliases": [],
+    "data_type": "array",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "premises_address",
+    "category": "Parties & Property",
+    "display_label": "Premises Address",
+    "description": "The full physical address of the leased space.",
+    "aliases": [],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "suite_or_unit_number",
+    "category": "Parties & Property",
+    "display_label": "Suite/Unit Number",
+    "description": "The specific identifier for the tenant's space within a multi-tenant building.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "rentable_square_footage",
+    "category": "Parties & Property",
+    "display_label": "Rentable Area (RSF)",
+    "description": "The total area for which the tenant pays rent, including common area allocations.",
+    "aliases": [],
+    "data_type": "number",
+    "required": true,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "usable_square_footage",
+    "category": "Parties & Property",
+    "display_label": "Usable Area (USF)",
+    "description": "The exact private physical space occupied by the tenant.",
+    "aliases": [],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "building_total_rsf",
+    "category": "Parties & Property",
+    "display_label": "Building Total RSF",
+    "description": "The total rentable square footage of the entire building or shopping center.",
+    "aliases": [],
+    "data_type": "number",
+    "required": true,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "load_factor",
+    "category": "Parties & Property",
+    "display_label": "Load Factor",
+    "description": "The ratio mapping usable to rentable space to account for common areas.",
+    "aliases": [
+      "Core Factor",
+      "Common Area Factor"
+    ],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "property_use_type",
+    "category": "Parties & Property",
+    "display_label": "Property Type",
+    "description": "The designated classification of the space.",
+    "aliases": [],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "execution_date",
+    "category": "Key Dates & Term",
+    "display_label": "Execution Date",
+    "description": "The date the lease agreement was fully signed by all parties.",
+    "aliases": [],
+    "data_type": "date",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "commencement_date",
+    "category": "Key Dates & Term",
+    "display_label": "Commencement Date",
+    "description": "The date the legal term of the lease officially begins.",
+    "aliases": [],
+    "data_type": "date",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "rent_commencement_date",
+    "category": "Key Dates & Term",
+    "display_label": "Rent Commencement",
+    "description": "The date the tenant is legally obligated to begin paying base rent.",
+    "aliases": [],
+    "data_type": "date",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "expiration_date",
+    "category": "Key Dates & Term",
+    "display_label": "Expiration Date",
+    "description": "The date the lease term naturally concludes without renewal.",
+    "aliases": [],
+    "data_type": "date",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "lease_term_months",
+    "category": "Key Dates & Term",
+    "display_label": "Lease Term (Months)",
+    "description": "The total duration of the initial lease term expressed in months.",
+    "aliases": [],
+    "data_type": "number",
+    "required": true,
+    "cam_relevant": false,
+    "weight": 1.5,
+    "critical": true
+  },
+  {
+    "field_name": "possession_date",
+    "category": "Key Dates & Term",
+    "display_label": "Possession Date",
+    "description": "The date the landlord grants the tenant physical access to the space.",
+    "aliases": [],
+    "data_type": "date",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "rent_abatement_period",
+    "category": "Key Dates & Term",
+    "display_label": "Free Rent Period",
+    "description": "The duration during which the tenant is excused from paying base rent.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "base_rent_annual",
+    "category": "Rent & Escalations",
+    "display_label": "Annual Base Rent",
+    "description": "The total base rent payable for the first full lease year.",
+    "aliases": [],
+    "data_type": "currency",
+    "required": true,
+    "cam_relevant": false,
+    "weight": 2,
+    "critical": true
+  },
+  {
+    "field_name": "rent_payment_frequency",
+    "category": "Rent & Escalations",
+    "display_label": "Payment Frequency",
+    "description": "The interval at which rent is due.",
+    "aliases": [
+      "Installment Period"
+    ],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "escalation_type",
+    "category": "Rent & Escalations",
+    "display_label": "Escalation Type",
+    "description": "The methodology used to increase rent over the term.",
+    "aliases": [],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false,
+    "weight": 1.5,
+    "critical": false
+  },
+  {
+    "field_name": "fixed_escalation_rate",
+    "category": "Rent & Escalations",
+    "display_label": "Fixed Escalation %",
+    "description": "The static percentage by which rent increases annually, if applicable.",
+    "aliases": [],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "cpi_index_reference",
+    "category": "Rent & Escalations",
+    "display_label": "CPI Index Used",
+    "description": "The specific inflation index utilized for variable escalations.",
+    "aliases": [
+      "Inflation Index",
+      "Cost of Living"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "percentage_rent_rate",
+    "category": "Rent & Escalations",
+    "display_label": "Percentage Rent Rate",
+    "description": "The percentage of gross sales payable to the landlord.",
+    "aliases": [],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "sales_breakpoint_amount",
+    "category": "Rent & Escalations",
+    "display_label": "Breakpoint Amount",
+    "description": "The gross sales threshold that triggers percentage rent obligations.",
+    "aliases": [],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "gross_sales_exclusions",
+    "category": "Rent & Escalations",
+    "display_label": "Sales Exclusions",
+    "description": "Specific revenue streams omitted from percentage rent calculations.",
+    "aliases": [],
+    "data_type": "array",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "lease_structure_type",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Lease Structure",
+    "description": "The categorization of expense sharing.",
+    "aliases": [],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": true,
+    "weight": 1.5,
+    "critical": false
+  },
+  {
+    "field_name": "pro_rata_share",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Pro Rata Share",
+    "description": "The tenant's fractional responsibility for total building operating expenses.",
+    "aliases": [],
+    "data_type": "percentage",
+    "required": true,
+    "cam_relevant": true,
+    "weight": 2,
+    "critical": true
+  },
+  {
+    "field_name": "base_year",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Base Year",
+    "description": "The foundational year used to calculate operating expense increases in gross leases.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "cam_cap_percentage",
+    "category": "CAM & Operating Expenses",
+    "display_label": "CAM Cap %",
+    "description": "The maximum allowable annual increase for controllable operating expenses.",
+    "aliases": [
+      "Expense Ceiling",
+      "Controllable Cap"
+    ],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": true,
+    "weight": 1.5,
+    "critical": false
+  },
+  {
+    "field_name": "cam_cap_type",
+    "category": "CAM & Operating Expenses",
+    "display_label": "CAM Cap Type",
+    "description": "Specifies whether the CAM cap is cumulative and compounding or non-cumulative.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "gross_up_percentage",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Gross-Up %",
+    "description": "The assumed occupancy level used to extrapolate variable operating expenses.",
+    "aliases": [
+      "Gross-Up Provision"
+    ],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "management_fee_cap",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Management Fee Cap",
+    "description": "The maximum allowable percentage of gross revenues charged for property management.",
+    "aliases": [
+      "Admin Fee Limit"
+    ],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "cam_exclusions",
+    "category": "CAM & Operating Expenses",
+    "display_label": "CAM Exclusions",
+    "description": "Specific costs legally barred from being passed through to the tenant.",
+    "aliases": [
+      "Unallowable Expenses",
+      "Carve-outs"
+    ],
+    "data_type": "array",
+    "required": true,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "audit_rights",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Audit Rights",
+    "description": "Indicates whether the tenant possesses the legal right to audit the landlord's CAM ledgers.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "has_renewal_option",
+    "category": "Options",
+    "display_label": "Has Renewal Option",
+    "description": "Indicates the presence of a contractual right to extend the lease term.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "renewal_terms",
+    "category": "Options",
+    "display_label": "Renewal Terms",
+    "description": "The specific parameters of the renewal.",
+    "aliases": [
+      "Extension Periods"
+    ],
+    "data_type": "array",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "renewal_notice_days",
+    "category": "Options",
+    "display_label": "Renewal Notice (Days)",
+    "description": "The deadline prior to expiration by which the tenant must exercise the renewal.",
+    "aliases": [
+      "Option Notice Period"
+    ],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "has_termination_option",
+    "category": "Options",
+    "display_label": "Has Termination Option",
+    "description": "Indicates the right to break the lease prior to the natural expiration date.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "termination_penalty",
+    "category": "Options",
+    "display_label": "Termination Penalty",
+    "description": "The fee or liquidated damages required to execute an early termination.",
+    "aliases": [],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "rofr_space",
+    "category": "Options",
+    "display_label": "Right of First Refusal",
+    "description": "Indicates a ROFR on specific adjacent or building spaces.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "rofo_space",
+    "category": "Options",
+    "display_label": "Right of First Offer",
+    "description": "Indicates a ROFO to lease space before it hits the open market.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "ti_allowance_amount",
+    "category": "Tenant Improvements & Construction",
+    "display_label": "TI Allowance",
+    "description": "The total monetary subsidy provided by the landlord for space customization.",
+    "aliases": [],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "ti_allowance_per_rsf",
+    "category": "Tenant Improvements & Construction",
+    "display_label": "TIA per RSF",
+    "description": "The improvement allowance calculated on a per-square-foot basis.",
+    "aliases": [],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "landlord_work_description",
+    "category": "Tenant Improvements & Construction",
+    "display_label": "Landlord's Work",
+    "description": "The specific construction obligations the landlord must complete prior to possession.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "tenant_work_description",
+    "category": "Tenant Improvements & Construction",
+    "display_label": "Tenant's Work",
+    "description": "The scope of construction the tenant is responsible for managing and funding.",
+    "aliases": [
+      "Initial Alterations",
+      "Fit-out"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "restoration_requirement",
+    "category": "Tenant Improvements & Construction",
+    "display_label": "Restoration Obligation",
+    "description": "The duty of the tenant to remove improvements and restore the space upon exit.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "hvac_responsibility",
+    "category": "Tenant Improvements & Construction",
+    "display_label": "HVAC Responsibility",
+    "description": "Identifies whether the landlord or tenant is responsible for replacing HVAC units.",
+    "aliases": [],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "cgl_occurrence_limit",
+    "category": "Insurance & Indemnity",
+    "display_label": "CGL Occurrence Limit",
+    "description": "The minimum liability coverage required for a single incident.",
+    "aliases": [
+      "Per Occurrence Cap"
+    ],
+    "data_type": "currency",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "cgl_aggregate_limit",
+    "category": "Insurance & Indemnity",
+    "display_label": "CGL Aggregate Limit",
+    "description": "The total maximum liability coverage required for the policy period.",
+    "aliases": [
+      "General Aggregate"
+    ],
+    "data_type": "currency",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "property_insurance_bearer",
+    "category": "Insurance & Indemnity",
+    "display_label": "Property Insurer",
+    "description": "Specifies whether the landlord or tenant insures the physical building/improvements.",
+    "aliases": [
+      "Casualty Insurance"
+    ],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "waiver_of_subrogation",
+    "category": "Insurance & Indemnity",
+    "display_label": "Waiver of Subrogation",
+    "description": "A mutual agreement preventing insurers from suing the other party to recoup losses.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "additional_insured_req",
+    "category": "Insurance & Indemnity",
+    "display_label": "Additional Insured",
+    "description": "Requirement for the tenant to add the landlord to their liability policy.",
+    "aliases": [
+      "Named Insured"
+    ],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "indemnification_scope",
+    "category": "Insurance & Indemnity",
+    "display_label": "Indemnification Scope",
+    "description": "The extent to which the tenant holds the landlord harmless from liability claims.",
+    "aliases": [
+      "Hold Harmless Agreement"
+    ],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "consent_required",
+    "category": "Assignment & Subletting",
+    "display_label": "Consent Required",
+    "description": "Indicates if landlord approval is necessary for a transfer of the leasehold.",
+    "aliases": [
+      "Permission to Assign"
+    ],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "consent_standard",
+    "category": "Assignment & Subletting",
+    "display_label": "Consent Standard",
+    "description": "The legal standard governing the landlord's right to refuse a transfer request.",
+    "aliases": [],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "profit_sharing_percentage",
+    "category": "Assignment & Subletting",
+    "display_label": "Profit Sharing %",
+    "description": "The portion of sublease profits payable to the landlord.",
+    "aliases": [],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "recapture_right",
+    "category": "Assignment & Subletting",
+    "display_label": "Recapture Right",
+    "description": "The landlord's right to terminate the lease and take back the space upon a transfer request.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "permitted_transferees",
+    "category": "Assignment & Subletting",
+    "display_label": "Permitted Transferees",
+    "description": "Exemptions allowing corporate restructurings or M&A without landlord consent.",
+    "aliases": [],
+    "data_type": "array",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "continuing_liability",
+    "category": "Assignment & Subletting",
+    "display_label": "Continuing Liability",
+    "description": "Indicates if the original tenant remains financially liable post-assignment.",
+    "aliases": [
+      "Ongoing Guaranty"
+    ],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "monetary_cure_period",
+    "category": "Default & Remedies",
+    "display_label": "Monetary Cure Period",
+    "description": "The number of days allowed to remedy missed financial payments after notice.",
+    "aliases": [],
+    "data_type": "number",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "non_monetary_cure_period",
+    "category": "Default & Remedies",
+    "display_label": "Non-Monetary Cure",
+    "description": "The number of days allowed to remedy operational or physical breaches after notice.",
+    "aliases": [
+      "Performance Grace Period"
+    ],
+    "data_type": "number",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "acceleration_clause",
+    "category": "Default & Remedies",
+    "display_label": "Acceleration Clause",
+    "description": "Landlord's right to demand all future rent immediately upon a lease default.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "liquidated_damages",
+    "category": "Default & Remedies",
+    "display_label": "Liquidated Damages",
+    "description": "A predetermined penalty fee assessed for specific breaches of the contract.",
+    "aliases": [],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "late_fee_percentage",
+    "category": "Default & Remedies",
+    "display_label": "Late Fee %",
+    "description": "The penalty percentage applied to overdue rent payments.",
+    "aliases": [],
+    "data_type": "percentage",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "holdover_rate",
+    "category": "Default & Remedies",
+    "display_label": "Holdover Rate",
+    "description": "The multiplier applied to base rent if the tenant remains post-expiration.",
+    "aliases": [
+      "Overstay Penalty"
+    ],
+    "data_type": "number",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "exclusive_use_rights",
+    "category": "Exclusivity & Co-tenancy",
+    "display_label": "Exclusive Use",
+    "description": "A covenant preventing the landlord from leasing to direct competitors in the center.",
+    "aliases": [
+      "Non-compete Clause"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "radius_restriction_miles",
+    "category": "Exclusivity & Co-tenancy",
+    "display_label": "Radius Restriction",
+    "description": "The geographic distance within which a tenant cannot open a competing location.",
+    "aliases": [],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "opening_cotenancy",
+    "category": "Exclusivity & Co-tenancy",
+    "display_label": "Opening Co-tenancy",
+    "description": "Conditions requiring specific occupancy levels before the tenant is obligated to open.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "ongoing_cotenancy",
+    "category": "Exclusivity & Co-tenancy",
+    "display_label": "Ongoing Co-tenancy",
+    "description": "Conditions requiring the continuous operation of specific anchor tenants.",
+    "aliases": [
+      "Operating Co-tenancy"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "cotenancy_remedy",
+    "category": "Exclusivity & Co-tenancy",
+    "display_label": "Co-tenancy Remedy",
+    "description": "The tenant's recourse if co-tenancy fails.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "alternative_rent_rate",
+    "category": "Exclusivity & Co-tenancy",
+    "display_label": "Alternative Rent",
+    "description": "The modified rent structure implemented during a co-tenancy failure period.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "parking_ratio",
+    "category": "Parking & Common Areas",
+    "display_label": "Parking Ratio",
+    "description": "The number of spaces allocated per 1,000 square feet of leased space.",
+    "aliases": [],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "unreserved_parking_spaces",
+    "category": "Parking & Common Areas",
+    "display_label": "Unreserved Spaces",
+    "description": "The raw number of non-specific parking spaces granted to the tenant.",
+    "aliases": [],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "reserved_parking_spaces",
+    "category": "Parking & Common Areas",
+    "display_label": "Reserved Spaces",
+    "description": "The number of explicitly designated, exclusive parking stalls for the tenant.",
+    "aliases": [
+      "Executive Parking"
+    ],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "monthly_parking_cost",
+    "category": "Parking & Common Areas",
+    "display_label": "Monthly Parking Cost",
+    "description": "The fee levied per space for utilizing the parking facilities.",
+    "aliases": [],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "trailer_parking_spaces",
+    "category": "Parking & Common Areas",
+    "display_label": "Trailer Parking",
+    "description": "The number of oversized spaces dedicated to industrial semi-truck trailers.",
+    "aliases": [],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "utilities_payment_method",
+    "category": "Utilities",
+    "display_label": "Utilities Payment",
+    "description": "How utilities are billed to the tenant.",
+    "aliases": [
+      "Utility Allocation"
+    ],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "janitorial_responsibility",
+    "category": "Utilities",
+    "display_label": "Janitorial Services",
+    "description": "Identifies whether the landlord or tenant is responsible for cleaning the premises.",
+    "aliases": [],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "clear_height_feet",
+    "category": "Utilities",
+    "display_label": "Clear Height (ft)",
+    "description": "The usable vertical clearance inside an industrial warehouse facility.",
+    "aliases": [
+      "Clear Headway",
+      "Ceiling Height"
+    ],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "dock_high_doors",
+    "category": "Utilities",
+    "display_label": "Dock-High Doors",
+    "description": "The number of elevated loading bays designed to align with semi-truck beds.",
+    "aliases": [],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "drive_in_doors",
+    "category": "Utilities",
+    "display_label": "Drive-In Doors",
+    "description": "The number of grade-level doors allowing vehicle entry into the warehouse.",
+    "aliases": [],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "power_capacity",
+    "category": "Utilities",
+    "display_label": "Power Capacity",
+    "description": "The quantitative electrical capability delivered to the premises.",
+    "aliases": [
+      "Electrical Load"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "permitted_use_description",
+    "category": "Signage & Permitted Use",
+    "display_label": "Permitted Use",
+    "description": "The specific, legally allowed business activities the tenant can conduct.",
+    "aliases": [
+      "Authorized Use",
+      "Use Clause"
+    ],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "prohibited_uses",
+    "category": "Signage & Permitted Use",
+    "display_label": "Prohibited Uses",
+    "description": "Specific activities explicitly banned within the leased premises.",
+    "aliases": [],
+    "data_type": "array",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "fascia_signage_rights",
+    "category": "Signage & Permitted Use",
+    "display_label": "Fascia Signage",
+    "description": "The right to affix branding directly onto the exterior wall of the building.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "monument_signage_rights",
+    "category": "Signage & Permitted Use",
+    "display_label": "Monument Signage",
+    "description": "The right to place the tenant's name on a shared roadside structure.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "signage_maintenance",
+    "category": "Signage & Permitted Use",
+    "display_label": "Signage Maintenance",
+    "description": "Determines if the landlord or tenant is financially responsible for sign upkeep.",
+    "aliases": [],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "security_deposit_amount",
+    "category": "Miscellaneous",
+    "display_label": "Security Deposit",
+    "description": "The total collateral held by the landlord to ensure lease performance.",
+    "aliases": [],
+    "data_type": "currency",
+    "required": true,
+    "cam_relevant": false,
+    "weight": 1.5,
+    "critical": false
+  },
+  {
+    "field_name": "security_deposit_type",
+    "category": "Miscellaneous",
+    "display_label": "Deposit Type",
+    "description": "The form of the collateral provided.",
+    "aliases": [
+      "Collateral Form"
+    ],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "has_guaranty",
+    "category": "Miscellaneous",
+    "display_label": "Has Guaranty",
+    "description": "Indicates if an external party has guaranteed the lease obligations.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "governing_law_state",
+    "category": "Miscellaneous",
+    "display_label": "Governing Law",
+    "description": "The legal jurisdiction whose laws dictate the interpretation of the contract.",
+    "aliases": [],
+    "data_type": "string",
+    "required": true,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "snda_requirement",
+    "category": "Miscellaneous",
+    "display_label": "SNDA Requirement",
+    "description": "Duty to sign a Subordination, Non-Disturbance, and Attornment agreement.",
+    "aliases": [],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "estoppel_turnaround_days",
+    "category": "Miscellaneous",
+    "display_label": "Estoppel Turnaround",
+    "description": "The number of days the tenant has to return a signed estoppel certificate.",
+    "aliases": [],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "reconciliation_frequency",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Reconciliation Frequency",
+    "description": "How often CAM charges are reconciled between estimated and actual amounts.",
+    "aliases": [
+      "CAM reconciliation period",
+      "operating expense reconciliation",
+      "annual reconciliation"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "cam_audit_deadline_days",
+    "category": "CAM & Operating Expenses",
+    "display_label": "CAM Audit Deadline (Days)",
+    "description": "Number of days tenant has to dispute or audit CAM reconciliation statement after receipt.",
+    "aliases": [
+      "audit period",
+      "contest period",
+      "objection deadline",
+      "audit window"
+    ],
+    "data_type": "number",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "cap_cumulative_vs_annual",
+    "category": "CAM & Operating Expenses",
+    "display_label": "CAM Cap Type (Cumulative vs Annual)",
+    "description": "Whether the CAM cap resets annually or compounds cumulatively year over year. Cumulative caps are significantly more favorable to tenants.",
+    "aliases": [
+      "compounding cap",
+      "rolling cap",
+      "annual reset cap",
+      "cumulative cap"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "controllable_vs_noncontrollable_expenses",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Controllable vs Non-Controllable Expenses",
+    "description": "Defines which CAM expenses are subject to the cap (controllable) vs excluded from the cap such as taxes, insurance, and utilities (non-controllable).",
+    "aliases": [
+      "controllable expenses",
+      "non-controllable expenses",
+      "cap exclusions",
+      "expense cap carveouts"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "base_year_gross_up",
+    "category": "CAM & Operating Expenses",
+    "display_label": "Base Year Gross-Up",
+    "description": "Whether the base year operating expenses are normalized to a full occupancy level (typically 95%). Protects tenant from inflated future CAM charges when occupancy rises.",
+    "aliases": [
+      "base year normalization",
+      "gross up base year",
+      "occupancy adjustment base year"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "cam_estimate_method",
+    "category": "CAM & Operating Expenses",
+    "display_label": "CAM Estimate Method",
+    "description": "How the landlord calculates monthly CAM estimates \u2014 prior year actuals, budget-based, or fixed amount.",
+    "aliases": [
+      "estimated CAM",
+      "CAM budget method",
+      "monthly CAM calculation"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "lease_classification",
+    "category": "ASC 842 / IFRS 16 Compliance",
+    "display_label": "Lease Classification",
+    "description": "Whether the lease is classified as a finance lease or operating lease under ASC 842 / IFRS 16 accounting standards.",
+    "aliases": [
+      "Finance Lease",
+      "Operating Lease",
+      "Capital Lease"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "discount_rate",
+    "category": "ASC 842 / IFRS 16 Compliance",
+    "display_label": "Discount Rate",
+    "description": "The rate used to discount future lease payments to present value for ASC 842 / IFRS 16 right-of-use asset calculation.",
+    "aliases": [
+      "Incremental Borrowing Rate",
+      "IBR",
+      "Implicit Rate"
+    ],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "has_purchase_option",
+    "category": "ASC 842 / IFRS 16 Compliance",
+    "display_label": "Has Purchase Option",
+    "description": "Indicates whether the lease grants the tenant an option to purchase the property.",
+    "aliases": [
+      "Purchase Right",
+      "Option to Buy",
+      "Buyout Option"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "purchase_option_price",
+    "category": "ASC 842 / IFRS 16 Compliance",
+    "display_label": "Purchase Option Price",
+    "description": "The price at which the tenant may purchase the property if the purchase option is exercised.",
+    "aliases": [
+      "Buyout Price",
+      "Option Price",
+      "Purchase Price"
+    ],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "variable_lease_payments",
+    "category": "ASC 842 / IFRS 16 Compliance",
+    "display_label": "Variable Lease Payments",
+    "description": "Description of lease payments that vary based on an index, rate, or usage, relevant to ASC 842 right-of-use asset measurement.",
+    "aliases": [
+      "Variable Rent",
+      "Contingent Rent",
+      "Index-Based Payments"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "residual_value_guarantee",
+    "category": "ASC 842 / IFRS 16 Compliance",
+    "display_label": "Residual Value Guarantee",
+    "description": "The amount guaranteed by the tenant regarding the residual value of the leased asset at the end of the lease term.",
+    "aliases": [
+      "RVG",
+      "Guaranteed Residual"
+    ],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "lease_incentives_received",
+    "category": "ASC 842 / IFRS 16 Compliance",
+    "display_label": "Lease Incentives Received",
+    "description": "Total value of incentives received from the landlord, including tenant improvement allowances and free rent, used to reduce the right-of-use asset under ASC 842.",
+    "aliases": [
+      "Landlord Incentives",
+      "Lease Concessions",
+      "Landlord Contributions"
+    ],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "short_term_lease_election",
+    "category": "ASC 842 / IFRS 16 Compliance",
+    "display_label": "Short-Term Lease Election",
+    "description": "Indicates whether the tenant has elected the short-term lease recognition exemption (lease term 12 months or less) under ASC 842.",
+    "aliases": [
+      "Short-Term Exception",
+      "12-Month Exemption"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "has_expansion_option",
+    "category": "Options",
+    "display_label": "Has Expansion Option",
+    "description": "Indicates whether the tenant has the contractual right to lease additional space within the property.",
+    "aliases": [
+      "Expansion Right",
+      "Option to Expand",
+      "Right of Expansion"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "expansion_option_terms",
+    "category": "Options",
+    "display_label": "Expansion Option Terms",
+    "description": "The specific parameters of the expansion option including the space, timeframe, and rent terms.",
+    "aliases": [
+      "Expansion Rights Description",
+      "Additional Space Option"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "has_contraction_option",
+    "category": "Options",
+    "display_label": "Has Contraction Option",
+    "description": "Indicates whether the tenant has the right to give back a portion of the leased premises.",
+    "aliases": [
+      "Contraction Right",
+      "Giveback Option",
+      "Space Reduction Option"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "auto_renewal",
+    "category": "Options",
+    "display_label": "Auto-Renewal",
+    "description": "Indicates whether the lease automatically renews unless the tenant provides timely notice of non-renewal.",
+    "aliases": [
+      "Automatic Renewal",
+      "Evergreen Clause",
+      "Auto-Extend"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "auto_renewal_terms",
+    "category": "Options",
+    "display_label": "Auto-Renewal Terms",
+    "description": "The specific parameters of the auto-renewal provision including notice period required and renewal term length.",
+    "aliases": [
+      "Automatic Renewal Terms",
+      "Evergreen Provision"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "casualty_termination_right",
+    "category": "Casualty, Condemnation & Force Majeure",
+    "display_label": "Casualty Termination Right",
+    "description": "The conditions under which either party may terminate the lease following substantial damage or destruction of the premises.",
+    "aliases": [
+      "Casualty Termination",
+      "Damage Termination Right",
+      "Destruction Termination"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "casualty_rent_abatement",
+    "category": "Casualty, Condemnation & Force Majeure",
+    "display_label": "Casualty Rent Abatement",
+    "description": "Indicates whether rent is abated during periods when the premises are damaged or destroyed and the tenant cannot fully use the space.",
+    "aliases": [
+      "Damage Rent Abatement",
+      "Rent Abatement After Casualty"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "condemnation_termination_right",
+    "category": "Casualty, Condemnation & Force Majeure",
+    "display_label": "Condemnation Termination Right",
+    "description": "The conditions under which either party may terminate the lease if the premises are taken by eminent domain or condemnation.",
+    "aliases": [
+      "Eminent Domain Termination",
+      "Taking Termination",
+      "Condemnation Clause"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "condemnation_award_allocation",
+    "category": "Casualty, Condemnation & Force Majeure",
+    "display_label": "Condemnation Award Allocation",
+    "description": "How any condemnation or eminent domain award is divided between landlord and tenant.",
+    "aliases": [
+      "Taking Award Split",
+      "Eminent Domain Proceeds",
+      "Condemnation Proceeds Allocation"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "force_majeure_clause",
+    "category": "Casualty, Condemnation & Force Majeure",
+    "display_label": "Force Majeure Clause",
+    "description": "Indicates whether the lease contains a force majeure clause excusing performance due to events beyond the parties' control.",
+    "aliases": [
+      "Act of God Clause",
+      "Force Majeure",
+      "Impossibility Clause"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "base_rent_per_rsf",
+    "category": "Rent & Escalations",
+    "display_label": "Base Rent per RSF",
+    "description": "The annual base rent expressed on a per-rentable-square-foot basis.",
+    "aliases": [
+      "Rent per Square Foot",
+      "Annual Rent PSF",
+      "Per Square Foot Rent"
+    ],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "monthly_base_rent",
+    "category": "Rent & Escalations",
+    "display_label": "Monthly Base Rent",
+    "description": "The monthly base rent obligation for the first full month of the lease term.",
+    "aliases": [
+      "Monthly Rent",
+      "Monthly Payment",
+      "Base Monthly Rent"
+    ],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "cpi_escalation_floor",
+    "category": "Rent & Escalations",
+    "display_label": "CPI Escalation Floor",
+    "description": "The minimum annual rent increase percentage when CPI-based escalations are used, protecting the landlord from low-inflation periods.",
+    "aliases": [
+      "CPI Floor",
+      "Minimum Escalation",
+      "CPI Minimum"
+    ],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "cpi_escalation_ceiling",
+    "category": "Rent & Escalations",
+    "display_label": "CPI Escalation Ceiling",
+    "description": "The maximum annual rent increase percentage when CPI-based escalations are used, protecting the tenant from high-inflation periods.",
+    "aliases": [
+      "CPI Cap",
+      "Maximum CPI Escalation",
+      "CPI Maximum"
+    ],
+    "data_type": "percentage",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "expense_stop_amount",
+    "category": "Rent & Escalations",
+    "display_label": "Expense Stop Amount",
+    "description": "The dollar amount per square foot above which the tenant is responsible for operating expense increases in a gross or modified gross lease.",
+    "aliases": [
+      "Expense Stop",
+      "Operating Expense Stop",
+      "Expense Threshold"
+    ],
+    "data_type": "currency",
+    "required": false,
+    "cam_relevant": true
+  },
+  {
+    "field_name": "landlord_notice_address",
+    "category": "Miscellaneous",
+    "display_label": "Landlord Notice Address",
+    "description": "The official address to which legal notices must be sent to the landlord.",
+    "aliases": [
+      "Landlord Notice",
+      "Notice to Landlord",
+      "Landlord Address for Notices"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "tenant_notice_address",
+    "category": "Miscellaneous",
+    "display_label": "Tenant Notice Address",
+    "description": "The official address to which legal notices must be sent to the tenant.",
+    "aliases": [
+      "Tenant Notice",
+      "Notice to Tenant",
+      "Tenant Address for Notices"
+    ],
+    "data_type": "string",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "hazardous_materials_clause",
+    "category": "Miscellaneous",
+    "display_label": "Hazardous Materials Clause",
+    "description": "Indicates whether the lease contains provisions addressing the use, storage, or disposal of hazardous materials on the premises.",
+    "aliases": [
+      "Hazmat Clause",
+      "Environmental Clause",
+      "Hazardous Substances"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  },
+  {
+    "field_name": "relocation_right",
+    "category": "Miscellaneous",
+    "display_label": "Relocation Right",
+    "description": "Indicates whether the landlord has the right to relocate the tenant to comparable space within the building.",
+    "aliases": [
+      "Relocation Clause",
+      "Landlord Relocation Right",
+      "Substitution Right"
+    ],
+    "data_type": "boolean",
+    "required": false,
+    "cam_relevant": false
+  }
+]

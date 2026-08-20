@@ -1,0 +1,64 @@
+Lextract
+Copyright (c) 2026 Angel Campa. All rights reserved.
+
+This file inventories third-party material vendored into this repository. Such
+material is NOT covered by the terms in LICENSE and remains under its own
+license, as recorded below.
+
+
+-------------------------------------------------------------------------------
+.codex/skills/stop-slop/
+-------------------------------------------------------------------------------
+MIT License. Copyright (c) 2025 Hardik Pandya.
+Full text retained at .codex/skills/stop-slop/LICENSE.
+
+
+-------------------------------------------------------------------------------
+.codex/skills/frontend-design/
+-------------------------------------------------------------------------------
+Apache License 2.0. Derived from Anthropic's "frontend-design" skill, per the
+`license:` field in that skill's SKILL.md.
+
+
+-------------------------------------------------------------------------------
+Test fixtures: commercial lease documents
+-------------------------------------------------------------------------------
+packages/extract-sdk/tests/fixtures/real-leases/ contains 22 commercial lease
+documents sourced from public SEC EDGAR filings (8-K and 10-K exhibits). See
+real_lease_manifest.json in that directory for the per-document provenance.
+Public filings; no license restrictions.
+
+backend/tests/fixtures/real_lease_*.pdf are published model and government
+forms (California model lease, CAR form, City of Chicago municipal lease,
+State of Georgia lease).
+
+
+-------------------------------------------------------------------------------
+Vendored third-party code
+-------------------------------------------------------------------------------
+docs/audit/vendor/axe.min.js is axe-core, Copyright Deque Systems, Inc.,
+licensed under the Mozilla Public License 2.0. It is checked in unmodified so
+the accessibility audits under docs/audit/ can be reproduced. A copy of the
+MPL-2.0 is available at https://mozilla.org/MPL/2.0/.
+
+
+-------------------------------------------------------------------------------
+Runtime and build dependencies
+-------------------------------------------------------------------------------
+Third-party packages declared in package.json, pyproject.toml, and the
+corresponding lock files are not vendored here and remain under their own
+licenses. Run `npm ls --all` or inspect the lock files for the full set.
+
+
+-------------------------------------------------------------------------------
+Unverified provenance
+-------------------------------------------------------------------------------
+The agent-instruction directories .claude/skills/, .agents/skills/, and the
+remainder of .codex/skills/ carry no authorship or license metadata. Some
+entries originate from third-party skill marketplaces and their redistribution
+terms have not been established. They are agent tooling, not part of the
+Lextract application, and are retained here only as a record of how the project
+was built.
+
+If you are the author of any material in those directories and object to its
+inclusion, contact the repository owner and it will be removed.

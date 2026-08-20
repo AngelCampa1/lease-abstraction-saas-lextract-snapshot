@@ -1,0 +1,21 @@
+{
+  "management_fee_cap": 18.0,
+  "audit_rights": false,
+  "cam_cap_percentage": null,
+  "cap_cumulative_vs_annual": "cumulative",
+  "lease_structure_type": "NNN",
+  "gross_up_percentage": null,
+  "cam_exclusions": [],
+  "monetary_cure_period": 5,
+  "holdover_rate": 300.0,
+  "has_termination_option": false,
+  "lease_term_months": 120,
+  "restoration_requirement": true,
+  "tenant_work_description": null,
+  "has_renewal_option": false,
+  "recapture_right": true,
+  "base_year_gross_up": false,
+  "base_year": "2024",
+  "reconciliation_frequency": null,
+  "cam_audit_deadline_days": 30
+}

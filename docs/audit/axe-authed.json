@@ -1,0 +1,41 @@
+### Result
+"{\n  \"06a-dashboard-desktop-light\": {\n    \"url\": \"https://lextract.io/dashboard\",\n    \"axe\": [],\n    \"violationCount\": 0,\n    \"finalUrl\": \"https://lextract.io/dashboard\"\n  },\n  \"06b-dashboard-desktop-dark\": {\n    \"url\": \"https://lextract.io/dashboard\",\n    \"axe\": [],\n    \"violationCount\": 0,\n    \"finalUrl\": \"https://lextract.io/dashboard\"\n  },\n  \"06c-dashboard-mobile-light\": {\n    \"url\": \"https://lextract.io/dashboard\",\n    \"axe\": [],\n    \"violationCount\": 0,\n    \"finalUrl\": \"https://lextract.io/dashboard\"\n  },\n  \"07a-profile-desktop-light\": {\n    \"url\": \"https://lextract.io/profile\",\n    \"axe\": [],\n    \"violationCount\": 0,\n    \"finalUrl\": \"https://lextract.io/profile\"\n  },\n  \"07b-profile-desktop-dark\": {\n    \"url\": \"https://lextract.io/profile\",\n    \"axe\": [],\n    \"violationCount\": 0,\n    \"finalUrl\": \"https://lextract.io/profile\"\n  },\n  \"07c-profile-mobile-light\": {\n    \"url\": \"https://lextract.io/profile\",\n    \"axe\": [],\n    \"violationCount\": 0,\n    \"finalUrl\": \"https://lextract.io/profile\"\n  },\n  \"05d-upload-authed-desktop\": {\n    \"url\": \"https://lextract.io/upload\",\n    \"axe\": [\n      {\n        \"id\": \"color-contrast\",\n        \"impact\": \"serious\",\n        \"help\": \"Elements must meet minimum color contrast ratio thresholds\",\n        \"count\": 1,\n        \"sample\": [\n          {\n            \"target\": [\n              \".text-primary-foreground\\\\/70\"\n            ],\n            \"summary\": \"Fix any of the following:\\n  Element has insufficient color contrast of 3.07 (foreground color: #b2dad6, background color: #008377, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\"\n          }\n        ]\n      },\n      {\n        \"id\": \"heading-order\",\n        \"impact\": \"moderate\",\n        \"help\": \"Heading levels should only increase by one\",\n        \"count\": 1,\n        \"sample\": [\n          {\n            \"target\": [\n              \"h3\"\n            ],\n            \"summary\": \"Fix any of the following:\\n  Heading order invalid\"\n          }\n        ]\n      },\n      {\n        \"id\": \"label\",\n        \"impact\": \"critical\",\n        \"help\": \"Form elements must have labels\",\n        \"count\": 1,\n        \"sample\": [\n          {\n            \"target\": [\n              \"input\"\n            ],\n            \"summary\": \"Fix any of the following:\\n  Form element does not have an implicit (wrapped) <label>\\n  Form element does not have an explicit <label>\\n  aria-label attribute does not exist or is empty\\n  aria-labelledby attribute does not exist, references elements that do not \"\n          }\n        ]\n      },\n      {\n        \"id\": \"nested-interactive\",\n        \"impact\": \"serious\",\n        \"help\": \"Interactive controls must not be nested\",\n        \"count\": 1,\n        \"sample\": [\n          {\n            \"target\": [\n              \".border-2\"\n            ],\n            \"summary\": \"Fix any of the following:\\n  Using a negative tabindex on an element inside an interactive control does not prevent assistive technologies from focusing the element (even with aria-hidden=\\\"true\\\")\"\n          }\n        ]\n      }\n    ],\n    \"violationCount\": 4,\n    \"finalUrl\": \"https://lextract.io/upload\"\n  }\n}"
+### Ran Playwright code
+```js
+await (async page => {
+  const surfaces = [
+    ['https://lextract.io/dashboard', '06a-dashboard-desktop-light', 'light', 1440, 900],
+    ['https://lextract.io/dashboard', '06b-dashboard-desktop-dark',  'dark',  1440, 900],
+    ['https://lextract.io/dashboard', '06c-dashboard-mobile-light',  'light', 390, 900],
+    ['https://lextract.io/profile',   '07a-profile-desktop-light',   'light', 1440, 900],
+    ['https://lextract.io/profile',   '07b-profile-desktop-dark',    'dark',  1440, 900],
+    ['https://lextract.io/profile',   '07c-profile-mobile-light',    'light', 390, 900],
+    ['https://lextract.io/upload',    '05d-upload-authed-desktop',   'light', 1440, 900],
+  ];
+  const out = {};
+  for (const [url, name, theme, vw, vh] of surfaces) {
+    try {
+      await page.setViewportSize({ width: vw, height: vh });
+      await page.evaluate(t => { try { localStorage.setItem('theme', t); } catch {} }, theme);
+      await page.goto(url, { waitUntil: 'networkidle', timeout: 25000 }).catch(()=>{});
+      await page.waitForTimeout(700);
+      await page.evaluate(t => { document.documentElement.classList.remove('light','dark'); document.documentElement.classList.add(t); }, theme);
+      await page.waitForTimeout(200);
+      await page.screenshot({ path: `docs/audit/${name}.png`, fullPage: true });
+      await page.addScriptTag({ path: '<repo-root>/docs/audit/vendor/axe.min.js' });
+      const axe = await page.evaluate(async () => {
+        const r = await window.axe.run(document, { resultTypes: ['violations'] });
+        return r.violations.map(v => ({ id:v.id, impact:v.impact, help:v.help, count:v.nodes.length, sample: v.nodes.slice(0,3).map(n => ({ target:n.target, summary:(n.failureSummary||'').slice(0,260) })) }));
+      });
+      out[name] = { url, axe, violationCount: axe.reduce((a,x)=>a+x.count,0), finalUrl: page.url() };
+    } catch (e) { out[name] = { url, error: String(e).slice(0,200) }; }
+  }
+  return JSON.stringify(out, null, 2);
+})(page);
+```
+### Page
+- Page URL: https://lextract.io/upload
+- Page Title: Upload a Lease — Extract 126 Fields in Minutes | Lextract
+- Console: 4 errors, 0 warnings
+### Events
+- New console entries: .playwright-cli\console-2026-04-12T00-39-11-260Z.log#L4

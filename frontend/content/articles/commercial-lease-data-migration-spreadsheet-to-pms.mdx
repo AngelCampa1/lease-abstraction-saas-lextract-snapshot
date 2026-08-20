@@ -1,0 +1,98 @@
+---
+title: 'Commercial Lease Data Migration: From Spreadsheets to a PMS'
+slug: commercial-lease-data-migration-spreadsheet-to-pms
+description: >-
+  How to migrate commercial lease data from Excel spreadsheets into a property
+  management system, including data preparation, mapping, and validation.
+publishedAt: '2026-03-19'
+updatedAt: '2026-03-19'
+author: 'Angel Campa, Founder'
+category: articles
+silo: lease-administration
+tags:
+  - lease data migration
+  - property management
+  - Yardi
+readingTime: 9
+featured: false
+funnelStage: bofu
+faq:
+  - question: What is the main takeaway from Commercial Lease Data Migration?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: How does Lextract help with Commercial Lease Data Migration?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+Spreadsheet-based lease tracking works until it doesn't. The inflection point is different for every organization - sometimes it's a missed option notice that costs a renewal, sometimes it's an audit that reveals rent escalations that were never invoiced, sometimes it's simply that three people are maintaining three versions of the same spreadsheet and nobody is certain which one is current.
+
+When the decision is made to migrate to a property management system (Yardi, MRI, AppFolio, or any other PMS), the migration itself is a significant project that organizations routinely underestimate. The system is only as useful as the data it contains. Migrating incomplete, inconsistent, or incorrect data into a PMS does not solve the underlying data problem - it embeds it in a system that is harder to audit than a spreadsheet.
+
+This article covers the full migration process: data audit, clean-up, field mapping, import, and validation.
+
+## Phase 1: The Data Audit
+
+Before you touch the PMS, inventory what you actually have.
+
+**Step 1: Identify all active leases.** Pull a complete list of every active lease in your portfolio from your existing spreadsheets. Then pull the actual documents. For every lease on the spreadsheet list, confirm you have: the executed lease document, all amendments in chronological order, any side letters or supplemental agreements. If you have a lease on the spreadsheet but cannot locate the executed document, that is a critical gap. You cannot migrate accurate data from a source you do not have.
+
+**Step 2: Identify data gaps in your current spreadsheet.** Your spreadsheet may capture lease expiration dates and monthly rent but miss CAM provisions, renewal option terms, and security deposit details. The PMS almost certainly requires more fields than your spreadsheet currently tracks. Build a gap matrix: every field the PMS requires in the left column, whether your spreadsheet currently has it in the middle column, and the source document you will use to fill the gap in the right column.
+
+Common gaps in spreadsheet-tracked portfolios: rent escalation schedules (most spreadsheets track current rent, not the full schedule), renewal option notice deadlines (vs. just the option terms), CAM cap provisions, security deposit burn-down schedules, and insurance requirement details. All of these need to be extracted from source documents before migration.
+
+**Step 3: Identify data quality problems in existing records.** Review the spreadsheet data for consistency issues: inconsistent tenant name formats (is it "Acme Corp", "Acme Corporation", "ACME Corp", or "Acme, Corp."?), dates stored in different formats across rows, rent amounts stored with dollar signs or commas that will cause import failures, and fields where the data represents outdated information that was never updated after an amendment.
+
+Fixing these problems before migration is much easier than fixing them after the data is in a PMS.
+
+## Phase 2: Data Clean-Up
+
+The clean-up phase is not glamorous, but it determines the quality of your migration.
+
+**Standardize tenant names.** Choose a canonical name format for each tenant - typically the legal entity name as it appears in the executed lease - and apply it consistently across all records. Create a name mapping table: old name variants on the left, standardized name on the right. This ensures that when the PMS aggregates data by tenant (for example, showing all leases for a single tenant across properties), it correctly identifies related records.
+
+**Standardize date formats.** Pick one format (ISO 8601: YYYY-MM-DD is PMS-friendly) and convert all dates. Mixed date formats cause import failures that are time-consuming to diagnose.
+
+**Separate combined fields.** Spreadsheets sometimes combine data that the PMS expects in separate fields. "10,000 SF / 3rd Floor" needs to become two fields: Rentable Area = 10000 and Floor = 3. "Suite 400, 123 Main Street, Chicago, IL 60601" needs to be parsed into suite, street address, city, state, and zip. Do this systematically before import, not manually in the PMS after.
+
+**Document the current amendment state.** For every lease with amendments, determine the current effective terms for every field: current rent (from the most recent amendment that changed rent), current expiration date (from the most recent amendment that extended or shortened the term), current premises square footage, and current renewal option terms. The PMS lease record should reflect current terms, with the amendment chain documented in the system's history or notes fields.
+
+## Phase 3: Field Mapping
+
+The field mapping document is the technical blueprint for your migration. It specifies, for every field in your destination PMS: what field it maps to in your source spreadsheet, any transformation required, and how to handle cases where the source data is absent.
+
+**Required vs. optional fields.** Identify which PMS fields are required for a lease record to save. These fields must have values for every lease, or your import will fail. Fill any required fields that are currently empty using source documents before attempting the import.
+
+**Transformation rules.** Some fields require transformation. A rent schedule stored as a single number needs to be expanded into a date-range series. A renewal option stored as "two 5-year options at fair market value" needs to be broken into structured fields: option count, option term length, exercise basis, and notice deadline. Define these transformation rules explicitly in your mapping document so the person doing the import applies them consistently.
+
+**Fields the PMS requires that you haven't tracked.** The PMS may require a "lease type" field (gross, NNN, modified gross, base year) that your spreadsheet never captured. It may require a "property class" or "lease status" field. For fields you've never tracked, you have three options: extract from source documents, derive from existing data where possible, or default to a standard value with a note to review.
+
+**PMS-specific data structures.** Different PMS platforms have different data models. Yardi, for example, stores leases within a property hierarchy (entity → property → unit → lease). MRI has a different hierarchy. Understanding your PMS's data model before you start mapping prevents structural mismatches that require a complete re-import.
+
+## Phase 4: Import and Validation
+
+Most PMS platforms support bulk import via CSV or Excel templates. Download the PMS import template, map your prepared data into the template format, and do a test import before committing to production.
+
+**Test import on a subset first.** Select five to ten leases - ideally a mix of simple and complex - and complete the import process from start to finish. Validate the results against source documents. This test run will surface import format issues, missing required fields, and data transformation problems before you commit all records.
+
+**Common import errors and how to fix them.** Date format mismatches are the most frequent cause of import failures - the template expects YYYY-MM-DD but your data has MM/DD/YYYY. Numeric fields with currency formatting (dollar signs, commas) fail because the system expects plain numbers. Required field violations fail silently in some systems - the record is not imported but no error is displayed; you only notice when the record count in the PMS does not match your import file. After every import batch, compare record counts.
+
+**Post-import validation.** After completing the full import, run a systematic validation: pull a random sample of 10-20% of records and verify every field against the source document. Check rent schedules, option terms, CAM provisions, and security deposit amounts. Discrepancies from this validation require manual correction in the PMS.
+
+Run the PMS's standard reports - rent roll, expiration schedule, critical dates - and compare them against your prior spreadsheet data. Material differences need investigation before you decommission the spreadsheet.
+
+## Ongoing Maintenance After Migration
+
+A successful migration establishes a clean baseline. Keeping it clean requires a documented process for updating the PMS when leases are executed or amended.
+
+When a new lease is signed, run it through an AI extraction tool to produce a structured field-by-field output, then enter the PMS fields from that output rather than from manual reading of the document. This produces more consistent data than relying on whoever is available to do data entry from reading the lease.
+
+When an amendment is executed, identify every field affected by the amendment, update those fields in the PMS, and attach the amendment document to the lease record. Do not assume amendments only affect rent and term - amendments frequently change options, CAM provisions, square footage, permitted use, and notice requirements.
+
+Assign a named data custodian for each property who is responsible for keeping the PMS current. The data quality achieved in migration deteriorates quickly if there is no clear ownership of ongoing maintenance.
+
+A well-executed migration pays dividends in operational efficiency: automated rent escalation invoicing, reliable critical date alerts, and accurate management reporting. A poorly executed migration gives you a more expensive spreadsheet.

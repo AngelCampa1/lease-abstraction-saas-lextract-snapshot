@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "lextract",
+  "compatibility_date": "2025-12-01",
+  "compatibility_flags": [
+    // Enable Node.js API
+    "nodejs_compat",
+    // Allow fetching URLs in the app
+    "global_fetch_strictly_public"
+  ],
+  "vars": {
+    // Public AI-SDR worker base URL. The assertion + context secrets are set
+    // separately via `wrangler secret put` (AI_SDR_CLIENT_ASSERTION_SECRET,
+    // AI_SDR_CONTEXT_SECRET) so they never live in source control.
+    "AI_SDR_WORKER_URL": "https://ventora-ai-sdr-worker.REPLACE_WITH_ACCOUNT_SUBDOMAIN.workers.dev"
+  },
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    { "pattern": "lextract.io", "custom_domain": true },
+    { "pattern": "www.lextract.io", "custom_domain": true }
+  ],
+  "services": [
+    {
+      // Self-reference service binding — the service name must match the worker name.
+      // Required by OpenNext for internal routing / ISR.
+      // See https://opennext.js.org/cloudflare/caching
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "lextract"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

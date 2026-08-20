@@ -1,0 +1,300 @@
+{
+  "DocumentMetadata": {
+    "Pages": 2
+  },
+  "JobStatus": "SUCCEEDED",
+  "Blocks": [
+    {
+      "BlockType": "PAGE",
+      "Geometry": {
+        "BoundingBox": {"Width": 1.0, "Height": 1.0, "Left": 0.0, "Top": 0.0}
+      },
+      "Id": "page-1",
+      "Page": 1
+    },
+    {
+      "BlockType": "LINE",
+      "Confidence": 99.5,
+      "Text": "COMMERCIAL LEASE AGREEMENT",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.5, "Height": 0.02, "Left": 0.25, "Top": 0.05}
+      },
+      "Id": "line-1",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-1", "word-2", "word-3"]
+        }
+      ]
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 99.8,
+      "Text": "COMMERCIAL",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.15, "Height": 0.02, "Left": 0.25, "Top": 0.05}
+      },
+      "Id": "word-1",
+      "Page": 1
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 99.6,
+      "Text": "LEASE",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.1, "Height": 0.02, "Left": 0.42, "Top": 0.05}
+      },
+      "Id": "word-2",
+      "Page": 1
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 99.4,
+      "Text": "AGREEMENT",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.14, "Height": 0.02, "Left": 0.54, "Top": 0.05}
+      },
+      "Id": "word-3",
+      "Page": 1
+    },
+    {
+      "BlockType": "LINE",
+      "Confidence": 98.2,
+      "Text": "LANDLORD: Acme Properties LLC",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.4, "Height": 0.02, "Left": 0.1, "Top": 0.12}
+      },
+      "Id": "line-2",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-4", "word-5", "word-6", "word-7"]
+        }
+      ]
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 99.0,
+      "Text": "LANDLORD:",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.12, "Height": 0.02, "Left": 0.1, "Top": 0.12}
+      },
+      "Id": "word-4",
+      "Page": 1
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 98.5,
+      "Text": "Acme",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.06, "Height": 0.02, "Left": 0.24, "Top": 0.12}
+      },
+      "Id": "word-5",
+      "Page": 1
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 98.0,
+      "Text": "Properties",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.12, "Height": 0.02, "Left": 0.32, "Top": 0.12}
+      },
+      "Id": "word-6",
+      "Page": 1
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 97.5,
+      "Text": "LLC",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.04, "Height": 0.02, "Left": 0.46, "Top": 0.12}
+      },
+      "Id": "word-7",
+      "Page": 1
+    },
+    {
+      "BlockType": "LINE",
+      "Confidence": 45.0,
+      "Text": "Low confidence noise text",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.3, "Height": 0.02, "Left": 0.1, "Top": 0.95}
+      },
+      "Id": "line-low-confidence",
+      "Page": 1
+    },
+    {
+      "BlockType": "KEY_VALUE_SET",
+      "Confidence": 95.0,
+      "EntityTypes": ["KEY"],
+      "Id": "kv-key-1",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-4"]
+        },
+        {
+          "Type": "VALUE",
+          "Ids": ["kv-val-1"]
+        }
+      ]
+    },
+    {
+      "BlockType": "KEY_VALUE_SET",
+      "Confidence": 94.0,
+      "EntityTypes": ["VALUE"],
+      "Id": "kv-val-1",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-5", "word-6", "word-7"]
+        }
+      ]
+    },
+    {
+      "BlockType": "TABLE",
+      "Confidence": 97.0,
+      "Id": "table-1",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["cell-1-1", "cell-1-2", "cell-2-1", "cell-2-2"]
+        }
+      ]
+    },
+    {
+      "BlockType": "CELL",
+      "Confidence": 96.0,
+      "RowIndex": 1,
+      "ColumnIndex": 1,
+      "Id": "cell-1-1",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-cell-1"]
+        }
+      ]
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 99.0,
+      "Text": "Item",
+      "Id": "word-cell-1",
+      "Page": 1,
+      "Geometry": {
+        "BoundingBox": {"Width": 0.05, "Height": 0.02, "Left": 0.1, "Top": 0.3}
+      }
+    },
+    {
+      "BlockType": "CELL",
+      "Confidence": 96.0,
+      "RowIndex": 1,
+      "ColumnIndex": 2,
+      "Id": "cell-1-2",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-cell-2"]
+        }
+      ]
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 99.0,
+      "Text": "Amount",
+      "Id": "word-cell-2",
+      "Page": 1,
+      "Geometry": {
+        "BoundingBox": {"Width": 0.08, "Height": 0.02, "Left": 0.3, "Top": 0.3}
+      }
+    },
+    {
+      "BlockType": "CELL",
+      "Confidence": 95.0,
+      "RowIndex": 2,
+      "ColumnIndex": 1,
+      "Id": "cell-2-1",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-cell-3"]
+        }
+      ]
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 98.0,
+      "Text": "Rent",
+      "Id": "word-cell-3",
+      "Page": 1,
+      "Geometry": {
+        "BoundingBox": {"Width": 0.05, "Height": 0.02, "Left": 0.1, "Top": 0.34}
+      }
+    },
+    {
+      "BlockType": "CELL",
+      "Confidence": 95.0,
+      "RowIndex": 2,
+      "ColumnIndex": 2,
+      "Id": "cell-2-2",
+      "Page": 1,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-cell-4"]
+        }
+      ]
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 98.0,
+      "Text": "$150,000",
+      "Id": "word-cell-4",
+      "Page": 1,
+      "Geometry": {
+        "BoundingBox": {"Width": 0.08, "Height": 0.02, "Left": 0.3, "Top": 0.34}
+      }
+    },
+    {
+      "BlockType": "PAGE",
+      "Geometry": {
+        "BoundingBox": {"Width": 1.0, "Height": 1.0, "Left": 0.0, "Top": 0.0}
+      },
+      "Id": "page-2",
+      "Page": 2
+    },
+    {
+      "BlockType": "LINE",
+      "Confidence": 97.8,
+      "Text": "RENEWAL OPTION: Tenant may renew for 60 months.",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.6, "Height": 0.02, "Left": 0.1, "Top": 0.05}
+      },
+      "Id": "line-3",
+      "Page": 2,
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["word-8"]
+        }
+      ]
+    },
+    {
+      "BlockType": "WORD",
+      "Confidence": 97.8,
+      "Text": "RENEWAL",
+      "Geometry": {
+        "BoundingBox": {"Width": 0.1, "Height": 0.02, "Left": 0.1, "Top": 0.05}
+      },
+      "Id": "word-8",
+      "Page": 2
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+### Result
+"{\n  \"z01-home-desktop-light\": {\n    \"url\": \"http://localhost:3000/\",\n    \"axe\": [],\n    \"violationCount\": 0\n  },\n  \"z02-pricing-desktop-light\": {\n    \"url\": \"http://localhost:3000/pricing\",\n    \"axe\": [],\n    \"violationCount\": 0\n  },\n  \"z02b-pricing-mobile-light\": {\n    \"url\": \"http://localhost:3000/pricing\",\n    \"axe\": [],\n    \"violationCount\": 0\n  },\n  \"z03-login-desktop-light\": {\n    \"url\": \"http://localhost:3000/login\",\n    \"axe\": [],\n    \"violationCount\": 0\n  },\n  \"z04-signup-desktop-light\": {\n    \"url\": \"http://localhost:3000/signup\",\n    \"axe\": [],\n    \"violationCount\": 0\n  },\n  \"z05-upload-desktop-light\": {\n    \"url\": \"http://localhost:3000/upload\",\n    \"axe\": [],\n    \"violationCount\": 0\n  },\n  \"z05b-upload-desktop-dark\": {\n    \"url\": \"http://localhost:3000/upload\",\n    \"axe\": [],\n    \"violationCount\": 0\n  },\n  \"z05c-upload-mobile-light\": {\n    \"url\": \"http://localhost:3000/upload\",\n    \"axe\": [],\n    \"violationCount\": 0\n  },\n  \"z10-results-mobile-light\": {\n    \"url\": \"http://localhost:3000/results/sample\",\n    \"axe\": [],\n    \"violationCount\": 0\n  }\n}"
+### Ran Playwright code
+```js
+await (async page => {
+  const surfaces = [
+    ['http://localhost:3000/',          'z01-home-desktop-light',      'light', 1440, 900],
+    ['http://localhost:3000/pricing',   'z02-pricing-desktop-light',   'light', 1440, 900],
+    ['http://localhost:3000/pricing',   'z02b-pricing-mobile-light',   'light', 390, 900],
+    ['http://localhost:3000/login',     'z03-login-desktop-light',     'light', 1440, 900],
+    ['http://localhost:3000/signup',    'z04-signup-desktop-light',    'light', 1440, 900],
+    ['http://localhost:3000/upload',    'z05-upload-desktop-light',    'light', 1440, 900],
+    ['http://localhost:3000/upload',    'z05b-upload-desktop-dark',    'dark',  1440, 900],
+    ['http://localhost:3000/upload',    'z05c-upload-mobile-light',    'light', 390, 900],
+    ['http://localhost:3000/results/sample', 'z10-results-mobile-light','light', 390, 900],
+  ];
+  const out = {};
+  for (const [url, name, theme, vw, vh] of surfaces) {
+    try {
+      await page.setViewportSize({ width: vw, height: vh });
+      await page.evaluate(t => { try { localStorage.setItem('theme', t); } catch {} }, theme);
+      await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(()=>{});
+      await page.waitForTimeout(1000);
+      await page.evaluate(t => { document.documentElement.classList.remove('light','dark'); document.documentElement.classList.add(t); }, theme);
+      await page.waitForTimeout(300);
+      await page.screenshot({ path: `docs/audit/${name}.png`, fullPage: true });
+      await page.addScriptTag({ path: '<repo-root>/docs/audit/vendor/axe.min.js' });
+      const axe = await page.evaluate(async () => {
+        const r = await window.axe.run(document, { resultTypes: ['violations'] });
+        return r.violations.map(v => ({ id:v.id, impact:v.impact, count:v.nodes.length, sample: v.nodes.slice(0,2).map(n => ({ target:n.target, summary:(n.failureSummary||'').slice(0,220) })) }));
+      });
+      out[name] = { url, axe, violationCount: axe.reduce((a,x)=>a+x.count,0) };
+    } catch (e) { out[name] = { url, error: String(e).slice(0,200) }; }
+  }
+  return JSON.stringify(out, null, 2);
+})(page);
+```
+### Page
+- Page URL: http://localhost:3000/results/sample
+- Page Title: Lextract — AI-Powered Commercial Lease Abstraction
+- Console: 35 errors, 8 warnings
+### Events
+- New console entries: .playwright-cli\console-2026-04-12T00-39-11-260Z.log#L32-L43

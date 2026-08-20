@@ -1,0 +1,483 @@
+{
+  "description": "22 real commercial leases sourced from SEC EDGAR public filings for extraction testing.",
+  "source": "SEC EDGAR (public filings, Exhibit 10.x) — legally available, no license restrictions",
+  "format": "HTML (.htm) as downloaded from SEC EDGAR. Convert to PDF with Playwright or wkhtmltopdf before running the full extraction pipeline.",
+  "leases": [
+    {
+      "id": "01",
+      "file": "01_office_karyopharm.htm",
+      "type": "office",
+      "lease_structure": "full_service_gross",
+      "tenant": "Karyopharm Therapeutics Inc.",
+      "landlord": "unknown",
+      "location": "Newton, MA",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2024-11-08",
+      "accession": "0000950170-24-124067",
+      "notable_fields": [
+        "base_rent_annual", "escalation_type", "ti_allowance_amount",
+        "has_renewal_option", "lease_term_months", "security_deposit_amount"
+      ],
+      "complexity": "medium",
+      "notes": "Biotech company office lease, Newton MA, standard FSG structure. Good for testing base office fields."
+    },
+    {
+      "id": "02",
+      "file": "02_office_cpi_corp.htm",
+      "type": "office_mixed_use",
+      "lease_structure": "modified_gross",
+      "tenant": "CPI Corp",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "10-K",
+      "sec_filing_date": "2012",
+      "accession": "0000025354-12-000054",
+      "notable_fields": [
+        "permitted_use_description", "prohibited_uses",
+        "base_rent_annual", "rent_payment_frequency", "lease_structure_type"
+      ],
+      "complexity": "medium",
+      "notes": "Mixed-use permitted (office, retail, or light manufacturing). Good for testing permitted_use and prohibited_uses extraction."
+    },
+    {
+      "id": "03",
+      "file": "03_office_movella.htm",
+      "type": "office",
+      "lease_structure": "full_service_gross",
+      "tenant": "Movella Holdings Inc.",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "S-1",
+      "sec_filing_date": "2023",
+      "accession": "0001193125-23-035948",
+      "notable_fields": [
+        "base_rent_annual", "lease_term_months", "security_deposit_amount",
+        "commencement_date", "expiration_date"
+      ],
+      "complexity": "low",
+      "notes": "Small/mid-size office lease. Good baseline test for simple lease extraction."
+    },
+    {
+      "id": "04",
+      "file": "04_medical_office_horizon.htm",
+      "type": "medical_office",
+      "lease_structure": "full_service_gross",
+      "tenant": "Horizon Mental Health Management Inc.",
+      "landlord": "St. David's Healthcare Partnership",
+      "location": "Austin, TX (St. David's Pavilion)",
+      "sec_filing_type": "10-K",
+      "sec_filing_date": "2006",
+      "accession": "0000935007-06-000001",
+      "notable_fields": [
+        "rentable_square_footage", "base_rent_annual", "permitted_use_description",
+        "cgl_occurrence_limit", "cgl_aggregate_limit", "property_insurance_bearer",
+        "additional_insured_req"
+      ],
+      "size_rsf": 28749,
+      "complexity": "high",
+      "notes": "Medical office building, 28,749 RSF, Austin TX. Good for testing insurance fields and healthcare-specific permitted use clauses."
+    },
+    {
+      "id": "05",
+      "file": "05_warehouse_corsair.htm",
+      "type": "industrial_warehouse",
+      "lease_structure": "nnn",
+      "tenant": "Corsair Memory Inc.",
+      "landlord": "Sutter Hill Investors LLC",
+      "location": "unknown",
+      "sec_filing_type": "S-1",
+      "sec_filing_date": "2012",
+      "accession": "0001486183-12-000001",
+      "notable_fields": [
+        "rentable_square_footage", "dock_high_doors", "clear_height_feet",
+        "power_capacity", "base_rent_annual", "pro_rata_share",
+        "cam_exclusions", "gross_up_percentage"
+      ],
+      "complexity": "medium",
+      "notes": "Industrial warehouse for hardware company. NNN structure. Good for testing industrial fields (dock doors, clear height, power). RF-005 (no gross-up) candidate."
+    },
+    {
+      "id": "06",
+      "file": "06_warehouse_northann.htm",
+      "type": "industrial_warehouse",
+      "lease_structure": "nnn",
+      "tenant": "Northann Corp",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2024",
+      "accession": "0001575965-24-000865",
+      "notable_fields": [
+        "rentable_square_footage", "base_rent_annual", "lease_term_months",
+        "has_renewal_option", "renewal_terms", "cam_cap_percentage"
+      ],
+      "complexity": "low",
+      "notes": "Standard warehouse/distribution lease, 2024 filing. Good for straightforward NNN field extraction."
+    },
+    {
+      "id": "07",
+      "file": "07_industrial_sancarlos.htm",
+      "type": "industrial_lab",
+      "lease_structure": "nnn",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "894 Industrial Road, San Carlos, CA",
+      "sec_filing_type": "S-1",
+      "sec_filing_date": "2018",
+      "accession": "0001382101-18-000001",
+      "notable_fields": [
+        "rentable_square_footage", "clear_height_feet", "permitted_use_description",
+        "hvac_responsibility", "restoration_requirement", "tenant_work_description"
+      ],
+      "size_rsf": 9740,
+      "complexity": "medium",
+      "notes": "Mixed industrial/lab/clean room/warehouse, 9,740 sqft, San Carlos CA. Good for testing lab/R&D use clauses and tenant improvement obligations."
+    },
+    {
+      "id": "08",
+      "file": "08_mixed_office_warehouse.htm",
+      "type": "industrial_mixed",
+      "lease_structure": "nnn",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "S-1",
+      "sec_filing_date": "2011",
+      "accession": "0001524025-11-000001",
+      "notable_fields": [
+        "dock_high_doors", "clear_height_feet", "rentable_square_footage",
+        "base_rent_annual", "pro_rata_share", "janitorial_responsibility"
+      ],
+      "complexity": "medium",
+      "notes": "~7K sqft office + 19K sqft warehouse, concrete tilt-up, insulated metal roof, dock high doors. Good for mixed-use industrial field testing."
+    },
+    {
+      "id": "09",
+      "file": "09_industrial_30k.htm",
+      "type": "industrial",
+      "lease_structure": "nnn",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "10-K",
+      "sec_filing_date": "2011",
+      "accession": "0001077800-11-000218",
+      "notable_fields": [
+        "rentable_square_footage", "base_rent_annual", "lease_term_months",
+        "pro_rata_share", "audit_rights", "cam_exclusions"
+      ],
+      "size_rsf": 30000,
+      "complexity": "medium",
+      "notes": "~30,000 RSF standalone industrial building. RF-002 (missing audit rights) and RF-006 (missing CAM exclusions) candidate."
+    },
+    {
+      "id": "10",
+      "file": "10_nnn_oysterpoint.htm",
+      "type": "office_nnn",
+      "lease_structure": "nnn",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "331 Oyster Point Blvd, South San Francisco, CA",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2023",
+      "accession": "0001746473-23-000062",
+      "notable_fields": [
+        "pro_rata_share", "cam_exclusions", "base_year", "audit_rights",
+        "cam_cap_percentage", "cam_cap_type", "cap_cumulative_vs_annual",
+        "management_fee_cap", "holdover_rate", "cam_audit_deadline_days"
+      ],
+      "complexity": "high",
+      "notes": "Large office/life science NNN lease, South San Francisco biotech corridor. 676KB — highly detailed. RF-001 (management fee), RF-004 (cumulative CAM cap), RF-008 (holdover rate), RF-015 (short audit window) candidate."
+    },
+    {
+      "id": "11",
+      "file": "11_nnn_commercial.htm",
+      "type": "commercial_nnn",
+      "lease_structure": "nnn",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2012",
+      "accession": "0001336698-12-000001",
+      "notable_fields": [
+        "pro_rata_share", "cam_cap_percentage", "holdover_rate",
+        "base_rent_annual", "reconciliation_frequency", "gross_up_percentage"
+      ],
+      "complexity": "medium",
+      "notes": "Standard commercial NNN. RF-003 (no CAM cap), RF-005 (no gross-up), RF-014 (no reconciliation frequency) candidate."
+    },
+    {
+      "id": "12",
+      "file": "12_ground_lease.htm",
+      "type": "ground_lease_amendment",
+      "lease_structure": "ground_nnn",
+      "tenant": "Impossible Math, LLC",
+      "landlord": "The Salvation Army, a Georgia Corporation",
+      "location": "Texas (governing law)",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2025-04-10",
+      "accession": "unknown",
+      "notable_fields": [
+        "has_termination_option", "has_renewal_option", "renewal_terms",
+        "lease_term_months", "base_rent_annual", "cpi_index_reference",
+        "escalation_type"
+      ],
+      "complexity": "low",
+      "notes": "Second Amendment to Ground Lease, original dated 2021-11-16, effective 2025-04-10. Removes termination option (Paragraph 2.3 deleted), changes term to 5yr initial + 4x 10yr auto-renewals, sets revenue-sharing rent with CPI escalation. RF-009 (no termination option) — termination right was explicitly removed in this amendment."
+    },
+    {
+      "id": "13",
+      "file": "13_ground_svc_reit.htm",
+      "type": "ground_lease_reit",
+      "lease_structure": "ground_nnn",
+      "tenant": "unknown",
+      "landlord": "Service Properties Trust (REIT)",
+      "location": "unknown",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2023",
+      "accession": "0000945394-23-000001",
+      "notable_fields": [
+        "lease_term_months", "base_rent_annual", "snda_requirement",
+        "has_guaranty", "estoppel_turnaround_days", "cam_exclusions"
+      ],
+      "complexity": "high",
+      "notes": "REIT ground lease (Service Properties Trust). 2.6MB — very large document with many exhibits. Use for large document stress testing and REIT-specific clause extraction (SNDA, estoppel, guaranty chain)."
+    },
+    {
+      "id": "14",
+      "file": "14_retail_childrens_place.htm",
+      "type": "retail",
+      "lease_structure": "nnn",
+      "tenant": "The Children's Place Retail Stores Inc.",
+      "landlord": "unknown",
+      "location": "Secaucus, NJ",
+      "sec_filing_type": "10-K",
+      "sec_filing_date": "2014",
+      "accession": "0000912898-14-000020",
+      "notable_fields": [
+        "has_guaranty", "percentage_rent_rate", "sales_breakpoint_amount",
+        "exclusive_use_rights", "opening_cotenancy", "ongoing_cotenancy",
+        "cotenancy_remedy", "holdover_rate", "monetary_cure_period"
+      ],
+      "complexity": "high",
+      "notes": "Retail store lease with corporate guaranty. Has co-tenancy, percentage rent, and exclusive use provisions. 488KB. RF-007 (short cure period), RF-008 (holdover rate), RF-012 (recapture right) candidate."
+    },
+    {
+      "id": "15",
+      "file": "15_retail_trees_corp.htm",
+      "type": "retail_specialty",
+      "lease_structure": "nnn",
+      "tenant": "TREES Corp (Colorado)",
+      "landlord": "unknown",
+      "location": "Colorado",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2025",
+      "accession": "0001477009-25-010427",
+      "notable_fields": [
+        "permitted_use_description", "prohibited_uses",
+        "base_rent_annual", "governing_law_state", "has_renewal_option"
+      ],
+      "complexity": "medium",
+      "notes": "Licensed cannabis retail lease, Colorado, 2025 (most recent fixture). Good for testing restrictive/regulatory permitted use clauses. RF-011 (no renewal option) candidate."
+    },
+    {
+      "id": "16",
+      "file": "16_retail_commercial.htm",
+      "type": "retail",
+      "lease_structure": "modified_gross",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "10-K",
+      "sec_filing_date": "2004",
+      "accession": "0001278263-04-000001",
+      "notable_fields": [
+        "base_rent_annual", "percentage_rent_rate", "sales_breakpoint_amount",
+        "gross_sales_exclusions", "cam_exclusions", "base_year_gross_up",
+        "lease_structure_type"
+      ],
+      "complexity": "high",
+      "notes": "Standard retail with percentage rent provisions and detailed exclusions. Good for testing percentage rent, CAM, and base year gross-up fields. RF-013 (no base year gross-up) candidate."
+    },
+    {
+      "id": "17",
+      "file": "17_datacenter_turnkey.htm",
+      "type": "data_center",
+      "lease_structure": "modified_gross",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "10-K",
+      "sec_filing_date": "2007",
+      "accession": "0001156378-07-000001",
+      "notable_fields": [
+        "permitted_use_description", "power_capacity",
+        "utilities_payment_method", "cgl_occurrence_limit",
+        "cgl_aggregate_limit", "waiver_of_subrogation",
+        "indemnification_scope"
+      ],
+      "complexity": "high",
+      "notes": "Turn-key datacenter lease with network pathway provisions. 432KB. Good for testing technical/specialty use, power capacity, and detailed indemnification clauses."
+    },
+    {
+      "id": "18",
+      "file": "18_specialty_nnn.htm",
+      "type": "specialty_nnn",
+      "lease_structure": "nnn",
+      "tenant": "unknown",
+      "landlord": "Zoned Properties Inc.",
+      "location": "unknown",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2018",
+      "accession": "0001279620-18-000001",
+      "notable_fields": [
+        "permitted_use_description", "prohibited_uses",
+        "base_rent_annual", "governing_law_state", "audit_rights",
+        "has_renewal_option", "has_termination_option"
+      ],
+      "complexity": "medium",
+      "notes": "Licensed medical marijuana facility NNN lease. Good for testing restrictive use clause extraction and specialty NNN. RF-002 (missing audit rights), RF-011 (no renewal option) candidate."
+    },
+    {
+      "id": "19",
+      "file": "19_sublease_commercial.htm",
+      "type": "sublease",
+      "lease_structure": "sublease",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "unknown",
+      "sec_filing_type": "10-K",
+      "sec_filing_date": "2004",
+      "accession": "0001095600-04-000001",
+      "notable_fields": [
+        "consent_required", "recapture_right", "permitted_transferees",
+        "continuing_liability", "profit_sharing_percentage", "consent_standard"
+      ],
+      "complexity": "medium",
+      "notes": "Commercial sublease with master lessor termination provisions. Good for testing sublease-specific assignment and subletting fields. RF-012 (recapture right present) candidate."
+    },
+    {
+      "id": "20",
+      "file": "20_sublease_nyc.htm",
+      "type": "sublease_office",
+      "lease_structure": "sublease",
+      "tenant": "unknown",
+      "landlord": "unknown",
+      "location": "New York, NY",
+      "sec_filing_type": "10-K",
+      "sec_filing_date": "2014",
+      "accession": "0001010086-14-000026",
+      "notable_fields": [
+        "consent_required", "base_rent_annual", "lease_term_months",
+        "governing_law_state", "security_deposit_amount", "consent_standard"
+      ],
+      "complexity": "medium",
+      "notes": "NYC office sublease. Tests NY-specific governing law and sublease clause extraction."
+    },
+    {
+      "id": "21",
+      "file": "21_amendment_nve.htm",
+      "type": "lease_amendment",
+      "lease_structure": "amendment",
+      "tenant": "NVE Corp",
+      "landlord": "unknown",
+      "location": "Eden Prairie, MN",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2024",
+      "accession": "0001376474-24-000647",
+      "notable_fields": [
+        "base_rent_annual", "lease_term_months", "expiration_date", "escalation_type"
+      ],
+      "complexity": "low",
+      "notes": "7th lease amendment for NVE Corp. Tests amendment document extraction — only modified terms are present, not the full original lease."
+    },
+    {
+      "id": "22",
+      "file": "22_amendment_intevac.htm",
+      "type": "lease_amendment",
+      "lease_structure": "amendment",
+      "tenant": "INTEVAC Inc.",
+      "landlord": "unknown",
+      "location": "Santa Clara, CA",
+      "sec_filing_type": "8-K",
+      "sec_filing_date": "2023",
+      "accession": "0001193125-23-289887",
+      "notable_fields": [
+        "base_rent_annual", "lease_term_months", "ti_allowance_amount",
+        "hvac_responsibility", "non_monetary_cure_period", "fixed_escalation_rate"
+      ],
+      "complexity": "medium",
+      "notes": "INTEVAC lease amendment with HVAC replacement terms and TI allowance. Tests amendment parsing including CapEx reimbursement provisions."
+    }
+  ],
+  "coverage_summary": {
+    "by_type": {
+      "office": ["01", "02", "03"],
+      "medical_office": ["04"],
+      "industrial_warehouse": ["05", "06"],
+      "industrial_lab": ["07"],
+      "industrial_mixed": ["08"],
+      "industrial": ["09"],
+      "office_nnn": ["10"],
+      "commercial_nnn": ["11"],
+      "ground_lease_amendment": ["12"],
+      "ground_lease_reit": ["13"],
+      "retail": ["14", "16"],
+      "retail_specialty": ["15"],
+      "data_center": ["17"],
+      "specialty_nnn": ["18"],
+      "sublease": ["19", "20"],
+      "amendment": ["21", "22"]
+    },
+    "by_structure": {
+      "nnn": ["05", "06", "07", "08", "09", "10", "11", "14", "15", "18"],
+      "ground_nnn": ["12", "13"],
+      "full_service_gross": ["01", "03", "04"],
+      "modified_gross": ["02", "16", "17"],
+      "sublease": ["19", "20"],
+      "amendment": ["21", "22"]
+    },
+    "by_geography": {
+      "CA": ["07", "08", "10", "22"],
+      "MA": ["01"],
+      "TX": ["04", "12"],
+      "NJ": ["14"],
+      "NY": ["20"],
+      "CO": ["15"],
+      "MN": ["21"]
+    },
+    "red_flag_candidates": {
+      "RF-001_excessive_management_fee": ["10", "13"],
+      "RF-002_missing_audit_rights": ["09", "18"],
+      "RF-003_no_cam_cap": ["05", "11"],
+      "RF-004_cumulative_cam_cap": ["10"],
+      "RF-005_no_gross_up": ["05", "06", "09", "11"],
+      "RF-006_missing_cam_exclusions": ["09", "11"],
+      "RF-007_short_cure_period": ["14"],
+      "RF-008_aggressive_holdover_rate": ["10", "14"],
+      "RF-009_no_termination_option": ["12", "15"],
+      "RF-010_missing_restoration_clarity": ["07", "08"],
+      "RF-011_no_renewal_option": ["15", "18"],
+      "RF-012_recapture_right_present": ["19"],
+      "RF-013_no_base_year_gross_up": ["02", "16"],
+      "RF-014_no_reconciliation_frequency": ["11"],
+      "RF-015_short_audit_window": ["10", "14"]
+    }
+  },
+  "field_coverage_gaps": [
+    "Parking fields (parking_ratio, unreserved_parking_spaces, reserved_parking_spaces, monthly_parking_cost, trailer_parking_spaces) — no lease is specifically flagged for these; look in industrial leases 05-09 or retail 14.",
+    "Signage fields (fascia_signage_rights, monument_signage_rights, signage_maintenance) — most likely present in retail leases 14-16.",
+    "Key dates sub-fields (possession_date, rent_abatement_period, rent_commencement_date) — check office leases 01-03 and retail 14.",
+    "ROFR/ROFO fields (rofr_space, rofo_space) — likely in larger office and retail leases 10, 13, 14.",
+    "Exclusivity fields (radius_restriction_miles, alternative_rent_rate) — check retail leases 14, 15, 16."
+  ],
+  "usage_notes": [
+    "Files are HTML (.htm) from SEC EDGAR archives. Convert to PDF before running the extraction pipeline.",
+    "Recommended PDF conversion: Playwright headless browser (`page.pdf()`) handles complex EDGAR HTML better than wkhtmltopdf.",
+    "File 13_ground_svc_reit.htm is 2.6MB — use for large document stress testing and timeout validation.",
+    "Amendment files (12, 21, 22) contain only modified terms, not full leases. Test amendment-aware extraction separately.",
+    "All files are SEC public filings — no license restrictions for internal testing.",
+    "Complexity rubric: low = <2 pages, simple terms; medium = standard full lease, 10-30 pages; high = complex multi-article, unusual clauses, or 30+ pages."
+  ]
+}

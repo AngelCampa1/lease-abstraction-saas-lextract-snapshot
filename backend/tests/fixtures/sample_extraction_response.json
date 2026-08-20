@@ -1,0 +1,94 @@
+{
+  "fields": {
+    "landlord_legal_name": {
+      "value": "Acme Properties LLC",
+      "confidence": 0.99,
+      "source_text": "LANDLORD: Acme Properties LLC, a Delaware limited liability company"
+    },
+    "tenant_legal_name": {
+      "value": "Best Corp Inc.",
+      "confidence": 0.99,
+      "source_text": "TENANT: Best Corp Inc., a Texas corporation"
+    },
+    "premises_address": {
+      "value": "123 Main Street, Suite 200, Anytown, TX 75001",
+      "confidence": 0.98,
+      "source_text": "PREMISES: 123 Main Street, Suite 200, Anytown, TX 75001"
+    },
+    "rentable_square_footage": {
+      "value": 10000,
+      "confidence": 0.99,
+      "source_text": "Rentable Square Footage: 10,000 RSF"
+    },
+    "building_total_rsf": {
+      "value": 190476,
+      "confidence": 0.98,
+      "source_text": "Building Total RSF: 190,476 RSF"
+    },
+    "commencement_date": {
+      "value": "2024-01-15",
+      "confidence": 0.98,
+      "source_text": "commencing on January 15, 2024"
+    },
+    "expiration_date": {
+      "value": "2029-01-14",
+      "confidence": 0.97,
+      "source_text": "expiring on January 14, 2029"
+    },
+    "lease_term_months": {
+      "value": 60,
+      "confidence": 0.99,
+      "source_text": "sixty (60) months"
+    },
+    "base_rent_annual": {
+      "value": 150000.00,
+      "confidence": 0.99,
+      "source_text": "Annual base rent of One Hundred Fifty Thousand Dollars ($150,000.00)"
+    },
+    "pro_rata_share": {
+      "value": 0.0525,
+      "confidence": 0.98,
+      "source_text": "Tenant's pro rata share shall be 5.25%"
+    },
+    "lease_structure_type": {
+      "value": "Triple Net (NNN)",
+      "confidence": 0.99,
+      "source_text": "This is a Triple Net (NNN) lease"
+    },
+    "escalation_type": {
+      "value": "Fixed",
+      "confidence": 0.95,
+      "source_text": "increase by three percent (3%) annually"
+    },
+    "fixed_escalation_rate": {
+      "value": 0.03,
+      "confidence": 0.98,
+      "source_text": "three percent (3%)"
+    },
+    "cam_cap_percentage": {
+      "value": 0.05,
+      "confidence": 0.95,
+      "source_text": "not increase by more than five percent (5%) annually"
+    },
+    "has_renewal_option": {
+      "value": true,
+      "confidence": 0.98,
+      "source_text": "Tenant shall have one (1) option to renew"
+    },
+    "has_termination_option": {
+      "value": false,
+      "confidence": 0.97,
+      "source_text": "Tenant shall have no early termination option"
+    },
+    "security_deposit_amount": {
+      "value": 25000.00,
+      "confidence": 0.99,
+      "source_text": "$25,000.00 cash deposit"
+    },
+    "governing_law_state": {
+      "value": "Texas",
+      "confidence": 0.99,
+      "source_text": "Governing Law: State of Texas"
+    }
+  }
+}

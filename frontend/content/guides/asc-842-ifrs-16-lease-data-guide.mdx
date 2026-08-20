@@ -1,0 +1,160 @@
+---
+title: "ASC 842 and IFRS 16: The Complete Lease Data Requirements Guide"
+slug: "asc-842-ifrs-16-lease-data-guide"
+description: "A field-by-field reference for the lease data your accounting team needs to comply with ASC 842 and IFRS 16."
+publishedAt: "2026-03-18"
+updatedAt: "2026-03-18"
+author: "Angel Campa, Founder"
+category: "guides"
+silo: "compliance"
+tags:
+  - ASC 842
+  - IFRS 16
+  - lease accounting
+  - compliance
+readingTime: 10
+featured: false
+funnelStage: mofu
+faq:
+  - question: "What lease data do I need to collect to comply with ASC 842?"
+    answer: "At minimum you need the lease commencement date, lease term, lease classification (finance vs. operating), fixed payment amounts and escalation schedule, variable payment components, options to extend or terminate (and whether exercise is reasonably certain), and the incremental borrowing rate used to discount the liability. Missing even one of these fields produces an incorrect right-of-use asset or lease liability calculation."
+  - question: "What is the difference between a finance lease and an operating lease under ASC 842?"
+    answer: "Under ASC 842, a finance lease transfers substantially all the risks and rewards of ownership to the lessee - it meets one of five criteria such as ownership transfer at end of term, a purchase option reasonably certain to be exercised, or a lease term covering most of the asset's useful life. An operating lease does not meet any of those criteria. Both appear on the balance sheet as a right-of-use asset and lease liability, but the income statement treatment differs: finance leases separate interest expense from amortization, while operating leases record a single straight-line lease cost."
+  - question: "How does IFRS 16 differ from ASC 842 in terms of data requirements?"
+    answer: "IFRS 16 uses a single lessee model - virtually all leases go on balance sheet with no operating/finance distinction for lessees. The data you need is largely the same (payments, term, discount rate, options), but IFRS 16 requires a lessee's incremental borrowing rate in the currency of the lease, and the standard is more prescriptive about how to assess extension options. IFRS 16 also requires remeasurement disclosures when there is a lease modification or a reassessment of the lease term."
+  - question: "Can I use AI lease abstraction to extract ASC 842 data automatically?"
+    answer: "Yes. Tools like Lextract extract the specific fields required for ASC 842 and IFRS 16 compliance - lease term, payment schedule, escalation clauses, renewal options, and termination rights - directly from your PDF lease documents. Automated extraction reduces the risk of manual transcription errors, which are the most common source of incorrect ROU asset and lease liability calculations. The output is structured data ready to feed into your lease accounting system."
+---
+
+Two accounting standards fundamentally changed how companies report their lease obligations. ASC 842, issued by the Financial Accounting Standards Board, became effective for US public companies in fiscal years beginning after December 15, 2018, and for private companies in 2022. IFRS 16, issued by the International Accounting Standards Board, became effective for reporting periods beginning on or after January 1, 2019. Together they ended the era of off-balance-sheet lease accounting.
+
+The conceptual change was straightforward: leases represent obligations, and obligations belong on the balance sheet. The implementation challenge is equally straightforward but far harder in practice: getting accurate lease data from documents that were not designed to produce it.
+
+This guide covers what both standards require, where the data lives in a typical commercial lease, and how to approach abstraction systematically for compliance purposes.
+
+## The Core Requirement
+
+Under both ASC 842 and IFRS 16, a lessee must recognize two items on the balance sheet at lease commencement:
+
+**Right-of-use (ROU) asset.** Represents the lessee's right to use the underlying asset over the lease term. Initially measured at the present value of the lease liability, adjusted for lease incentives received, initial direct costs, and prepaid rent.
+
+**Lease liability.** Represents the obligation to make future lease payments. Initially measured at the present value of unpaid lease payments discounted at the appropriate rate.
+
+Both figures depend on inputs that must come directly from the lease document. If the inputs are wrong, both balance sheet figures are wrong. There is no estimation shortcut - the standard requires specific contractual data points.
+
+## The 12-Month Threshold
+
+Both standards allow companies to exempt short-term leases from balance sheet recognition. Under ASC 842 and IFRS 16, a lease qualifies for the short-term exemption if, at commencement, the lease term is 12 months or less.
+
+The critical nuance: the lease term for this purpose is not just the non-cancellable period. It includes renewal options that the lessee is reasonably certain to exercise. A lease with a 6-month initial term and a likely 24-month renewal does not qualify for the short-term exemption. This determination requires understanding the renewal options in every lease, not just the headline term.
+
+## The 5 Key Data Fields
+
+Both standards require the same core data set. Here is each field, why it matters, and where it typically appears in a commercial lease.
+
+### 1. Commencement Date
+
+The date on which the lessor makes the underlying asset available for use. This is not always the same as the lease execution date. A landlord may execute a lease in October but deliver the space for construction in January. The commencement date is January.
+
+The distinction matters because the ROU asset and lease liability are measured at commencement. Measuring too early overstates the asset; measuring too late creates a reporting gap.
+
+In a commercial lease, the commencement date is typically defined in Article 1 (Definitions) or Article 2 (Term). In leases with build-out periods, commencement may be contingent on landlord's substantial completion of tenant improvements, and a separate commencement certificate is often executed once the date is established.
+
+### 2. Lease Term
+
+The lease term for accounting purposes is longer than the non-cancellable period in most cases. It includes:
+
+- The non-cancellable period of the lease
+- Any periods covered by renewal options where the lessee is reasonably certain to exercise
+- Any periods covered by termination options where the lessee is reasonably certain not to exercise
+
+"Reasonably certain" is a high threshold under ASC 842 - higher than probable under IFRS 16, where the standard is more prescriptive. The analysis considers economic incentives: significant leasehold improvements that would be lost at expiration, favorable renewal rent terms, and the importance of the premises to the lessee's operations all increase the likelihood of extension.
+
+Renewal options and termination options live in various places in a commercial lease: renewal options typically in an exhibit or late in the lease body, termination rights often in a separate article. Every option and every termination right must be located and documented.
+
+### 3. Lease Payments
+
+The present value calculation requires the complete schedule of future lease payments. This includes:
+
+**Fixed payments.** The contractual rent for each period, net of lease incentives. If the lease has a stepped rent schedule, every step must be captured.
+
+**In-substance fixed payments.** Payments that may vary in form but are, in substance, unavoidable. A lease that requires the tenant to pay whichever is higher of $50,000 or 10% of sales is functionally a fixed payment if the minimum is reliably above 10% of projected sales.
+
+**Variable payments based on an index or rate.** CPI-linked escalations, for example. At commencement, these are measured using the index or rate at commencement date. They are remeasured when the payments are reassessed.
+
+**Variable payments not based on an index or rate.** These are excluded from the lease liability and expensed as incurred. Percentage rent above a natural breakpoint is the most common example in retail leases.
+
+**Residual value guarantees.** If the lessee has guaranteed a residual value, the guaranteed amount is included in lease payments.
+
+**Exercise price of purchase options.** If the lessee is reasonably certain to exercise a purchase option, the exercise price is included.
+
+The complete rent schedule is typically in an exhibit to the lease (commonly Exhibit B or Exhibit C) rather than the lease body. Amendments frequently supersede the original rent schedule entirely. The current operative rent schedule is always the most recent governing document.
+
+### 4. Discount Rate
+
+The present value calculation requires a discount rate. Under both standards, the lessee should use the rate implicit in the lease if it can be readily determined.
+
+In practice, the implicit rate is almost never disclosed in commercial real estate leases. Lessees use their incremental borrowing rate (IBR) - the rate the lessee would pay to borrow funds over a similar term with similar collateral in a similar economic environment.
+
+The IBR determination is a finance function, not a lease abstraction function. But the inputs needed to determine the appropriate IBR - lease term, payment profile, commencement date - come from the abstraction. Inaccurate lease terms produce inaccurate IBR selections, which produce inaccurate present value calculations.
+
+### 5. Lease vs. Non-Lease Components
+
+Commercial leases frequently bundle access to space with ancillary services: HVAC maintenance, property management services, janitorial services for common areas, security services. Under both ASC 842 and IFRS 16, these service components are non-lease components and must be separated from the lease component in measuring the lease liability - unless the company elects the practical expedient to combine them.
+
+The practical expedient (available under both standards) allows companies to account for lease and non-lease components as a single combined component, simplifying the calculation. Most companies with real estate portfolios elect this practical expedient. The election must be made by asset class and applied consistently.
+
+Where non-lease components are separated, the total consideration must be allocated between lease and non-lease components based on relative standalone prices. This requires identifying and valuing the services embedded in each lease.
+
+## ASC 842 vs. IFRS 16: Where They Differ
+
+Both standards arrive at similar balance sheet outcomes for lessees, but the accounting models diverge in several areas.
+
+| Feature | ASC 842 | IFRS 16 |
+|---|---|---|
+| Lessee classification | Finance and operating leases (different P&L treatment) | No distinction - all leases treated as finance leases |
+| P&L presentation | Operating leases: straight-line lease expense; Finance leases: interest + amortization | All leases: interest expense + depreciation |
+| Short-term exemption | Leases with term of 12 months or less at commencement | Same |
+| Low-value asset exemption | Not available | Available for assets with new value below approximately $5,000 |
+| Reasonably certain standard | High threshold for renewal options | IFRS uses "reasonably certain" - in practice similar to ASC 842 |
+
+For lessees, the classification distinction under ASC 842 matters for income statement presentation, not balance sheet recognition. Both finance and operating leases generate ROU assets and lease liabilities. The difference is that operating lease expense is presented as a single straight-line amount, while finance lease expense front-loads the cost (more interest expense in early years).
+
+The data requirements for classification analysis are embedded in the same abstraction fields - lease term, payment profile, ownership transfer provisions, purchase options - so a comprehensive abstract supports both standards simultaneously.
+
+## Where ASC 842 Data Lives in a Commercial Lease
+
+Field-by-field location guide for a typical commercial office or retail lease:
+
+| ASC 842 Data Field | Typical Location in Lease |
+|---|---|
+| Commencement date | Article 1 (Definitions), Article 2 (Term), or Commencement Date Rider |
+| Expiration date | Article 2 (Term) |
+| Renewal options | Separate exhibit (Renewal Option Rider) or Article on Options |
+| Lease term (accounting) | Derived from commencement, expiration, and renewal analysis |
+| Base rent Year 1 | Article 4 (Rent) and/or Rent Schedule Exhibit |
+| Complete rent schedule | Rent Schedule Exhibit (typically Exhibit B or C) |
+| Fixed escalations | Rent Schedule Exhibit or Article 4 |
+| CPI escalation provision | Article 4 or separate rider |
+| Lease vs. non-lease components | Article 6 (Operating Expenses) and/or services provisions |
+| Purchase option | Article on Options or late in the lease body |
+| Termination right | Article on Termination or Early Termination Rider |
+| TI allowance (lease incentive) | Work Letter Exhibit or Article 8 (Improvements) |
+
+## Common ASC 842 Abstraction Errors
+
+**Excluding renewal options from the lease term.** The most frequent error. An abstractor records only the non-cancellable term and notes the renewal option separately without assessing it for the "reasonably certain" analysis. The accounting team must perform the assessment, but they need the option terms in front of them to do it.
+
+**Missing CPI-linked escalation clauses.** Annual increases tied to CPI are common in longer leases. These clauses are often in a separate rider rather than the rent schedule, and they are frequently missed when the abstractor focuses on the rent schedule exhibit.
+
+**Not capturing lease amendments as modifications.** An amendment that extends the lease term or adds space must be treated as a lease modification under ASC 842. If the amendment is abstracted as a routine document update rather than flagged as a potential modification event, the accounting team does not know to assess the remeasurement requirement.
+
+**Treating gross lease CAM as non-lease components without analysis.** In a full gross lease, operating expenses are included in rent rather than separately stated. These may or may not qualify as non-lease components depending on the services provided. Blanket treatment without analysis creates exposure.
+
+**Incorrect commencement date for build-to-suit spaces.** When a landlord constructs space to a tenant's specification, the lease execution date may precede the commencement date by 12 to 18 months. Using the execution date rather than the commencement date results in premature recognition.
+
+## Applying Lextract to ASC 842 Compliance
+
+Lextract extracts the ASC 842-relevant fields systematically across every lease in a portfolio. Commencement and expiration dates, the complete rent schedule (including every escalation step), all renewal options with terms and exercise windows, lease incentives, and amendment history are all captured as structured data points with individual confidence scores.
+
+For lease portfolios undergoing initial ASC 842 implementation or annual compliance review, the output feeds directly into the lease accounting software that computes ROU assets and lease liabilities. The alternative - manual extraction by accounting staff or external accountants - adds hours per lease and introduces the error risk that the balance sheet numbers ultimately depend on.

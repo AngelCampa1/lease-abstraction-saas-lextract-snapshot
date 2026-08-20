@@ -1,0 +1,284 @@
+---
+title: 'Lease Extraction Template: The 126-Field Commercial Lease Checklist'
+slug: lease-extraction-template
+description: >-
+  A 126-field lease extraction template organized by category. Each field
+  includes where to find it in the lease, common extraction errors, and whether
+  ASC 842 requires it.
+publishedAt: '2026-04-01'
+author: 'Angel Campa, Founder'
+category: articles
+silo: lease-abstraction
+tags:
+  - lease extraction
+  - template
+  - checklist
+  - lease fields
+readingTime: 12
+featured: false
+funnelStage: mofu
+faq:
+  - question: What fields should a lease extraction template include?
+    answer: >-
+      A complete lease extraction template covers 126 fields across 16
+      categories: parties and property (10 fields), key dates and term (7), rent
+      and escalations (13), CAM and operating expenses (15), options (12),
+      tenant improvements (6), insurance and indemnity (6), assignment and
+      subletting (6), default and remedies (6), exclusivity and co-tenancy (6),
+      parking and common areas (5), utilities (6), signage and permitted use
+      (5), miscellaneous (10), ASC 842 compliance (8), and casualty,
+      condemnation, and force majeure (5).
+  - question: Where do you find base rent in a commercial lease?
+    answer: >-
+      Base rent is defined in the rent section of the lease, typically titled
+      'Rent,' 'Base Rent,' 'Minimum Rent,' or 'Fixed Rent.' Look for a table or
+      schedule showing annual amounts, monthly amounts, and per-RSF rates. If
+      the lease has amendments, check the most recent amendment first, as it may
+      override the original rent schedule entirely.
+  - question: Which lease fields are required for ASC 842 compliance?
+    answer: >-
+      ASC 842 requires 8 specific fields: lease classification (finance vs.
+      operating), discount rate (incremental borrowing rate), purchase option,
+      variable lease payments, residual value guarantee, lease incentives
+      received, short-term lease election, and lease term including reasonably
+      certain renewal periods. These fields are in addition to the standard
+      extraction fields like commencement date, payment schedule, and escalation
+      terms.
+updatedAt: '2026-04-01'
+---
+
+Most lease extraction templates cover 30 to 40 fields. That captures the headline terms: tenant name, rent amount, expiration date. It does not capture the provisions that cost tenants money. CAM cap structures, escalation ceilings, co-tenancy triggers, restoration obligations that run into six figures: these sit buried in the middle of the document, and a 30-field template will not flag them.
+
+This template covers all 126 fields that a complete commercial lease extraction should capture. Each field includes the section of the lease where it typically appears, the most common extraction error for that field, and whether ASC 842 requires it for lease accounting compliance.
+
+## How to Use This Template
+
+Work through each category section by section. Fields marked **[REQ]** are required for any lease extraction regardless of property type. The remaining fields apply based on the lease structure: retail leases need co-tenancy and percentage rent fields, industrial leases need clear height and dock door counts, and office leases need after-hours HVAC and gross-up provisions.
+
+Use this as a quality check against any extraction output, whether you abstract leases by hand or run them through an automated tool. If your extraction is missing fields from a category that applies to your lease type, you have a coverage gap.
+
+For automated extraction, [Lextract's lease extraction software](/lease-extraction-software) maps directly to this 126-field schema with confidence scores on every field.
+
+## Parties and Property (10 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Landlord Name [REQ] | First page, recitals section | May differ from the DBA on building signage. Check amendments for entity changes after sale. | No |
+| Tenant Name [REQ] | First page, recitals section | Verify against the guaranty. Parent vs. subsidiary matters for credit analysis. | No |
+| Guarantor Name | Guaranty exhibit or separate guaranty agreement | Some leases reference the guarantor only in the guaranty exhibit, not in the base lease body. | No |
+| Premises Address [REQ] | First page or premises exhibit | Watch for leases that define "Premises" by legal description only, with the street address buried in an exhibit. | No |
+| Suite/Unit Number | Premises section or Exhibit A floor plan | Multi-floor tenants may have different suite numbers per floor. Extract all of them. | No |
+| Rentable Area (RSF) [REQ] | Premises section, often in a defined terms table | Amendments may restate RSF after remeasurement. Always use the most recent figure. | No |
+| Usable Area (USF) | Premises section or space measurement exhibit | Not all leases include USF. If missing, you cannot independently verify the load factor. | No |
+| Building Total RSF [REQ] | Premises section or operating expense definitions | Needed to calculate pro rata share. Landlords sometimes use different RSF figures in different sections. | No |
+| Load Factor | Premises section, calculated from RSF and USF | Verify by dividing RSF by USF. Discrepancies between stated and calculated load factors indicate a measurement issue. | No |
+| Property Type [REQ] | Inferred from lease structure and permitted use clause | Not always stated explicitly. Determine from the permitted use, building description, and lease structure (NNN vs. gross). | No |
+
+## Key Dates and Term (7 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Execution Date [REQ] | Signature page | May differ from the commencement date by months or years. Some leases are executed before the building is constructed. | No |
+| Commencement Date [REQ] | Term section or commencement date agreement exhibit | Often contingent on landlord delivery of premises. The actual date may differ from the projected date in the lease. | Yes |
+| Rent Commencement [REQ] | Rent section or free rent provision | Frequently differs from the commencement date due to free rent periods or TI construction timelines. | Yes |
+| Expiration Date [REQ] | Term section | Some leases state a fixed date; others define the term as "60 months from commencement." If commencement shifts, expiration shifts too. | Yes |
+| Lease Term (Months) [REQ] | Term section | Verify by counting months between commencement and expiration. Off-by-one errors are common when the lease states "five years" but the dates span 61 months. | Yes |
+| Possession Date | Delivery or possession section | May precede commencement date. Early access for TI construction is common but does not always trigger rent. | No |
+| Free Rent Period | Rent section or separate free rent provision | Some leases grant free base rent but still require CAM and tax payments during the free period. Extract the scope of the abatement. | Yes |
+
+## Rent and Escalations (13 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Annual Base Rent [REQ] | Rent section, often in a schedule or table | Multi-year leases have different amounts per year. Extract the full escalation schedule, not only Year 1. | Yes |
+| Payment Frequency [REQ] | Rent section | Almost always monthly, but some ground leases and international leases use quarterly or annual payments. | Yes |
+| Escalation Type [REQ] | Rent section or escalation provision | Fixed, CPI, or fair market value. Some leases combine types (fixed for years 1-5, CPI for years 6-10). | Yes |
+| Fixed Escalation % | Rent escalation schedule | May be stated as a dollar amount rather than a percentage. Convert to percentage for comparison. | Yes |
+| CPI Index Used | CPI escalation provision | Leases specify different CPI indices (All Urban Consumers, Urban Wage Earners, regional vs. national). The index choice affects the escalation amount. | No |
+| Percentage Rent Rate | Percentage rent section (retail leases) | Applies to retail leases. The rate typically ranges from 4% to 8% of gross sales above the breakpoint. | No |
+| Breakpoint Amount | Percentage rent section | Natural breakpoint (annual base rent divided by percentage rent rate) vs. artificial breakpoint (a fixed dollar amount). These produce different results. | No |
+| Sales Exclusions | Percentage rent section | Catalog/internet sales, returns, employee discounts, and gift card sales are commonly excluded. Missing exclusions inflate percentage rent. | No |
+| Base Rent per RSF | Rent section or calculated from annual rent and RSF | Verify by dividing annual base rent by RSF. Discrepancies indicate an error in the rent amount or the square footage. | No |
+| Monthly Base Rent | Rent section | Annual rent divided by 12. Some leases state only the monthly figure, requiring you to calculate the annual amount. | Yes |
+| CPI Escalation Floor | CPI escalation provision | A minimum annual increase regardless of CPI movement. Missing this field understates future rent obligations. | Yes |
+| CPI Escalation Ceiling | CPI escalation provision | A maximum annual increase. Without a ceiling, tenant exposure to inflation is uncapped. | Yes |
+| Expense Stop Amount | Rent section or operating expense provision | Found in full-service gross leases. The landlord pays operating expenses up to this amount; the tenant pays the excess. | No |
+
+## CAM and Operating Expenses (15 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Lease Structure [REQ] | Rent section and operating expense provisions | NNN, modified gross, full service gross, or absolute net. The label in the lease does not always match the actual structure. Read the expense provisions. | No |
+| Pro Rata Share [REQ] | Operating expense section or defined terms | Verify by dividing tenant RSF by building total RSF. Landlord-stated percentages sometimes use a different denominator. | No |
+| Base Year | Operating expense section (gross leases) | The calendar year used to establish the expense baseline. A base year with abnormally low expenses inflates future pass-throughs. | No |
+| CAM Cap % | Operating expense or CAM provision | Not all leases have CAM caps. When present, the cap may apply to controllable expenses only, excluding taxes and insurance. | No |
+| CAM Cap Type | Operating expense or CAM provision | Cumulative caps compound over the lease term. Non-cumulative (annual) caps reset each year. The difference in tenant exposure over a 10-year lease is significant. | No |
+| Gross-Up % | Operating expense section | Allows the landlord to adjust expenses to reflect a fully occupied building. Without a gross-up cap, the landlord can inflate variable expenses. | No |
+| Management Fee Cap | Operating expense section or management fee provision | Typically 3% to 5% of collected rents. If uncapped, this line item can grow without limit. | No |
+| CAM Exclusions [REQ] | Operating expense definitions, often a long list | The most negotiated provision in operating expense sections. Common exclusions: capital expenditures, leasing commissions, landlord's income taxes, and above-standard tenant costs. | No |
+| Audit Rights [REQ] | Operating expense section or audit provision | Deadline to exercise audit rights (commonly 12 months after statement). If the lease is silent on audit rights, the tenant may have none. | No |
+| Reconciliation Frequency | Operating expense section | Almost always annual, but confirm. Some leases allow semi-annual reconciliation. | No |
+| CAM Audit Deadline (Days) | Audit rights provision | The window to request an audit after receiving the reconciliation statement. Missing the deadline waives the right. | No |
+| CAM Cap Type (Cumulative vs Annual) | Operating expense or CAM provision | Cumulative caps allow unused cap room to carry forward. Annual caps reset. Tenants strongly prefer cumulative caps. | No |
+| Controllable vs Non-Controllable Expenses | Operating expense definitions | Some leases cap controllable expenses but leave taxes and insurance uncapped. Extract the classification of each expense category. | No |
+| Base Year Gross-Up | Operating expense section (gross leases) | Whether the base year expenses are grossed up to reflect full occupancy. Without this, the base year baseline is artificially low. | No |
+| CAM Estimate Method | Operating expense or budget provision | How the landlord calculates monthly CAM estimates. Some use prior year actuals; others use a budget with a percentage increase. | No |
+
+## Options (12 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Has Renewal Option [REQ] | Options section or renewal provision | May be buried in a miscellaneous provisions section rather than a dedicated options section. | Yes |
+| Renewal Terms | Renewal provision | Fair market value, fixed rate, or CPI-adjusted. "Fair market value" renewals often include a floor (no less than current rent). | Yes |
+| Renewal Notice (Days) | Renewal provision | Typically 6 to 12 months before expiration. Missing the notice deadline kills the option. | No |
+| Has Termination Option [REQ] | Options section or termination provision | Early termination options often require a penalty payment and 6 to 12 months advance notice. | Yes |
+| Termination Penalty | Termination provision | Usually unamortized TI, leasing commissions, free rent, plus several months of rent. Can exceed $100,000 on larger spaces. | Yes |
+| Right of First Refusal | ROFR provision | Gives the tenant the right to match any third-party offer on adjacent space. More restrictive than a right of first offer. | No |
+| Right of First Offer | ROFO provision | Landlord must offer available space to the tenant before marketing it. Less restrictive than ROFR. | No |
+| Has Expansion Option | Expansion provision | Specifies the space, the timeframe, and the rent for the expansion. Often tied to a specific suite or floor. | No |
+| Expansion Option Terms | Expansion provision | Rent for expansion space may be at the then-current rate, at fair market value, or at the same rate as the original premises. | No |
+| Has Contraction Option | Contraction or reduction provision | Rare but valuable. Allows the tenant to give back a portion of the space, usually with a penalty. | No |
+| Auto-Renewal | Term section or renewal provision | Lease automatically renews for successive periods unless the tenant gives notice. Missing the opt-out deadline traps the tenant. | Yes |
+| Auto-Renewal Terms | Term section or renewal provision | The rent and term for auto-renewal periods. Often month-to-month at a higher rate. | Yes |
+
+## Tenant Improvements and Construction (6 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| TI Allowance | Work letter exhibit or tenant improvement provision | Stated as a total dollar amount or per RSF. Some landlords amortize TI into rent rather than providing a cash allowance. | Yes |
+| TIA per RSF | Work letter exhibit | Divide total TI allowance by RSF to compare across leases. Market TI allowances vary widely by property type and market. | No |
+| Landlord's Work | Work letter exhibit | What the landlord builds before tenant takes possession. Ranges from "warm shell" to full build-out. Ambiguous descriptions create disputes. | No |
+| Tenant's Work | Work letter exhibit | What the tenant builds at its own cost, above the TI allowance. Must comply with landlord's construction standards. | No |
+| Restoration Obligation [REQ] | Surrender or restoration provision | Whether the tenant must remove improvements and restore the premises to original condition at lease end. Restoration costs can exceed $15 per RSF. | No |
+| HVAC Responsibility [REQ] | Maintenance or HVAC provision | Who maintains, repairs, and replaces the HVAC system. In NNN leases, this often falls entirely on the tenant. Replacement costs for a rooftop unit can exceed $50,000. | No |
+
+## Insurance and Indemnity (6 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| CGL Occurrence Limit [REQ] | Insurance provision | Typically $1 million per occurrence. Some landlords require $2 million, which may require an umbrella policy. | No |
+| CGL Aggregate Limit [REQ] | Insurance provision | Typically $2 million aggregate. Verify that your existing policy meets or exceeds the lease requirement. | No |
+| Property Insurer [REQ] | Insurance provision | Whether the landlord or tenant insures the building and tenant improvements. In NNN leases, the tenant may carry property insurance. | No |
+| Waiver of Subrogation [REQ] | Insurance or indemnity provision | Both parties waive their insurer's right to subrogate against the other. Missing this creates litigation risk after a casualty. | No |
+| Additional Insured [REQ] | Insurance provision | The landlord (and often the landlord's lender and property manager) must be named as additional insureds on the tenant's policy. | No |
+| Indemnification Scope [REQ] | Indemnity provision | Mutual vs. one-sided. One-sided indemnification in the landlord's favor is common but negotiable. Check whether it covers the landlord's own negligence. | No |
+
+## Assignment and Subletting (6 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Consent Required [REQ] | Assignment and subletting section | Almost always yes. The question is whether consent is in the landlord's sole discretion or cannot be unreasonably withheld. | No |
+| Consent Standard [REQ] | Assignment and subletting section | "Not to be unreasonably withheld" vs. "in landlord's sole discretion." The standard determines the tenant's practical ability to assign or sublet. | No |
+| Profit Sharing % | Assignment and subletting section | The landlord's share of any sublease profit (excess of sublease rent over base rent). Ranges from 0% to 50%. | No |
+| Recapture Right [REQ] | Assignment and subletting section | Allows the landlord to terminate the lease and take back the space instead of consenting to the sublease. This can kill a sublease deal. | No |
+| Permitted Transferees | Assignment and subletting section | Affiliates, subsidiaries, and successors by merger that can take the lease without landlord consent. The definition of "affiliate" matters. | No |
+| Continuing Liability [REQ] | Assignment and subletting section | Whether the original tenant remains liable after assignment. Most leases require continuing liability through the original term. | No |
+
+## Default and Remedies (6 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Monetary Cure Period [REQ] | Default section | Days to cure a payment default after notice. Typically 5 to 10 days. Some leases provide no cure period for monetary defaults. | No |
+| Non-Monetary Cure [REQ] | Default section | Days to cure a non-monetary default. Typically 30 days, with extensions for defaults that cannot reasonably be cured in 30 days. | No |
+| Acceleration Clause [REQ] | Remedies section | Allows the landlord to demand all remaining rent for the lease term upon default. The present value discount rate matters. | No |
+| Liquidated Damages | Remedies section | A pre-agreed damage formula. If absent, the landlord pursues actual damages, which can be higher or lower. | No |
+| Late Fee % [REQ] | Rent or default section | Typically 3% to 5% of the overdue amount. Some jurisdictions cap late fees. Fees above 10% may be unenforceable as penalties. | No |
+| Holdover Rate [REQ] | Holdover provision | The rent multiplier if the tenant stays past expiration. Typically 150% to 200% of the last month's rent. Above 200% is a red flag. | No |
+
+## Exclusivity and Co-tenancy (6 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Exclusive Use | Exclusive use provision (retail leases) | Defines the tenant's exclusive right to operate a specific business type in the shopping center. Narrow definitions leave loopholes. | No |
+| Radius Restriction | Radius restriction provision (retail leases) | Prohibits the tenant from opening a competing location within a defined radius. Affects percentage rent calculations. | No |
+| Opening Co-tenancy | Co-tenancy provision (retail leases) | Requires specific anchor tenants or a minimum occupancy percentage before the tenant must open. If not met, the tenant may pay reduced rent or terminate. | No |
+| Ongoing Co-tenancy | Co-tenancy provision (retail leases) | Requires continued anchor presence or occupancy levels during the lease term. Anchor departure triggers remedies. | No |
+| Co-tenancy Remedy | Co-tenancy provision | What happens when co-tenancy conditions fail: reduced rent, percentage-only rent, or termination right. Extract the specific remedy and timeline. | No |
+| Alternative Rent | Co-tenancy provision | The reduced rent amount the tenant pays during a co-tenancy failure period. Often a percentage of base rent or percentage rent only. | No |
+
+## Parking and Common Areas (5 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Parking Ratio | Parking section or premises exhibit | Expressed as spaces per 1,000 RSF. Office typically requires 3 to 4 per 1,000 RSF; retail varies widely. | No |
+| Unreserved Spaces | Parking section | Available on a first-come, first-served basis. Verify the total count matches the ratio times the RSF. | No |
+| Reserved Spaces | Parking section | Specific numbered spaces or a designated area. Reserved spaces cost more and are often in a separate license agreement. | No |
+| Monthly Parking Cost | Parking section or separate parking agreement | May be included in base rent or billed separately. Costs escalate over the lease term in some agreements. | No |
+| Trailer Parking | Parking or industrial provisions | Relevant for warehouse and distribution leases. The number of trailer parking spots affects logistics operations. | No |
+
+## Utilities (6 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Utilities Payment [REQ] | Utilities section | Direct meter (tenant pays utility company), submeter (tenant pays landlord based on metered usage), or included in CAM. Each has different cost implications. | No |
+| Janitorial Services [REQ] | Services or maintenance section | Landlord-provided in office leases, tenant responsibility in industrial. The frequency and scope of service affect operating costs. | No |
+| Clear Height (ft) | Premises section or building specs (industrial) | Floor-to-ceiling clearance in warehouses. Modern distribution requires 32 feet minimum. Older buildings at 24 feet limit racking options. | No |
+| Dock-High Doors | Premises section or building specs (industrial) | Number and dimensions of loading dock doors. Affects throughput capacity for warehouse operations. | No |
+| Drive-In Doors | Premises section or building specs (industrial) | Ground-level doors for truck or forklift access. Separate from dock-high doors. | No |
+| Power Capacity | Premises section or building specs (industrial) | Amps, voltage, and phase. Manufacturing and cold storage tenants need specific electrical configurations. Upgrading power after lease execution is expensive. | No |
+
+## Signage and Permitted Use (5 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Permitted Use [REQ] | Use clause | Narrow use clauses ("operation of a dental practice") restrict future flexibility. Broader clauses ("general office use") provide more options but may conflict with exclusive use provisions of other tenants. | No |
+| Prohibited Uses | Use clause or rules and regulations exhibit | Often a long list. Some prohibited uses are obvious (hazardous materials); others are restrictive (no food preparation in office spaces). | No |
+| Fascia Signage | Signage provision | Building-mounted signs. Size, location, and illumination restrictions vary by lease and local ordinance. | No |
+| Monument Signage | Signage provision | Freestanding signs near the road. Top position on a monument sign is a negotiation point for anchor tenants. | No |
+| Signage Maintenance | Signage provision | Who pays to maintain, repair, and remove signs. Landlords often require removal and facade restoration at lease end. | No |
+
+## Miscellaneous (10 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Security Deposit [REQ] | Security deposit section | Amount and any burn-down schedule (reduction over time based on payment history). Large deposits tie up working capital. | No |
+| Deposit Type [REQ] | Security deposit section | Cash, letter of credit, or surety bond. Letters of credit have annual renewal requirements and issuing bank fees. | No |
+| Has Guaranty [REQ] | Guaranty exhibit or separate agreement | Personal guaranty, corporate guaranty, or good-guy guaranty. The type and duration affect the guarantor's exposure. | No |
+| Governing Law [REQ] | Miscellaneous provisions | The state whose law governs the lease. Matters for dispute resolution and statutory protections. | No |
+| SNDA Requirement | Subordination provision | Whether the landlord must deliver a Subordination, Non-Disturbance, and Attornment agreement from its lender. Protects the tenant if the landlord defaults on its mortgage. | No |
+| Estoppel Turnaround | Estoppel provision | Days the tenant has to respond to an estoppel certificate request. Typically 10 to 15 days. Failure to respond may constitute deemed approval. | No |
+| Landlord Notice Address | Notice provision | The address for formal notices. Must be exact; notices sent to the wrong address may be ineffective. | No |
+| Tenant Notice Address | Notice provision | Often the premises address, but some tenants designate a corporate headquarters or legal department address. | No |
+| Hazardous Materials Clause | Environmental provision | Tenant representations about hazardous materials use and indemnification for contamination. Critical for industrial and laboratory spaces. | No |
+| Relocation Right | Relocation provision | Allows the landlord to move the tenant to comparable space in the building. Tenants should resist this clause or negotiate tight conditions. | No |
+
+## Casualty, Condemnation, and Force Majeure (5 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Casualty Termination Right | Casualty or damage/destruction section | Whether the tenant can terminate if the premises are damaged beyond a threshold (often 30% to 50% of the premises). Some leases give this right only if damage occurs in the last 12 to 24 months of the term. | No |
+| Casualty Rent Abatement | Casualty section | Whether rent abates during the repair period and whether the abatement is proportional to the unusable area. | No |
+| Condemnation Termination Right | Condemnation or eminent domain section | Whether a partial taking triggers a termination right. Threshold is typically a percentage of the premises or a material impairment of the tenant's use. | No |
+| Condemnation Award Allocation | Condemnation section | How the condemnation award splits between landlord and tenant. Tenants usually receive compensation for their leasehold interest, moving costs, and trade fixtures. | No |
+| Force Majeure Clause | Force majeure or excusable delays section | Which obligations force majeure excuses. Most clauses carve out rent payments, meaning the tenant still pays rent during force majeure events. | No |
+
+## ASC 842 / IFRS 16 Compliance (8 Fields)
+
+| Field | Where to Find It | Common Gotchas | ASC 842 |
+|-------|------------------|----------------|---------|
+| Lease Classification | Determined by applying the five classification tests in ASC 842 | Not stated in the lease. The extraction system must flag the inputs (term vs. useful life, present value vs. fair value) for the accounting team to classify. | Yes |
+| Discount Rate | Not in the lease; tenant must determine | The incremental borrowing rate the tenant would pay to borrow on a collateralized basis over a similar term. Most tenants use a portfolio approach. Misestimating the rate materially affects the ROU asset and lease liability. | Yes |
+| Has Purchase Option | Purchase option section, if present | Rare in standard commercial leases. Common in equipment leases and some ground leases. If reasonably certain to be exercised, the purchase price is included in the lease liability. | Yes |
+| Purchase Option Price | Purchase option section | The fixed or formula-based price at which the tenant can purchase the property. Bargain purchase options affect lease classification. | Yes |
+| Variable Lease Payments | Rent and expense sections | CPI escalations, percentage rent, and variable CAM charges. Under ASC 842, variable payments based on an index or rate are included in the initial measurement; variable payments based on usage or performance are not. | Yes |
+| Residual Value Guarantee | Guaranty or residual value section | The amount the tenant guarantees the asset will be worth at lease end. Common in equipment leases, rare in real estate. Included in the lease liability measurement. | Yes |
+| Lease Incentives Received | TI allowance and free rent provisions | TI allowances and free rent periods reduce the ROU asset. Missing these fields inflates the asset on the balance sheet. | Yes |
+| Short-Term Lease Election | Determined by lease term analysis | Leases with a term of 12 months or less (including renewal options reasonably certain to be exercised) can elect the short-term exemption. These stay off the balance sheet. | Yes |
+
+## The 20 Fields You Cannot Skip
+
+Regardless of lease type, property type, or extraction method, these 20 fields form the minimum viable extraction. Skip any of them and you risk missing a material financial obligation or a deadline that cannot be recovered.
+
+**Identity and space:** Landlord Name, Tenant Name, Premises Address, Rentable Area (RSF), Building Total RSF. These five fields anchor every calculation in the lease, from pro rata share to rent per square foot.
+
+**Timeline:** Commencement Date, Rent Commencement, Expiration Date, Lease Term. Four fields that drive every critical date in your portfolio management system. Get the commencement date wrong and every downstream date shifts.
+
+**Money:** Annual Base Rent, Escalation Type, Lease Structure, Pro Rata Share, CAM Exclusions. These five fields determine the tenant's total occupancy cost over the lease term. The difference between a NNN lease with a 5% CAM cap and one without a cap can exceed $100,000 over 10 years.
+
+**Risk:** Audit Rights, Restoration Obligation, Holdover Rate, Consent Standard, Acceleration Clause, Monetary Cure Period. These six fields define what happens when something goes wrong: a disputed CAM statement, a lease expiration, a needed assignment, or a payment default. Missing any of them leaves you blind to a material risk.
+
+## Automate the Full 126-Field Extraction
+
+Working through 126 fields by hand takes 4 to 8 hours per lease. Multiply that by a portfolio of 50 or 500 leases and the cost adds up fast.
+
+[Lextract's lease extraction software](/lease-extraction-software) extracts all 126 fields automatically from any commercial lease PDF at $15 per lease. Every field includes a confidence score so you know which extractions to trust and which to verify. Twenty automated red flag checks identify risky provisions before they become expensive surprises. [Upload your first lease](/upload) and compare the output against this template.

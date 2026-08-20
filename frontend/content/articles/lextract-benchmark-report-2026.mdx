@@ -1,0 +1,179 @@
+---
+title: 'Lextract Benchmark Report 2026: AI Lease Abstraction Performance Data'
+slug: lextract-benchmark-report-2026
+description: >-
+  Original benchmark data on AI lease abstraction speed, confidence scoring, and
+  126-field extraction coverage.
+publishedAt: '2026-03-21'
+updatedAt: '2026-03-27'
+author: 'Angel Campa, Founder'
+category: articles
+silo: lease-abstraction
+tags:
+  - AI lease abstraction
+  - lease abstraction accuracy
+  - benchmarks
+  - lease abstraction speed
+  - lease extraction
+readingTime: 7
+featured: false
+funnelStage: mofu
+sources:
+  - title: "Lextract 126-field schema"
+    url: "https://lextract.io/fields"
+    publisher: "Lextract"
+    checkedAt: "2026-05-31"
+  - title: "Commercial lease abstraction pricing"
+    url: "https://lextract.io/resources/articles/how-much-does-lease-abstraction-cost"
+    publisher: "Lextract"
+    checkedAt: "2026-05-31"
+faq:
+  - question: What is the main takeaway from Lextract Benchmark Report 2026?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: How does Lextract help with Lextract Benchmark Report 2026?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+This report presents performance benchmarks for AI-powered commercial lease abstraction based on Lextract's extraction pipeline. All figures reflect processing of standard US commercial lease formats (NNN, full service gross, modified gross) using a vision-capable AI model that reads commercial lease PDFs end-to-end with no separate OCR step.
+
+## Core Performance Benchmarks
+
+**Extraction speed: Typically 5–15 minutes per lease**
+
+Lextract processes a standard commercial lease PDF from upload to structured output in 5–15 minutes, depending on document length and complexity. The pipeline runs three independent passes back-to-back:
+
+- Pass 1 (primary extraction): the 126-field schema is filled by reading the PDF natively
+- Pass 2 (adversarial validation re-read): the document is re-read to challenge the primary extraction
+- Pass 3 (escalation on disputed critical fields, when triggered): high-stakes disputed fields are re-evaluated with extra context
+- Output generation (Excel, Word, PDF) follows immediately after the final pass
+
+For comparison, manual abstraction by a trained US-based paralegal typically takes 4-8 hours per lease (this manual range is the one cited consistently across CRE outsourced abstraction service descriptions; see <a href="/resources/articles/how-much-does-lease-abstraction-cost">how much does lease abstraction cost</a>). On standard commercial lease formats, that puts the AI pipeline in the 10–20x faster range end-to-end.
+
+**Field coverage: 126 structured fields per extraction**
+
+Lextract extracts 126 structured fields from each commercial lease, organized into 16 categories:
+
+| Category | Field Count | Examples |
+|----------|------------|---------|
+| Parties & Identification | 10 | Landlord entity, tenant entity, guarantor |
+| Premises & Property | 8 | Property address, suite, rentable area |
+| Lease Term & Dates | 10 | Commencement, expiration, renewal notice deadlines |
+| Financial Terms | 18 | Base rent, escalation, security deposit, TI allowance |
+| Operating Expenses & CAM | 14 | CAM cap, base year, gross-up, audit rights |
+| Options & Rights | 8 | Renewal options, termination rights, expansion rights |
+| Permitted Use & Restrictions | 6 | Use clause, exclusivity, co-tenancy |
+| Assignment & Subletting | 6 | Assignment consent standard, subletting rights |
+| Insurance & Indemnity | 6 | Required coverage, additional insured language |
+| Maintenance & Repairs | 6 | Landlord and tenant repair obligations |
+| Utilities & Services | 5 | Utility responsibility, HVAC, after-hours charges |
+| Parking & Common Areas | 5 | Parking allocation, common area rights |
+| Signage & Access | 5 | Signage rights, access rules, hours |
+| Default & Remedies | 7 | Cure periods, late fees, acceleration language |
+| Casualty & Condemnation | 6 | Abatement rights, termination triggers |
+| ASC 842 & Special Provisions | 6 | Accounting fields, SNDA, estoppel, surrender conditions |
+
+For comparison, a typical paralegal manual abstract covers 40–60 fields. General AI tools (ChatGPT with a lease prompt) extract the fields you specifically request - typically 10–20 without a carefully engineered prompt.
+
+**Red flag detection: 20 automated checks**
+
+Lextract runs 20 automated red flag checks on every extraction. These checks identify high-risk provisions that tenants, lenders, and investors need to evaluate.
+
+| Red Flag Category | Detection Signal | Notes |
+|------------------|---------------|-------|
+| Uncapped CAM charges | automated flag | Catches leases with no annual CAM increase cap |
+| Missing tenant audit rights | automated flag | Identifies leases with no CAM audit provision |
+| Personal guarantee present | automated flag | Identifies explicit guarantees |
+| Holdover rate exceeding 150% | automated flag | Flags punitive holdover provisions |
+| Management fee exceeding 5% | automated flag | Identifies above-market management fee pass-throughs |
+| One-sided termination rights | automated flag | Flags landlord-only termination provisions |
+
+Red flag results should be treated as triage signals, not legal conclusions. A flagged provision can be standard or tenant-favorable in context, and an unflagged lease can still contain negotiated risk that requires professional review.
+
+## Confidence Expectations by Document Type
+
+Field-level confidence shows how clearly each extracted value is supported by the source lease and whether validation passes agreed with the primary extraction.
+
+| Document Type | Confidence Pattern | Key Variable |
+|---------------|---------------|-------------|
+| Typed NNN lease (standard) | confidence-scored | Vision-LLM reads layout and field locations natively |
+| Full service gross lease | confidence-scored | Complex operating expense definitions |
+| Modified gross lease | confidence-scored | Variable structure across documents |
+| Retail percentage rent lease | mixed confidence | Breakpoint calculations, gross sales definitions |
+| Ground lease | lower confidence | Complex cross-references, non-standard structure |
+| Lease with 3+ amendments | lower confidence | Amendment hierarchy reconciliation |
+| Low-resolution scanned PDF | lower confidence | Visual signal degradation limits extraction confidence |
+| Handwritten annotations | low confidence | Current AI models struggle with illegible handwriting |
+
+**AI vs. manual first-pass review**: Manual abstraction quality varies by reviewer, document complexity, and QA process. AI extraction on standard typed leases is most useful as a confidence-scored first pass, while senior human review remains important for high-stakes fields and unusual provisions.
+
+The practical implication: AI extraction changes the review task from full-document reading to targeted validation. For complex non-standard documents, human review remains essential.
+
+## Confidence Scoring Distribution
+
+Every extracted field receives a per-field confidence score (0–100). This is the critical differentiator from manual abstraction and general AI tools, which provide no indication of extraction certainty.
+
+Across standard commercial lease extractions:
+
+- **Score 90–100 (high confidence)**: Clear source support and agreement across validation passes.
+- **Score 70–89 (moderate confidence)**: Usable extraction with some ambiguity, usually because the source language is complex or cross-referenced.
+- **Score below 70 (review recommended)**: Direct human verification recommended before relying on the value.
+
+**Practical validation workflow**: A reviewer focusing on fields scoring below 85 can validate uncertain fields directly against the source lease instead of re-abstracting all 126 fields. This targeted workflow usually takes minutes per flagged field compared to 4-8 hours for full manual re-abstraction.
+
+## Cost Comparison
+
+At scale, the cost difference between AI and manual abstraction is substantial. Lextract's published pricing is $15 per lease for a single lease, $13 per lease in a 5-pack, and $12 per lease in a 10-pack (see [pricing](/pricing)). The table below uses the 10-pack per-lease rate for the AI column; manual and offshore ranges reflect typical published industry quotes per lease.
+
+| Volume | Lextract (AI, 10-pack rate) | Manual (US paralegal) | Offshore Managed Service |
+|--------|---------|----------------------|--------------------------|
+| 10 leases | $120 | $1,500–$3,000 | $400–$750 |
+| 50 leases | $600 | $7,500–$15,000 | $1,500–$3,750 |
+| 100 leases | $1,200 | $15,000–$30,000 | $3,000–$7,500 |
+
+For volumes beyond a single 10-pack, customers can stack 10-packs at the same per-lease rate or contact sales for larger engagements. AI abstraction at the 10-pack rate runs roughly 12–25x cheaper than US-based manual abstraction and 2–6x cheaper than offshore managed services on the same volumes.
+
+Including internal reviewer time (20–30 minutes at $75/hour per lease for confidence-flagged field validation):
+
+| Volume | AI + Review Total | Manual Service |
+|--------|-----------------|---------------|
+| 50 leases | $600 + $1,250 = $1,850 | $7,500–$15,000 |
+| 100 leases | $1,200 + $2,500 = $3,700 | $15,000–$30,000 |
+
+The cost advantage holds even after accounting for internal review labor.
+
+## Processing Capacity
+
+Lextract's extraction pipeline runs each lease independently, so portfolio batches process in parallel rather than queuing serially:
+
+- Single lease: Typically 5–15 minutes from upload to download
+- Portfolio batches: Multiple leases run concurrently, so wall-clock time for a batch is governed by the longest single lease in the batch rather than the sum
+
+For a 100-lease due diligence project, AI extraction returns all 100 structured abstracts in the same 5–15 minute window per lease, not 100× that window. Manual abstraction of the same 100 leases requires roughly 400–800 hours of paralegal time at 4-8 hours per lease - approximately 10-20 weeks for a single full-time abstractor.
+
+## Key Benchmarks at a Glance
+
+| Metric | Lextract (AI) | Manual Paralegal | Offshore Service | ChatGPT |
+|--------|-------------|-----------------|-----------------|---------|
+| Processing time | 5–15 minutes | 4–8 hours | 24–72 hours | 2–5 minutes |
+| Field coverage | 126 fields | 40–60 fields | Custom (per client) | 10–20 (as prompted) |
+| Review signal | confidence-scored | reviewer judgment | reviewer judgment | unverified |
+| Confidence scores | Yes (per field) | No | No | No |
+| Red flag detection | 20 checks (automated) | Manual | Manual | None |
+| Cost per lease | $15 | $150–$300 | $30–$75 | Free |
+| Data retention | Zero | Varies | Varies | Trains on inputs* |
+
+*ChatGPT consumer plans may train on inputs. Enterprise plans with data processing agreements are an exception.
+
+## Methodology Note
+
+Confidence and detection notes in this report are based on internal Lextract testing against a labeled reference set of commercial lease documents with manually established ground truth values. Document types, scan quality, and lease complexity varied across the test set. Actual performance on any specific lease will vary based on its characteristics.
+
+Manual review comparisons are working assumptions for planning, not a universal benchmark. Specific shops, document mixes, and reviewer experience will produce different results.
+
+These benchmarks apply to standard US commercial real estate leases in English. Performance on non-English documents, foreign lease formats, or highly non-standard structures is not covered by these benchmarks. Speed and cost comparisons use Lextract's published pricing tiers; volume pricing beyond a single 10-pack is available on request and not assumed in the tables above.

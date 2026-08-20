@@ -1,0 +1,95 @@
+diff --git a/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js b/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js
+index 9701b04..b893111 100644
+--- a/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js
++++ b/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js
+@@ -13,7 +13,35 @@ const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+  * Without this, subsequent patches would fail with EACCES errors.
+  */
+ export function copyFileAndMakeOwnerWritable(src, dest) {
+-    copyFileSync(src, dest);
++    // Bounded retry around the copy. On Windows, antivirus scanners and the
++    // search indexer briefly hold freshly written build manifests (notably
++    // server-reference-manifest.js), so copyFileSync intermittently throws
++    // EBUSY/EPERM/EACCES. Retrying with a short synchronous backoff clears the
++    // transient lock and stops the OpenNext build from flaking.
++    const TRANSIENT_COPY_ERRORS = new Set(["EBUSY", "EPERM", "EACCES"]);
++    const MAX_ATTEMPTS = 5;
++    for (let attempt = 1;; attempt++) {
++        try {
++            copyFileSync(src, dest);
++            break;
++        }
++        catch (e) {
++            if (e.code === "EINVAL") {
++                // Windows: copyFileSync fails for filenames containing square brackets.
++                // Fall back to read+write so bracket-named Turbopack chunks are copied and
++                // included in tracedFiles (required for patchTurbopackRuntime to work).
++                writeFileSync(dest, readFileSync(src));
++                break;
++            }
++            if (TRANSIENT_COPY_ERRORS.has(e.code) && attempt < MAX_ATTEMPTS) {
++                // Synchronous backoff (50/100/150/200ms) without pulling in an async
++                // timer — this runs in a tight synchronous loop over every traced file.
++                Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, attempt * 50);
++                continue;
++            }
++            throw e;
++        }
++    }
+     // Ensure the copied file is writable (add owner write permission)
+     const stats = statSync(dest);
+     if (!(stats.mode & 0o200)) {
+diff --git a/node_modules/@opennextjs/aws/dist/core/routing/cacheInterceptor.js b/node_modules/@opennextjs/aws/dist/core/routing/cacheInterceptor.js
+index aca747a..8c92d67 100644
+--- a/node_modules/@opennextjs/aws/dist/core/routing/cacheInterceptor.js
++++ b/node_modules/@opennextjs/aws/dist/core/routing/cacheInterceptor.js
+@@ -202,13 +202,15 @@ export async function cacheInterceptor(event) {
+     localizedPath = localizedPath.replace(/\/$/, "");
+     // Then we decode the path params
+     localizedPath = decodePathParams(localizedPath);
+-    debug("Checking cache for", localizedPath, PrerenderManifest);
+-    const isISR = Object.keys(PrerenderManifest?.routes ?? {}).includes(localizedPath ?? "/") ||
+-        Object.values(PrerenderManifest?.dynamicRoutes ?? {}).some((dr) => new RegExp(dr.routeRegex).test(localizedPath));
++    const normalizedLocalizedPath = localizedPath || "/";
++    const cacheKey = normalizedLocalizedPath === "/" ? "/index" : normalizedLocalizedPath;
++    debug("Checking cache for", normalizedLocalizedPath, PrerenderManifest);
++    const isISR = Object.keys(PrerenderManifest?.routes ?? {}).includes(normalizedLocalizedPath) ||
++        Object.values(PrerenderManifest?.dynamicRoutes ?? {}).some((dr) => new RegExp(dr.routeRegex).test(normalizedLocalizedPath));
+     debug("isISR", isISR);
+     if (isISR) {
+         try {
+-            const cachedData = await globalThis.incrementalCache.get(localizedPath ?? "/index");
++            const cachedData = await globalThis.incrementalCache.get(cacheKey);
+             debug("cached data in interceptor", cachedData);
+             if (!cachedData?.value) {
+                 return event;
+@@ -219,7 +221,7 @@ export async function cacheInterceptor(event) {
+                 const tags = getTagsFromValue(cachedData.value);
+                 const _hasBeenRevalidated = cachedData.shouldBypassTagCache
+                     ? false
+-                    : await hasBeenRevalidated(localizedPath, tags, cachedData);
++                    : await hasBeenRevalidated(normalizedLocalizedPath, tags, cachedData);
+                 if (_hasBeenRevalidated) {
+                     return event;
+                 }
+@@ -228,9 +230,9 @@ export async function cacheInterceptor(event) {
+             switch (cachedData?.value?.type) {
+                 case "app":
+                 case "page":
+-                    return generateResult(event, localizedPath, cachedData.value, cachedData.lastModified);
++                    return generateResult(event, normalizedLocalizedPath, cachedData.value, cachedData.lastModified);
+                 case "redirect": {
+-                    const cacheControl = await computeCacheControl(localizedPath, "", host, cachedData.value.revalidate, cachedData.lastModified);
++                    const cacheControl = await computeCacheControl(normalizedLocalizedPath, "", host, cachedData.value.revalidate, cachedData.lastModified);
+                     return {
+                         type: "core",
+                         statusCode: cachedData.value.meta?.status ?? 307,
+@@ -244,7 +246,7 @@ export async function cacheInterceptor(event) {
+                     };
+                 }
+                 case "route": {
+-                    const cacheControl = await computeCacheControl(localizedPath, cachedData.value.body, host, cachedData.value.revalidate, cachedData.lastModified);
++                    const cacheControl = await computeCacheControl(normalizedLocalizedPath, cachedData.value.body, host, cachedData.value.revalidate, cachedData.lastModified);
+                     const isBinary = isBinaryContentType(String(cachedData.value.meta?.headers?.["content-type"]));
+                     return {
+                         type: "core",

@@ -1,0 +1,71 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lextract-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-12",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "api.lextract.io/*",
+      "zone_name": "lextract.io"
+    }
+  ],
+  "vars": {
+    "ALLOWED_ORIGINS": "https://lextract.io,https://www.lextract.io",
+    "ENVIRONMENT": "production",
+    "FRONTEND_URL": "https://lextract.io",
+    "NEON_AUTH_BASE_URL": "https://ep-broad-bar-anfbpa5r.neonauth.c-6.us-east-1.aws.neon.tech/neondb/auth",
+    "PUBLIC_API_ORIGIN": "https://api.lextract.io"
+  },
+  "r2_buckets": [
+    {
+      "binding": "DOCUMENTS_BUCKET",
+      "bucket_name": "lextract-documents"
+    }
+  ],
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "05955a381872429d803c5b32729d4fc2",
+      "localConnectionString": "postgres://lextract:lextract@127.0.0.1:5433/lextract"
+    }
+  ],
+  "queues": {
+    "producers": [
+      {
+        "binding": "EMAIL_QUEUE",
+        "queue": "lextract-email"
+      },
+      {
+        "binding": "CLEANUP_QUEUE",
+        "queue": "lextract-cleanup"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "lextract-email",
+        "dead_letter_queue": "lextract-email-dlq",
+        "max_retries": 5
+      },
+      {
+        "queue": "lextract-cleanup",
+        "dead_letter_queue": "lextract-cleanup-dlq",
+        "max_retries": 5
+      }
+    ]
+  },
+  "workflows": [
+    {
+      "name": "lextract-extraction-workflow",
+      "binding": "EXTRACTION_WORKFLOW",
+      "class_name": "ExtractionWorkflow"
+    },
+    {
+      "name": "lextract-export-workflow",
+      "binding": "EXPORT_WORKFLOW",
+      "class_name": "ExportWorkflow"
+    }
+  ]
+}

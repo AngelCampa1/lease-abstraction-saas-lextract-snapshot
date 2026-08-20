@@ -1,0 +1,114 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[project]
+name = "lextract-backend"
+version = "0.1.0"
+description = "Lextract.io Backend API — AI-powered commercial lease abstraction"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "python-dotenv>=1.0.1",
+    "python-multipart>=0.0.27",
+    "httpx>=0.28.0",
+    "psycopg[binary]>=3.2.0",
+    "psycopg_pool>=3.2.0",
+    "boto3>=1.35.0",
+    "botocore>=1.35.0",
+    "stripe>=11.0.0",
+    "celery[redis]>=5.4.0",
+    "redis>=5.0.0",
+    "sentry-sdk[fastapi]>=2.44.0",
+    "resend>=2.5.0",
+    "limits>=3.0.0",
+    "tenacity>=8.0.0",
+    "PyJWT[crypto]>=2.8.0",
+    "email-validator>=2.1.0",
+    "python-docx>=1.1.0",
+    "weasyprint>=62.0",
+    "openpyxl>=3.1.0",
+    "pypdf>=6.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-cov>=6.0.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-timeout>=2.3.0",
+    "moto[s3]>=5.0.0",
+    "black>=24.10.0",
+    "isort>=5.13.0",
+    "ruff>=0.8.0",
+    "mypy>=1.13.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+unfixable = ["F401", "F841"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["E501", "N806", "N817", "I001"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_untyped_calls = false
+
+[[tool.mypy.overrides]]
+module = ["celery.*", "sentry_sdk.*", "resend.*", "psycopg.*", "psycopg_pool.*", "stripe.*", "boto3.*", "botocore.*", "limits.*", "extract_sdk", "extract_sdk.*", "docx.*", "lxml.*", "weasyprint.*", "openpyxl.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "app.tasks.*"
+disallow_untyped_decorators = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+pythonpath = ["."]
+norecursedirs = ["tests/e2e"]
+markers = [
+    "e2e: end-to-end tests calling real external APIs (requires API keys)",
+    "integration: integration tests against real Neon/R2 (requires RUN_INTEGRATION_TESTS=true)",
+]
+addopts = [
+    "--cov=app",
+    "--cov-report=term-missing",
+    "--cov-fail-under=95",
+]
+
+[tool.coverage.run]
+branch = true
+omit = ["*/tests/*", "app/services/.gitkeep"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]

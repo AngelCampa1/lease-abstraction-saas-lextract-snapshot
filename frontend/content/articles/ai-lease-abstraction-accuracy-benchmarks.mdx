@@ -1,0 +1,139 @@
+---
+title: "AI Lease Abstraction Accuracy: Benchmarks and What to Expect"
+slug: "ai-lease-abstraction-accuracy-benchmarks"
+description: "What accuracy can you realistically expect from AI lease abstraction tools? We break down field-level accuracy rates, where AI excels, where it struggles, and how to validate output."
+publishedAt: "2026-03-21"
+updatedAt: "2026-03-27"
+author: "Angel Campa, Founder"
+category: "articles"
+silo: "lease-abstraction"
+tags:
+  - AI lease abstraction
+  - accuracy
+  - benchmarks
+  - lease abstraction quality
+  - lease extraction
+readingTime: 7
+featured: false
+funnelStage: mofu
+sources:
+  - title: "Lextract 126-field schema"
+    url: "https://lextract.io/fields"
+    publisher: "Lextract"
+    checkedAt: "2026-05-31"
+  - title: "Commercial lease abstraction pricing"
+    url: "https://lextract.io/resources/articles/how-much-does-lease-abstraction-cost"
+    publisher: "Lextract"
+    checkedAt: "2026-05-31"
+faq:
+  - question: "How accurate is AI lease abstraction?"
+    answer: "Purpose-built AI lease abstraction tools achieve confidence-scored field extraction on standard commercial leases (typed NNN, gross, modified gross). Ground leases and heavily amended leases score lower-confidence. Low-resolution scans drop to lower-confidence. For comparison, trained paralegals achieve variable first-pass accuracy on first-pass manual abstraction. Lextract returns confidence-scored extractions on standard formats."
+  - question: "Is AI lease abstraction more accurate than humans?"
+    answer: "AI lease abstraction delivers confidence-scored extraction on standard commercial leases. Manual first-pass accuracy varies by reviewer, document complexity, and QA process. For complex leases with unusual structures or extensive amendments, senior human review on top of AI extraction is best practice."
+  - question: "What is field-level accuracy in lease abstraction?"
+    answer: "Field-level accuracy means that a specific percentage of extracted fields match the ground truth value in the source lease document. In a 126-field extraction, some fields can still require manual verification even when the overall result is high confidence. Confidence scoring addresses this: tools like Lextract provide a score (0-100) per field, allowing reviewers to focus on uncertain fields rather than re-reading the full document."
+  - question: "How do you validate AI lease abstraction output?"
+    answer: "The most efficient validation uses confidence scores to focus review: (1) check all fields scoring below 85; (2) cross-reference high-stakes fields (rent, dates, options) regardless of confidence score; (3) spot-check 10-15% of remaining fields. For a 126-field extraction, this workflow takes 15-25 minutes vs. 4-8 hours for full manual re-review."
+---
+
+The most common question about AI lease abstraction is not "can it do it?" - it is "how accurate is it?" The honest answer depends on document quality, lease complexity, and which fields you are extracting. Here is a breakdown of realistic accuracy benchmarks and how to validate AI output efficiently.
+
+## Accuracy Benchmarks by Document Type
+
+Purpose-built AI lease abstraction tools achieve different accuracy rates depending on the lease format and document quality:
+
+| Document Type | Typical Accuracy | Notes |
+|---------------|-----------------|-------|
+| Typed NNN lease (standard format) | confidence-scored | Vision-LLM reads layout and field locations natively |
+| Typed full service gross lease | confidence-scored | More complex operating expense language |
+| Modified gross lease | confidence-scored | Variable structure requires more parsing |
+| Ground lease | lower-confidence | Complex cross-references, atypical structure |
+| Lease with multiple amendments | lower-confidence | Amendment hierarchy requires reconciliation |
+| Heavily scanned / low-resolution PDF | lower-confidence | Visual signal degradation on extremely low-resolution images limits extraction accuracy |
+| Handwritten annotations | low-confidence | Current AI models struggle with handwriting |
+
+Lextract achieves confidence-scored field extraction on standard commercial lease formats (typed NNN, gross, and modified gross leases with clean scans) based on internal testing against a labeled reference set; see the [Lextract Benchmark Report 2026](/resources/articles/lextract-benchmark-report-2026) for the methodology note.
+
+Manual first-pass accuracy varies by reviewer, document complexity, and QA process. Senior review remains important because it catches issues a first pass can miss. Treat AI extraction as a faster first pass with targeted human review, not as a guarantee.
+
+## What Field-Level Accuracy Means
+
+Field-level accuracy means each extracted field should match the ground-truth value in the lease. Lextract uses confidence scores to show which fields need verification.
+
+Not all errors are equal. Errors in high-stakes fields (rent amounts, critical dates, renewal option terms) have greater consequences than errors in secondary descriptive fields (parking space count, building class designation). Confidence scoring addresses this: Lextract provides a confidence score (0-100) on every extracted field, allowing reviewers to prioritize verification of low-confidence results without re-reading the full document.
+
+A typical 126-field extraction can still generate uncertain fields. With confidence scoring, a reviewer can identify those specific fields and verify them in 10-15 minutes. Without confidence scoring, the reviewer must re-read the entire lease to locate errors - effectively negating the time savings of AI extraction.
+
+## Where AI Performs Best
+
+**Numeric and date fields**: Base rent, lease commencement date, lease expiration date, rent escalation percentages, and renewal option notice periods are consistently high-accuracy extractions. These fields have unambiguous values and appear in predictable locations in standard lease formats.
+
+**Party information**: Landlord name, tenant name, and entity types are straightforward extractions with high confidence on well-formatted leases.
+
+**Structured financial terms**: Annual rent, monthly rent, security deposit amount, and tenant improvement allowance are extractable with high confidence from standard lease language.
+
+**Fixed format clauses**: Holding over provisions, notice requirements, and assignment restrictions follow consistent legal language patterns that AI models recognize reliably.
+
+## Where AI Accuracy Declines
+
+**Ambiguous escalation language**: CPI-linked rent escalations with complex calculation methodology, base year definitions, and cap/floor provisions require interpretation. AI models extract the escalation mechanism but may misclassify the calculation base or index reference.
+
+**Defined term cross-references**: Commercial leases frequently define "Operating Expenses" or "CAM Charges" in one section and apply exceptions, inclusions, and exclusions in other sections. Assembling the complete definition requires understanding the full document structure, not just extracting a single clause.
+
+**Percentage rent calculations**: Retail leases with percentage rent provisions tied to gross sales require extracting both the breakpoint and the applicable percentage - and sometimes the definition of "gross sales" involves lengthy carve-outs.
+
+**Heavily amended leases**: A base lease with five amendments in different files requires the AI to understand which provisions have been superseded. Current tools vary significantly in how well they handle amendment hierarchies.
+
+**Non-English lease provisions**: Most AI tools are optimized for English-language commercial leases. Bilingual leases or exhibits in other languages reduce accuracy.
+
+## How to Validate AI Lease Abstraction Output
+
+The most efficient validation workflow uses confidence scores to focus review time:
+
+**Step 1: Identify high-stakes fields.**
+For any lease, determine which fields matter most for your use case. In due diligence, rent amounts, expiration dates, renewal options, and termination rights are critical. In CAM reconciliation, the CAM cap percentage, base year, gross-up provision, and audit rights language are the priority fields.
+
+**Step 2: Review all confidence-flagged fields first.**
+Lextract provides confidence scores on every field. Start with any field scoring below 85. In a 126-field extraction, this is typically 8-15 fields requiring targeted review.
+
+**Step 3: Cross-reference the high-stakes fields regardless of confidence.**
+For rent amounts, critical dates, and options, verify against the source document regardless of confidence score. These fields are too consequential for any AI error to pass through.
+
+**Step 4: Spot-check 10-15% of remaining fields.**
+Randomly verify a sample of the remaining structured fields. If spot-check accuracy is high, the extraction is reliable. If you find multiple errors in the spot-check, re-read the relevant sections.
+
+A thorough validation of a 126-field extraction using this workflow takes 15-25 minutes for an experienced CRE professional - vs. 4-8 hours for full manual abstraction.
+
+## Red Flag Detection Accuracy
+
+Automated red flag detection is a separate accuracy consideration from field extraction. Red flags are pattern-based: does the lease contain a provision matching a risk pattern (e.g., CAM charges with no cap)?
+
+Lextract's 20-point red flag detection catches risk patterns when they appear in the lease, but it still requires human judgment on severity and negotiability. The tool flags the provision and identifies the relevant language; the attorney or advisor determines appropriate response.
+
+Over-flagging can occur when a provision is flagged even though the clause is standard or tenant-favorable. Under-flagging can occur when a risk pattern is present but not flagged. Treat red flag detection as targeted triage, not as a substitute for legal review.
+
+## Practical Accuracy Expectations for Common Workflows
+
+**Due diligence on an acquisition portfolio (50 leases):**
+- AI extraction at confidence-scored extraction processes all 50 leases in under 4 hours at $15/lease
+- Targeted review of flagged fields: 15-20 minutes per lease
+- Total workflow: under 20 hours for a 50-lease due diligence
+- Manual alternative: 200-400 hours of paralegal time at $90-$250/lease
+
+**CAM reconciliation prep (reviewing landlord's annual statement):**
+- Extract CAM cap, base year, gross-up, and audit rights fields
+- These fields are typically extracted with high confidence on standard NNN leases
+- 15-minute targeted review is sufficient for most reconciliations
+
+**Rent roll verification for a lender:**
+- Extracting rent, escalation schedule, term dates, and renewal options
+- Accuracy on these fields: high confidence on standard leases
+- Confidence scores immediately identify uncertain values for lender review
+
+## The Honest Bottom Line
+
+AI lease abstraction returns confidence-scored field extraction on standard commercial leases. The correct use is AI extraction as the first pass with targeted human review of confidence-flagged fields, not as a replacement for professional judgment on high-stakes provisions.
+
+The question to ask is not "is AI abstraction perfect?" (it is not) but "is confidence-scored extraction with confidence-flagged exceptions faster and cheaper than manual abstraction?" The answer, for standard commercial leases, is clearly yes.
+
+[Lextract lease extraction software](/lease-extraction-software) processes leases typically in 5-15 minutes depending on document length and complexity, provides per-field confidence scores, and costs $15 per lease. The confidence scores are the critical differentiator: they transform validation from "re-read everything" to "review these 8 specific fields," reducing validation time from hours to minutes. For a full feature comparison, see [lease abstraction software](/lease-abstraction-software).

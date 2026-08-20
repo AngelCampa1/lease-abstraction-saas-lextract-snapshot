@@ -1,0 +1,597 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Lextract home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Lextract" [ref=e5]
+      - navigation "Main navigation" [ref=e6]:
+        - link "Software" [ref=e7] [cursor=pointer]:
+          - /url: /lease-abstraction-software
+        - link "How It Works" [ref=e8] [cursor=pointer]:
+          - /url: /#how-it-works
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - button "Resources" [ref=e11]:
+          - text: Resources
+          - img [ref=e12]
+      - generic [ref=e14]:
+        - button "Currently system mode, click to switch to light" [ref=e704]:
+          - img
+        - link "Log In" [ref=e15] [cursor=pointer]:
+          - /url: /login
+        - link "Get Started" [ref=e16] [cursor=pointer]:
+          - /url: /upload
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - img [ref=e22]
+        - text: AI-Powered Lease Intelligence
+      - heading "AI Lease Abstraction — Extract Every Clause from Any Commercial Lease" [level=1] [ref=e25]
+      - paragraph [ref=e26]: Upload free. Preview results instantly. Pay only for the full report — $10 per lease. No subscription, no contract, no minimum.
+      - generic [ref=e27]:
+        - link "Try It Free — Upload a Lease" [ref=e28] [cursor=pointer]:
+          - /url: /upload
+        - link "See a Sample Report →" [ref=e29] [cursor=pointer]:
+          - /url: /sample-report
+      - list [ref=e30]:
+        - listitem [ref=e31]:
+          - img [ref=e32]
+          - generic [ref=e35]: 126 fields extracted
+        - listitem [ref=e36]:
+          - img [ref=e37]
+          - generic [ref=e40]: Results in minutes
+        - listitem [ref=e41]:
+          - img [ref=e42]
+          - generic [ref=e45]: AES-256 encrypted
+    - generic [ref=e47]:
+      - heading "AI Lease Abstraction Software Results" [level=2] [ref=e48]
+      - generic [ref=e50]:
+        - paragraph [ref=e52]: 5–15 min average processing
+        - paragraph [ref=e55]: 126 fields per lease
+        - paragraph [ref=e58]: $10 per lease, no subscription
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - heading "Upload. Extract. Done." [level=2] [ref=e62]
+        - paragraph [ref=e63]: Three steps. No training needed. Upload a lease and get structured data back in minutes.
+      - generic [ref=e64]:
+        - generic [ref=e66]:
+          - img [ref=e68]
+          - paragraph [ref=e71]: Step 01
+          - heading "Upload your lease PDF" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Drag and drop any commercial lease. We handle single-tenant, multi-tenant, NNN, gross, and ground leases up to 200 pages.
+        - generic [ref=e75]:
+          - img [ref=e77]
+          - paragraph [ref=e80]: Step 02
+          - heading "AI extracts 126 fields across 14 categories" [level=3] [ref=e81]
+          - paragraph [ref=e82]: Our extraction pipeline reads every page, identifies clauses, and pulls structured data with confidence scores for each field.
+        - generic [ref=e84]:
+          - img [ref=e86]
+          - paragraph [ref=e89]: Step 03
+          - heading "Review results and export your report" [level=3] [ref=e90]
+          - paragraph [ref=e91]: Check extracted data against the original PDF side by side. Edit any field, then export to Word, PDF, or Excel.
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - heading "126 Commercial Lease Fields Extracted in Minutes, Not Hours" [level=2] [ref=e95]
+        - paragraph [ref=e96]: Here is what you get from a single lease upload. Every field includes a confidence score so you know what to double-check.
+      - generic [ref=e98]:
+        - heading "Extracted Fields (9 of 126 shown)" [level=3] [ref=e100]
+        - generic [ref=e101]:
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e106]: Parties
+              - paragraph [ref=e107]: Tenant Name
+              - paragraph [ref=e108]: Meridian Health Systems, LLC
+            - generic [ref=e109]: High
+          - generic [ref=e111]:
+            - generic [ref=e112]:
+              - generic [ref=e114]: Parties
+              - paragraph [ref=e115]: Landlord Name
+              - paragraph [ref=e116]: Oakwood Properties Trust
+            - generic [ref=e117]: High
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e122]: Dates
+              - paragraph [ref=e123]: Lease Start Date
+              - paragraph [ref=e124]: January 1, 2024
+            - generic [ref=e125]: High
+          - generic [ref=e127]:
+            - generic [ref=e128]:
+              - generic [ref=e130]: Dates
+              - paragraph [ref=e131]: Lease End Date
+              - paragraph [ref=e132]: December 31, 2033
+            - generic [ref=e133]: High
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - generic [ref=e138]: Financial
+              - paragraph [ref=e139]: Base Rent (Monthly)
+              - paragraph [ref=e140]: $14,250.00
+            - generic [ref=e141]: High
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e146]: Financial
+              - paragraph [ref=e147]: Annual Escalation
+              - paragraph [ref=e148]: 3% per annum
+            - generic [ref=e149]: Medium
+          - generic [ref=e151]:
+            - generic [ref=e152]:
+              - generic [ref=e154]: CAM
+              - paragraph [ref=e155]: CAM Cap
+              - paragraph [ref=e156]: 5% cumulative, non-compounding
+            - generic [ref=e157]: High
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e162]: CAM
+              - paragraph [ref=e163]: Audit Rights
+              - paragraph [ref=e164]: Tenant may audit within 180 days of reconciliation
+            - generic [ref=e165]: Medium
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - generic [ref=e170]: Renewal
+              - paragraph [ref=e171]: Renewal Notice Period
+              - paragraph [ref=e172]: Not specified
+            - generic [ref=e173]: Low
+        - link "Upload yours to see all 126 fields" [ref=e195] [cursor=pointer]:
+          - /url: /upload
+    - generic [ref=e197]:
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - img [ref=e200]
+          - text: Built-in Protection
+        - heading "Never Miss a Red Flag" [level=2] [ref=e202]
+        - paragraph [ref=e203]: Every extraction automatically scans for lease terms that could cost you money. We flag risky clauses so you can negotiate or plan ahead.
+      - generic [ref=e204]:
+        - generic [ref=e207]:
+          - img [ref=e209]
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - heading "Uncapped CAM Escalation" [level=3] [ref=e213]
+              - generic [ref=e214]: Critical
+            - paragraph [ref=e215]: No annual or cumulative cap on common area maintenance charges. Landlord can pass through unlimited cost increases year over year.
+            - paragraph [ref=e216]: "Found in: Section 7.2 - Operating Expenses"
+        - generic [ref=e219]:
+          - img [ref=e221]
+          - generic [ref=e223]:
+            - generic [ref=e224]:
+              - heading "Missing Audit Rights" [level=3] [ref=e225]
+              - generic [ref=e226]: High
+            - paragraph [ref=e227]: Lease does not grant tenant the right to audit landlord operating expense reconciliations. No access to supporting documentation.
+            - paragraph [ref=e228]: "Found in: Section 7.4 - Reconciliation"
+        - generic [ref=e231]:
+          - img [ref=e233]
+          - generic [ref=e235]:
+            - generic [ref=e236]:
+              - heading "Capital Expenditure Pass-Through" [level=3] [ref=e237]
+              - generic [ref=e238]: High
+            - paragraph [ref=e239]: Landlord may amortize capital improvements over useful life and pass costs to tenants as operating expenses without tenant consent.
+            - paragraph [ref=e240]: "Found in: Section 7.3 - Capital Expenditures"
+        - generic [ref=e243]:
+          - img [ref=e245]
+          - generic [ref=e247]:
+            - generic [ref=e248]:
+              - heading "Short Dispute Window" [level=3] [ref=e249]
+              - generic [ref=e250]: Medium
+            - paragraph [ref=e251]: Tenant has only 30 days from reconciliation statement to raise objections. Industry standard is 90-180 days.
+            - paragraph [ref=e252]: "Found in: Section 7.5 - Dispute Resolution"
+    - generic [ref=e254]:
+      - generic [ref=e255]:
+        - heading "Lease Abstraction Pricing" [level=2] [ref=e256]
+        - paragraph [ref=e257]: "Pay per lease. No subscriptions, no monthly fees, no hidden costs. Compare: manual abstraction costs $90–$250 per lease from professional services."
+      - generic [ref=e258]:
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - img
+            - text: Launch Price — Limited Time
+          - generic [ref=e262]:
+            - heading "Single Lease" [level=3] [ref=e263]
+            - generic [ref=e264]: $10
+            - paragraph [ref=e265]: $10/lease
+            - paragraph [ref=e266]: Try it on one lease. No commitment.
+          - list [ref=e267]:
+            - listitem [ref=e268]:
+              - img [ref=e269]
+              - generic [ref=e271]: 126-field extraction
+            - listitem [ref=e272]:
+              - img [ref=e273]
+              - generic [ref=e275]: Confidence scoring
+            - listitem [ref=e276]:
+              - img [ref=e277]
+              - generic [ref=e279]: Red flag detection
+            - listitem [ref=e280]:
+              - img [ref=e281]
+              - generic [ref=e283]: Word, PDF, and Excel export
+            - listitem [ref=e284]:
+              - img [ref=e285]
+              - generic [ref=e287]: Side-by-side PDF viewer
+          - link "Get Started" [ref=e289] [cursor=pointer]:
+            - /url: /upload
+        - generic [ref=e291]:
+          - generic [ref=e292]: 10% off
+          - generic [ref=e293]:
+            - heading "5-Pack" [level=3] [ref=e294]
+            - generic [ref=e295]: $45
+            - paragraph [ref=e296]: $9/lease
+            - paragraph [ref=e297]: Best for small portfolios and due diligence.
+          - list [ref=e298]:
+            - listitem [ref=e299]:
+              - img [ref=e300]
+              - generic [ref=e302]: Everything in Single Lease
+            - listitem [ref=e303]:
+              - img [ref=e304]
+              - generic [ref=e306]: 5 lease credits
+            - listitem [ref=e307]:
+              - img [ref=e308]
+              - generic [ref=e310]: Credits never expire
+            - listitem [ref=e311]:
+              - img [ref=e312]
+              - generic [ref=e314]: Use at your own pace
+            - listitem [ref=e315]:
+              - img [ref=e316]
+              - generic [ref=e318]: Priority support
+          - link "Get Started" [ref=e320] [cursor=pointer]:
+            - /url: /upload
+        - generic [ref=e322]:
+          - generic [ref=e323]: 15% off
+          - generic [ref=e324]:
+            - heading "10-Pack" [level=3] [ref=e325]
+            - generic [ref=e326]: $85
+            - paragraph [ref=e327]: $8.50/lease
+            - paragraph [ref=e328]: Best for teams and recurring abstractions.
+          - list [ref=e329]:
+            - listitem [ref=e330]:
+              - img [ref=e331]
+              - generic [ref=e333]: Everything in 5-Pack
+            - listitem [ref=e334]:
+              - img [ref=e335]
+              - generic [ref=e337]: 10 lease credits
+            - listitem [ref=e338]:
+              - img [ref=e339]
+              - generic [ref=e341]: Credits never expire
+            - listitem [ref=e342]:
+              - img [ref=e343]
+              - generic [ref=e345]: Use at your own pace
+            - listitem [ref=e346]:
+              - img [ref=e347]
+              - generic [ref=e349]: Priority support
+          - link "Get Started" [ref=e351] [cursor=pointer]:
+            - /url: /upload
+      - generic [ref=e352]:
+        - img [ref=e353]
+        - generic [ref=e356]: 30-day money back guarantee — no questions asked
+    - generic [ref=e358]:
+      - generic [ref=e359]:
+        - paragraph [ref=e360]: Purpose-Built Pipeline
+        - heading "Not just AI — a verified extraction pipeline" [level=2] [ref=e361]
+        - paragraph [ref=e362]: ChatGPT gives you a paragraph. Lextract gives you 126 verified fields with per-field confidence scores. Here's what happens when you upload a lease.
+      - generic [ref=e363]:
+        - generic [ref=e364]:
+          - img [ref=e366]
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - img [ref=e371]
+              - generic [ref=e376]:
+                - paragraph [ref=e377]: Step 01
+                - paragraph [ref=e378]: OCR
+            - heading "Reads scanned PDFs, tables, and forms" [level=3] [ref=e379]
+            - paragraph [ref=e380]: AWS Textract analyzes every page — including scanned documents — extracting text, tables, and form fields with layout awareness and per-block confidence.
+            - generic [ref=e381]:
+              - img [ref=e382]
+              - paragraph [ref=e385]: ChatGPT cannot process scanned PDFs or structured tables.
+        - generic [ref=e386]:
+          - img [ref=e388]
+          - generic [ref=e390]:
+            - generic [ref=e391]:
+              - img [ref=e393]
+              - generic [ref=e398]:
+                - paragraph [ref=e399]: Step 02
+                - paragraph [ref=e400]: Extract
+            - heading "Extracts 126 named fields across 14 categories" [level=3] [ref=e401]
+            - paragraph [ref=e402]: Every lease gets the same structured output — parties, dates, financials, CAM provisions, options, and more. Typed, normalized, and schema-enforced.
+            - generic [ref=e403]:
+              - img [ref=e404]
+              - paragraph [ref=e407]: Generic AI returns freeform text with no consistent schema.
+        - generic [ref=e408]:
+          - img [ref=e410]
+          - generic [ref=e412]:
+            - generic [ref=e413]:
+              - img [ref=e415]
+              - generic [ref=e418]:
+                - paragraph [ref=e419]: Step 03
+                - paragraph [ref=e420]: Verify
+            - heading "A second AI pass challenges every answer" [level=3] [ref=e421]
+            - paragraph [ref=e422]: An independent adversarial pass acts as a hostile reviewer — checking percentage formats, date ordering, financial plausibility, and 10 other forensic rules.
+            - generic [ref=e423]:
+              - img [ref=e424]
+              - paragraph [ref=e427]: Single-pass tools have no self-correction. Errors go undetected.
+        - generic [ref=e428]:
+          - img [ref=e430]
+          - generic [ref=e432]:
+            - generic [ref=e433]:
+              - img [ref=e435]
+              - generic [ref=e438]:
+                - paragraph [ref=e439]: Step 04
+                - paragraph [ref=e440]: Score
+            - heading "Every field gets a confidence score" [level=3] [ref=e441]
+            - paragraph [ref=e442]: OCR and AI confidence are blended per-field. Cross-field validators penalize inconsistencies. You see green, yellow, or red for each value.
+            - generic [ref=e443]:
+              - img [ref=e444]
+              - paragraph [ref=e447]: No other tool tells you which specific fields to verify.
+        - generic [ref=e449]:
+          - generic [ref=e450]:
+            - img [ref=e452]
+            - generic [ref=e454]:
+              - paragraph [ref=e455]: Step 05
+              - paragraph [ref=e456]: Flag
+          - heading "20 risk rules run automatically" [level=3] [ref=e457]
+          - paragraph [ref=e458]: Uncapped CAM, missing audit rights, aggressive holdover — 20 rules across 3 severity levels flag provisions that cost tenants real money.
+          - generic [ref=e459]:
+            - img [ref=e460]
+            - paragraph [ref=e463]: Generic AI has no knowledge of what makes a lease clause risky.
+      - generic [ref=e464]:
+        - link "Try It Free — Upload a Lease" [ref=e465] [cursor=pointer]:
+          - /url: /upload
+        - link "See ChatGPT vs Lextract in detail →" [ref=e466] [cursor=pointer]:
+          - /url: /resources/comparisons/chatgpt-lease-review
+    - generic [ref=e468]:
+      - heading "Best Lease Abstraction Software for Commercial Real Estate" [level=2] [ref=e469]
+      - paragraph [ref=e470]: Lextract is the best lease abstraction software for commercial real estate professionals who need structured, exportable data from lease PDFs. Lextract extracts 126 structured fields from any commercial lease PDF — parties, rent schedules, CAM provisions, renewal options, critical dates, and 20 automated red flag checks — in 5–15 minutes at $10 per lease with no subscription required. Manual paralegal abstraction costs $150–$300 per lease and takes 3–5 hours. Offshore services charge $50–$100 and take 1–5 business days. Enterprise platforms like Prophia and MRI Contract Intelligence require annual contracts starting at $10,000–$100,000+/year. Lextract delivers higher field coverage (126 fields vs. 40–80 for manual), per-field confidence scoring for targeted review, and structured exports to JSON, Excel, Word, and PDF — at a fraction of the cost. Lextract lease abstraction software supports NNN, modified gross, full service gross, ground leases, and percentage leases. Credits never expire.
+      - generic [ref=e471]:
+        - link "Learn more about lease abstraction software →" [ref=e472] [cursor=pointer]:
+          - /url: /lease-abstraction-software
+        - link "Lease extraction software →" [ref=e473] [cursor=pointer]:
+          - /url: /lease-extraction-software
+        - link "See how AI lease abstraction works →" [ref=e474] [cursor=pointer]:
+          - /url: /ai-lease-abstraction
+    - generic [ref=e480]:
+      - generic [ref=e481]:
+        - generic [ref=e482]:
+          - img [ref=e483]
+          - text: Partner Product
+        - heading "Found CAM Issues? Take Action with CamAudit" [level=2] [ref=e485]
+        - paragraph [ref=e486]: When Lextract flags risky CAM clauses or missing audit rights in your lease, CamAudit picks up where we leave off. CamAudit.io is a forensic CAM audit platform that analyzes landlord operating expense reconciliations, identifies overcharges, and helps you recover money.
+        - paragraph [ref=e487]: Upload your lease here, then bring the results to CamAudit for a complete review.
+        - link "Visit CamAudit" [ref=e489] [cursor=pointer]:
+          - /url: https://camaudit.io
+          - text: Visit CamAudit
+          - img
+      - generic [ref=e491]:
+        - heading "How it connects" [level=3] [ref=e492]
+        - list [ref=e494]:
+          - listitem [ref=e495]:
+            - generic [ref=e496]: "1"
+            - generic [ref=e497]: Lextract extracts your lease and flags CAM risks
+          - listitem [ref=e498]:
+            - generic [ref=e499]: "2"
+            - generic [ref=e500]: Export your Lextract results with one click
+          - listitem [ref=e501]:
+            - generic [ref=e502]: "3"
+            - generic [ref=e503]: CamAudit analyzes actual operating expense statements against your lease terms
+          - listitem [ref=e504]:
+            - generic [ref=e505]: "4"
+            - generic [ref=e506]: Recover overcharges identified in the audit
+    - generic [ref=e508]:
+      - heading "Frequently Asked Questions" [level=2] [ref=e510]
+      - generic [ref=e512]:
+        - group [ref=e513]:
+          - generic "What types of commercial leases does Lextract support?" [ref=e514] [cursor=pointer]:
+            - generic [ref=e515]: What types of commercial leases does Lextract support?
+            - img [ref=e516]
+        - group [ref=e518]:
+          - generic "How accurate is the AI extraction?" [ref=e519] [cursor=pointer]:
+            - generic [ref=e520]: How accurate is the AI extraction?
+            - img [ref=e521]
+        - group [ref=e523]:
+          - generic "How long does extraction take?" [ref=e524] [cursor=pointer]:
+            - generic [ref=e525]: How long does extraction take?
+            - img [ref=e526]
+        - group [ref=e528]:
+          - generic "Do I need a subscription?" [ref=e529] [cursor=pointer]:
+            - generic [ref=e530]: Do I need a subscription?
+            - img [ref=e531]
+        - group [ref=e533]:
+          - generic "What export formats are available?" [ref=e534] [cursor=pointer]:
+            - generic [ref=e535]: What export formats are available?
+            - img [ref=e536]
+        - group [ref=e538]:
+          - generic "Is my lease data secure?" [ref=e539] [cursor=pointer]:
+            - generic [ref=e540]: Is my lease data secure?
+            - img [ref=e541]
+        - group [ref=e543]:
+          - generic "Can AI create a lease abstract?" [ref=e544] [cursor=pointer]:
+            - generic [ref=e545]: Can AI create a lease abstract?
+            - img [ref=e546]
+        - group [ref=e548]:
+          - generic "How do I abstract a lease?" [ref=e549] [cursor=pointer]:
+            - generic [ref=e550]: How do I abstract a lease?
+            - img [ref=e551]
+        - group [ref=e553]:
+          - generic "Can ChatGPT abstract a lease?" [ref=e554] [cursor=pointer]:
+            - generic [ref=e555]: Can ChatGPT abstract a lease?
+            - img [ref=e556]
+        - group [ref=e558]:
+          - generic "What are red flags in a commercial lease?" [ref=e559] [cursor=pointer]:
+            - generic [ref=e560]: What are red flags in a commercial lease?
+            - img [ref=e561]
+        - group [ref=e563]:
+          - generic "How much does lease abstraction cost?" [ref=e564] [cursor=pointer]:
+            - generic [ref=e565]: How much does lease abstraction cost?
+            - img [ref=e566]
+        - group [ref=e568]:
+          - generic "What is the difference between lease abstraction and lease administration?" [ref=e569] [cursor=pointer]:
+            - generic [ref=e570]: What is the difference between lease abstraction and lease administration?
+            - img [ref=e571]
+    - generic [ref=e574]:
+      - heading "Explore Resources" [level=2] [ref=e575]
+      - paragraph [ref=e576]: Everything you need to understand, negotiate, and manage commercial leases.
+      - generic [ref=e577]:
+        - link "Glossary 100+ commercial lease terms defined — from abatement to yield spread." [ref=e578] [cursor=pointer]:
+          - /url: /glossary
+          - paragraph [ref=e579]: Glossary
+          - paragraph [ref=e580]: 100+ commercial lease terms defined — from abatement to yield spread.
+        - link "Extracted Fields Browse all 126 fields Lextract pulls from every lease, organized by category." [ref=e581] [cursor=pointer]:
+          - /url: /fields
+          - paragraph [ref=e582]: Extracted Fields
+          - paragraph [ref=e583]: Browse all 126 fields Lextract pulls from every lease, organized by category.
+        - link "Lease Clauses What each clause means and what to watch for." [ref=e584] [cursor=pointer]:
+          - /url: /clauses
+          - paragraph [ref=e585]: Lease Clauses
+          - paragraph [ref=e586]: What each clause means and what to watch for.
+        - link "Red Flags 20 risky provisions Lextract detects automatically." [ref=e587] [cursor=pointer]:
+          - /url: /red-flags
+          - paragraph [ref=e588]: Red Flags
+          - paragraph [ref=e589]: 20 risky provisions Lextract detects automatically.
+        - link "Guides Step-by-step guides to lease abstraction and review." [ref=e590] [cursor=pointer]:
+          - /url: /resources/guides
+          - paragraph [ref=e591]: Guides
+          - paragraph [ref=e592]: Step-by-step guides to lease abstraction and review.
+        - link "Calculators NNN costs, CAM reconciliation, rent escalations, and more." [ref=e593] [cursor=pointer]:
+          - /url: /calculators
+          - paragraph [ref=e594]: Calculators
+          - paragraph [ref=e595]: NNN costs, CAM reconciliation, rent escalations, and more.
+        - link "Use Cases How teams use Lextract across due diligence, renewals, and more." [ref=e596] [cursor=pointer]:
+          - /url: /use-cases
+          - paragraph [ref=e597]: Use Cases
+          - paragraph [ref=e598]: How teams use Lextract across due diligence, renewals, and more.
+        - link "Comparisons Lextract vs alternatives — feature-by-feature breakdowns." [ref=e599] [cursor=pointer]:
+          - /url: /resources/comparisons
+          - paragraph [ref=e600]: Comparisons
+          - paragraph [ref=e601]: Lextract vs alternatives — feature-by-feature breakdowns.
+  - contentinfo [ref=e602]:
+    - generic [ref=e603]:
+      - generic [ref=e604]:
+        - generic [ref=e605]:
+          - link "Lextract home" [ref=e606] [cursor=pointer]:
+            - /url: /
+            - img "Lextract" [ref=e607]
+          - paragraph [ref=e608]: AI-powered commercial lease abstraction. Upload a lease PDF and get 126 structured fields extracted in minutes.
+          - link "support@lextract.io" [ref=e609] [cursor=pointer]:
+            - /url: mailto:support@lextract.io
+            - img [ref=e610]
+            - text: support@lextract.io
+        - generic [ref=e613]:
+          - paragraph [ref=e614]: Product
+          - list [ref=e615]:
+            - listitem [ref=e616]:
+              - link "Upload a Lease" [ref=e617] [cursor=pointer]:
+                - /url: /upload
+            - listitem [ref=e618]:
+              - link "Pricing" [ref=e619] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e620]:
+              - link "Sample Report" [ref=e621] [cursor=pointer]:
+                - /url: /sample-report
+            - listitem [ref=e622]:
+              - link "How It Works" [ref=e623] [cursor=pointer]:
+                - /url: /#how-it-works
+            - listitem [ref=e624]:
+              - link "Lease Abstraction Software" [ref=e625] [cursor=pointer]:
+                - /url: /lease-abstraction-software
+            - listitem [ref=e626]:
+              - link "Lease Extraction Software" [ref=e627] [cursor=pointer]:
+                - /url: /lease-extraction-software
+            - listitem [ref=e628]:
+              - link "AI Lease Abstraction" [ref=e629] [cursor=pointer]:
+                - /url: /ai-lease-abstraction
+            - listitem [ref=e630]:
+              - link "Automated Lease Abstraction" [ref=e631] [cursor=pointer]:
+                - /url: /automated-lease-abstraction
+            - listitem [ref=e632]:
+              - link "Lease Abstraction Services" [ref=e633] [cursor=pointer]:
+                - /url: /lease-abstraction-services
+        - generic [ref=e634]:
+          - paragraph [ref=e635]: Resources
+          - list [ref=e636]:
+            - listitem [ref=e637]:
+              - link "All Resources" [ref=e638] [cursor=pointer]:
+                - /url: /resources
+            - listitem [ref=e639]:
+              - link "Articles" [ref=e640] [cursor=pointer]:
+                - /url: /resources/articles
+            - listitem [ref=e641]:
+              - link "Guides" [ref=e642] [cursor=pointer]:
+                - /url: /resources/guides
+            - listitem [ref=e643]:
+              - link "Glossary" [ref=e644] [cursor=pointer]:
+                - /url: /glossary
+            - listitem [ref=e645]:
+              - link "Fields" [ref=e646] [cursor=pointer]:
+                - /url: /fields
+            - listitem [ref=e647]:
+              - link "Industries" [ref=e648] [cursor=pointer]:
+                - /url: /industries
+            - listitem [ref=e649]:
+              - link "Lease Types" [ref=e650] [cursor=pointer]:
+                - /url: /lease-types
+            - listitem [ref=e651]:
+              - link "State Laws" [ref=e652] [cursor=pointer]:
+                - /url: /resources/states
+            - listitem [ref=e653]:
+              - link "Use Cases" [ref=e654] [cursor=pointer]:
+                - /url: /use-cases
+            - listitem [ref=e655]:
+              - link "Case Studies" [ref=e656] [cursor=pointer]:
+                - /url: /case-studies
+            - listitem [ref=e657]:
+              - link "Calculators" [ref=e658] [cursor=pointer]:
+                - /url: /calculators
+        - generic [ref=e659]:
+          - paragraph [ref=e660]: Explore
+          - list [ref=e661]:
+            - listitem [ref=e662]:
+              - link "Clauses" [ref=e663] [cursor=pointer]:
+                - /url: /clauses
+            - listitem [ref=e664]:
+              - link "Red Flags" [ref=e665] [cursor=pointer]:
+                - /url: /red-flags
+            - listitem [ref=e666]:
+              - link "Templates" [ref=e667] [cursor=pointer]:
+                - /url: /templates
+            - listitem [ref=e668]:
+              - link "Workflows" [ref=e669] [cursor=pointer]:
+                - /url: /workflows
+            - listitem [ref=e670]:
+              - link "Integrations" [ref=e671] [cursor=pointer]:
+                - /url: /integrations
+            - listitem [ref=e672]:
+              - link "Property Types" [ref=e673] [cursor=pointer]:
+                - /url: /property-types
+            - listitem [ref=e674]:
+              - link "Locations" [ref=e675] [cursor=pointer]:
+                - /url: /locations
+            - listitem [ref=e676]:
+              - link "Comparisons" [ref=e677] [cursor=pointer]:
+                - /url: /resources/comparisons
+            - listitem [ref=e678]:
+              - link "FAQ" [ref=e679] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=e680]:
+              - link "By Role" [ref=e681] [cursor=pointer]:
+                - /url: /for
+        - generic [ref=e682]:
+          - paragraph [ref=e683]: Company
+          - list [ref=e684]:
+            - listitem [ref=e685]:
+              - link "About" [ref=e686] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e687]:
+              - link "Privacy Policy" [ref=e688] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e689]:
+              - link "Terms of Service" [ref=e690] [cursor=pointer]:
+                - /url: /terms
+        - generic [ref=e691]:
+          - paragraph [ref=e692]: Related Tools
+          - list [ref=e693]:
+            - listitem [ref=e694]:
+              - link "CamAudit — CAM Audit" [ref=e695] [cursor=pointer]:
+                - /url: https://www.camaudit.io
+            - listitem [ref=e696]:
+              - link "CapVeri — CRE FinOps" [ref=e697] [cursor=pointer]:
+                - /url: https://www.capveri.com
+      - generic [ref=e698]:
+        - paragraph [ref=e699]: Lextract does not provide legal, tax, or accounting advice. All extracted data is informational only. Users must verify extracted fields against original lease documents. No guarantee of extraction accuracy; confidence scores indicate reliability.
+        - paragraph [ref=e700]: © 2026 Lextract. All rights reserved.
+  - button "Send feedback" [ref=e701]:
+    - img [ref=e702]
+    - text: Feedback
+  - region "Notifications alt+T"
+  - alert [ref=e705]

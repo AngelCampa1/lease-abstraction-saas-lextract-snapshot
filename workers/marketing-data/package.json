@@ -1,0 +1,15 @@
+{
+  "name": "lextract-marketing-data-worker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "check": "npm run verify:knowledge && cd ../../frontend && npx vitest run __tests__/workers/marketing-data.test.ts && cd ../workers/marketing-data && npx wrangler deploy --dry-run",
+    "deploy": "npx wrangler deploy",
+    "dev": "npx wrangler dev",
+    "migrate:local": "npx wrangler d1 migrations apply lextract-marketing --local",
+    "migrate:remote": "npx wrangler d1 migrations apply lextract-marketing --remote",
+    "predeploy": "npm run verify:knowledge",
+    "verify:knowledge": "cd ../../frontend && npm run build:knowledge",
+    "types": "npx wrangler types"
+  }
+}

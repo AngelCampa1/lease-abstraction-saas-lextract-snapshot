@@ -1,0 +1,179 @@
+---
+title: What Is Lease Extraction? The Technical Process Behind Lease Data
+slug: what-is-lease-extraction
+description: >-
+  Lease extraction converts commercial lease PDFs into structured data using a
+  vision-capable AI model. Learn how the pipeline works, what it produces, and
+  how it differs from lease abstraction.
+publishedAt: '2026-04-01'
+author: 'Angel Campa, Founder'
+category: articles
+silo: lease-abstraction
+tags:
+  - lease extraction
+  - lease data extraction
+  - document processing
+  - vision AI
+readingTime: 8
+featured: false
+funnelStage: tofu
+faq:
+  - question: What is lease extraction?
+    answer: >-
+      Lease extraction is the process of reading a commercial lease PDF and
+      converting its contents into structured data fields like tenant name, base
+      rent, escalation schedule, CAM provisions, and renewal options. Modern
+      lease extraction uses a vision-capable AI model that reads the PDF
+      natively - scanned or digital, no separate OCR step - and extracts 126+
+      named fields with confidence scores.
+  - question: Is lease extraction the same as lease abstraction?
+    answer: >-
+      Yes. Lease extraction and lease abstraction describe the same process.
+      'Extraction' emphasizes the technical data-processing step of pulling
+      information from a document. 'Abstraction' is the industry-standard term
+      used by CRE professionals, paralegals, and property managers. Both produce
+      structured data from unstructured lease documents.
+  - question: How long does lease extraction take?
+    answer: >-
+      Manual lease extraction by a paralegal takes 4 to 8 hours per lease.
+      AI-powered lease extraction tools like Lextract process a commercial lease
+      in 5 to 15 minutes with confidence-scored field extraction on standard
+      formats.
+  - question: What technology does lease extraction software use?
+    answer: >-
+      Modern lease extraction software uses a single vision-capable AI model
+      that reads the PDF directly - no separate OCR step. The AI sees page
+      layout, tables, signatures, and stamps the way a human reviewer does, then
+      extracts named fields against a fixed schema with source references and
+      confidence scores. Lextract runs three independent passes: a primary
+      extraction, an adversarial validation pass that re-reads the PDF to flag
+      errors, and an escalation pass on disputed critical fields.
+updatedAt: '2026-04-01'
+---
+
+Lease extraction is the process of converting a commercial lease PDF into structured, machine-readable data. If you have searched for this term, you are likely evaluating extraction tools, building a data pipeline, or trying to understand what happens between "upload a PDF" and "get a spreadsheet." This article covers the full technical pipeline: how a vision-capable AI model reads commercial leases end-to-end and turns 60-200 pages of legal language into 126 named fields with confidence scores.
+
+For the industry perspective on why firms abstract leases and what the output looks like in practice, see [What Is Commercial Lease Abstraction](/resources/articles/what-is-commercial-lease-abstraction). This article focuses on the how.
+
+## How AI Lease Extraction Works
+
+Modern lease extraction runs as a single vision-AI pipeline with three independent verification passes. There is no separate OCR step, no flat text stream, and no two-stage handoff where layout information gets lost between systems. The AI reads the PDF directly as images and works against the actual visual document.
+
+### How the AI Reads Lease PDFs
+
+The extraction model is vision-capable: it accepts the lease PDF as input and reads each page as an image. It sees what a human reviewer sees - page layout, table rows and columns, defined-term cross-references, signatures, stamps, handwritten margin notes, and rotated exhibits. Scanned and digital PDFs go through the same pipeline.
+
+This matters because a commercial lease is not a novel. It is a structured legal document where the position of text on the page carries meaning. "Base Rent" in a table header means something different from "base rent" in a paragraph of boilerplate. A vision-capable model preserves that distinction natively, without depending on an upstream text-extraction step that strips formatting before any reasoning happens.
+
+The model receives the full PDF and extracts each field against the fixed 126-field schema. Each extraction includes the field value, a confidence score (High, Medium, or Low), and the source location in the document where the value was found. Because the model holds the entire document in context, it follows defined-term chains and resolves cross-references - a "Base Rent" defined in Section 3, modified by an escalation schedule in Exhibit B, and further amended in a First Amendment is reconciled into the correct currently-effective value.
+
+### Three Independent Passes for Accuracy
+
+Lextract runs three independent AI passes against every lease:
+
+**Pass 1 - Primary extraction.** The model reads the PDF and extracts all 126 fields against the schema with source references.
+
+**Pass 2 - Adversarial validation.** A second independent pass re-reads the PDF specifically to challenge the primary extraction: does each value actually appear where the source reference claims, does it conflict with another section, and would a careful human reviewer disagree? Disagreements are flagged as disputed fields.
+
+**Pass 3 - Escalation on disputed critical fields.** When the validation pass flags a disputed value on a high-stakes field - base rent, commencement date, expiration date, renewal options, CAM cap - a third pass re-evaluates with extra context (surrounding sections, the full amendment chain, the relevant exhibit) and either confirms a value or marks the field Low confidence for human review.
+
+The cumulative effect is that extraction errors have to survive multiple independent looks at the source document. Vision-AI extraction does not magically fix extremely degraded scans - when the underlying visual signal is poor, characters blur and table boundaries disappear - but the multi-pass pattern catches the failure mode that single-pass extractors miss: a confident wrong answer.
+
+## What Lease Extraction Produces
+
+The output of lease extraction is a structured data set. Each field has a name, a value, a data type, a confidence score, and a category. Here is a sample of what the output looks like across different field categories:
+
+| Field | Category | Data Type | Example Value |
+|---|---|---|---|
+| Base Rent (Annual) | Financials | Currency | $384,000 |
+| Escalation Type | Financials | Enum | Fixed 3% Annual |
+| Lease Expiration Date | Dates | Date | 2031-08-31 |
+| CAM Cap | Expenses | Percentage | 5% cumulative |
+| Renewal Option Terms | Options | Text | Two 5-year options at FMV |
+| Permitted Use | Restrictions | Text | General office use |
+
+Across a full extraction, the 126 fields break down into these categories:
+
+**Parties and premises** (12 fields): landlord, tenant, guarantor entity names, property address, suite number, rentable and usable square footage, pro rata share.
+
+**Financial terms** (28 fields): base rent, rent escalation schedule, percentage rent, security deposit, letter of credit, tenant improvement allowance, free rent periods, holdover rate.
+
+**Key dates** (15 fields): commencement, expiration, rent commencement, option notice deadlines, estoppel delivery dates.
+
+**Options** (10 fields): renewal, expansion, contraction, termination, right of first refusal, right of first offer, purchase option.
+
+**Operating expenses** (22 fields): CAM structure, CAM cap, management fee, insurance obligations, tax obligations, gross-up provisions, audit rights, base year or stop amounts.
+
+**Restrictions and obligations** (18 fields): permitted use, exclusivity, co-tenancy, radius restriction, assignment and subletting, restoration obligation, alterations consent.
+
+**Compliance and insurance** (12 fields): insurance requirements, indemnification, environmental obligations, ADA compliance, subordination.
+
+**ASC 842 fields** (9 fields): lease classification inputs, initial direct costs, variable lease payments, discount rate indicators.
+
+Beyond the field extractions, Lextract runs 20 automated red flag checks. These flag provisions like above-market holdover rates (200%+ of base rent), missing audit rights on NNN leases, personal guarantees, and co-tenancy kick-out clauses. Red flags do not mean the lease is bad. They mean a human should review that specific provision.
+
+Structured exports are available in Excel (for analysis), Word (for legal review markups), and PDF (for file-and-forget archiving).
+
+## Why Commercial Leases Are Harder to Extract
+
+Commercial lease extraction is a harder technical problem than most document processing tasks. Three characteristics make commercial leases uniquely challenging.
+
+### Document Length and Structural Complexity
+
+A residential lease runs 10 to 20 pages in a standardized format. A commercial lease runs 60 to 200 pages with exhibits, schedules, riders, and amendments appended over years. The base lease alone may contain 40 to 60 sections with cross-references between them. Exhibit A (floor plan) and Exhibit B (work letter) contain structured data in formats completely different from the body text.
+
+No two commercial leases use the same section numbering, defined term conventions, or exhibit structure. Extraction systems cannot rely on "look for Section 7.2 for the renewal option" because the next lease may put renewal options in Section 12.4 or in a separate rider.
+
+### Amendment Chains
+
+A 10-year lease may have three to five amendments, each modifying specific provisions of the base lease or prior amendments. The First Amendment might change the base rent. The Second Amendment might extend the term and modify the renewal option. The Third Amendment might add a contraction right.
+
+The extraction engine must read the full document chain and identify which version of each provision controls. A rent amount from the base lease may be superseded by the First Amendment and further modified by the Third Amendment. Extracting the base lease value without checking amendments produces incorrect data.
+
+### Cross-Referenced Defined Terms
+
+Commercial leases define terms that change the meaning of common words. "Premises" might mean the physical space described in Exhibit A. "Additional Rent" might include CAM charges, insurance, and taxes but exclude management fees. "Landlord" might mean a specific LLC that changed names in the Second Amendment.
+
+Extraction accuracy depends on resolving these definitions correctly. When a lease says "Tenant shall pay its Pro Rata Share of Operating Expenses," the extraction engine needs to find the definition of "Pro Rata Share" (often in Section 1) and the definition of "Operating Expenses" (often in a separate section or exhibit) to extract the correct values.
+
+## Lease Extraction vs. Lease Abstraction
+
+Lease extraction and lease abstraction describe the same process. The terminology difference reflects who is talking.
+
+"Extraction" comes from data engineering and document processing. It emphasizes the technical act of pulling structured data from an unstructured document. Software engineers and product teams use this term.
+
+"Abstraction" is the CRE operating term. Property managers, paralegals, asset managers, and attorneys use "abstract" as a verb: "abstract this lease" means "produce a structured summary of its material terms." The output is called a "lease abstract."
+
+Both terms describe the same pipeline: read the document, identify the material terms, and produce structured data. Lextract uses both terms because both audiences use the product. For more on the industry context, see [lease abstraction software](/lease-abstraction-software) and [What Is Commercial Lease Abstraction](/resources/articles/what-is-commercial-lease-abstraction).
+
+## Three Approaches to Lease Extraction
+
+### Manual Extraction by a Paralegal
+
+A trained paralegal reads the lease, works through a template or spreadsheet, and fills in each field. This approach delivers strong results on complex provisions where human judgment matters.
+
+The tradeoffs: 4 to 8 hours per lease, $90 to $250 in labor depending on complexity and market, and typically 40 to 80 fields captured. Consistency across reviewers varies, fatigue can affect later leases in a batch, and there is no systematic confidence scoring to flag uncertain extractions.
+
+### General-Purpose AI Chatbots
+
+Upload a lease PDF to a general-purpose AI chatbot and prompt: "Extract the key terms from this lease." You will get a response in seconds. The response will be a narrative summary with the major terms identified.
+
+The problem: each run produces different field names, different formatting, and different levels of detail. There is no fixed schema, so you cannot compare extractions across leases. There are no confidence scores, no red flag detection, and no structured export format. Long leases may exceed context windows, producing incomplete extractions. For a quick question about a single clause, general-purpose AI works well. For systematic data extraction, it does not scale.
+
+### Purpose-Built Lease Extraction Tools
+
+Tools built for lease extraction (like [Lextract](/lease-extraction-software)) run vision-capable AI against a fixed schema with multi-pass validation. Every lease produces the same 126 fields in the same format with confidence scores and red flag checks.
+
+The output is immediately usable: import into a property management system, compare across a portfolio, feed into an ASC 842 compliance model, or hand to an attorney with low-confidence fields highlighted. Lextract processes a lease for $15 in 5 to 15 minutes.
+
+## When You Need Lease Extraction
+
+**Portfolio acquisition due diligence.** A data room contains 50 to 500 lease PDFs. Your underwriting model needs verified rent roll data, not the seller's summary. Lease extraction turns raw documents into structured data you can reconcile against the seller's numbers. See [Lease Extraction for Due Diligence](/resources/articles/lease-extraction-due-diligence) for the full workflow.
+
+**ASC 842 lease accounting compliance.** The accounting standard requires specific data points from each lease: classification inputs, variable payment identification, discount rate indicators, modification dates. Manual collection of ASC 842 fields across a portfolio of 100+ leases is a multi-week project. Extraction produces the required fields as part of the standard output. See [ASC 842 Lease Data Requirements](/resources/articles/asc-842-lease-data-requirements).
+
+**Property management system onboarding.** Migrating leases from filing cabinets or scattered PDFs into a PMS (Yardi, MRI, VTS) requires structured data in a specific format. Lease extraction produces that data. Without it, someone is manually re-keying every lease into the system.
+
+**Ongoing lease administration.** New leases, renewals, and amendments arrive throughout the year. Extracting each document on arrival keeps your lease database current without accumulating a backlog of un-abstracted documents.
+
+Lextract extracts 126 fields from any commercial lease PDF at $15 per lease with per-field confidence scores and 20 automated red flag checks. [Upload a lease to try it](/upload).

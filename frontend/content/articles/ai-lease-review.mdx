@@ -1,0 +1,156 @@
+---
+title: "AI Lease Review: How It Works, What It Catches, and When to Use It"
+slug: "ai-lease-review"
+description: "AI lease review extracts structured data from commercial lease PDFs in minutes. Here is how it works, what it catches, what it misses, and how to use it in professional workflows."
+publishedAt: "2026-03-24"
+updatedAt: "2026-03-27"
+author: "Angel Campa, Founder"
+category: "articles"
+silo: "lease-abstraction"
+tags:
+  - ai lease review
+  - AI lease abstraction
+  - commercial lease review
+  - automated lease review
+readingTime: 7
+featured: false
+funnelStage: mofu
+faq:
+  - question: "What is AI lease review?"
+    answer: "AI lease review uses vision-capable AI to read commercial lease PDFs natively - scanned or digital, no separate OCR step - and automatically extract structured data, identify risky provisions, and flag uncertain extractions. It replaces the first-pass manual read with AI extraction, leaving human review focused on confidence-flagged fields and high-stakes provisions. Purpose-built tools like Lextract extract 126 fields with per-field confidence scores, an adversarial validation pass that re-reads the PDF to flag errors, and 20 automated red flag checks, typically in 5-15 minutes."
+  - question: "Can AI review a commercial lease?"
+    answer: "Yes. AI-powered tools extract structured data, identify risk provisions, and provide confidence scores on commercial lease PDFs. Lextract extracts 126 fields from any commercial lease PDF, typically in 5-15 minutes, with confidence-scored extraction on standard formats. AI review does not replace attorney judgment on complex or unusual provisions - it accelerates the extraction and risk triage steps."
+  - question: "What is the difference between AI lease review and ChatGPT lease review?"
+    answer: "Purpose-built AI lease review tools (Lextract, Prophia, LeaseLens) use structured extraction schemas that return named fields in a consistent format with confidence scoring and automated red flag detection. ChatGPT produces unstructured narrative summaries without a fixed schema, no confidence scores, and no audit trail. For professional workflows requiring exportable data or risk triage, purpose-built tools are required."
+  - question: "How accurate is AI lease review?"
+    answer: "Purpose-built AI lease review tools achieve confidence-scored field extraction on standard commercial leases (NNN, gross, modified gross) with clean scans. Ground leases and heavily amended leases score lower confidence. Low-resolution scans drop to lower confidence. Per-field confidence scores let reviewers identify uncertain extractions without re-reading the full document."
+---
+
+AI lease review uses vision-capable AI to do what paralegals have done manually for decades: read a commercial lease and extract the material terms. The difference is minutes, not hours, and a structured output instead of a filled-in template.
+
+Here is how it works, what it reliably catches, and where human judgment is still required.
+
+## How AI Lease Review Works
+
+The process runs as three independent passes plus confidence scoring for any commercial lease PDF:
+
+**Pass 1: Primary extraction.** A vision-capable AI model reads the PDF directly - scanned or digital, no separate OCR step. It sees page layout, tables, signatures, and stamps the way a human reviewer does, then maps each of the 126 fields - base rent, lease commencement date, CAM cap percentage, renewal option notice period - to a structured field schema with a source reference for every value.
+
+**Pass 2: Adversarial validation.** A second independent AI pass re-reads the PDF specifically to challenge the primary extraction: does each value actually appear where the source reference claims, does it conflict with another section, would a careful human reviewer disagree? Disagreements are flagged as disputed fields. Disputed values on critical fields trigger a third escalation pass that re-evaluates with extra context.
+
+**Confidence scoring and red flag detection.** Each extracted field receives a confidence score reflecting both how clearly the source supports the value and whether the validation pass agreed. Separately, a rule-based engine checks the extracted fields against a set of red flag patterns and flags provisions that meet the risk criteria.
+
+The output is a structured data set: 126 named fields (in the case of Lextract), each with a value, a confidence score, and any applicable red flag designation. Review time focuses on the 8-15 fields below the confidence threshold, not the full document.
+
+## What AI Lease Review Reliably Catches
+
+AI performs consistently well on fields with clear, unambiguous values in standard lease formats:
+
+**Numeric fields:**
+- Base rent (annual, monthly, per SF)
+- Security deposit
+- Tenant improvement allowance
+- Escalation rate (fixed percentage)
+- CAM cap percentage
+- Management fee percentage
+- Gross-up percentage
+
+**Date fields:**
+- Lease commencement and expiration dates
+- Renewal option notice deadline
+- Rent commencement date
+- Free rent period
+
+**Binary/categorical fields:**
+- Lease type (NNN, gross, modified gross)
+- Personal guarantee existence
+- Audit rights existence
+- Assignment allowed with or without consent
+- Renewal option existence
+
+**Party and premises:**
+- Landlord and tenant entity names
+- Property address
+- Rentable and usable square footage
+- Pro rata share
+
+On standard commercial leases (typed, well-formatted NNN, gross, and modified gross leases), accuracy on these fields runs confidence-scored.
+
+## What AI Lease Review Misses or Flags Uncertain
+
+**Complex defined terms.** Commercial leases often define "Operating Expenses," "CAM Charges," or "Gross Revenues" with multiple exclusions, carve-outs, and cross-references spread across different sections. AI extracts the primary definition but may miss exclusion language on page 48 that qualifies the provision on page 12.
+
+**Amendment hierarchies.** When a base lease has multiple amendments - some superseding earlier amendments - the AI must understand which version of a provision controls. Current tools vary in how well they handle this. For heavily amended leases, human review of the amendment structure is important.
+
+**Ambiguous escalation language.** CPI-linked escalations with complex calculation methodology, base index definitions, and cap/floor provisions require interpretation that AI sometimes misclassifies. The value gets extracted, but the formula may be partially wrong.
+
+**Percentage rent calculations.** Retail leases with percentage rent tied to gross sales require extracting the breakpoint, rate, and definition of "gross sales" - often with lengthy carve-outs across multiple pages.
+
+**Non-standard provisions.** Provisions with no precedent in the training data - unusual operating rights, complex co-investment structures, bespoke development obligations - may receive low confidence scores or be missed entirely.
+
+For all of these, confidence scoring is the mechanism: the model assigns a low confidence score when uncertain, which directs human review to the specific fields that need it.
+
+## AI Lease Review vs. Manual Review: The Comparison
+
+| Dimension | AI Review (Lextract) | Manual Review |
+|-----------|---------------------|---------------|
+| First-pass time | 5-15 minutes | 2-6 hours |
+| Field extraction accuracy | confidence-scored (standard leases) | manual first-pass accuracy varies by reviewer and QA process (first pass) |
+| Consistency | Identical standard applied to every document | Varies by reviewer, fatigue |
+| Confidence flagging | Per-field (0-100 score) | None - reviewer decides |
+| Red flag detection | 20 automated checks | Manual pattern recognition |
+| Cost | $15 per lease | $75-$400 per lease in labor |
+| Complex provision handling | Requires human review of flagged fields | Full human judgment throughout |
+| Amendment reconciliation | Limited - human review recommended | Full judgment |
+
+AI review does not replace manual review for complex or high-stakes leases. It replaces the first-pass extraction step, letting human review focus on the 8-15 fields that are uncertain rather than 126 fields that are routine.
+
+## AI Lease Review vs. ChatGPT Lease Review
+
+The most common question from CRE professionals evaluating AI tools is: "Can I just use ChatGPT?"
+
+ChatGPT can read lease language pasted into a prompt and produce a narrative summary. It is useful for explaining specific clauses or getting a quick overview.
+
+What ChatGPT does not provide:
+
+- **Structured output**: No fixed schema means no two extractions look alike. You cannot import a ChatGPT response into Yardi.
+- **Confidence scoring**: No indication of which values are uncertain.
+- **Red flag detection**: No automated check against risk patterns.
+- **Consistent field coverage**: You get what you ask for; you do not get what you forgot to ask for.
+- **Context window limits**: Long leases get truncated. You may miss provisions on page 65.
+- **Audit trail**: No link between extracted value and source language.
+
+Purpose-built tools like Lextract are designed for professional CRE workflows. ChatGPT is a general-purpose assistant. For occasional quick reads on non-critical provisions, ChatGPT is fine. For due diligence, rent roll verification, or portfolio review, a purpose-built tool is required.
+
+See: [Why ChatGPT is not enough for lease review](/resources/articles/chatgpt-not-enough-lease-review).
+
+## When to Use AI Lease Review
+
+**Use AI as the primary first pass** for:
+- Standard commercial leases (NNN, gross, modified gross, shorter ground leases)
+- Portfolio-level due diligence where volume requires speed
+- Rent roll verification against a seller's representation
+- CAM audit preparation (extract the CAM provisions, then compare to statements)
+- Property management system onboarding (extract ? export ? import)
+
+**Add human review on top of AI for:**
+- Heavily amended leases (5+ amendments)
+- Ground leases with complex rent structures
+- Any lease where a specific provision will be negotiated or litigated
+- Leases with non-standard operating rights or development obligations
+- Any extraction with multiple low-confidence fields
+
+**Use human-only review when:**
+- The lease is in active litigation
+- The extraction will be presented to a court, regulatory body, or lender with independent auditors
+- The document contains primarily handwritten annotations or non-English provisions
+
+For most commercial real estate portfolios, AI handles 90%+ of leases as the primary extraction tool. The 10% requiring deeper human review are identifiable by the confidence scores - not by re-reading everything.
+
+## How to Get Started
+
+Lextract processes any commercial lease PDF in minutes for $15. Upload the document, receive 126 structured fields with per-field confidence scores and red flag detection, export to Excel, Word, or PDF.
+
+No subscription. No implementation. No demo required.
+
+[Extract your first lease ?](/)

@@ -1,0 +1,19 @@
+### Result
+"[]"
+### Ran Playwright code
+```js
+await (async page => {
+  await page.addScriptTag({ path: '<repo-root>/docs/audit/vendor/axe.min.js' });
+  const result = await page.evaluate(async () => {
+    const r = await window.axe.run(document, { resultTypes: ['violations'] });
+    return r.violations.map(v => ({id:v.id, impact:v.impact, help:v.help, count:v.nodes.length, sample: v.nodes.slice(0,3).map(n => ({target:n.target, summary:n.failureSummary?.slice(0,220)})) }));
+  });
+  return JSON.stringify(result, null, 2);
+})(page);
+```
+### Page
+- Page URL: https://lextract.io/
+- Page Title: AI Lease Abstraction Tool — 126 Fields, $10/Lease | Lextract
+- Console: 1 errors, 0 warnings
+### Events
+- New console entries: .playwright-cli\console-2026-04-12T00-39-11-260Z.log#L1

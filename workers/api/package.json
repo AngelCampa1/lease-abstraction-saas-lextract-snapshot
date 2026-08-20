@@ -1,0 +1,34 @@
+{
+  "name": "@lextract/api-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev -c wrangler.dev.jsonc",
+    "deploy": "wrangler deploy",
+    "types": "wrangler types",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "check:deploy-vars": "node scripts/assert-production-wrangler-vars.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run check:deploy-vars && npm run typecheck && npm run test:coverage && wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "hono": "^4.10.7",
+    "jose": "^6.2.3",
+    "pg": "^8.21.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.16.15",
+    "@cloudflare/workers-types": "^4",
+    "@types/pg": "^8.20.0",
+    "@vitest/coverage-istanbul": "^4.1.8",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18",
+    "wrangler": "^4.74.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

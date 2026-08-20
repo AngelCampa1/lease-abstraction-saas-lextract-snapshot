@@ -1,0 +1,102 @@
+---
+title: Why ChatGPT Is Not Enough for Commercial Lease Review
+slug: chatgpt-not-enough-lease-review
+description: >-
+  ChatGPT can explain lease clauses but cannot produce a reliable, structured
+  126-field extraction. Here is what it can and cannot do for lease review.
+publishedAt: '2026-03-19'
+updatedAt: '2026-03-19'
+author: 'Angel Campa, Founder'
+category: articles
+silo: lease-abstraction
+tags:
+  - ChatGPT lease review
+  - AI lease abstraction
+  - lease abstraction
+readingTime: 7
+featured: false
+funnelStage: mofu
+faq:
+  - question: >-
+      What is the main takeaway from Why ChatGPT Is Not Enough for Commercial
+      Lease Review?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: >-
+      How does Lextract help with Why ChatGPT Is Not Enough for Commercial Lease
+      Review?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+ChatGPT is a genuinely useful tool for many tasks in commercial real estate. Legal language translation, clause explanation, and ad-hoc document questions are legitimate use cases where it performs well. But when a property manager or asset manager asks whether ChatGPT can replace a structured lease abstraction workflow, the honest answer is no - and understanding why clarifies what each tool is actually good for.
+
+This is not a knock on ChatGPT. It is an explanation of what the tool is and what it is not.
+
+## What ChatGPT Does Well for Lease Review
+
+Before discussing the limitations, the legitimate uses deserve acknowledgment.
+
+**Explaining complex provisions.** Lease language is frequently opaque. "Notwithstanding the foregoing, Tenant's obligations under this Section shall survive the expiration or earlier termination of this Lease" - ChatGPT can translate that clearly and accurately. For attorneys, asset managers, and property managers who need to understand what a clause means without a law degree, this is genuinely valuable.
+
+**Answering ad-hoc questions about a specific clause.** If you paste a co-tenancy provision and ask "what happens if the anchor tenant vacates?", ChatGPT will give you a solid plain-English explanation of the waterfall of consequences. For one-off questions, it is fast and competent.
+
+**Summarizing a single lease in narrative form.** If you paste a lease and ask for a narrative summary of the key terms, ChatGPT will produce a readable summary. For evaluating a single lease quickly, this is useful.
+
+**Drafting response language.** When a tenant raises a clause dispute, ChatGPT can help draft an initial response letter or talking points. This is a legitimate productivity use.
+
+These are real capabilities, and CRE professionals should use them where they apply.
+
+## Where ChatGPT Falls Short for Systematic Abstraction
+
+The failures become apparent when you move from one-off questions to a systematic, production-quality extraction workflow.
+
+**ChatGPT cannot apply a fixed 126-field lease schema.** Modern general-purpose AI assistants have vision capabilities and can read scanned and digital PDFs as images. The limitation is not whether ChatGPT can see the document; it is what it does with what it sees. Ask ChatGPT to extract lease terms and you get an unstructured narrative response that varies every time. There is no enforcement of a 126-field schema, no consistent field naming, and no guarantee that the same concept is extracted the same way across leases.
+
+Even on documents the model reads cleanly, ChatGPT's output is shaped by the prompt rather than a fixed extraction contract. A rent schedule embedded in a PDF table may be summarized into prose, broken into a different shape than your spreadsheet expects, or partially flattened - and you have no way to know which without re-reading the source.
+
+**ChatGPT does not produce consistent structured output.** Ask ChatGPT to extract the base rent from 50 leases and you will get 50 different response formats. Sometimes a number, sometimes a sentence, sometimes a range, sometimes a table, depending on how the question was phrased and what variation was in the source document. There is no guarantee that "base rent" in lease 1 and "base rent" in lease 37 were extracted using the same logic and stored in a comparable format.
+
+For portfolio management, this inconsistency is fatal. You cannot build a rent roll, run cash flow projections, or populate a property management system from data that lacks a consistent schema.
+
+**There is no fixed schema.** Purpose-built lease abstraction systems define a schema upfront - every field, every data type, every allowed value. The schema enforces consistency. ChatGPT has no inherent schema. You can ask it to follow a schema, and it will often comply, but there is no enforcement mechanism, and schema adherence degrades across documents, especially on edge cases.
+
+**There is no confidence scoring.** When an AI extraction system is uncertain about a field - because the clause is ambiguous, the document quality is poor, or the provision conflicts with an amendment - a well-designed system flags that field for human review. ChatGPT does not produce confidence scores. It answers confidently regardless of whether the underlying text was clear or ambiguous. This makes it difficult to know which outputs to verify.
+
+**There is no adversarial validation.** Production lease abstraction runs multiple independent passes that re-read the source document and challenge the primary extraction. ChatGPT runs one pass per prompt with no built-in mechanism to disagree with itself or flag disputed values, so confident wrong answers pass through unchecked.
+
+**There is no audit trail.** A production extraction records the source location for each field - the page, section, and clause that supplied the value - so a reviewer can verify any extraction in seconds. ChatGPT responses do not consistently provide source references, and when they do, the references are not enforced against the actual document layout.
+
+**There is no amendment reconciliation.** A commercial lease executed in 2019 may have three amendments that change the expiration date, modify the operating expense structure, and add a termination option. A production abstraction system processes all documents as a set and produces a single coherent abstract that reflects the current state of the lease. ChatGPT, used in a typical workflow, processes one document at a time without a mechanism to reconcile amendments against originals systematically.
+
+**Hallucination risk on financial data.** Like all AI models, ChatGPT can generate plausible-sounding but incorrect information, particularly when a document is ambiguous or a question is poorly scoped. For financial data - rent amounts, escalation percentages, option strike prices - a confident wrong answer is worse than no answer, because it may propagate unchecked into a financial model.
+
+## What Production Lease Abstraction Actually Requires
+
+For systematic abstraction across a portfolio, you need:
+
+1. **Vision-capable AI extraction** that reads scanned and digital PDFs natively as images. The AI sees page layout, tables, signatures, and stamps the way a human reviewer does, with no separate OCR step that strips formatting before extraction.
+
+2. **A fixed schema** that defines every field to extract, the expected data type, and the validation rules. This schema must be consistent across every document processed.
+
+3. **Structured extraction prompts** that apply the schema consistently, handle amendment reconciliation, and are tuned specifically for commercial lease documents.
+
+4. **Adversarial validation and escalation passes** that re-read the source document to challenge the primary extraction and re-evaluate disputed critical fields, catching confident wrong answers before they reach the output.
+
+5. **Confidence scoring and audit trail** that flag uncertain extractions for human review and record the page and section that supplied each value so reviewers can verify extractions in seconds.
+
+This is what purpose-built lease abstraction tools provide. Lextract applies all five layers in sequence: vision-capable AI extraction, a validated 126-field schema, three independent passes (primary extraction, adversarial validation, escalation on disputed critical fields), confidence scoring that surfaces low-confidence fields, and a review interface that shows the source text for each extracted value.
+
+## The Right Way to Think About ChatGPT in a Lease Workflow
+
+ChatGPT is a strong complement to a systematic abstraction workflow, not a replacement for it.
+
+After a structured abstraction produces the extracted data, ChatGPT is useful for: understanding unusual provisions flagged during review, drafting tenant communications, answering ad-hoc questions about specific clauses, and helping less experienced team members understand what certain lease terms mean operationally.
+
+Before a systematic abstraction - using ChatGPT as the extraction tool itself - the output is too inconsistent, too unstructured, and too difficult to verify at scale to be relied upon for portfolio management, financial reporting, or loan underwriting.
+
+The distinction matters because using the wrong tool in the wrong place creates confidence in data that does not deserve it.

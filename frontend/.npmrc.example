@@ -1,0 +1,9 @@
+# Optional. Only needed to install the private `@ventora/ai-cs` support widget.
+#
+# `@ventora/ai-cs` is declared under `optionalDependencies`, so `npm install`
+# succeeds without this file — the widget falls back to the no-op in
+# `components/ai-cs/vendor-stub.tsx` and the rest of the app is unaffected.
+#
+# To install it, copy this file to `.npmrc`, then export VENTORA_REGISTRY_TOKEN.
+@ventora:registry=https://<your-private-registry-host>/
+//<your-private-registry-host>/:_authToken=${VENTORA_REGISTRY_TOKEN}

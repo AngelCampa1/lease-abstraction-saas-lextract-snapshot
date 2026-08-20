@@ -1,0 +1,2406 @@
+[
+  {
+    "title": "Commercial Lease Negotiation Checklist: 15 Points to Negotiate Before You Sign",
+    "slug": "commercial-lease-negotiation-checklist",
+    "description": "A practical 15-point checklist covering every major negotiation lever in a commercial lease - from base rent and TI to CAM caps, renewal options, and exit rights.",
+    "publishedAt": "2026-04-10",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-negotiation",
+    "tags": [
+      "commercial lease negotiation",
+      "lease negotiation checklist",
+      "commercial lease tips"
+    ],
+    "readingTime": 11,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the most important thing to negotiate in a commercial lease?",
+        "answer": "The single most important negotiation point depends on your situation, but for most tenants the CAM cap - a ceiling on annual operating expense increases - has the highest long-term dollar value. A 5-year lease without a CAM cap can expose you to unlimited operating expense growth; a 3% controllable expense cap on the same lease limits that growth to 34% over 10 years. For tenants with significant capital at risk (major buildouts, expensive equipment), a robust termination right or co-tenancy clause may be more important. For short-term financial flexibility, free rent and TI allowance have the most immediate impact."
+      },
+      {
+        "question": "Can I negotiate a commercial lease without a broker?",
+        "answer": "You can, but you are at a significant information disadvantage. Tenant representative brokers have market data on comparable transactions, know the building's vacancy history, and have negotiated dozens of leases against many of the same landlords. More importantly, tenant rep services are typically paid by the landlord - the commission is built into the transaction economics regardless of whether you have representation. If you decline to use a tenant rep, the landlord keeps the full commission rather than paying half to your representative. You get no savings and no professional advocacy. For any lease with total value above $100,000, use a tenant rep."
+      },
+      {
+        "question": "How long does commercial lease negotiation take?",
+        "answer": "A straightforward commercial lease negotiation for a small-to-mid-size tenant typically takes 4 to 12 weeks from initial proposal to signed lease. Complex negotiations for larger spaces, significant buildouts, or properties with unusual issues can take 3 to 6 months. The negotiation stages are: (1) landlord proposal or RFP response, 1-2 weeks; (2) letter of intent negotiation, 2-4 weeks; (3) lease document drafting and review, 3-6 weeks; (4) execution and delivery. The LOI stage is where the core business terms are agreed and is typically the highest-leverage phase of the negotiation."
+      }
+    ]
+  },
+  {
+    "title": "Commercial Lease Renewal Negotiation: How to Get Better Terms the Second Time",
+    "slug": "commercial-lease-renewal-negotiation",
+    "description": "Lease renewal is your best negotiating opportunity as a tenant. Learn when to start, what to ask for, and how to use market data to lower your rent and improve terms.",
+    "publishedAt": "2026-04-10",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-negotiation",
+    "tags": [
+      "commercial lease renewal",
+      "lease renewal negotiation",
+      "commercial lease negotiation"
+    ],
+    "readingTime": 10,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "When should I start negotiating my commercial lease renewal?",
+        "answer": "Start 12 to 18 months before your lease expiration date. This gives you enough time to genuinely evaluate alternatives - tour competing spaces, get competitive proposals, and use that market intelligence as leverage. Tenants who start 3 months before expiration negotiate from weakness: the landlord knows you cannot realistically move, so your threat to relocate is not credible. Starting 12–18 months out makes the threat credible and gives you time to actually exercise it if the landlord does not negotiate meaningfully."
+      },
+      {
+        "question": "What will landlords typically negotiate on a lease renewal?",
+        "answer": "Landlords will generally negotiate on: free rent (1–3 months is common in soft markets), tenant improvement allowance to refresh the space, CAM cap resets or new caps if the original lease had none, renewal option language, and sometimes base rent reduction if the market has softened since the original lease. Landlords are least flexible on: lease term (they want longer terms), personal guarantee (they want to keep it), and structural lease provisions. The items landlords are most flexible on vary significantly by market conditions - a landlord with 15% vacancy negotiates very differently than one with 2% vacancy."
+      },
+      {
+        "question": "How much does a tenant rep broker cost for lease renewal?",
+        "answer": "Tenant rep brokers for commercial lease renewals are typically paid by the landlord out of the transaction commission - there is no direct cost to the tenant in most cases. The broker's commission on a renewal is typically 2–4% of the total lease value (sometimes split with a landlord rep). For a 5-year renewal at $10,000/month, the total lease value is $600,000, and a tenant rep commission might be $12,000–$24,000, paid by the landlord. The tenant gets professional representation, market data, and negotiation expertise for free. Not using a tenant rep in a renewal negotiation is leaving professional leverage on the table."
+      }
+    ]
+  },
+  {
+    "title": "How to Read a CAM Reconciliation Statement (and Spot Overcharges)",
+    "slug": "how-to-read-cam-reconciliation-statement",
+    "description": "Your landlord's annual CAM reconciliation statement can include errors and inflated charges. Learn how to read every line item, what the gross-up provision means, and what to challenge.",
+    "publishedAt": "2026-04-10",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "cam-reconciliation",
+    "tags": [
+      "CAM reconciliation",
+      "CAM statement",
+      "CAM charges",
+      "common area maintenance"
+    ],
+    "readingTime": 10,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "When does the landlord have to send the CAM reconciliation statement?",
+        "answer": "Most commercial leases require the landlord to deliver the annual CAM reconciliation statement within 90 to 120 days after the end of the calendar year - so by March 31 or April 30 for a December 31 fiscal year. Some leases specify 180 days. The deadline matters: if your lease contains a landlord default provision or a 'time is of the essence' clause tied to the reconciliation deadline, a late statement may limit the landlord's ability to collect additional amounts. Always note the deadline in your lease and flag any statements that arrive after it."
+      },
+      {
+        "question": "How long do I have to dispute a CAM reconciliation statement?",
+        "answer": "Your lease's audit rights provision defines the dispute window - typically 12 to 18 months after receiving the reconciliation statement. Beyond this window, most leases deem the reconciliation final and binding. Do not let the audit window pass without at least reviewing the statement against your lease's expense definitions. If you identify potential overcharges, send a written notice of your intent to exercise audit rights before the window closes, even if the full audit is not complete."
+      },
+      {
+        "question": "What is a gross-up provision in a CAM reconciliation statement?",
+        "answer": "A gross-up provision allows the landlord to calculate variable operating expenses as if the building were at a defined occupancy level - typically 90% to 95% - rather than actual occupancy. The rationale is that some operating expenses (property management, security, exterior lighting) are relatively fixed regardless of how many tenants are in the building. Without gross-up, tenants in a half-occupied building would bear an inflated share of fixed costs that will redistribute when the building fills. A proper gross-up applies only to variable expenses and only to the portion that genuinely varies with occupancy - not to every line item on the expense statement."
+      }
+    ]
+  },
+  {
+    "title": "Types of Commercial Leases: NNN, Gross, Modified Gross, and Ground Leases Explained",
+    "slug": "types-of-commercial-leases",
+    "description": "The five main types of commercial leases - NNN, gross, modified gross, percentage, and ground - have very different cost structures and risk profiles. Here's how each works.",
+    "publishedAt": "2026-04-10",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-types",
+    "tags": [
+      "types of commercial leases",
+      "NNN lease",
+      "gross lease",
+      "modified gross lease"
+    ],
+    "readingTime": 9,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the most common type of commercial lease?",
+        "answer": "Triple net (NNN) leases are the most common structure for single-tenant retail, industrial, and net lease investment properties. Modified gross leases are the most common structure for multi-tenant office buildings, where the landlord covers structural expenses and the tenant pays for utilities and janitorial within their space. Pure gross leases are less common and typically found in smaller or older office buildings. Percentage leases are standard in enclosed shopping malls and food service retail. The 'most common' structure depends heavily on property type and market."
+      },
+      {
+        "question": "Which type of commercial lease is best for a tenant?",
+        "answer": "A gross lease offers tenants the most cost predictability - one payment covers everything. But 'best' depends on your priorities. If you want to control your own maintenance and trade cost variability for a lower base rent, a NNN lease may result in lower total occupancy cost if the property is well-maintained and expenses are reasonable. The worst outcome for tenants is an uncapped NNN lease on a property with aging systems, where CAM charges escalate unpredictably. For most tenants without real estate expertise, a modified gross lease with clearly defined expense stops is the best balance of predictability and reasonable base rent."
+      },
+      {
+        "question": "How can you tell what type of commercial lease you have from the lease document?",
+        "answer": "The lease type is usually identified in the recitals or in the base rent section. Look for language like 'triple net,' 'NNN,' 'gross lease,' or 'modified gross.' More reliably, look at the operating expense provisions: if the tenant is responsible for property taxes, insurance, and maintenance on top of base rent, it is NNN. If the tenant pays only base rent and the landlord covers operating expenses, it is gross. If there is an expense stop - 'Tenant pays operating expenses in excess of $X per square foot' - it is likely a modified gross or base year gross lease. If no clear language appears, read the expense allocation provisions carefully and classify based on who actually pays what."
+      }
+    ]
+  },
+  {
+    "title": "What Is a Commercial Lease? Key Terms, Types, and What to Watch For",
+    "slug": "what-is-a-commercial-lease",
+    "description": "A commercial lease is a legally binding contract between a landlord and a business tenant. Learn the key terms, lease types, and critical clauses before you sign.",
+    "publishedAt": "2026-04-10",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "commercial lease",
+      "what is a commercial lease",
+      "commercial lease basics"
+    ],
+    "readingTime": 9,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What makes a commercial lease different from a residential lease?",
+        "answer": "Commercial leases are largely unregulated compared to residential leases. There is no federal framework governing commercial lease terms - no implied warranty of habitability, no mandated notice periods, no automatic renewal protections. Everything is negotiated. A residential tenant has statutory protections even when they sign a terrible lease; a commercial tenant has only the rights they negotiate into the document itself. This makes reading and understanding the lease before signing critically important."
+      },
+      {
+        "question": "How long is a typical commercial lease?",
+        "answer": "Commercial lease terms vary significantly by property type and tenant size. Retail leases commonly run 5 to 10 years with renewal options. Office leases in Class A buildings typically run 5 to 7 years for smaller tenants and 10 to 15 years for larger floor tenants. Industrial and warehouse leases often run 3 to 10 years. Ground leases run 30 to 99 years. Short-term (1–3 year) commercial leases exist primarily in flex space and coworking contexts, but standard market leases are 5-year minimum to justify landlord tenant improvement contributions."
+      },
+      {
+        "question": "What happens if a landlord breaches a commercial lease?",
+        "answer": "Commercial lease remedies for landlord breach are governed by the lease itself and applicable state law. Common landlord breaches include failure to maintain the building, failure to deliver quiet enjoyment, violation of exclusive use provisions, and improper CAM charges. A tenant's remedies typically include: sending written notice of default and giving the landlord a cure period (usually 30 days), withholding rent only if the lease explicitly permits it and state law allows it, seeking specific performance in court, or terminating the lease if the breach is material. Never withhold rent without legal advice - in most states, rent withholding without proper procedure triggers a tenant default."
+      }
+    ]
+  },
+  {
+    "title": "AI Lease Abstraction: How It Works, Confidence & Cost (2026)",
+    "slug": "ai-lease-abstraction-guide",
+    "description": "AI lease abstraction extracts 126 structured fields from commercial lease PDFs in minutes, with confidence scoring for targeted review.",
+    "publishedAt": "2026-04-06",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "ai lease abstraction",
+      "ai lease abstraction software",
+      "ai lease abstraction services",
+      "automated lease abstraction",
+      "lease abstraction"
+    ],
+    "readingTime": 9,
+    "featured": true,
+    "funnelStage": "mofu",
+    "sources": [
+      {
+        "title": "Prophia Plans & Pricing",
+        "url": "https://www.prophia.com/pricing",
+        "publisher": "Prophia",
+        "checkedAt": "2026-06-11"
+      },
+      {
+        "title": "MRI Contract Intelligence Software",
+        "url": "https://www.mrisoftware.com/products/contract-intelligence/",
+        "publisher": "MRI Software",
+        "checkedAt": "2026-06-11"
+      },
+      {
+        "title": "LeaseLens: Free AI Lease Abstraction & Summary",
+        "url": "https://www.linkedin.com/posts/noahwaisberg_free-ai-lease-abstraction-summary-leaselens-activity-7062515813148225536-D65B",
+        "publisher": "LinkedIn",
+        "checkedAt": "2026-06-11"
+      }
+    ],
+    "faq": [
+      {
+        "question": "What is AI lease abstraction?",
+        "answer": "AI lease abstraction is the automated process of using vision-capable AI to read commercial lease PDFs end-to-end - scanned or digital, no separate OCR step - and extract structured data fields. Instead of a paralegal manually reading a 90-page lease and filling out a template over 4-8 hours, the AI processes the same document in 5-15 minutes and returns 126 structured fields with per-field confidence scores. Lextract runs three independent passes: a primary extraction, an adversarial validation pass that re-reads the PDF to flag errors, and an escalation pass on disputed critical fields."
+      },
+      {
+        "question": "How accurate is AI lease abstraction?",
+        "answer": "Purpose-built AI lease abstraction tools return confidence-scored field extraction on standard commercial leases (NNN, gross, modified gross) with high-quality PDFs. Ground leases and heavily amended leases score lower confidence. Low-resolution scans drop to lower confidence. Manual first-pass accuracy varies by reviewer, document complexity, and QA process. The key advantage of AI is not just extraction speed but per-field confidence scores - reviewers know exactly which fields to verify rather than re-reading the full document."
+      },
+      {
+        "question": "How much does AI lease abstraction cost?",
+        "answer": "AI lease abstraction tools range from $15 per lease (Lextract, pay-per-use) to $25 per lease (LeaseLens export). Enterprise platforms like Prophia and MRI Contract Intelligence use subscription pricing negotiated via sales. Traditional outsourced abstraction services vary by provider, field scope, and QA depth. Lextract's 10-pack price reduces a 200-lease portfolio to $2,400 in extraction fees."
+      },
+      {
+        "question": "What is AI lease abstraction software vs. services?",
+        "answer": "AI lease abstraction software is a self-serve tool where you upload a lease PDF and receive structured output you review yourself - typically in 5-15 minutes at $15-50 per lease. AI lease abstraction services combine AI with managed human review - abstractors validate the AI output before delivery, turnaround is 1-3 business days, and cost is $75-200 per lease. Software is appropriate for teams comfortable reviewing AI output; services are appropriate for institutional transactions requiring full liability coverage."
+      },
+      {
+        "question": "What fields does AI lease abstraction extract?",
+        "answer": "Purpose-built AI lease abstraction tools extract 80-200+ fields from commercial leases. Lextract extracts 126 curated fields across 16 categories: parties and premises, financial terms, operating expenses, critical dates, renewal and termination options, CAM provisions, insurance requirements, use restrictions, parking, utilities, signage, assignment rights, default and remedies, and special provisions. General-purpose AI assistants can identify some of these fields but return unstructured narrative output without a fixed schema."
+      }
+    ]
+  },
+  {
+    "title": "CAM Reconciliation: How the Annual Process Works",
+    "slug": "cam-reconciliation-guide",
+    "description": "CAM reconciliation compares estimated vs. actual operating expenses in NNN leases. Learn the timeline, how to read a statement, common errors, and how to dispute overcharges.",
+    "publishedAt": "2026-04-06",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "cam-reconciliation",
+    "tags": [
+      "cam reconciliation",
+      "what is cam reconciliation",
+      "cam reconciliation process",
+      "NNN lease",
+      "common area maintenance",
+      "lease abstraction"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is CAM reconciliation?",
+        "answer": "CAM reconciliation is the annual process of comparing the estimated common area maintenance charges collected from tenants throughout the year against the landlord's actual operating expenses. If actual expenses exceeded estimates, tenants owe additional payment (true-up). If actual expenses were lower than estimates, tenants receive a credit or refund. Most NNN and modified gross leases require the landlord to complete reconciliation and deliver a statement within 90–120 days after the lease year ends."
+      },
+      {
+        "question": "How does CAM reconciliation work?",
+        "answer": "CAM reconciliation works in four steps: (1) During the year, tenants pay monthly CAM estimates based on the landlord's projection. (2) After year-end, the landlord totals all actual operating expenses in the CAM pool. (3) The landlord calculates each tenant's pro-rata share of actual expenses and subtracts the estimates already paid. (4) Tenants with a positive balance (underpaid) receive a bill; tenants with a negative balance (overpaid) receive a credit or refund, depending on the lease terms."
+      },
+      {
+        "question": "When is CAM reconciliation due?",
+        "answer": "Most commercial leases require CAM reconciliation statements to be delivered 90–120 days after the end of the lease year (which may be calendar year or lease anniversary year). A landlord who misses this deadline may forfeit the right to collect underpayments for that year - this provision is included in well-negotiated tenant-favorable leases. Tenants should track the reconciliation deadline and send a written notice if the statement is late."
+      },
+      {
+        "question": "How do I read a CAM reconciliation statement?",
+        "answer": "A CAM reconciliation statement has four components: (1) Total operating expenses - the list of all costs incurred in the CAM pool during the year, with line items by category. (2) Gross-up calculation - if the lease allows expense gross-up, the adjustment to normalize expenses to a defined occupancy level. (3) Your pro-rata share - your rentable SF divided by total building rentable SF (or grossed-up area). (4) Reconciliation - your share of actual expenses minus your estimated payments, yielding the amount owed or the credit amount."
+      },
+      {
+        "question": "What is a CAM reconciliation audit?",
+        "answer": "A CAM reconciliation audit is a formal examination of the landlord's expense records to verify that the amounts billed in the reconciliation statement match actual, lease-eligible expenses. Tenants have the right to audit under most NNN leases within 12 to 18 months of receiving the reconciliation statement. CAM audits can surface billing errors in the landlord-prepared reconciliation when charges do not match the lease. If the recovery exceeds the threshold specified in the lease, the landlord may be required to pay the tenant's audit costs."
+      }
+    ]
+  },
+  {
+    "title": "Commercial Lease Audit: How to Review Your Lease for Errors",
+    "slug": "commercial-lease-audit-guide",
+    "description": "A commercial lease audit verifies that landlord charges and lease administration match what the lease actually requires. Learn when to audit, what to check, and what errors cost tenants the most.",
+    "publishedAt": "2026-04-06",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "cam-audit",
+    "tags": [
+      "commercial lease audit",
+      "lease audit",
+      "lease audit checklist",
+      "CAM audit",
+      "lease abstraction"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is a commercial lease audit?",
+        "answer": "A commercial lease audit is a systematic review of a commercial lease and the landlord's associated charges to verify that billing, administration, and operating expense pass-throughs match what the lease contractually requires. It covers CAM reconciliation accuracy, rent escalation calculations, lease term compliance, and critical date tracking. Most lease audits are triggered by CAM reconciliation statements that show unexpected charges, but proactive audits at lease signing prevent overpayments from the start."
+      },
+      {
+        "question": "How do you audit a commercial lease?",
+        "answer": "Auditing a commercial lease involves four steps: (1) Obtain a structured abstract of the lease identifying the exact contractual requirements for rent, CAM, escalation, and expense definitions. (2) Gather all landlord billing records - reconciliation statements, invoices, property tax bills, insurance certificates. (3) Compare actual charges against lease requirements line by line, identifying any expense that falls outside the permitted CAM definition, any calculation methodology inconsistency, or any fee above a capped rate. (4) Document findings in a written audit report and present to the landlord for credit or correction."
+      },
+      {
+        "question": "What is a lease audit checklist?",
+        "answer": "A lease audit checklist covers: rent escalation calculations (verified against the lease schedule), CAM expense eligibility (each line item against the CAM definition), management fee vs. lease cap, pro-rata share denominator accuracy, gross-up calculation methodology, operating expense exclusions (capital expenditures, insurance-covered costs, other tenant costs), reconciliation statement delivery deadline, audit rights window status, and critical date compliance (renewal notice deadlines, TI draw deadlines, lease expiration)."
+      },
+      {
+        "question": "When should you audit a commercial lease?",
+        "answer": "The most productive times to audit a commercial lease: (1) At lease signing - use AI abstraction to extract all contractual terms and build a complete data baseline before any charges are incurred. (2) Annual CAM reconciliation - within the audit rights window (typically 12–18 months of receiving the statement). (3) Before lease renewal - audit the full lease term for accumulated overcharges, which strengthens renewal negotiating position. (4) Before lease assignment or sale - verify all landlord obligations have been met and no outstanding disputes exist."
+      }
+    ]
+  },
+  {
+    "title": "Lease Abstraction Automation: How AI Replaces Manual Extraction",
+    "slug": "lease-abstraction-automation",
+    "description": "Lease abstraction automation uses vision-capable AI to extract structured fields from lease PDFs in minutes. Learn how it works, what can be automated vs. what needs human review, and ROI benchmarks.",
+    "publishedAt": "2026-04-06",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease abstraction automation",
+      "automated lease abstraction",
+      "automated commercial lease abstraction software",
+      "ai lease abstraction",
+      "lease abstraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is lease abstraction automation?",
+        "answer": "Lease abstraction automation is the use of vision-capable AI to automatically extract structured data fields from commercial lease PDFs without manual data entry. Automated tools process a commercial lease in 5-15 minutes and return 126 structured fields with per-field confidence scores, replacing 4-8 hours of manual paralegal work per lease."
+      },
+      {
+        "question": "What is automated commercial lease abstraction software?",
+        "answer": "Automated commercial lease abstraction software is a purpose-built tool that uses a vision-capable AI model to read lease PDFs natively (scanned or digital, no separate OCR step), identify and extract material data fields against a fixed schema, and produce a per-field confidence score for every extraction. Leading tools include Lextract (126 fields, $15/lease), Prophia (enterprise portfolio platform), and LeaseLens (200+ fields, free view tier). These tools produce structured output in formats importable into property management systems."
+      },
+      {
+        "question": "What can be automated in lease abstraction?",
+        "answer": "Lease abstraction automation handles three of four process steps reliably: (1) document intake and AI reading of the PDF, (2) field identification and value extraction for standard data points (dates, dollar amounts, parties, addresses) via a primary extraction pass and an adversarial validation pass, and (3) output formatting and PMS import. The fourth step - quality review - still requires human judgment, but automation compresses it significantly: confidence scores direct reviewers to the fields that warrant verification, reducing review time from 4-8 hours to 15-25 minutes."
+      },
+      {
+        "question": "What is the ROI of automating lease abstraction?",
+        "answer": "The ROI of lease abstraction automation is immediate and compounding. At $15/lease vs. $200/lease (outsourced service), a team processing 100 leases per year saves $18,000 annually. Time savings are equally significant: 100 leases at 3 hours each equals 300 hours of paralegal time, versus 25 minutes of review per AI-processed lease, saving 258 hours per year. For acquisition due diligence with 50 leases, automated abstraction compresses a 2-3 week process to 2-3 days."
+      }
+    ]
+  },
+  {
+    "title": "Lease Abstraction Companies: Top Providers Compared (2026)",
+    "slug": "lease-abstraction-companies",
+    "description": "The top lease abstraction companies in 2026, compared by service model, turnaround time, cost per lease, and best use case. Includes AI software vs. outsourced service comparison.",
+    "publishedAt": "2026-04-06",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease abstraction companies",
+      "lease abstraction services",
+      "lease abstraction",
+      "commercial lease abstraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "sources": [
+      {
+        "title": "Prophia Plans & Pricing",
+        "url": "https://www.prophia.com/pricing",
+        "publisher": "Prophia",
+        "checkedAt": "2026-06-11"
+      },
+      {
+        "title": "MRI Contract Intelligence Software",
+        "url": "https://www.mrisoftware.com/products/contract-intelligence/",
+        "publisher": "MRI Software",
+        "checkedAt": "2026-06-11"
+      },
+      {
+        "title": "Lease Abstraction",
+        "url": "https://www.realogicinc.com/lease-abstraction/",
+        "publisher": "Realogic",
+        "checkedAt": "2026-06-11"
+      },
+      {
+        "title": "RE BackOffice Lease Abstraction",
+        "url": "https://www.rebolease.com/commercial-real-estate-lease-administration-glossary/lease-abstraction",
+        "publisher": "RE BackOffice",
+        "checkedAt": "2026-06-11"
+      },
+      {
+        "title": "Commercial Lease Administration Services",
+        "url": "https://www.jll.com/en-us/services/leasing-for-tenants/lease-administration",
+        "publisher": "JLL",
+        "checkedAt": "2026-06-11"
+      }
+    ],
+    "faq": [
+      {
+        "question": "What do lease abstraction companies do?",
+        "answer": "Lease abstraction companies extract structured data from commercial lease PDFs - capturing dates, rent amounts, escalation schedules, CAM provisions, renewal options, and risk clauses into a standardized format. They serve CRE investors, property managers, lenders, and attorneys who need lease data organized for due diligence, portfolio management, or loan underwriting without spending 4-8 hours per lease on manual review."
+      },
+      {
+        "question": "How much do lease abstraction services cost?",
+        "answer": "Lease abstraction service costs range from $15 per lease (AI software, self-review) to negotiated pricing for AI-assisted managed services, traditional outsourced BPO services, and enterprise CRE platform engagements. The cost driver is the degree of human review: more human oversight means higher cost and slower turnaround."
+      },
+      {
+        "question": "What is the best lease abstraction company?",
+        "answer": "The best lease abstraction provider depends on your workflow. For fast structured data at low cost (due diligence, PMS import), Lextract delivers 126 fields with per-field confidence scores at $15/lease in 5-15 minutes. For institutional transactions requiring full human review and liability coverage, managed services from Realogic, RE BackOffice, or the CRE divisions of CBRE and JLL provide certified abstracts with 1-3 day turnaround at $75-$200/lease. For enterprise portfolio management, Prophia and MRI Contract Intelligence combine extraction with ongoing portfolio intelligence."
+      },
+      {
+        "question": "What is the difference between lease abstraction services and software?",
+        "answer": "Lease abstraction services are managed offerings where human abstractors (with or without AI assistance) review and certify the output before delivery - you receive a finished abstract, typically in 1-5 business days, at $75-$400 per lease. Lease abstraction software is a self-serve tool where you upload the lease PDF, the AI extracts the data in minutes, and you review the output yourself - typically at $15-$50 per lease. Services provide liability coverage and human certification; software provides speed and cost efficiency."
+      }
+    ]
+  },
+  {
+    "title": "Triple Net Lease (NNN): How It Works, What's Included & Calculator",
+    "slug": "triple-net-lease-guide",
+    "description": "A triple net lease (NNN) requires tenants to pay base rent plus property taxes, insurance, and maintenance. Learn how NNN leases work, what's included, and how they compare to gross leases.",
+    "publishedAt": "2026-04-06",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-types",
+    "tags": [
+      "triple net lease",
+      "NNN lease",
+      "what is a triple net lease",
+      "triple net lease vs gross lease",
+      "commercial lease types"
+    ],
+    "readingTime": 10,
+    "featured": true,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is a triple net lease?",
+        "answer": "A triple net lease (NNN lease) is a commercial lease structure in which the tenant pays base rent plus three additional expense categories: property taxes, building insurance, and maintenance/repairs. In a true NNN lease, the tenant bears all operating costs of the property above the base rent, making the landlord's income nearly passive. Triple net leases are most common in single-tenant retail properties, net lease investment properties, and industrial facilities."
+      },
+      {
+        "question": "How does a triple net lease work?",
+        "answer": "In a triple net lease, the landlord charges a lower base rent reflecting that the tenant covers operating expenses directly. The tenant pays monthly base rent plus estimated property tax and insurance amounts (often escrowed and reconciled annually) plus maintenance costs as incurred. At year end, the landlord reconciles actual expenses against estimates and the tenant pays any shortfall or receives a credit. The landlord's cash flow is predictable and close to passive; the tenant's total occupancy cost fluctuates with actual expenses."
+      },
+      {
+        "question": "What is included in a triple net lease?",
+        "answer": "A triple net lease includes three expense categories beyond base rent: (1) property taxes - the tenant pays their proportional share of real estate taxes on the property; (2) building insurance - the tenant pays their share of the landlord's property, casualty, and liability insurance premiums; (3) maintenance and repairs - the tenant covers common area maintenance (CAM) including parking lots, landscaping, roofing, and building systems. In a true NNN lease, structural repairs and capital expenditures may also fall to the tenant."
+      },
+      {
+        "question": "What is the difference between a triple net lease and a gross lease?",
+        "answer": "In a triple net lease, the tenant pays base rent plus property taxes, insurance, and maintenance expenses - total occupancy cost is higher than base rent and fluctuates with actual expenses. In a gross lease, the tenant pays a single all-inclusive rent and the landlord covers all operating expenses from that payment. NNN leases have lower base rents but variable total cost; gross leases have higher base rents but predictable total cost. For landlords, NNN leases provide more stable net income; for tenants, gross leases provide more predictable budgeting."
+      },
+      {
+        "question": "What is a triple net lease calculator?",
+        "answer": "A triple net lease calculator estimates a tenant's total annual occupancy cost by adding base rent to estimated NNN expenses. Basic formula: Annual NNN cost = (Base rent per SF × RSF) + (Property tax per SF × RSF) + (Insurance per SF × RSF) + (CAM per SF × RSF). For a 5,000 SF tenant with $15/SF base rent, $3/SF taxes, $1.50/SF insurance, and $4/SF CAM, total annual cost = $28.50/SF × 5,000 = $142,500, or approximately $11,875/month."
+      }
+    ]
+  },
+  {
+    "title": "How to Extract Data from a Commercial Lease PDF: 3 Methods Compared",
+    "slug": "how-to-extract-data-from-lease-pdf",
+    "description": "Three approaches to extracting structured data from commercial lease PDFs: manual, general-purpose AI, and purpose-built tools. Step-by-step with accuracy and cost comparisons.",
+    "publishedAt": "2026-04-01",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease extraction",
+      "PDF processing",
+      "lease data extraction",
+      "how-to"
+    ],
+    "readingTime": 9,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "How do you extract data from a commercial lease PDF?",
+        "answer": "Three methods: (1) Manual extraction by a paralegal reading the lease and filling a template, costing $90 to $250 per lease over 4 to 8 hours. (2) General-purpose AI assistants, which are fast but produce unstructured narratives without consistent field schemas or confidence scores. (3) Purpose-built lease extraction tools like Lextract, which use vision-capable AI to read the PDF natively and extract 126 structured fields with confidence scores at $15 per lease in 5 to 15 minutes."
+      },
+      {
+        "question": "Can ChatGPT extract data from a lease?",
+        "answer": "ChatGPT can read a lease and summarize its contents, but it produces unstructured text responses without a fixed field schema. Each run may use different field names, miss fields, or format data inconsistently. It has no confidence scoring, no red flag detection, and no structured export to JSON or Excel. For one-off questions about a lease, ChatGPT works. For systematic data extraction across multiple leases, a purpose-built tool is required."
+      },
+      {
+        "question": "What fields should you extract from a commercial lease?",
+        "answer": "At minimum, extract the 20 critical fields: landlord name, tenant name, premises address, rentable area, base rent, escalation type, commencement date, expiration date, lease term, lease structure (NNN/gross/modified gross), CAM cap, pro rata share, security deposit, renewal option, termination option, permitted use, restoration obligation, holdover rate, late fee, and governing law. A thorough extraction covers 126 fields including CAM exclusions, co-tenancy clauses, ROFR, and ASC 842 compliance data."
+      },
+      {
+        "question": "What is the most accurate way to extract lease data?",
+        "answer": "Purpose-built lease extraction tools that use vision-capable AI (the model reads the PDF natively, then a second adversarial validation pass re-reads it to flag errors) achieve confidence-scored extraction on standard commercial leases. They avoid the fatigue and inconsistency of manual extraction and the unstructured output of general-purpose AI, which lacks structured schemas and confidence scoring. Per-field confidence scores let reviewers target uncertain extractions instead of re-reading the full document."
+      }
+    ],
+    "updatedAt": "2026-04-01"
+  },
+  {
+    "title": "Lease Extraction for Due Diligence: Processing Acquisition Lease Stacks",
+    "slug": "lease-extraction-due-diligence",
+    "description": "How to extract structured data from 50 to 500 leases in an acquisition data room. Speed benchmarks, PDF quality issues, and rent roll reconciliation workflows.",
+    "publishedAt": "2026-04-01",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "lease extraction",
+      "due diligence",
+      "portfolio acquisition",
+      "rent roll verification"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "How do you extract lease data during due diligence?",
+        "answer": "Upload each lease PDF from the data room to a lease extraction tool like Lextract. The tool runs vision-capable AI against the PDF directly - no separate OCR step - to produce 126 structured fields per lease with confidence scores, plus an adversarial validation pass that catches errors. Export the results to Excel to cross-reference against the seller's rent roll and identify discrepancies in rent amounts, lease terms, CAM structures, and option dates."
+      },
+      {
+        "question": "How long does it take to extract data from an acquisition lease stack?",
+        "answer": "With purpose-built extraction software, each lease takes 5 to 15 minutes to process. A 100-lease portfolio can be fully extracted in 1 to 2 days including human review of low-confidence fields. Manual extraction of the same portfolio would take 200 to 400 paralegal hours spread over 4 to 8 weeks."
+      },
+      {
+        "question": "What lease data matters most for acquisition due diligence?",
+        "answer": "The critical extraction fields for due diligence are: base rent and escalation schedule (to verify the rent roll), lease expiration dates and renewal options (to model rollover risk), CAM structure and pro rata share (to verify expense reimbursement income), tenant improvement allowances and free rent (to calculate effective rent), and any termination or contraction options that reduce income certainty."
+      },
+      {
+        "question": "How do you reconcile extracted lease data against a seller rent roll?",
+        "answer": "Export extracted lease data to a spreadsheet and compare field by field against the seller's rent roll. Key reconciliation checks: does the extracted base rent match the rent roll amount? Do escalation dates align? Are square footage figures consistent? Do operating expense structures match the NNN/gross classification? Discrepancies indicate either seller errors, outdated rent rolls, or amendment provisions that the rent roll has not incorporated."
+      }
+    ],
+    "updatedAt": "2026-04-01"
+  },
+  {
+    "title": "Lease Extraction Template: The 126-Field Commercial Lease Checklist",
+    "slug": "lease-extraction-template",
+    "description": "A 126-field lease extraction template organized by category. Each field includes where to find it in the lease, common extraction errors, and whether ASC 842 requires it.",
+    "publishedAt": "2026-04-01",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease extraction",
+      "template",
+      "checklist",
+      "lease fields"
+    ],
+    "readingTime": 12,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What fields should a lease extraction template include?",
+        "answer": "A complete lease extraction template covers 126 fields across 16 categories: parties and property (10 fields), key dates and term (7), rent and escalations (13), CAM and operating expenses (15), options (12), tenant improvements (6), insurance and indemnity (6), assignment and subletting (6), default and remedies (6), exclusivity and co-tenancy (6), parking and common areas (5), utilities (6), signage and permitted use (5), miscellaneous (10), ASC 842 compliance (8), and casualty, condemnation, and force majeure (5)."
+      },
+      {
+        "question": "Where do you find base rent in a commercial lease?",
+        "answer": "Base rent is defined in the rent section of the lease, typically titled 'Rent,' 'Base Rent,' 'Minimum Rent,' or 'Fixed Rent.' Look for a table or schedule showing annual amounts, monthly amounts, and per-RSF rates. If the lease has amendments, check the most recent amendment first, as it may override the original rent schedule entirely."
+      },
+      {
+        "question": "Which lease fields are required for ASC 842 compliance?",
+        "answer": "ASC 842 requires 8 specific fields: lease classification (finance vs. operating), discount rate (incremental borrowing rate), purchase option, variable lease payments, residual value guarantee, lease incentives received, short-term lease election, and lease term including reasonably certain renewal periods. These fields are in addition to the standard extraction fields like commencement date, payment schedule, and escalation terms."
+      }
+    ],
+    "updatedAt": "2026-04-01"
+  },
+  {
+    "title": "What Is Lease Extraction? The Technical Process Behind Lease Data",
+    "slug": "what-is-lease-extraction",
+    "description": "Lease extraction converts commercial lease PDFs into structured data using a vision-capable AI model. Learn how the pipeline works, what it produces, and how it differs from lease abstraction.",
+    "publishedAt": "2026-04-01",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease extraction",
+      "lease data extraction",
+      "document processing",
+      "vision AI"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is lease extraction?",
+        "answer": "Lease extraction is the process of reading a commercial lease PDF and converting its contents into structured data fields like tenant name, base rent, escalation schedule, CAM provisions, and renewal options. Modern lease extraction uses a vision-capable AI model that reads the PDF natively - scanned or digital, no separate OCR step - and extracts 126+ named fields with confidence scores."
+      },
+      {
+        "question": "Is lease extraction the same as lease abstraction?",
+        "answer": "Yes. Lease extraction and lease abstraction describe the same process. 'Extraction' emphasizes the technical data-processing step of pulling information from a document. 'Abstraction' is the industry-standard term used by CRE professionals, paralegals, and property managers. Both produce structured data from unstructured lease documents."
+      },
+      {
+        "question": "How long does lease extraction take?",
+        "answer": "Manual lease extraction by a paralegal takes 4 to 8 hours per lease. AI-powered lease extraction tools like Lextract process a commercial lease in 5 to 15 minutes with confidence-scored field extraction on standard formats."
+      },
+      {
+        "question": "What technology does lease extraction software use?",
+        "answer": "Modern lease extraction software uses a single vision-capable AI model that reads the PDF directly - no separate OCR step. The AI sees page layout, tables, signatures, and stamps the way a human reviewer does, then extracts named fields against a fixed schema with source references and confidence scores. Lextract runs three independent passes: a primary extraction, an adversarial validation pass that re-reads the PDF to flag errors, and an escalation pass on disputed critical fields."
+      }
+    ],
+    "updatedAt": "2026-04-01"
+  },
+  {
+    "title": "AI Lease Review: How It Works, What It Catches, and When to Use It",
+    "slug": "ai-lease-review",
+    "description": "AI lease review extracts structured data from commercial lease PDFs in minutes. Here is how it works, what it catches, what it misses, and how to use it in professional workflows.",
+    "publishedAt": "2026-03-24",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "ai lease review",
+      "AI lease abstraction",
+      "commercial lease review",
+      "automated lease review"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is AI lease review?",
+        "answer": "AI lease review uses vision-capable AI to read commercial lease PDFs natively - scanned or digital, no separate OCR step - and automatically extract structured data, identify risky provisions, and flag uncertain extractions. It replaces the first-pass manual read with AI extraction, leaving human review focused on confidence-flagged fields and high-stakes provisions. Purpose-built tools like Lextract extract 126 fields with per-field confidence scores, an adversarial validation pass that re-reads the PDF to flag errors, and 20 automated red flag checks, typically in 5-15 minutes."
+      },
+      {
+        "question": "Can AI review a commercial lease?",
+        "answer": "Yes. AI-powered tools extract structured data, identify risk provisions, and provide confidence scores on commercial lease PDFs. Lextract extracts 126 fields from any commercial lease PDF, typically in 5-15 minutes, with confidence-scored extraction on standard formats. AI review does not replace attorney judgment on complex or unusual provisions - it accelerates the extraction and risk triage steps."
+      },
+      {
+        "question": "What is the difference between AI lease review and ChatGPT lease review?",
+        "answer": "Purpose-built AI lease review tools (Lextract, Prophia, LeaseLens) use structured extraction schemas that return named fields in a consistent format with confidence scoring and automated red flag detection. ChatGPT produces unstructured narrative summaries without a fixed schema, no confidence scores, and no audit trail. For professional workflows requiring exportable data or risk triage, purpose-built tools are required."
+      },
+      {
+        "question": "How accurate is AI lease review?",
+        "answer": "Purpose-built AI lease review tools achieve confidence-scored field extraction on standard commercial leases (NNN, gross, modified gross) with clean scans. Ground leases and heavily amended leases score lower confidence. Low-resolution scans drop to lower confidence. Per-field confidence scores let reviewers identify uncertain extractions without re-reading the full document."
+      }
+    ]
+  },
+  {
+    "title": "Commercial Lease Review: What to Check Before You Sign (or Abstract)",
+    "slug": "commercial-lease-review",
+    "description": "A complete guide to commercial lease review for CRE professionals. What to check, which clauses carry the most risk, and how AI accelerates the review process.",
+    "publishedAt": "2026-03-24",
+    "updatedAt": "2026-03-24",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "commercial lease review",
+      "lease review",
+      "ai lease review",
+      "commercial lease analysis",
+      "lease abstraction"
+    ],
+    "readingTime": 9,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is a commercial lease review?",
+        "answer": "A commercial lease review is the process of reading a commercial lease document and evaluating every material clause for financial risk, compliance obligations, and operational impact. It covers rent structure, operating expense exposure, critical dates, renewal and termination rights, assignment restrictions, and risk provisions like personal guarantees and relocation clauses."
+      },
+      {
+        "question": "How long does a commercial lease review take?",
+        "answer": "A thorough manual commercial lease review by an experienced attorney or CRE professional takes 2–6 hours depending on lease complexity and length (typically 60–120 pages). AI-assisted review using tools like Lextract extracts 126 structured fields typically in 5–15 minutes, with targeted human review of flagged fields taking an additional 15–25 minutes."
+      },
+      {
+        "question": "What should I look for in a commercial lease review?",
+        "answer": "Key areas in a commercial lease review include: rent structure and escalation schedule, CAM structure and caps (NNN vs. gross), operating expense inclusions and exclusions, renewal option terms and notice deadlines, early termination rights and fees, personal guarantee scope, assignment and subletting rights, permitted use restrictions, co-tenancy and exclusivity provisions, and red flags like uncapped CAM, missing audit rights, or one-sided termination rights."
+      },
+      {
+        "question": "Can AI replace a lawyer for commercial lease review?",
+        "answer": "AI replaces the manual data extraction step, not attorney judgment. Tools like Lextract extract 126 structured fields and flag 20 risk provision types, typically in 5-15 minutes. Attorneys and advisors still need to evaluate the negotiability, market context, and deal implications of flagged provisions. AI accelerates the review process by turning full-document reading into targeted review; it does not replace professional judgment on complex or high-stakes provisions."
+      }
+    ]
+  },
+  {
+    "title": "Lease Abstract Example: What a Complete Commercial Lease Abstract Looks Like",
+    "slug": "lease-abstract-example",
+    "description": "See a complete commercial lease abstract example with all 126 fields annotated. Understand what gets extracted, why it matters, and how to generate one in minutes.",
+    "publishedAt": "2026-03-24",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease abstract example",
+      "lease abstraction",
+      "commercial lease abstract",
+      "what is a lease abstract"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What does a lease abstract look like?",
+        "answer": "A commercial lease abstract is a structured summary organized into categories: parties and premises, financial terms, operating expenses, critical dates, options and rights, insurance, and special provisions. Each field has a specific value extracted from the source lease. Purpose-built tools like Lextract return 126 fields in a standardized format exportable to Excel, Word, or PDF."
+      },
+      {
+        "question": "What is included in a lease abstract?",
+        "answer": "A complete lease abstract includes: tenant and landlord entity names, property address and suite, rentable and usable square footage, base rent schedule, escalation terms (CPI, fixed %), security deposit, tenant improvement allowance, lease commencement and expiration dates, renewal option deadlines, CAM structure (NNN/gross/modified gross), CAM caps, operating expense exclusions, insurance minimums, special rights (ROFR, expansion, termination), and risk provisions (personal guarantee, relocation rights)."
+      },
+      {
+        "question": "How do I create a lease abstract?",
+        "answer": "To create a lease abstract manually, read the full lease document and populate a template with key data points across all material categories. Alternatively, upload the lease PDF to Lextract and receive 126 structured fields in minutes for $15 - including confidence scores and automated red flag detection."
+      },
+      {
+        "question": "What is the difference between a lease abstract and a lease summary?",
+        "answer": "A lease abstract is a structured, field-by-field extraction of material lease terms into a standardized format suitable for import into property management systems or financial models. A lease summary is a narrative description of key terms, usually written in prose. Abstracts are used for database entry, due diligence tracking, and portfolio management. Summaries are used for quick reads and client communications."
+      }
+    ]
+  },
+  {
+    "title": "AI Lease Abstraction Accuracy: Benchmarks and What to Expect",
+    "slug": "ai-lease-abstraction-accuracy-benchmarks",
+    "description": "What accuracy can you realistically expect from AI lease abstraction tools? We break down field-level accuracy rates, where AI excels, where it struggles, and how to validate output.",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "AI lease abstraction",
+      "accuracy",
+      "benchmarks",
+      "lease abstraction quality",
+      "lease extraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "sources": [
+      {
+        "title": "Lextract 126-field schema",
+        "url": "https://lextract.io/fields",
+        "publisher": "Lextract",
+        "checkedAt": "2026-05-31"
+      },
+      {
+        "title": "Commercial lease abstraction pricing",
+        "url": "https://lextract.io/resources/articles/how-much-does-lease-abstraction-cost",
+        "publisher": "Lextract",
+        "checkedAt": "2026-05-31"
+      }
+    ],
+    "faq": [
+      {
+        "question": "How accurate is AI lease abstraction?",
+        "answer": "Purpose-built AI lease abstraction tools achieve confidence-scored field extraction on standard commercial leases (typed NNN, gross, modified gross). Ground leases and heavily amended leases score lower-confidence. Low-resolution scans drop to lower-confidence. For comparison, trained paralegals achieve variable first-pass accuracy on first-pass manual abstraction. Lextract returns confidence-scored extractions on standard formats."
+      },
+      {
+        "question": "Is AI lease abstraction more accurate than humans?",
+        "answer": "AI lease abstraction delivers confidence-scored extraction on standard commercial leases. Manual first-pass accuracy varies by reviewer, document complexity, and QA process. For complex leases with unusual structures or extensive amendments, senior human review on top of AI extraction is best practice."
+      },
+      {
+        "question": "What is field-level accuracy in lease abstraction?",
+        "answer": "Field-level accuracy means that a specific percentage of extracted fields match the ground truth value in the source lease document. In a 126-field extraction, some fields can still require manual verification even when the overall result is high confidence. Confidence scoring addresses this: tools like Lextract provide a score (0-100) per field, allowing reviewers to focus on uncertain fields rather than re-reading the full document."
+      },
+      {
+        "question": "How do you validate AI lease abstraction output?",
+        "answer": "The most efficient validation uses confidence scores to focus review: (1) check all fields scoring below 85; (2) cross-reference high-stakes fields (rent, dates, options) regardless of confidence score; (3) spot-check 10-15% of remaining fields. For a 126-field extraction, this workflow takes 15-25 minutes vs. 4-8 hours for full manual re-review."
+      }
+    ]
+  },
+  {
+    "title": "7 Best AI Lease Abstraction Tools (2026) - Ranked by Structured Output and Workflow Fit",
+    "slug": "best-ai-lease-abstraction-tools-2026",
+    "description": "We ranked the best AI lease abstraction tools for 2026 by structured field coverage, confidence scoring, pricing model, export readiness, and actual CRE workflow fit.",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-04-17",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "best ai lease abstraction tool",
+      "ai lease abstraction software",
+      "lease abstraction tool comparison",
+      "lease abstraction software",
+      "AI lease abstraction",
+      "best lease extraction software",
+      "lease extraction tool",
+      "lease extraction"
+    ],
+    "readingTime": 11,
+    "featured": true,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the best AI tool for lease abstraction?",
+        "answer": "For CRE teams that need structured, export-ready lease data, Lextract is the strongest overall choice because it combines fixed field extraction, confidence scoring, red flag detection, and pay-per-lease pricing."
+      },
+      {
+        "question": "Is there a free AI lease abstraction tool?",
+        "answer": "There are free or partially free tools for quick summaries, but most free options do not deliver structured field-by-field output with confidence scoring and workflow-ready exports."
+      },
+      {
+        "question": "How accurate is AI lease abstraction?",
+        "answer": "Purpose-built AI lease abstraction tools typically perform well on standard commercial leases, but accuracy varies by document quality, amendment complexity, and whether the tool returns visible confidence or exception signals."
+      },
+      {
+        "question": "How much does AI lease abstraction cost?",
+        "answer": "Pricing ranges from free summary tools to per-lease products and enterprise subscriptions. The main pricing divide is between pay-per-lease tools and platforms that require annual contracts."
+      },
+      {
+        "question": "What fields does AI lease abstraction extract?",
+        "answer": "Purpose-built tools extract parties, rent schedules, CAM language, critical dates, option terms, insurance obligations, use restrictions, and other workflow-critical provisions."
+      },
+      {
+        "question": "How does AI-powered lease extraction work?",
+        "answer": "AI-powered lease extraction reads the lease PDF, identifies target provisions, normalizes values into a fixed schema, and ideally flags uncertain or conflicting fields for review."
+      }
+    ]
+  },
+  {
+    "title": "Free AI Lease Abstraction Tools: What They Can (and Can't) Do",
+    "slug": "free-ai-lease-abstraction-tools-what-they-miss",
+    "description": "Free AI lease abstraction tools are fast and easy - but they have real limitations. Here is what free tools deliver, what they miss, and when you need structured output instead.",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "AI lease abstraction free",
+      "free lease abstraction",
+      "AI lease review",
+      "ChatGPT lease abstraction"
+    ],
+    "readingTime": 6,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Free AI Lease Abstraction Tools?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Free AI Lease Abstraction Tools?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "How to Abstract a Retail Lease: Step-by-Step Guide",
+    "slug": "how-to-abstract-retail-lease",
+    "description": "Retail leases include percentage rent, co-tenancy clauses, exclusivity, and kick-out rights that office leases don't. Step-by-step guide to abstracting all retail-specific provisions.",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-03-21",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "retail lease abstraction",
+      "retail lease",
+      "lease abstraction",
+      "percentage rent"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from How to Abstract a Retail Lease?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with How to Abstract a Retail Lease?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Lease Abstraction Services vs. AI Software: When to Use Each",
+    "slug": "lease-abstraction-services-vs-ai-software",
+    "description": "Managed lease abstraction services vs. self-serve AI software - a practical comparison of cost, speed, accuracy, and which approach fits your workflow.",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease abstraction services",
+      "AI lease abstraction",
+      "managed services",
+      "outsourced lease abstraction",
+      "lease extraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Lease Abstraction Services vs. AI Software?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Lease Abstraction Services vs. AI Software?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Lextract Benchmark Report 2026: AI Lease Abstraction Performance Data",
+    "slug": "lextract-benchmark-report-2026",
+    "description": "Original benchmark data on AI lease abstraction speed, confidence scoring, and 126-field extraction coverage.",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "AI lease abstraction",
+      "lease abstraction accuracy",
+      "benchmarks",
+      "lease abstraction speed",
+      "lease extraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "sources": [
+      {
+        "title": "Lextract 126-field schema",
+        "url": "https://lextract.io/fields",
+        "publisher": "Lextract",
+        "checkedAt": "2026-05-31"
+      },
+      {
+        "title": "Commercial lease abstraction pricing",
+        "url": "https://lextract.io/resources/articles/how-much-does-lease-abstraction-cost",
+        "publisher": "Lextract",
+        "checkedAt": "2026-05-31"
+      }
+    ],
+    "faq": [
+      {
+        "question": "What is the main takeaway from Lextract Benchmark Report 2026?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Lextract Benchmark Report 2026?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "ASC 842 Lease Data Requirements: What Your Auditor Needs",
+    "slug": "asc-842-lease-data-requirements",
+    "description": "A complete breakdown of the lease data fields required for ASC 842 compliance, what auditors verify, and how to prepare your lease data systematically.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "compliance",
+    "tags": [
+      "ASC 842",
+      "lease accounting",
+      "compliance"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from ASC 842 Lease Data Requirements?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with ASC 842 Lease Data Requirements?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "The Best Way to Convert a Lease PDF to Excel",
+    "slug": "best-way-convert-lease-pdf-excel",
+    "description": "Copy-paste fails on commercial lease PDFs. Here is the correct technical architecture for converting lease documents to structured Excel data.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease PDF to Excel",
+      "lease data extraction",
+      "lease abstraction"
+    ],
+    "readingTime": 6,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from The Best Way to Convert a Lease PDF to Excel?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with The Best Way to Convert a Lease PDF to Excel?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Free CAM Reconciliation Spreadsheet Template (2026)",
+    "slug": "cam-reconciliation-spreadsheet-template-2026",
+    "description": "What a proper CAM reconciliation spreadsheet needs to include, the most common calculation errors, and how to verify landlord CAM statements.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "cam-reconciliation",
+    "tags": [
+      "CAM reconciliation",
+      "CAM reconciliation template",
+      "commercial lease CAM"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Free CAM Reconciliation Spreadsheet Template (2026)?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Free CAM Reconciliation Spreadsheet Template (2026)?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Why ChatGPT Is Not Enough for Commercial Lease Review",
+    "slug": "chatgpt-not-enough-lease-review",
+    "description": "ChatGPT can explain lease clauses but cannot produce a reliable, structured 126-field extraction. Here is what it can and cannot do for lease review.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "ChatGPT lease review",
+      "AI lease abstraction",
+      "lease abstraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Why ChatGPT Is Not Enough for Commercial Lease Review?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Why ChatGPT Is Not Enough for Commercial Lease Review?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Commercial Lease Data Entry Checklist: 126 Fields",
+    "slug": "commercial-lease-data-entry-checklist",
+    "description": "A complete commercial lease data entry checklist covering all 126 fields across 16 categories for property management systems and lease databases.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-administration",
+    "tags": [
+      "lease data entry",
+      "lease abstraction",
+      "lease administration"
+    ],
+    "readingTime": 10,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Commercial Lease Data Entry Checklist?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Commercial Lease Data Entry Checklist?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Commercial Lease Data Migration: From Spreadsheets to a PMS",
+    "slug": "commercial-lease-data-migration-spreadsheet-to-pms",
+    "description": "How to migrate commercial lease data from Excel spreadsheets into a property management system, including data preparation, mapping, and validation.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-administration",
+    "tags": [
+      "lease data migration",
+      "property management",
+      "Yardi"
+    ],
+    "readingTime": 9,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Commercial Lease Data Migration?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Commercial Lease Data Migration?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Commercial Lease Tracking with Airtable: Complete Setup Guide",
+    "slug": "commercial-lease-tracking-airtable",
+    "description": "How to build a commercial lease tracking database in Airtable from scratch, including field setup, views, and automations for critical date alerts.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-administration",
+    "tags": [
+      "Airtable lease tracking",
+      "lease database",
+      "lease administration"
+    ],
+    "readingTime": 9,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Commercial Lease Tracking with Airtable?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Commercial Lease Tracking with Airtable?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "DSCR Calculator for Commercial Real Estate Loans",
+    "slug": "dscr-calculator-commercial-real-estate",
+    "description": "How to calculate debt service coverage ratio for commercial real estate loans, with worked examples and how lease data affects DSCR calculations.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "DSCR",
+      "commercial real estate",
+      "due diligence"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from DSCR Calculator for Commercial Real Estate Loans?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with DSCR Calculator for Commercial Real Estate Loans?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "The Hidden Cost of Manual Lease Abstraction (2026 Analysis)",
+    "slug": "hidden-cost-manual-lease-abstraction",
+    "description": "A fully burdened cost analysis of manual lease abstraction by in-house staff, including opportunity cost, error rates, and scalability constraints.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease abstraction",
+      "lease administration",
+      "property management",
+      "lease extraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from The Hidden Cost of Manual Lease Abstraction (2026 Analysis)?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with The Hidden Cost of Manual Lease Abstraction (2026 Analysis)?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "How to Audit Your Landlord's CAM Statement (Step-by-Step Guide)",
+    "slug": "how-to-audit-landlord-cam-statement",
+    "description": "Step-by-step guide to auditing a commercial landlord's CAM reconciliation statement. Catch the 5 most common overcharges, know your audit rights, and dispute effectively.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "cam-audit",
+    "tags": [
+      "CAM audit",
+      "CAM reconciliation",
+      "CAM statement",
+      "commercial lease audit"
+    ],
+    "readingTime": 9,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "Do commercial tenants have the right to audit CAM charges?",
+        "answer": "Most commercial leases include an audit rights clause giving tenants the right to inspect the landlord's books and records supporting the CAM statement, typically within 12–24 months of receiving the statement. If your lease does not include an explicit audit right, you have limited recourse - this is one of the most important clauses to negotiate before signing."
+      },
+      {
+        "question": "How often do CAM audits find overcharges?",
+        "answer": "CAM audits can surface billing errors in institutional-property reconciliations when charges do not match the lease. Per-foot recoveries vary widely with property type, expense base, and contract terms; a 10% unsupported charge on $5/SF in CAM is $0.50/SF, which over a 5-year lease on 10,000 SF is roughly $25,000."
+      },
+      {
+        "question": "What is the deadline to dispute a CAM reconciliation?",
+        "answer": "Most leases require tenants to dispute a CAM statement within 90–180 days of receipt, and to request an audit within 12–24 months of receipt. After the dispute window closes, the statement is typically deemed accepted. Always check your specific lease for these deadlines - they vary and landlords are not required to remind you."
+      },
+      {
+        "question": "What expenses can landlords NOT include in CAM?",
+        "answer": "Expenses that should be excluded from CAM in a well-negotiated lease include: capital expenditures and major repairs, landlord's depreciation, leasing commissions and tenant improvement allowances, income taxes, costs covered by insurance proceeds, and costs attributable to other tenants' negligence. Typical management fee caps run 3–5% of gross revenues. Check your lease's exclusions list against the statement line by line."
+      }
+    ]
+  },
+  {
+    "title": "How to Import Lease Data into Yardi Voyager (Step-by-Step Guide)",
+    "slug": "import-lease-data-yardi-voyager",
+    "description": "Step-by-step guide to importing commercial lease data into Yardi Voyager from AI lease abstraction. Reduce manual entry errors and cut setup time in half.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-administration",
+    "tags": [
+      "Yardi Voyager",
+      "Yardi lease import",
+      "lease data import",
+      "lease administration",
+      "property management software"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "Can you import lease data into Yardi Voyager from a spreadsheet?",
+        "answer": "Yes. Yardi Voyager supports CSV-based data import through its standard import templates. The key is mapping your extracted lease fields to Yardi's expected field names before import. Errors in field mapping - especially date formats, rent amounts, and tenant IDs - are the most common cause of import failures and require manual correction in the system."
+      },
+      {
+        "question": "What lease fields does Yardi Voyager require for a basic tenant record?",
+        "answer": "A complete Yardi Voyager tenant record requires: tenant name and entity type, building and unit identifiers, lease commencement and expiration dates, base rent amount and payment frequency, rent escalation schedule, and security deposit amount. Optional but important fields include CAM estimate amounts, options (renewal, expansion, termination), and critical notice dates. Missing critical dates means Yardi cannot generate automated reminders for renewals and expirations."
+      },
+      {
+        "question": "How do you handle lease amendments when importing into Yardi?",
+        "answer": "Lease amendments should be applied as modifications to the original lease record in Yardi, not as new leases. Map each amendment's effective date and changed fields separately. The most common amendment fields - rent changes, term extensions, space expansions - each have dedicated modification workflows in Voyager. Import the original lease first, verify it, then apply amendments sequentially in chronological order."
+      }
+    ]
+  },
+  {
+    "title": "What Lease Data Does Juniper Square Need for Fund Reporting?",
+    "slug": "juniper-square-lease-data-fund-reporting",
+    "description": "The specific lease data fields required for accurate Juniper Square fund reporting, investor distributions, and portfolio analytics.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "Juniper Square",
+      "fund reporting",
+      "lease abstraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from What Lease Data Does Juniper Square Need for Fund Reporting??",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with What Lease Data Does Juniper Square Need for Fund Reporting??",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Lease Abstraction for CRE Attorneys: What Outside Counsel Needs",
+    "slug": "lease-abstraction-cre-attorneys",
+    "description": "How commercial real estate attorneys use lease abstraction to deliver faster client work, identify risks, and reduce time spent on data extraction.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "CRE attorney",
+      "lease review",
+      "lease abstraction"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Lease Abstraction for CRE Attorneys?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Lease Abstraction for CRE Attorneys?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "NNN Lease Cost Calculator: How to Calculate Your True Occupancy Cost",
+    "slug": "nnn-lease-calculator-occupancy-cost",
+    "description": "A NNN lease quotes base rent, but your actual monthly payment is typically 25–40% higher. Learn to calculate total occupancy cost - base rent + CAM + taxes + insurance - with worked examples.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-types",
+    "tags": [
+      "NNN lease",
+      "triple net lease",
+      "NNN lease calculator",
+      "commercial lease cost",
+      "NNN occupancy cost"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "How do you calculate NNN rent?",
+        "answer": "Total NNN occupancy cost = Base Rent + CAM Charges + Real Estate Taxes + Insurance (all expressed per square foot per year, then multiplied by your leased square footage). For example: $18.00 base + $4.50 CAM + $3.25 taxes + $0.60 insurance = $26.35/SF/year total. Divide by 12 for the monthly payment."
+      },
+      {
+        "question": "What does $18.00 NNN mean in commercial real estate?",
+        "answer": "$18.00 NNN means the base rent is $18.00 per square foot per year, and you pay property taxes, insurance, and CAM charges on top of that. On a 5,000 SF space, base rent is $65,000/year ($7,500/month), but total occupancy cost with NNN expenses typically runs $24–$28/SF - meaning the actual monthly payment would be $10,000–$11,667."
+      },
+      {
+        "question": "How much are CAM charges on a NNN lease?",
+        "answer": "CAM charges on a NNN lease typically range from $3–$8 per square foot per year depending on property type and market. Retail centers tend to run $4–$8/SF, suburban office is $4–$6/SF, and industrial is $1–$3/SF. These are estimates - actual CAM is reconciled to real expenses each year, so budget 10–15% above the initial estimate for potential reconciliation payments."
+      },
+      {
+        "question": "Is gross or NNN better for tenants?",
+        "answer": "A gross lease is generally more predictable for tenants because operating costs are bundled into base rent. A NNN lease exposes tenants to variable operating costs (CAM, taxes, insurance) that can increase significantly year over year. However, NNN base rents are typically lower than gross rents, and tenants who negotiate hard CAM caps and exclusions can limit their upside exposure. The better structure depends on the specific terms negotiated."
+      },
+      {
+        "question": "What is a typical NNN lease expense load?",
+        "answer": "The NNN expense load (CAM + taxes + insurance) typically runs $6–$14 per square foot per year in most US markets. Retail shopping center tenants often see the highest loads ($8–$14/SF). Industrial tenants pay the least ($2–$5/SF). Office tenants typically fall in the $5–$9/SF range. These numbers have increased meaningfully since 2022 due to property tax reassessments and rising insurance premiums."
+      }
+    ]
+  },
+  {
+    "title": "Portfolio Acquisition Lease Review: The 48-Hour Playbook",
+    "slug": "portfolio-acquisition-48-hour-lease-review",
+    "description": "How acquisition teams review and verify 20-50 leases in 48 hours during compressed commercial real estate due diligence periods.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "portfolio acquisition",
+      "due diligence",
+      "lease abstraction"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Portfolio Acquisition Lease Review?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Portfolio Acquisition Lease Review?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "How Property Managers Should Organize Lease Data Across 5+ Properties",
+    "slug": "property-managers-organize-lease-data",
+    "description": "A practical framework for property managers to organize and maintain accurate lease data across a multi-property commercial portfolio.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "property-management",
+    "tags": [
+      "property management",
+      "lease administration",
+      "lease database"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from How Property Managers Should Organize Lease Data Across 5+ Properties?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with How Property Managers Should Organize Lease Data Across 5+ Properties?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Rent Escalation Calculator: CPI, Fixed %, and Step Increases [Free Tool]",
+    "slug": "rent-escalation-calculator-guide",
+    "description": "Free rent escalation calculator for commercial leases. Model CPI-indexed, fixed annual %, and step rent schedules. See exactly how much your base rent will grow over years 1–10.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "rent escalation",
+      "base rent",
+      "commercial lease"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "How do you calculate rent escalation?",
+        "answer": "Rent escalation is calculated based on the escalation type in the lease. For fixed percentage escalation: New rent = Current rent × (1 + escalation rate). Example: $10,000/month × 1.03 = $10,300 for a 3% annual increase. For CPI escalation: New rent = Base rent × (Current CPI ÷ Base year CPI). For step rent: The new amount is stated explicitly in the lease schedule - just read the applicable year's amount. Always identify which type applies before calculating."
+      },
+      {
+        "question": "What is a typical rent escalation rate?",
+        "answer": "The most common fixed annual rent escalation rate in commercial leases is 3% per year, though rates of 2–4% are standard depending on market conditions and negotiating positions. CPI-based escalation is common in long-term ground leases and some office leases - CPI has averaged 2–4% annually over the past decade but spiked above 8% in 2022. Percentage rent escalations in retail leases typically trigger when gross sales exceed a natural breakpoint calculated from base rent divided by the percentage rent rate."
+      },
+      {
+        "question": "What is a rent escalation clause?",
+        "answer": "A rent escalation clause is a lease provision that specifies how and when base rent increases over the lease term. The three main types are: (1) fixed percentage increases (e.g., 3% annually), (2) CPI-indexed increases tied to the Consumer Price Index, and (3) step rent schedules with specific amounts for each year. Without an escalation clause, base rent stays flat for the entire lease term - which benefits the tenant but is uncommon in institutional lease deals."
+      }
+    ]
+  },
+  {
+    "title": "CAM Caps and Exclusions: Tenant Rep's Negotiation Guide (2026)",
+    "slug": "tenant-rep-cam-caps-exclusions",
+    "description": "CAM charges add 15–35% to occupancy costs. Learn how to negotiate a 3–5% annual cap on controllable expenses, which exclusions matter most, and how to verify they land in the executed lease.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-negotiation",
+    "tags": [
+      "CAM charges",
+      "lease negotiation",
+      "tenant representative"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from CAM Caps and Exclusions?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with CAM Caps and Exclusions?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "How to Track Commercial Lease Critical Dates in Excel",
+    "slug": "track-commercial-lease-critical-dates-excel",
+    "description": "A practical guide to building a commercial lease critical dates tracker in Excel, including which dates to track and how to set up expiration alerts.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-administration",
+    "tags": [
+      "lease critical dates",
+      "lease expiration tracking",
+      "lease administration"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from How to Track Commercial Lease Critical Dates in Excel?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with How to Track Commercial Lease Critical Dates in Excel?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "How to Verify a Rent Roll During Due Diligence",
+    "slug": "verify-rent-roll-due-diligence",
+    "description": "A systematic process for verifying an acquisition rent roll against executed lease documents, including common discrepancies and how to find them.",
+    "publishedAt": "2026-03-19",
+    "updatedAt": "2026-03-19",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "rent roll",
+      "due diligence",
+      "lease abstraction",
+      "lease extraction"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from How to Verify a Rent Roll During Due Diligence?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with How to Verify a Rent Roll During Due Diligence?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "ASC 842 Transition Checklist: What Finance Teams Need From Lease Abstracts",
+    "slug": "asc-842-transition-checklist",
+    "description": "What ASC 842 requires from lease abstracts: commencement dates, rent schedules, renewal options, discount rates, and embedded lease identification.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "compliance",
+    "tags": [
+      "ASC 842",
+      "lease accounting",
+      "lease abstraction",
+      "compliance",
+      "right-of-use asset"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from ASC 842 Transition Checklist?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with ASC 842 Transition Checklist?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "CAM Audit Checklist: 14 Items to Review Before Signing Off",
+    "slug": "cam-audit-checklist",
+    "description": "A practical 14-item CAM audit checklist covering gross-up clauses, exclusions, admin fee caps, and pro-rata share calculations for commercial tenants.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "cam-reconciliation",
+    "tags": [
+      "CAM audit",
+      "CAM reconciliation",
+      "lease abstraction",
+      "NNN lease",
+      "common area maintenance"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from CAM Audit Checklist?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with CAM Audit Checklist?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "CAM Charges Explained: What They Are, What's Included & How to Calculate",
+    "slug": "cam-charges-tenant-guide",
+    "description": "CAM charges are monthly operating expense pass-throughs in NNN leases. Learn what's included, how to calculate your share, and how to dispute overcharges.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "cam-reconciliation",
+    "tags": [
+      "CAM charges",
+      "common area maintenance",
+      "lease abstraction",
+      "NNN lease",
+      "what are cam charges",
+      "how to calculate cam charges"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What are CAM charges?",
+        "answer": "CAM charges (common area maintenance charges) are monthly fees tenants pay in NNN and modified gross leases to cover their proportional share of operating expenses for shared areas - parking lots, lobbies, landscaping, elevators, and building systems. A tenant occupying 5% of a building pays 5% of all CAM-eligible expenses."
+      },
+      {
+        "question": "What is included in CAM charges?",
+        "answer": "CAM charges typically include landscaping, parking lot maintenance, exterior lighting, janitorial for common areas, elevator maintenance, HVAC for shared spaces, property management fees, and security. What is excluded depends on the lease - tenants can negotiate to exclude capital expenditures, above-market management fees, and costs related to other tenants' spaces."
+      },
+      {
+        "question": "How do you calculate CAM charges?",
+        "answer": "CAM charges are calculated by multiplying the tenant's pro-rata share (tenant's rentable square footage ÷ total building rentable square footage) by the total annual CAM expenses. For example, a 5,000 SF tenant in a 100,000 SF building with $500,000 in annual CAM pays $25,000 per year ($500,000 × 5%), or approximately $2,083 per month."
+      },
+      {
+        "question": "What are excessive CAM charges?",
+        "answer": "Excessive CAM charges are landlord billings that exceed what the lease allows - including capital expenditures passed as operating expenses, management fees above the lease cap, costs not covered by the CAM definition, and expenses that should be covered by insurance. CAM audits can surface these errors by comparing invoices, contracts, allocations, and charge categories against the lease."
+      },
+      {
+        "question": "Can a tenant refuse to pay CAM charges?",
+        "answer": "A tenant cannot simply refuse to pay CAM charges if they are contractually required by the lease, as doing so constitutes a lease default. The correct approach is to pay under protest and simultaneously exercise audit rights, request supporting documentation, and dispute specific line items. If the landlord confirms an overcharge, most leases require a credit or refund within 30–60 days."
+      }
+    ]
+  },
+  {
+    "title": "How to Abstract a Commercial Lease Amendment",
+    "slug": "commercial-lease-amendment-abstraction",
+    "description": "Amendments change the original lease but aren't always reflected in the base abstract. Here is how to handle amendments correctly.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease amendment",
+      "lease abstraction",
+      "commercial lease"
+    ],
+    "readingTime": 5,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from How to Abstract a Commercial Lease Amendment?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with How to Abstract a Commercial Lease Amendment?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Commercial Lease Critical Dates: A Complete Tracking Guide",
+    "slug": "critical-dates-tracking-guide",
+    "description": "How to identify, track, and manage commercial lease critical dates -- renewal notices, audit deadlines, rent escalations, and more -- across a portfolio.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "property-management",
+    "tags": [
+      "critical dates",
+      "lease administration",
+      "lease abstraction",
+      "property management",
+      "commercial lease"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Commercial Lease Critical Dates?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Commercial Lease Critical Dates?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Estoppel Certificate (Certificate of Estoppel): What It Is & How to Prepare One",
+    "slug": "estoppel-certificate-guide",
+    "description": "An estoppel certificate (certificate of estoppel) is a legally binding tenant statement used in property sales and financing. Learn what it covers, who signs it, and how to review one.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "estoppel certificate",
+      "certificate of estoppel",
+      "commercial lease",
+      "due diligence",
+      "lease abstraction",
+      "lease administration"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is an estoppel certificate?",
+        "answer": "An estoppel certificate is a legally binding document in which a tenant certifies the current status of their lease - confirming the lease commencement and expiration dates, current rent amount, security deposit held, whether the landlord is in default, and any outstanding landlord obligations. It is used by landlords in property sale and refinancing transactions to give buyers and lenders verified lease status."
+      },
+      {
+        "question": "What is a certificate of estoppel?",
+        "answer": "A certificate of estoppel is the same document as an estoppel certificate - the terms are used interchangeably. It is a tenant's written certification of their lease status, signed under penalty of legal estoppel: the tenant cannot later assert facts that contradict what they certified, even if those facts are true. Lenders and buyers rely on estoppel certificates as authoritative representations of lease status."
+      },
+      {
+        "question": "Who signs an estoppel certificate?",
+        "answer": "The tenant signs the estoppel certificate - typically an authorized officer or executive with signing authority under the lease. If the tenant is a partnership or LLC, the certificate must be signed by a partner or manager with authority to bind the entity. Some leases require both the tenant and any guarantors to sign. The landlord does not sign the estoppel certificate."
+      },
+      {
+        "question": "How long do you have to return an estoppel certificate?",
+        "answer": "Most commercial leases give tenants 10 to 30 days to execute and return an estoppel certificate after the landlord's request. Failing to return the certificate within the required time is a lease default in most leases, and some leases include a 'deemed correct' provision - meaning the landlord's form is considered accurate if the tenant fails to respond within the deadline."
+      },
+      {
+        "question": "What is the difference between an estoppel certificate and SNDA?",
+        "answer": "An estoppel certificate certifies the current status of a lease for a buyer or lender - a point-in-time representation. An SNDA (Subordination, Non-Disturbance, and Attornment Agreement) is a three-party contract between landlord, tenant, and lender that governs what happens to the lease if the lender forecloses. Both are commonly requested together in financing transactions, but they serve different purposes."
+      }
+    ]
+  },
+  {
+    "title": "How Much Does Lease Abstraction Cost in 2026?",
+    "slug": "how-much-does-lease-abstraction-cost",
+    "description": "Lease abstraction pricing ranges from $15 for Lextract to higher-cost outsourced services. Here is what drives the cost and how to calculate your true ROI.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease abstraction cost",
+      "lease abstraction pricing",
+      "AI lease abstraction"
+    ],
+    "readingTime": 5,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "How much does lease abstraction cost?",
+        "answer": "Lease abstraction costs $15-$50 per lease for AI tools (Lextract: $15/lease). Outsourced BPO services and in-house manual abstraction vary by provider, lease complexity, reviewer seniority, and QA depth. AI tools are materially cheaper than outsourced services while delivering results in minutes vs. 3-5 business days."
+      },
+      {
+        "question": "How much does AI lease abstraction cost?",
+        "answer": "AI lease abstraction tools range from free (Kolena - text summary, no structured fields) to $15-$50 per lease for purpose-built tools. Lextract charges $15 per lease, or $12/lease in 10-packs. Enterprise AI platforms (MRI, Prophia, Yardi Smart Lease) require subscription pricing negotiated via sales."
+      },
+      {
+        "question": "Is AI lease abstraction cheaper than outsourcing?",
+        "answer": "Yes, significantly. AI tools like Lextract cost $15 per lease and deliver results typically in 5-15 minutes. Outsourced BPO services cost materially more and take 3-5 business days. On a 200-lease portfolio, Lextract at the 10-pack rate ($12/lease) costs $2,400; outsourced services depend on provider quotes, scope, and QA requirements."
+      },
+      {
+        "question": "What is the cheapest way to abstract a commercial lease?",
+        "answer": "The cheapest structured AI lease abstraction is Lextract at $15 per lease (or $12/lease in 10-packs), which delivers 126 structured fields with confidence scores in minutes. Free tools like Kolena and LeaseLens exist but return unstructured text summaries or require $25 export fees. For professional workflows requiring structured, exportable data, $15/lease is the market floor."
+      }
+    ]
+  },
+  {
+    "title": "How to Abstract a Commercial Lease: Step-by-Step [Free Template]",
+    "slug": "how-to-abstract-commercial-lease",
+    "description": "A practical step-by-step walkthrough of the lease abstraction process - from reading the full document to populating a standardized 126-field data template. Includes a free checklist.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "how to abstract a lease",
+      "lease abstraction process",
+      "lease abstraction template",
+      "commercial lease abstraction",
+      "lease extraction"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "How long does it take to abstract a commercial lease manually?",
+        "answer": "Manual commercial lease abstraction by an experienced paralegal typically takes 4-8 hours for a standard lease of 30-80 pages. Complex leases with multiple amendments, exhibits, and addenda can take longer. AI-powered abstraction tools like Lextract complete the same extraction in 5-15 minutes at a fraction of the cost."
+      },
+      {
+        "question": "What fields should a commercial lease abstract include?",
+        "answer": "A complete commercial lease abstract should cover: parties and guarantors, premises and building details, lease term and critical dates, base rent schedule and escalations, operating expenses (CAM/NNN) structure and caps, tenant improvement allowance, renewal and expansion options, assignment and subletting rights, termination rights, insurance requirements, and red flags. The Lextract standard includes 126 structured fields across these categories."
+      },
+      {
+        "question": "What is the difference between lease abstraction and lease review?",
+        "answer": "Lease abstraction extracts specific data fields from a lease into a structured format - it answers 'what are the key terms?' Lease review is a legal analysis that evaluates whether the terms are favorable, identifies risks, and suggests negotiation points - it answers 'are these terms acceptable?' Abstraction produces a data set; review produces legal advice. Lextract performs abstraction, not legal review."
+      },
+      {
+        "question": "Do I need specialized software to abstract a lease?",
+        "answer": "You can abstract a lease with nothing more than a spreadsheet and the original PDF. The challenge is consistency and thoroughness - it is easy to miss a clause buried in exhibit D or misread a complex CAM formula. Purpose-built tools provide a standard field schema, reduce the risk of omissions, and are significantly faster. AI tools like Lextract automate the entire process."
+      }
+    ]
+  },
+  {
+    "title": "How to Dispute CAM Charges: A Step-by-Step Tenant Guide",
+    "slug": "how-to-dispute-cam-charges",
+    "description": "A step-by-step guide for tenants disputing CAM charges -- from requesting backup documentation to negotiating a settlement with your landlord.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-04-06",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "cam-reconciliation",
+    "tags": [
+      "CAM charges",
+      "CAM dispute",
+      "CAM reconciliation",
+      "lease audit",
+      "tenant rights"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What are excessive CAM charges?",
+        "answer": "Excessive CAM charges are landlord billings that exceed what the lease contractually permits - such as capital expenditures billed as operating expenses, management fees above the lease cap, costs related to other tenants' spaces, and expenses that should be covered by property insurance. CAM audits can surface these errors by comparing the reconciliation to the lease's expense definition, exclusions, caps, and allocation method."
+      },
+      {
+        "question": "Can a tenant refuse to pay CAM charges?",
+        "answer": "A tenant cannot refuse to pay CAM charges required by their lease without risking a lease default. The correct approach is to pay under protest while simultaneously exercising audit rights and requesting supporting documentation. If an audit confirms an overcharge above the threshold stated in the lease (typically 5%), the landlord is required to credit or refund the excess, and most leases shift the audit cost to the landlord."
+      },
+      {
+        "question": "What are tenant rights for CAM disputes?",
+        "answer": "Tenants' CAM rights depend on their lease, but standard protections negotiated in well-drafted leases include: the right to audit the landlord's expense records within 12–18 months of receiving the reconciliation statement; an audit cost-shifting provision (landlord pays if overcharge exceeds 5%); a reconciliation deadline (landlord must deliver the statement by a defined date, or forfeit the right to collect underpayments); and a dispute notice right that pauses payment obligations on disputed amounts during the audit period."
+      }
+    ]
+  },
+  {
+    "title": "IFRS 16 vs ASC 842: Key Differences for Real Estate Lease Data",
+    "slug": "ifrs-16-vs-asc-842",
+    "description": "Compare IFRS 16 and ASC 842 on lessee accounting, lessor models, variable payments, subleases, and what each standard requires from lease abstracts.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "compliance",
+    "tags": [
+      "IFRS 16",
+      "ASC 842",
+      "lease accounting",
+      "compliance",
+      "lease abstraction"
+    ],
+    "readingTime": 9,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from IFRS 16 vs ASC 842?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with IFRS 16 vs ASC 842?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "ASC 842 Lease Abstraction: What Your Auditors Actually Need",
+    "slug": "lease-abstraction-asc-842-compliance",
+    "description": "ASC 842 requires companies to put operating leases on the balance sheet. Here are the exact fields your accounting team needs from every lease.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "compliance",
+    "tags": [
+      "ASC 842",
+      "lease abstraction",
+      "IFRS 16",
+      "lease accounting"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from ASC 842 Lease Abstraction?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with ASC 842 Lease Abstraction?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Lease Abstraction for Due Diligence: A Lender's and Buyer's Guide",
+    "slug": "lease-abstraction-due-diligence",
+    "description": "Due diligence on a multi-tenant property means abstracting every lease under time pressure. Here is what lenders and buyers need extracted and why.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "due diligence",
+      "lease abstraction",
+      "commercial real estate acquisition"
+    ],
+    "readingTime": 6,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Lease Abstraction for Due Diligence?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Lease Abstraction for Due Diligence?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Lease Abstraction for Portfolio Acquisitions: A Process Guide",
+    "slug": "lease-abstraction-portfolio-acquisition",
+    "description": "Acquiring a multi-property portfolio means abstracting dozens of leases under deal pressure. Here is how to structure the process.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "portfolio acquisition",
+      "lease abstraction",
+      "commercial real estate due diligence"
+    ],
+    "readingTime": 6,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Lease Abstraction for Portfolio Acquisitions?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Lease Abstraction for Portfolio Acquisitions?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Lease Administration Best Practices for Commercial Real Estate",
+    "slug": "lease-administration-best-practices",
+    "description": "Core lease administration best practices for commercial portfolios: critical date tracking, CAM reconciliation, rent escalation verification, and abstract maintenance.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-administration",
+    "tags": [
+      "lease administration",
+      "property management",
+      "lease abstraction",
+      "critical dates",
+      "commercial lease"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Lease Administration Best Practices for Commercial Real Estate?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Lease Administration Best Practices for Commercial Real Estate?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "How to Convert a Lease PDF to Excel: The Structured Data Guide",
+    "slug": "lease-pdf-to-excel-guide",
+    "description": "Getting lease data out of a PDF and into Excel requires more than copy-paste. Here is how to extract 126 structured fields correctly.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease PDF to Excel",
+      "lease data extraction",
+      "lease abstraction"
+    ],
+    "readingTime": 5,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from How to Convert a Lease PDF to Excel?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with How to Convert a Lease PDF to Excel?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "8 Leverage Points in Commercial Lease Negotiation (Tenant's Guide 2026)",
+    "slug": "leverage-points-lease-negotiation",
+    "description": "Tenants have more leverage than they think. Learn the 8 negotiation levers - market timing, vacancy rates, TI allowance, CAM caps, renewal options - and exactly how to use each one.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-negotiation",
+    "tags": [
+      "lease negotiation",
+      "commercial lease",
+      "tenant leverage",
+      "lease abstraction",
+      "tenant improvement"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from 8 Leverage Points in Commercial Lease Negotiation (Tenant's Guide 2026)?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with 8 Leverage Points in Commercial Lease Negotiation (Tenant's Guide 2026)?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "LOI vs. Lease: How Abstraction Catches Discrepancies",
+    "slug": "loi-vs-lease-abstraction",
+    "description": "The letter of intent is not the lease. Comparing abstracted data against LOI terms is how experienced tenants catch negotiated concessions that got lost in drafting.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "LOI",
+      "letter of intent",
+      "lease negotiation",
+      "lease abstraction"
+    ],
+    "readingTime": 5,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from LOI vs. Lease?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with LOI vs. Lease?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "NNN Lease Checklist: 12 Things to Review Before Signing",
+    "slug": "nnn-lease-checklist",
+    "description": "A 12-item checklist for tenants reviewing triple-net leases, covering base rent, tax responsibility, HVAC, CAM definitions, and termination rights.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-types",
+    "tags": [
+      "NNN lease",
+      "triple net lease",
+      "lease review",
+      "lease abstraction",
+      "commercial lease"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from NNN Lease Checklist?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with NNN Lease Checklist?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "NNN vs. Gross Lease: A Tenant's Guide to Commercial Lease Structures",
+    "slug": "nnn-vs-gross-lease",
+    "description": "NNN and gross leases shift expense risk differently. Learn how each structure affects your total occupancy cost and what to watch for in the abstract.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-types",
+    "tags": [
+      "NNN lease",
+      "gross lease",
+      "commercial lease",
+      "lease structures"
+    ],
+    "readingTime": 6,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from NNN vs. Gross Lease?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with NNN vs. Gross Lease?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "SNDA Agreements Explained: What Tenants Need to Know",
+    "slug": "snda-agreements-explained",
+    "description": "What SNDA agreements are, how subordination, non-disturbance, and attornment each work, when SNDAs are required, and how to negotiate non-disturbance protection.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-administration",
+    "tags": [
+      "SNDA",
+      "subordination",
+      "non-disturbance",
+      "lease administration",
+      "commercial lease"
+    ],
+    "readingTime": 7,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from SNDA Agreements Explained?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with SNDA Agreements Explained?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Sublease Analysis Checklist: What to Review Before Subleasing",
+    "slug": "sublease-analysis-checklist",
+    "description": "A comprehensive checklist for tenants subleasing commercial space, covering consent requirements, recapture rights, profit splits, liability, and holdover provisions.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-03-18",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "due-diligence",
+    "tags": [
+      "sublease",
+      "commercial lease",
+      "due diligence",
+      "lease abstraction",
+      "lease administration"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Sublease Analysis Checklist?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Sublease Analysis Checklist?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Tenant Improvement Allowance (TI): Typical Amounts, How to Negotiate [2026]",
+    "slug": "tenant-improvement-allowance-guide",
+    "description": "TI allowances average $30-$120/sq ft depending on market and lease term. Learn how to negotiate a higher TI, structure the payment, and track it under ASC 842. Real-world examples.",
+    "publishedAt": "2026-03-18",
+    "updatedAt": "2026-04-10",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-negotiation",
+    "tags": [
+      "tenant improvement allowance",
+      "TI allowance",
+      "lease negotiation",
+      "lease abstraction",
+      "commercial lease"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is a tenant improvement allowance?",
+        "answer": "A tenant improvement allowance (TI allowance) is a landlord-funded contribution toward the cost of improving a commercial space to suit the tenant's specific needs. It is expressed as a dollar amount per rentable square foot (e.g., $60/RSF) and applied toward construction, MEP systems, finishes, and architectural fees. TI is not a gift - it is an economic component of the lease transaction that is underwritten based on the lease term, tenant credit, and market conditions."
+      },
+      {
+        "question": "What is a reasonable tenant improvement allowance?",
+        "answer": "A reasonable tenant improvement allowance depends on property type and market. For Class A office space in major gateway markets (New York, San Francisco, Chicago), $80-$150 per RSF is typical for new leases. Secondary markets run $40-$80 per RSF. Retail TI ranges from $10-$100 per RSF depending on tenant credit. Industrial TI is typically $10-$30 per RSF for office-finish areas. Medical and life sciences space can reach $150-$200 per RSF due to specialized infrastructure."
+      },
+      {
+        "question": "Do you have to pay back a tenant improvement allowance?",
+        "answer": "Tenants do not directly pay back TI allowance - it is funded by the landlord. However, the landlord recovers the TI cost through the rent stream over the lease term. Economically, a lease with higher TI and higher base rent costs the same as one with lower TI and lower base rent over the full term. If a tenant terminates the lease early, many leases require the tenant to repay a prorated portion of the unamortized TI as part of the termination fee."
+      },
+      {
+        "question": "How is tenant improvement allowance taxed?",
+        "answer": "Under current IRS rules, TI allowances received by tenants are generally excluded from taxable income when used for improvements to the leased property (IRC Section 109 / 1019). Under ASC 842, TI allowances received from the landlord reduce the tenant's initial right-of-use (ROU) asset - they are treated as lease incentives that offset the initial measurement. Consult a tax advisor for your specific situation."
+      },
+      {
+        "question": "What happens to unused tenant improvement allowance?",
+        "answer": "Unused TI allowance is typically forfeited at the draw deadline (usually 12-18 months after lease commencement) unless the lease specifically allows the tenant to apply unused funds to rent credits, FF&E, or other costs. Negotiate the use of unused TI allowance upfront - landlords have no incentive to agree to repurpose unused funds after the lease is signed."
+      }
+    ]
+  },
+  {
+    "title": "The Complete Checklist: 126 Fields to Extract from Every Commercial Lease",
+    "slug": "126-fields-commercial-lease-checklist",
+    "description": "A comprehensive checklist of 126 data fields every commercial lease abstraction should capture. Organized by category for easy reference.",
+    "publishedAt": "2026-03-12",
+    "updatedAt": "2026-03-12",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "checklist",
+      "lease fields",
+      "data extraction"
+    ],
+    "readingTime": 8,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from The Complete Checklist?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with The Complete Checklist?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "How Property Managers Use Lease Abstracts to Prevent Revenue Leakage",
+    "slug": "property-managers-lease-abstracts-revenue-leakage",
+    "description": "Property managers lose thousands per lease through missed escalations and CAM errors. Lease abstracts are the fix. Here is how to use them.",
+    "publishedAt": "2026-03-10",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "property-management",
+    "tags": [
+      "property management",
+      "revenue leakage",
+      "lease abstracts"
+    ],
+    "readingTime": 6,
+    "featured": false,
+    "funnelStage": "bofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from How Property Managers Use Lease Abstracts to Prevent Revenue Leakage?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with How Property Managers Use Lease Abstracts to Prevent Revenue Leakage?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "Manual vs AI Lease Abstraction: Cost, Speed, and Accuracy Compared",
+    "slug": "manual-vs-ai-lease-abstraction",
+    "description": "How does AI lease abstraction compare to manual review on cost, speed, and accuracy? We break down the numbers for CRE professionals.",
+    "publishedAt": "2026-03-07",
+    "updatedAt": "2026-03-27",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "AI lease abstraction",
+      "automation",
+      "cost comparison",
+      "lease extraction"
+    ],
+    "readingTime": 6,
+    "featured": false,
+    "funnelStage": "mofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from Manual vs AI Lease Abstraction?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with Manual vs AI Lease Abstraction?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "5 Red Flags Every Tenant Rep Should Catch in a Commercial Lease",
+    "slug": "red-flags-tenant-reps-commercial-lease",
+    "description": "Tenant reps miss costly lease clauses every week. Here are 5 red flags in commercial leases that cost tenants real money and how to spot them.",
+    "publishedAt": "2026-03-05",
+    "updatedAt": "2026-03-05",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "red flags",
+      "tenant representation",
+      "lease review"
+    ],
+    "readingTime": 6,
+    "featured": false,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is the main takeaway from 5 Red Flags Every Tenant Rep Should Catch in a Commercial Lease?",
+        "answer": "The main takeaway is that commercial lease data should be extracted into structured fields before teams make pricing, diligence, compliance, or negotiation decisions from the document."
+      },
+      {
+        "question": "How does Lextract help with 5 Red Flags Every Tenant Rep Should Catch in a Commercial Lease?",
+        "answer": "Lextract reads commercial lease PDFs and returns 126 structured fields, 20 automated red flag checks, confidence scores, and export-ready outputs in 5-15 minutes for $15 per lease."
+      }
+    ]
+  },
+  {
+    "title": "What Is Lease Abstraction? Definition, Process, Outputs, and Examples",
+    "slug": "what-is-commercial-lease-abstraction",
+    "description": "Lease abstraction turns a commercial lease into structured, decision-ready data. Learn what a lease abstract includes, who uses it, how the process works, and when AI beats manual review.",
+    "publishedAt": "2026-03-03",
+    "updatedAt": "2026-04-17",
+    "author": "Angel Campa, Founder",
+    "category": "articles",
+    "silo": "lease-abstraction",
+    "tags": [
+      "lease abstraction",
+      "what is lease abstraction",
+      "commercial real estate",
+      "CRE technology",
+      "lease extraction",
+      "lease abstraction meaning",
+      "lease abstraction process"
+    ],
+    "readingTime": 9,
+    "featured": true,
+    "funnelStage": "tofu",
+    "faq": [
+      {
+        "question": "What is lease abstraction?",
+        "answer": "Lease abstraction is the process of reading a commercial lease and extracting every critical data point - dates, dollar amounts, escalation schedules, CAM provisions, renewal options, termination rights - into a standardized structured format."
+      },
+      {
+        "question": "What data is included in a lease abstract?",
+        "answer": "A complete commercial lease abstract covers parties and premises, financial terms, operating expenses, critical dates, insurance requirements, renewal and termination rights, use restrictions, and material risk clauses."
+      },
+      {
+        "question": "How long does lease abstraction take?",
+        "answer": "Manual lease abstraction often takes 2–4 hours per lease. Outsourced services can take several business days. AI-powered platforms like Lextract typically process a lease in 5–15 minutes."
+      },
+      {
+        "question": "What is the difference between AI and manual lease abstraction?",
+        "answer": "Manual abstraction relies on a paralegal or analyst reading the lease and entering data by hand. AI abstraction reads the lease PDF natively, extracts structured fields automatically, and uses confidence scoring so reviewers only inspect uncertain fields."
+      },
+      {
+        "question": "What does lease abstraction mean?",
+        "answer": "Lease abstraction means converting a lease from a long legal document into a clean, structured summary of the terms that matter for operations, accounting, due diligence, renewals, and risk review."
+      },
+      {
+        "question": "What is the lease abstraction process?",
+        "answer": "The lease abstraction process usually includes document intake, field identification, structured capture, and quality review. AI tools compress the first three steps and focus human time on verification instead of first-pass extraction."
+      }
+    ]
+  }
+]

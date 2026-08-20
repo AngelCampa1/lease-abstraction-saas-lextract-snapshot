@@ -1,0 +1,127 @@
+---
+title: "How to Import Lease Data into Yardi Voyager (Step-by-Step Guide)"
+slug: "import-lease-data-yardi-voyager"
+description: "Step-by-step guide to importing commercial lease data into Yardi Voyager from AI lease abstraction. Reduce manual entry errors and cut setup time in half."
+publishedAt: "2026-03-19"
+updatedAt: "2026-04-10"
+author: "Angel Campa, Founder"
+category: "articles"
+silo: "lease-administration"
+tags:
+  - Yardi Voyager
+  - Yardi lease import
+  - lease data import
+  - lease administration
+  - property management software
+readingTime: 8
+featured: false
+funnelStage: bofu
+faq:
+  - question: "Can you import lease data into Yardi Voyager from a spreadsheet?"
+    answer: "Yes. Yardi Voyager supports CSV-based data import through its standard import templates. The key is mapping your extracted lease fields to Yardi's expected field names before import. Errors in field mapping - especially date formats, rent amounts, and tenant IDs - are the most common cause of import failures and require manual correction in the system."
+  - question: "What lease fields does Yardi Voyager require for a basic tenant record?"
+    answer: "A complete Yardi Voyager tenant record requires: tenant name and entity type, building and unit identifiers, lease commencement and expiration dates, base rent amount and payment frequency, rent escalation schedule, and security deposit amount. Optional but important fields include CAM estimate amounts, options (renewal, expansion, termination), and critical notice dates. Missing critical dates means Yardi cannot generate automated reminders for renewals and expirations."
+  - question: "How do you handle lease amendments when importing into Yardi?"
+    answer: "Lease amendments should be applied as modifications to the original lease record in Yardi, not as new leases. Map each amendment's effective date and changed fields separately. The most common amendment fields - rent changes, term extensions, space expansions - each have dedicated modification workflows in Voyager. Import the original lease first, verify it, then apply amendments sequentially in chronological order."
+---
+
+Entering lease data into Yardi Voyager manually is one of the highest-risk steps in the lease administration workflow. Errors introduced at commencement - wrong rent amounts, incorrect expiration dates, missed options - persist in the system and drive downstream errors in billing, CAM reconciliation, and financial reporting for the full life of the lease. A structured import using abstracted lease data reduces that risk substantially.
+
+This guide walks through the full workflow: what Yardi needs, how to structure the data, which modules are populated from which fields, and how to handle rent schedules and option tracking.
+
+## Understanding Yardi Voyager's Data Model Before You Import
+
+Yardi Voyager organizes commercial lease data across several modules, and understanding which module owns which data prevents confusion when setting up the import.
+
+**Lease Administration module** stores the core lease terms: tenant entity, premises (building and unit codes), lease type, commencement date, expiration date, base rent by period, and lease status. This is the primary record that drives billing and occupancy reporting.
+
+**Charge Codes** control how rent and other charges are billed. Each charge type (base rent, CAM estimate, tax estimate, insurance estimate) requires a configured charge code before you can enter the corresponding lease charges. Verify that your charge codes are configured before importing lease records.
+
+**CAM Reconciliation module** uses the lease's operating expense structure - the CAM estimate amounts, the tenant's pro-rata share, and the applicable caps - to run year-end reconciliations. This data must be accurate at commencement or your reconciliation starting point will be wrong.
+
+**Critical Dates module** stores option dates, notice deadlines, and custom date types. These can be imported separately but must be linked to the correct lease record.
+
+**Rent Schedule** within the lease record stores the stepped rent over the full lease term. This is distinct from the single "current rent" field - the full schedule drives future billing automatically.
+
+## Step 1: Prepare the Source Data from Lease Abstraction
+
+Before touching Yardi, you need a clean data set. The fields required for a complete Yardi Voyager lease setup are:
+
+- Tenant legal name (must match the entity name in Yardi's tenant master)
+- Tenant code (Yardi's internal identifier)
+- Building code and unit code
+- Lease type (NNN, gross, modified gross)
+- Commencement date
+- Expiration date
+- Rent commencement date (if different from lease commencement - free rent periods)
+- Base rent by period (every step, not just the starting rent)
+- CAM estimate (annual, or monthly)
+- Tax estimate (annual, or monthly)
+- Insurance estimate (annual, or monthly)
+- Security deposit amount
+- Renewal options (number of options, term length per option, notice deadline)
+- Termination options (if any)
+- Pro-rata share percentage
+
+If you are using a lease abstraction tool like Lextract, export the full 126-field Excel workbook. It will contain all of these fields in a consistent format. Save the relevant sheet as CSV to match Yardi's import template requirements.
+
+## Step 2: Map Fields to Yardi's Import Template
+
+Yardi Voyager supports flat-file CSV imports for lease commencement via its CommercialRE Lease Import function (accessed through Administration > Data Import in most configurations). Download Yardi's current import template - the column headers must match exactly.
+
+The most common mapping issues:
+
+**Date format:** Yardi typically requires MM/DD/YYYY. If your abstraction export uses ISO 8601 (YYYY-MM-DD), reformat before import. A single date format mismatch will cause the entire import batch to fail.
+
+**Rent amounts:** Yardi stores rent as monthly amounts. If your abstraction exports annual amounts (which many do), divide by 12 before import. Verify that your abstraction clearly labels whether base rent figures are monthly or annual.
+
+**Charge code mapping:** Each rent component requires a charge code column. If your template has "base_rent_monthly" and "cam_estimate_monthly" as separate fields, they map to separate charge code columns in Yardi. Confirm with your system administrator which charge codes correspond to which lease components.
+
+**Unit codes:** Yardi requires the exact unit code as configured in the system. If your abstraction data has the suite number as written in the lease (e.g., "Suite 300") and Yardi's unit master has it as "STE-300", the import will fail on that row. Pre-match unit codes against Yardi's unit master before building the import file.
+
+## Step 3: Enter the Full Rent Schedule
+
+This is the step most teams skip, and it causes the most downstream problems.
+
+In Yardi Voyager, a lease with stepped rent requires a separate rent schedule record for each rent period. If a 10-year lease has annual rent increases, the full rent schedule should have 10 rows - one for each year. Entering only the starting rent and expecting someone to update it manually when rents step up is a control failure.
+
+The rent schedule import maps to: Lease ID, period start date, period end date, monthly rent amount, charge code. One row per period.
+
+If you import the full schedule at commencement, Yardi's billing engine will automatically use the correct rent amount for each billing period without manual intervention.
+
+For free rent periods: enter a rent schedule row covering the free rent dates with a $0 amount on the base rent charge code. Do not simply start the rent schedule at the rent commencement date - the lease commencement date must still be reflected accurately so that occupancy and term calculations are correct.
+
+## Step 4: Set Up CAM and Operating Expense Charges
+
+For NNN and modified gross leases, the operating expense estimates must be entered as separate charge records on the lease, each using the appropriate charge code.
+
+In Voyager, navigate to the lease record, then to Charges. Add charge records for:
+
+- CAM estimate (annual amount divided by 12, monthly charge code)
+- Real estate tax estimate (same structure)
+- Insurance estimate (same structure)
+
+Each charge record needs: start date (typically rent commencement), end date (lease expiration), amount, and charge code. Set the CAM and tax estimates to recur monthly.
+
+Pro-rata share is stored in the tenant's lease record and is used by the CAM reconciliation module. Enter it as a percentage (e.g., 8.5 for 8.5%). Confirm this figure against the lease - it should be derived from the tenant's rentable square footage divided by the building's rentable area, as defined in the lease.
+
+## Step 5: Import and Configure Critical Dates
+
+Critical dates in Yardi can be imported via the Critical Dates import template or entered manually in the lease record under the Dates tab.
+
+For each lease, the minimum critical dates to enter are:
+
+- Lease expiration date (often already on the main record, but also add as a critical date with advance notice configured)
+- Renewal option notice deadline (typically 6–12 months before expiration; the exact notice period is in the lease)
+- Termination option date and notice deadline (if applicable)
+- Rent escalation dates (if your Voyager configuration uses critical dates to trigger rent reviews rather than automated schedule billing)
+
+Configure advance notice days for each critical date type. Yardi can generate automated reminder reports or trigger email alerts when a critical date is within the configured notice window.
+
+## Common Errors in Manual vs. Import Workflows
+
+Teams that enter lease data manually, field by field, tend to make errors in three places: rent schedule entry (entering current rent only), option date calculation (computing the notice deadline wrong from the lease language), and pro-rata share (using the wrong denominator - gross area instead of rentable area, or a denominator that does not match the lease definition).
+
+An import workflow using structured data from lease abstraction pushes these errors earlier in the process, where they are easier to catch. If the abstraction is verified before import, the Yardi data is reliable from day one. If errors are discovered later in a manual workflow, they require retroactive correction in Yardi - which creates billing discrepancies that have to be reconciled against prior invoices.
+
+The investment in accurate lease abstraction upfront is, functionally, an investment in clean Yardi data for the full life of the lease.

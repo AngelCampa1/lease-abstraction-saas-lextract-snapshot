@@ -1,0 +1,214 @@
+<style>
+  .journey {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .stage {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    gap: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .stage-name {
+    padding: 14px 16px;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    border-right: 1px solid rgba(255,255,255,0.25);
+  }
+  .stage-name .url {
+    font-weight: 400;
+    font-size: 11px;
+    opacity: 0.75;
+    font-family: monospace;
+  }
+  .stage-desc {
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    border-right: 1px solid #e2e8f0;
+    background: white;
+  }
+  .stage-pain {
+    padding: 14px 16px;
+    font-size: 12px;
+    line-height: 1.5;
+    background: #fff8f8;
+  }
+  .friction-0 .stage-name { background: #dcfce7; color: #166534; }
+  .friction-1 .stage-name { background: #fef9c3; color: #854d0e; }
+  .friction-2 .stage-name { background: #ffedd5; color: #9a3412; }
+  .friction-3 .stage-name { background: #fee2e2; color: #991b1b; }
+  .pain-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  .pt-high { background: #fee2e2; color: #991b1b; }
+  .pt-med { background: #ffedd5; color: #9a3412; }
+  .pt-low { background: #fef9c3; color: #854d0e; }
+  .col-header {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    padding: 8px 0 6px;
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .col-header span { padding: 0 16px; }
+  .friction-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  .legend {
+    display: flex;
+    gap: 16px;
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+</style>
+
+<h2>End-to-End User Journey — Lextract.io</h2>
+<p class="subtitle">Every step a first-time user takes, from landing to export</p>
+
+<div class="col-header">
+  <span>Stage</span>
+  <span>What happens</span>
+  <span>Pain points</span>
+</div>
+
+<div class="journey">
+
+  <div class="stage friction-0">
+    <div class="stage-name">
+      1. Upload page
+      <span class="url">/upload</span>
+    </div>
+    <div class="stage-desc">
+      Lands on page with hero, dropzone, and sample CTA. Drops their PDF. Sees upload progress bar.
+    </div>
+    <div class="stage-pain">
+      <span class="pain-tag pt-low">LOW</span> Both CTAs (Upload + Sample) compete equally — the primary action isn't clear<br>
+      <span class="pain-tag pt-low">LOW</span> No sense of what comes next — "what do I get for $20?"
+    </div>
+  </div>
+
+  <div class="stage friction-1">
+    <div class="stage-name">
+      2. Processing
+      <span class="url">/processing/{id}</span>
+    </div>
+    <div class="stage-desc">
+      Watches step progress (Upload → Extract → Score → Done). Waits 30s–3min depending on page count. Sees notification prompt.
+    </div>
+    <div class="stage-pain">
+      <span class="pain-tag pt-high">HIGH</span> If user closes tab, they lose the anonymous session — results are gone<br>
+      <span class="pain-tag pt-med">MED</span> No email capture — user can't "come back later"<br>
+      <span class="pain-tag pt-low">LOW</span> Browser notification opt-in feels intrusive as first interaction
+    </div>
+  </div>
+
+  <div class="stage friction-2">
+    <div class="stage-name">
+      3. Teaser view
+      <span class="url">/results/{id}</span>
+    </div>
+    <div class="stage-desc">
+      Sees 5 fields visible, rest blurred. Sees red flag count. Sees confidence chart. Hits a CTA to unlock.
+    </div>
+    <div class="stage-pain">
+      <span class="pain-tag pt-high">HIGH</span> Anonymous user must sign up before they can even see payment — two gates, not one<br>
+      <span class="pain-tag pt-med">MED</span> Blurred fields don't show <em>which categories</em> are locked — low FOMO value<br>
+      <span class="pain-tag pt-med">MED</span> Red flag count shown but no hint of what the flags are — users may not understand urgency
+    </div>
+  </div>
+
+  <div class="stage friction-3">
+    <div class="stage-name">
+      4. Signup gate
+      <span class="url">/signup?return=…</span>
+    </div>
+    <div class="stage-desc">
+      Anonymous user is forced to create an account (email + password) before proceeding to payment.
+    </div>
+    <div class="stage-pain">
+      <span class="pain-tag pt-high">HIGH</span> Hard stop — user already invested time, now faces a wall before getting value<br>
+      <span class="pain-tag pt-high">HIGH</span> No "why do I need an account?" explanation<br>
+      <span class="pain-tag pt-med">MED</span> Email verification step (if required) adds another round-trip
+    </div>
+  </div>
+
+  <div class="stage friction-2">
+    <div class="stage-name">
+      5. Stripe checkout
+      <span class="url">stripe.com</span>
+    </div>
+    <div class="stage-desc">
+      Redirected to Stripe-hosted checkout. Enters card details. Submits. Redirected back to /results.
+    </div>
+    <div class="stage-pain">
+      <span class="pain-tag pt-med">MED</span> Leaves the app — breaks immersion and raises trust questions<br>
+      <span class="pain-tag pt-low">LOW</span> No "what happens after I pay?" — uncertainty about next step
+    </div>
+  </div>
+
+  <div class="stage friction-1">
+    <div class="stage-name">
+      6. Full results
+      <span class="url">/results/{id}</span>
+    </div>
+    <div class="stage-desc">
+      Sees 14-category accordion with all 126 fields. Red flag panel. Confidence scores. Edit + export options. CamAudit banner.
+    </div>
+    <div class="stage-pain">
+      <span class="pain-tag pt-high">HIGH</span> 126 fields in 14 categories — no "where do I start?" guidance<br>
+      <span class="pain-tag pt-med">MED</span> Inline editing is not discoverable — user doesn't know they can click fields<br>
+      <span class="pain-tag pt-med">MED</span> Export is async — user requests file, waits for a job, then downloads
+    </div>
+  </div>
+
+  <div class="stage friction-0">
+    <div class="stage-name">
+      7. Dashboard
+      <span class="url">/dashboard</span>
+    </div>
+    <div class="stage-desc">
+      After first extraction: sees quick stats, extraction history, credit balance. For new users: welcome banner + empty state.
+    </div>
+    <div class="stage-pain">
+      <span class="pain-tag pt-low">LOW</span> Credit balance is shown but there's no clear path to buy more<br>
+      <span class="pain-tag pt-low">LOW</span> Welcome banner appears only before first extraction — no guided first-run experience
+    </div>
+  </div>
+
+</div>
+
+<div class="legend">
+  <strong style="margin-right:4px">Friction level:</strong>
+  <div class="legend-item"><span style="width:12px;height:12px;border-radius:2px;background:#dcfce7;display:inline-block"></span> Low</div>
+  <div class="legend-item"><span style="width:12px;height:12px;border-radius:2px;background:#fef9c3;display:inline-block"></span> Medium</div>
+  <div class="legend-item"><span style="width:12px;height:12px;border-radius:2px;background:#ffedd5;display:inline-block"></span> High</div>
+  <div class="legend-item"><span style="width:12px;height:12px;border-radius:2px;background:#fee2e2;display:inline-block"></span> Very high</div>
+</div>

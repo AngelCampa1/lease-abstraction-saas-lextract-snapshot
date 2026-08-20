@@ -1,0 +1,120 @@
+---
+title: DSCR Calculator for Commercial Real Estate Loans
+slug: dscr-calculator-commercial-real-estate
+description: >-
+  How to calculate debt service coverage ratio for commercial real estate loans,
+  with worked examples and how lease data affects DSCR calculations.
+publishedAt: '2026-03-19'
+updatedAt: '2026-03-19'
+author: 'Angel Campa, Founder'
+category: articles
+silo: due-diligence
+tags:
+  - DSCR
+  - commercial real estate
+  - due diligence
+readingTime: 7
+featured: false
+funnelStage: tofu
+faq:
+  - question: >-
+      What is the main takeaway from DSCR Calculator for Commercial Real Estate
+      Loans?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: >-
+      How does Lextract help with DSCR Calculator for Commercial Real Estate
+      Loans?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+Debt service coverage ratio (DSCR) is the single most important metric in commercial real estate lending. Lenders set minimum thresholds - typically 1.20x to 1.30x - and loans below that threshold either do not close or require additional collateral, reserves, or guarantees. Understanding how DSCR is calculated and how lease data drives it is essential for anyone involved in CRE acquisitions, refinancing, or asset management.
+
+## The DSCR Formula
+
+DSCR = Net Operating Income (NOI) / Annual Debt Service
+
+Where:
+- **NOI** = Effective gross income minus operating expenses
+- **Annual Debt Service** = Total principal and interest payments over 12 months
+
+A DSCR of 1.20x means the property generates $1.20 of NOI for every $1.00 of debt service - a 20% cushion.
+
+**Example:** A property with $500,000 NOI and $400,000 in annual debt service has a DSCR of 1.25x.
+
+Most conventional commercial mortgage lenders require 1.20x–1.25x minimum DSCR. SBA and USDA commercial loans typically require 1.25x. CMBS lenders underwriting for securitization often require 1.25x–1.35x.
+
+## How NOI Is Calculated from Lease Data
+
+This is where lease data becomes critical. NOI is derived from the lease economics of your tenant roster - not from what you think tenants are paying, but from what the executed leases actually require them to pay.
+
+**Gross potential rent (GPR)** is the sum of all base rents assuming full occupancy. For a multi-tenant property, this means summing the current annual rent from each executed lease at the projected closing date, accounting for where each tenant sits in their rent escalation schedule.
+
+For a five-tenant retail property with leases expiring at different times:
+- Tenant A: $120,000/year (Year 3 of 5-year lease, next escalation in 8 months)
+- Tenant B: $85,000/year (Year 1 of renewal, flat for 3 years)
+- Tenant C: $65,000/year (just executed, 6 months free rent still running = $32,500 effective Year 1)
+- Tenant D: $45,000/year (holdover, month-to-month)
+- Tenant E: vacant (2,000 SF, last leased at $30/SF)
+
+GPR cannot be calculated correctly without knowing the precise rent schedule, free rent periods, and current option status of each tenant - data that lives only in the executed lease documents.
+
+**Effective gross income (EGI)** = GPR minus vacancy and credit loss allowance. Lenders typically apply a 5–10% vacancy factor to account for realistic turnover, even at fully occupied properties.
+
+**Operating expenses** include property taxes, insurance, management fees, maintenance, utilities (unless fully passed through), and reserves for replacement. For NNN leases, most operating expenses are passed through to tenants, making net operating income closer to gross rent minus management fees and reserves.
+
+**CAM structure critically affects NOI.** A property with all NNN leases where tenants pay taxes, insurance, and maintenance produces nearly all-net income. A property with gross leases where the landlord pays all operating expenses has significantly lower NOI. The same gross rents on NNN vs. gross leases can produce very different NOI figures.
+
+## How Lease Expiration Risk Affects Lender Underwriting
+
+Lenders do not just evaluate current DSCR - they evaluate rollover risk. If three of your five leases expire within two years of the loan closing, the lender will stress-test the DSCR assuming those spaces go vacant for 6–12 months and release at market rates (which may be lower than current contract rents).
+
+This is where option data becomes critical. A tenant with a below-market rent who holds two five-year renewal options at the tenant's sole election is a likely renewal - and the lender will credit that cash flow more reliably than a tenant whose lease expires with no options and who is paying above-market rent.
+
+Accurately extracted option terms - including notice deadlines and rent basis for renewals - directly affect how a lender models rollover probability and stabilized occupancy.
+
+## A Worked DSCR Example
+
+**Property:** 20,000 SF suburban office, 3 tenants
+
+**Lease data (from extraction):**
+- Tenant A: 10,000 SF, $28/SF NNN, 4 years remaining, one 3-year renewal at fair market
+- Tenant B: 6,000 SF, $26/SF NNN, 2 years remaining, no options
+- Tenant C: 4,000 SF, $30/SF NNN, 6 years remaining, two 5-year renewals at 95% FMR
+
+**Gross potential rent:**
+- Tenant A: $280,000
+- Tenant B: $156,000
+- Tenant C: $120,000
+- GPR Total: $556,000
+
+**Vacancy factor (7%):** -$38,920
+
+**EGI:** $517,080
+
+**Operating expenses (management 4%, taxes, insurance, reserves):**
+- Management (4% of EGI): $15,683
+- Real estate taxes: $45,000
+- Insurance: $12,000
+- Reserves ($.50/SF): $10,000
+- Total: $87,683
+
+**NOI:** $517,080 - $87,683 = **$429,397**
+
+**Debt service (assume $4.5M loan, 6.5%, 25-year am):**
+Annual debt service ≈ $379,620
+
+**DSCR:** $429,397 / $379,620 = **1.13x** - below the typical 1.25x threshold
+
+The lender would flag Tenant B's lease expiration in 2 years with no options. At a 1.25x DSCR requirement, the maximum loan would be approximately $4.0M, not $4.5M. The lender may also require a lease-up reserve or deposit for the Tenant B space.
+
+## Why Accurate Lease Data Matters for Loan Applications
+
+Lenders verify lease data. They will pull executed leases directly, compare your rent roll against the documents, and calculate DSCR from the lease terms themselves. If you present a loan application with a rent roll that overstates income - through incorrect rent amounts, omitted free rent periods, or misrepresented option status - the discrepancy will be found during underwriting and can delay or kill the loan.
+
+Building your DSCR analysis from extracted lease data - rather than from memory or a summary spreadsheet - ensures that your loan application reflects what the leases actually say. It also surfaces rollover risks and income adjustments before the lender finds them, giving you the ability to address them proactively in your underwriting narrative.

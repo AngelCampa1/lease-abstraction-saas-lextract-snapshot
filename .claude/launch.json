@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lextract-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "frontend", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "lextract-frontend-prod",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "frontend", "run", "start"],
+      "port": 3000
+    },
+    {
+      "name": "lextract-api",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "workers/api", "run", "dev"],
+      "port": 8787
+    }
+  ]
+}

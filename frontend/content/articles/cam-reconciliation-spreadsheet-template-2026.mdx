@@ -1,0 +1,139 @@
+---
+title: Free CAM Reconciliation Spreadsheet Template (2026)
+slug: cam-reconciliation-spreadsheet-template-2026
+description: >-
+  What a proper CAM reconciliation spreadsheet needs to include, the most common
+  calculation errors, and how to verify landlord CAM statements.
+publishedAt: '2026-03-19'
+updatedAt: '2026-03-19'
+author: 'Angel Campa, Founder'
+category: articles
+silo: cam-reconciliation
+tags:
+  - CAM reconciliation
+  - CAM reconciliation template
+  - commercial lease CAM
+readingTime: 8
+featured: false
+funnelStage: bofu
+faq:
+  - question: >-
+      What is the main takeaway from Free CAM Reconciliation Spreadsheet
+      Template (2026)?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: >-
+      How does Lextract help with Free CAM Reconciliation Spreadsheet Template
+      (2026)?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+CAM reconciliation is the annual accounting between what a commercial tenant paid in estimated operating expenses throughout the year and what the actual expenses were. If actual expenses exceeded estimates, the tenant owes additional payment. If actual expenses were lower, the landlord issues a credit or refund.
+
+In theory, this is straightforward arithmetic. In practice, CAM statements from landlords frequently contain calculation errors - some inadvertent, some not - that result in tenants overpaying. A well-structured spreadsheet lets you verify the landlord's math against the actual lease terms.
+
+## What CAM Reconciliation Actually Measures
+
+The landlord collects monthly CAM estimates (sometimes called operating expense estimates) from all tenants throughout the year. At year end, the landlord compiles the actual operating expenses for the property and compares the total to the estimates collected.
+
+Each tenant is responsible for their pro-rata share of allowable operating expenses, minus any applicable caps, exclusions, and adjustments. The reconciliation statement should show:
+
+1. Total actual operating expenses for the property
+2. Exclusions applied (expenses specifically excluded under the lease)
+3. Net includable expenses
+4. Any gross-up adjustment (for vacancies)
+5. Tenant's pro-rata share percentage
+6. Tenant's total obligation
+7. Tenant's estimated payments made during the year
+8. Resulting balance due or credit
+
+Errors in any of these calculation steps compound. A misapplied exclusion in step 2, for example, inflates step 3, which inflates the final tenant obligation. Without a reconstruction of the calculation from source data, those errors are invisible.
+
+## Spreadsheet Structure
+
+The reconciliation spreadsheet needs to reconstruct the landlord's calculation from the lease and supporting documentation, then compare the result to what the landlord charged.
+
+**Tab 1: Expense Breakdown**
+
+This tab lists every operating expense line item claimed by the landlord. The columns should be:
+
+| Column | Content |
+|---|---|
+| Expense Category | e.g., Landscaping, Security, HVAC Maintenance |
+| Landlord Claimed Amount | From the landlord's reconciliation statement |
+| Supporting Invoice Total | From invoices in the audit package |
+| Lease Included? | Yes/No - does the lease allow this expense? |
+| Exclusion Basis | If No, cite the lease exclusion language |
+| Includable Amount | =IF(Lease Included="Yes", Landlord Claimed Amount, 0) |
+| Variance | =Includable Amount - Landlord Claimed Amount |
+
+The **Lease Included?** column is where you apply the exclusion list from the lease. Most leases exclude capital expenditures, management fees above the cap, leasing commissions, depreciation, executive salaries, and costs recoverable from insurance or condemnation proceeds. Each of these requires a line-by-line check against the landlord's expense categories.
+
+**Tab 2: Management Fee Calculation**
+
+Management fees require their own tab because they are subject to a cap in most leases, and the cap calculation is a common error source. Typical management fee caps are expressed as a percentage of gross revenues (commonly 3–5%).
+
+The tab should calculate: (Gross revenues per lease definition) × (Management fee cap percentage) = Maximum allowable management fee. Compare this to what the landlord claimed. If the claimed management fee exceeds the cap, the excess is excluded.
+
+The "gross revenues" definition in the lease matters significantly. Some definitions include parking and storage income; others exclude it. Some use collected revenue; others use billed revenue. Read the lease definition carefully before populating this cell.
+
+**Tab 3: Pro-Rata Share Calculation**
+
+Verify the pro-rata share percentage independently. The formula is: Tenant Rentable Square Footage / Building Rentable Area = Pro-Rata Share.
+
+But the denominator requires scrutiny. The lease defines the denominator - it may be the total rentable area of the building, or only the office portion, or only the floors the tenant occupies. It may be a fixed denominator frozen at commencement, or a floating denominator that changes as the building is leased up. Read the definition in the lease; do not assume the landlord is using the correct denominator.
+
+Calculate your own pro-rata share and compare it to the landlord's. A half-percentage-point error on a large lease is a meaningful dollar amount.
+
+**Tab 4: Gross-Up Adjustment**
+
+When a building is not fully occupied, landlords gross up variable operating expenses (those that would be higher if the building were fully occupied) to a specified occupancy level, typically 90–95%. The gross-up provision protects landlords from bearing all the variable costs during vacancy periods, but it must be calculated correctly.
+
+The gross-up formula: (Actual Variable Expense / Actual Occupancy Percentage) × Gross-Up Occupancy Percentage = Grossed-Up Variable Expense.
+
+Common errors here: applying gross-up to fixed expenses (which do not scale with occupancy), using the wrong occupancy percentage, or applying gross-up when the building was actually above the gross-up threshold. If the building was 93% occupied and the gross-up provision allows gross-up to 95%, the landlord may gross up the variable expenses. If the building was 96% occupied, no gross-up applies.
+
+**Tab 5: Reconciliation Summary**
+
+This tab assembles the verified figures:
+
+- Total includable expenses (from Tab 1)
+- Management fee (from Tab 2, capped)
+- Gross-up adjusted expenses (from Tab 4)
+- Tenant's pro-rata share percentage (from Tab 3)
+- Tenant's verified obligation
+- Tenant's actual payments during the year
+- Verified balance due or credit
+- Landlord's stated balance
+- Variance (your calculation vs. landlord's)
+
+The variance at the bottom of this tab is the number that drives action. A positive variance means the landlord claimed more than the lease allows. A negative variance means the landlord undercharged the tenant. Tenants can verify the final numbers against their landlord's statement using [CAMAudit.io](https://www.camaudit.io).
+
+## The Most Common Landlord Calculation Errors
+
+**Improper expense inclusions.** Capital expenditures disguised as maintenance expenses are among the most common. A roof replacement is a capital item and should not be included in CAM; routine roof maintenance is includable. When a single invoice covers both repair and replacement, landlords sometimes include the full amount. Require itemized invoices for large maintenance line items.
+
+**Management fee over-cap.** If the management fee is capped at 4% of gross revenues and the building generates $1,500,000 in annual revenues, the cap is $80,000. If the landlord claims $110,000 in management fees, $30,000 must be excluded. This error appears frequently when the management fee is charged by an affiliated entity at a market rate that happens to exceed the lease cap.
+
+**Wrong pro-rata share denominator.** Using a denominator that differs from the lease definition - typically using gross area when the lease specifies rentable area, or omitting certain tenants from the denominator as intended by the lease - changes every tenant's share. Each dollar of error in the denominator calculation is multiplied across all expense categories.
+
+**Misapplied gross-up.** Grossing up when occupancy was above the threshold, applying gross-up to fixed expenses, or using an incorrect actual occupancy figure are all common. Request the occupancy schedule used in the gross-up calculation.
+
+**Failure to include tenant's payments accurately.** Occasionally, estimated payments made during the year are understated in the reconciliation statement, resulting in an inflated balance due. Cross-reference against your own payment records.
+
+## Using Lease Abstract Data for Verification
+
+The lease abstract is the foundation of every tab in this spreadsheet. The specific fields you need:
+
+- CAM exclusion list (Tab 1 - what expenses are not allowed)
+- Management fee cap percentage (Tab 2)
+- Pro-rata share definition and denominator (Tab 3)
+- Gross-up provision and occupancy threshold (Tab 4)
+- CAM cap structure, if any (limits tenant's year-over-year increase)
+
+If you are using a lease abstraction tool, these fields should be extracted as part of the standard output. Lextract extracts CAM structure, cap provisions, exclusion notes, and pro-rata share as part of the 126-field schema. Having these in a structured format means you can build the verification spreadsheet directly from the abstraction data rather than re-reading the operating expense section of every lease before each reconciliation cycle. Property managers can automate this process entirely with [CapVeri.com](https://www.capveri.com).

@@ -1,0 +1,84 @@
+---
+title: 'ASC 842 Lease Data Requirements: What Your Auditor Needs'
+slug: asc-842-lease-data-requirements
+description: >-
+  A complete breakdown of the lease data fields required for ASC 842 compliance,
+  what auditors verify, and how to prepare your lease data systematically.
+publishedAt: '2026-03-19'
+updatedAt: '2026-03-19'
+author: 'Angel Campa, Founder'
+category: articles
+silo: compliance
+tags:
+  - ASC 842
+  - lease accounting
+  - compliance
+readingTime: 8
+featured: false
+funnelStage: mofu
+faq:
+  - question: What is the main takeaway from ASC 842 Lease Data Requirements?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: How does Lextract help with ASC 842 Lease Data Requirements?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+ASC 842 changed how companies report leases on their balance sheets. Under the old standard (ASC 840), operating leases lived entirely off-balance-sheet. Under ASC 842, any lease with a term greater than 12 months requires recognition of a right-of-use (ROU) asset and a corresponding lease liability. The liability is the present value of future lease payments; the asset is that liability adjusted for prepaid rent, initial direct costs, and lease incentives.
+
+That calculation sounds straightforward until you try to extract the underlying data from 30 executed leases, each with its own amendments, side letters, and poorly worded escalation clauses. This is where companies struggle - and where auditors find problems.
+
+This article covers the specific data fields auditors verify for each lease under ASC 842, the initial recognition requirements versus subsequent measurement needs, and practical guidance on building a lease data file that survives audit scrutiny.
+
+## What Auditors Actually Examine
+
+Your auditor is verifying that the ROU asset and lease liability on your balance sheet are mathematically correct. To do that, they need to trace each lease through the present value calculation from first principles. That means they need the following data for every qualifying lease.
+
+**Commencement date and lease term.** The commencement date is when the underlying asset is made available for use - not necessarily when you start paying rent. The lease term under ASC 842 is not simply the stated term in the lease. It includes renewal options that are reasonably certain to be exercised and excludes termination options that are reasonably certain to be exercised. Auditors will challenge your probability assessments for every option in every lease.
+
+**All payment amounts and their timing.** The lease liability is the present value of unpaid lease payments discounted at the rate implicit in the lease (or your incremental borrowing rate when the implicit rate is not determinable). Auditors need every payment amount for every period of the lease term - including the periods covered by renewal options you've deemed reasonably certain. A simple monthly rent figure is insufficient if the rent changes over time.
+
+**Escalation provisions - and their type.** This is where most ASC 842 data problems concentrate. Fixed escalations (e.g., rent increases 3% per year) are included in the payment schedule at their fixed amounts. CPI-linked escalations are measured only as of the commencement date or remeasurement event - you use the known CPI index at that date and do not project future CPI increases. Fair market value resets are excluded from the payment schedule entirely and treated as variable lease payments when they occur. If your data file does not distinguish between these escalation types, your liability calculation will be wrong.
+
+**Renewal and termination options with probability assessments.** Every option must be captured with its economic terms: the additional rent obligation if exercised, any penalty for not exercising a renewal option, and any penalty payable upon exercise of a termination option. ASC 842 requires documented, supportable probability assessments - not just a binary "yes, we'll renew" checkbox.
+
+**Variable lease payments.** Payments that depend on an index or rate at commencement are included in the liability calculation. Payments that depend on usage, performance, or other variable factors are expensed as incurred and excluded from the initial liability. Your lease data must categorize each payment component correctly.
+
+**Non-lease components.** Common area maintenance, parking, and other service components must be separated from lease components unless you elect the practical expedient to combine them. If you've elected the expedient, document it. If not, you need the allocation between lease and non-lease components for each contract.
+
+## Initial Recognition vs. Subsequent Measurement
+
+Initial recognition and subsequent measurement have different data demands, and companies frequently prepare for recognition without thinking through what they need for the ongoing measurement cycle.
+
+At **initial recognition**, you calculate the lease liability (present value of payments), then build the ROU asset (liability plus initial direct costs plus prepaid rent, minus lease incentives received). This is a point-in-time calculation that requires the complete payment schedule and the discount rate.
+
+**Subsequent measurement** requires you to maintain an amortization table for both the liability and the asset through the end of the lease term. The liability amortizes using the effective interest method - each period's interest expense accrues on the beginning balance, payments reduce the balance, and the ending balance rolls forward. The asset amortizes on a straight-line basis (for operating leases) or using the pattern of use (for finance leases).
+
+This means your data system needs to produce amortization tables, not just opening balances. If you remeasure a lease - because a renewal option changed from not reasonably certain to reasonably certain, or because of a lease modification - you need to recalculate from the remeasurement date using current discount rates.
+
+## Common Audit Findings
+
+Auditors find the same problems repeatedly across ASC 842 implementations.
+
+**Missed renewals.** A lease with a 5-year initial term and two 5-year renewal options, where the tenant has been in occupancy for 15 years and invested $500,000 in leasehold improvements, almost certainly meets the "reasonably certain" threshold for renewal. If the company calculated the liability based only on the remaining initial term, the liability is materially understated. Auditors will review lease age, leasehold investment, business significance, and market conditions to challenge probability assessments.
+
+**Incorrect escalation treatment.** CPI escalations projected into the future - rather than fixed at the index value as of commencement - will overstate the liability. Conversely, fixed annual escalations omitted from the payment schedule will understate it. The distinction between fixed and variable escalations must be documented in the source data, not left to interpretation during the audit.
+
+**Unamortized free rent periods.** Free rent periods do not mean no rent cost. Under ASC 842, rent expense for an operating lease is recognized on a straight-line basis over the lease term, including free rent periods. If a lease has 3 months of free rent in a 60-month term, rent expense in months 4-60 is higher than cash paid, creating a deferred rent liability. This shows up as an adjustment to the ROU asset at inception, not as a separate liability. Companies that pull it out incorrectly get both the asset and the liability wrong.
+
+## Building the Audit-Ready Lease Data File
+
+The goal is a single, structured data file - one row per lease, one row per amendment - that gives your accountants and auditors everything they need to trace the balance sheet numbers back to source documents.
+
+For each lease, capture: tenant entity name, property address, commencement date, original expiration date, remaining term at transition date, lease classification (operating or finance), discount rate used, initial direct costs, lease incentives received, and prepaid rent. Then for the payment schedule: each distinct rent period with start date, end date, and monthly payment amount. Escalation terms documented by type (fixed percentage, CPI, FMV, other variable). Each option documented with type (renewal, termination, purchase), notice deadline, economic terms, and probability assessment as of the most recent measurement date.
+
+Use a consistent format. Auditors will request your work papers, and inconsistent formats force them to reconcile manually - which takes time and creates opportunities to find additional problems.
+
+AI-powered lease abstraction tools accelerate the data collection process by extracting payment schedules, escalation provisions, and option terms from executed lease PDFs. The output should feed directly into your ASC 842 software or a structured spreadsheet template. The accuracy of the extracted data is what your auditor will verify, so the abstraction output is worth reviewing carefully before you build the amortization schedules on top of it.
+
+Prepare the data file before audit fieldwork begins. Companies that hand auditors a partially complete spreadsheet during fieldwork add weeks to the timeline and signal that the accounting is not under control.

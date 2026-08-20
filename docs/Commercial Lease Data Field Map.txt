@@ -1,0 +1,1553 @@
+﻿Commercial Real Estate Lease Abstraction: A Comprehensive Data Architecture and JSON Field Mapping Analysis
+The commercial real estate sector is governed by highly negotiated, densely structured contractual frameworks that dictate the financial, operational, and regulatory relationship between property owners and occupants. Commercial leases—whether for retail shopping centers, high-rise office buildings, or industrial logistics facilities—contain critical data that drives asset valuation, risk management, and financial reporting. Historically, the extraction of this data has relied on manual abstraction processes, which are labor-intensive, prone to human error, and fundamentally unscalable. As the industry transitions toward artificial intelligence-driven abstraction architectures, it is imperative to establish a definitive, exhaustive schema that translates the unstructured prose of legal documents into a structured, queryable data dictionary.
+This report provides an exhaustive architectural framework and field map for commercial lease abstraction in the United States market. By synthesizing the dominant industry standards—specifically the Building Owners and Managers Association (BOMA) guidelines, the International Council of Shopping Centers (ICSC) retail lease standards, NAIOP commercial real estate development norms, and the Financial Accounting Standards Board (FASB) ASC 842 lease accounting disclosures—this analysis constructs a comprehensive data schema. The subsequent sections detail the qualitative mechanics of fifteen core lease categories, explicitly outlining how each data point impacts financial audits, Common Area Maintenance (CAM) reconciliations, and corporate compliance. To satisfy the requirement for a programmatic implementation, the analysis concludes with a comprehensive, valid JSON array containing the precise field mappings necessary for an AI-powered extraction tool.
+The Regulatory Imperative: ASC 842, IFRS 16, and Industry Standards
+To accurately map a commercial lease into a structured database, one must first understand the prevailing accounting and industry standards that dictate the terminology, mathematical formulas, and reporting obligations embedded within the lease text. The transition to ASC 842 and IFRS 16 accounting standards has revolutionized how leases are treated on corporate balance sheets. Operating leases, previously relegated to footnotes, must now be capitalized, requiring lessees to recognize a Right-of-Use (ROU) asset and a corresponding lease liability for almost all leases with terms greater than twelve months.1 To calculate these figures, financial teams must extract highly specific variables at lease commencement, including the non-cancelable lease term, the probability of exercising renewal options, any lease incentives received, initial direct costs incurred, and the discount rate.3 The accuracy of the AI abstraction tool directly determines the validity of the entity's financial disclosures, making the precise extraction of these fields a strict regulatory imperative.
+Beyond financial accounting, the physical measurement and operational definitions within the lease are governed by specific industry bodies. The Building Owners and Managers Association (BOMA) has dictated the standard for measuring commercial buildings since 1915.6 BOMA standards determine the exact calculation of "Usable Area"—the private space exclusively occupied by the tenant—and "Rentable Area," which includes the usable area plus a pro-rata share of common spaces such as lobbies and hallways.7 The ratio between these two figures ensures the landlord is compensated for the upkeep of the entire building.8 BOMA 2024 for Office Buildings and BOMA 2025 for Industrial Buildings provide specific measurement methodologies that dramatically alter how square footage is stated within the lease document.6
+In the retail sector, the International Council of Shopping Centers (ICSC) model lease introduces profound complexities regarding "Percentage Rent" and "Gross Sales" definitions, which dictate how landlords share in a tenant's revenue.10 Conversely, industrial properties present a different set of physical and operational variables governed largely by NAIOP norms, focusing on logistics-centric metrics such as clear height, dock-high doors, and electrical power capacity.11 The abstraction architecture must be robust enough to capture the nuanced data fields across all these asset classes.
+Categorical Field Mapping and Narrative Analysis
+The following subsections systematically dissect the fifteen core categories of commercial lease data. Each category analyzes the underlying legal and operational mechanics, citing the relevant industry standards and financial implications. To provide a structured blueprint for AI implementation, each section includes a tabular representation of the necessary data fields.
+Parties and Property
+The identification of the entities bound by the contract and the precise physical location they are leasing forms the bedrock of the agreement. This category requires capturing the legal corporate names of the landlord (lessor) and tenant (lessee), alongside any guarantors who assume financial liability in the event of a tenant default.13 The property description must transcend a simple street address; it involves capturing the specific suite or unit number, as well as the square footage metrics derived from BOMA standards.6 Discrepancies between the Usable Square Footage (USF) and Rentable Square Footage (RSF) determine the load factor, which can significantly inflate the tenant's financial obligations.7 Because the RSF serves as the denominator for calculating the tenant's pro-rata share of operating expenses, any inaccuracy in this category will exponentially compound through every subsequent financial calculation and CAM reconciliation.10
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Landlord Name
+	landlord_legal_name
+	string
+	true
+	false
+	Tenant Name
+	tenant_legal_name
+	string
+	true
+	false
+	Guarantor Name
+	guarantor_name
+	array
+	false
+	false
+	Premises Address
+	premises_address
+	string
+	true
+	false
+	Suite/Unit Number
+	suite_or_unit_number
+	string
+	false
+	false
+	Rentable Area (RSF)
+	rentable_square_footage
+	number
+	true
+	true
+	Usable Area (USF)
+	usable_square_footage
+	number
+	false
+	false
+	Building Total RSF
+	building_total_rsf
+	number
+	true
+	true
+	Load Factor
+	load_factor
+	percentage
+	false
+	false
+	Property Type
+	property_use_type
+	string
+	true
+	false
+	Key Dates and Term
+The chronological framework of a commercial lease involves a sequence of distinct milestones rather than a single start and end date. The execution date signifies when the contract is signed by all parties, but it rarely coincides with the commencement date, which dictates when the legal term of the lease officially begins.17 Furthermore, the rent commencement date is frequently delayed due to landlord construction periods or negotiated free rent concessions, known as rent abatement periods.18 The expiration date marks the legal termination of the contract. For ASC 842 compliance, extracting the exact non-cancelable lease term in months is a mandatory requirement for amortizing the Right-of-Use asset and calculating the maturity of lease liabilities.1 Misstating these critical dates creates profound operational confusion, leading to missed renewal deadlines, holdover financial penalties, and erroneous financial disclosures on the corporate balance sheet.14
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Execution Date
+	execution_date
+	date
+	true
+	false
+	Commencement Date
+	commencement_date
+	date
+	true
+	false
+	Rent Commencement
+	rent_commencement_date
+	date
+	true
+	false
+	Expiration Date
+	expiration_date
+	date
+	true
+	false
+	Lease Term (Months)
+	lease_term_months
+	number
+	true
+	false
+	Possession Date
+	possession_date
+	date
+	false
+	false
+	Free Rent Period
+	rent_abatement_period
+	string
+	false
+	false
+	Rent and Escalations
+The financial core of the lease is defined by the base rent and the specific mechanisms by which it increases over time. Because commercial leases span multiple years, landlords require protection against inflation and market fluctuations. Rent escalations are programmed into the contract and may take the form of fixed, predetermined steps (such as a flat three percent annual increase) or variable increases tied to macroeconomic indicators like the Consumer Price Index (CPI).14 In the retail sector, base rent is frequently supplemented by percentage rent, an arrangement where the landlord receives a fraction of the tenant's gross sales once those sales surpass a defined breakpoint.10 Abstraction tools must delineate whether this breakpoint is a natural breakpoint, calculated by dividing the base rent by the percentage rent rate, or an artificial, hard-coded sales figure.10 Furthermore, the ICSC model highlights up to thirteen specific negotiated exclusions from gross sales, including employee discounts, bad debts, and internet sales not fulfilled at the premises, which directly impact the landlord's revenue share and require precise data extraction.10
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Annual Base Rent
+	base_rent_annual
+	currency
+	true
+	false
+	Payment Frequency
+	rent_payment_frequency
+	string
+	true
+	false
+	Escalation Type
+	escalation_type
+	string
+	true
+	false
+	Fixed Escalation %
+	fixed_escalation_rate
+	percentage
+	false
+	false
+	CPI Index Used
+	cpi_index_reference
+	string
+	false
+	false
+	Percentage Rent Rate
+	percentage_rent_rate
+	percentage
+	false
+	false
+	Breakpoint Amount
+	sales_breakpoint_amount
+	currency
+	false
+	false
+	Sales Exclusions
+	gross_sales_exclusions
+	array
+	false
+	false
+	CAM and Operating Expenses
+Common Area Maintenance (CAM) reconciliation is arguably the most contentious and complex operational component of commercial real estate management.16 Depending on the specific lease structure—such as Triple Net (NNN), Gross, or Modified Gross—the tenant's liability for property taxes, building insurance, and general maintenance costs varies drastically.11 In a Triple Net lease, the tenant pays a pro-rata share of all operating expenses.11 To protect tenants from volatile expense spikes, leases frequently introduce CAM caps, which act as ceilings on the amount controllable expenses can increase year-over-year.16 Capital expenditures, such as replacing a roof or upgrading an HVAC system, are frequently excluded from CAM pass-throughs or must be amortized over their useful life to prevent landlords from unfairly burdening tenants with building upgrades.20 Furthermore, when a building is not fully occupied, landlords use gross-up provisions to artificially inflate variable expenses, such as janitorial services and utilities, to reflect what costs would be at full occupancy, ensuring existing tenants pay an equitable share rather than subsidizing the landlord's vacancy losses.16
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Lease Structure
+	lease_structure_type
+	string
+	true
+	true
+	Pro Rata Share
+	pro_rata_share
+	percentage
+	true
+	true
+	Base Year
+	base_year
+	string
+	false
+	true
+	CAM Cap %
+	cam_cap_percentage
+	percentage
+	false
+	true
+	CAM Cap Type
+	cam_cap_type
+	string
+	false
+	true
+	Gross-Up %
+	gross_up_percentage
+	percentage
+	false
+	true
+	Management Fee Cap
+	management_fee_cap
+	percentage
+	false
+	true
+	CAM Exclusions
+	cam_exclusions
+	array
+	true
+	true
+	Audit Rights
+	audit_rights
+	boolean
+	true
+	true
+	Options (Renewal, Termination, ROFR, ROFO)
+Leases are dynamic documents that grant tenants contractual mechanisms to modify their spatial footprint or terminate their obligations, representing significant encumbrances on the asset that limit the landlord's flexibility. Renewal options allow the tenant to extend the lease term, often at a predetermined rent or Fair Market Value (FMV).14 Termination options provide an exit strategy prior to the natural expiration date, usually accompanied by a heavy termination penalty or unamortized cost reimbursement.21 Expansion rights typically manifest as a Right of First Refusal (ROFR), where the tenant has the right to match a third-party offer for adjacent space, or a Right of First Offer (ROFO), where the landlord must offer the space to the tenant before marketing it to the public.14 For ASC 842 compliance, management must assess the probability of a tenant exercising a renewal option; if the exercise is deemed reasonably certain, the renewal period must be capitalized into the Right-of-Use asset and the corresponding lease liability.4 Notice periods governing when these options must be exercised are strictly enforced, and missing a deadline typically results in the absolute forfeiture of the right.21
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Has Renewal Option
+	has_renewal_option
+	boolean
+	true
+	false
+	Renewal Terms
+	renewal_terms
+	array
+	false
+	false
+	Renewal Notice (Days)
+	renewal_notice_days
+	number
+	false
+	false
+	Has Termination Option
+	has_termination_option
+	boolean
+	true
+	false
+	Termination Penalty
+	termination_penalty
+	currency
+	false
+	false
+	Right of First Refusal
+	rofr_space
+	string
+	false
+	false
+	Right of First Offer
+	rofo_space
+	string
+	false
+	false
+	Tenant Improvements and Construction
+When a commercial space is leased, it rarely meets the immediate operational and aesthetic needs of the tenant. Consequently, leases contain detailed work letters that outline the scope, financing, and responsibility for constructing the demised premises.24 Landlords frequently offer a Tenant Improvement Allowance (TIA) to subsidize these build-outs, making the space viable for the occupant.11 Abstraction algorithms must distinguish between landlord's work, which involves base building preparations such as delivering a vanilla shell, and tenant's work, which encompasses custom fit-outs.24 Under ASC 842 accounting guidelines, a tenant improvement allowance is treated as a lease incentive, which reduces the initial measurement of the Right-of-Use asset and must be tracked meticulously.3 It is also vital to abstract who holds ownership of these improvements upon lease expiration, as restoration or make-good clauses may force the tenant to bear the massive cost of tearing down the build-out and restoring the premises to its original condition.27
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	TI Allowance
+	ti_allowance_amount
+	currency
+	false
+	false
+	TIA per RSF
+	ti_allowance_per_rsf
+	currency
+	false
+	false
+	Landlord's Work
+	landlord_work_description
+	string
+	false
+	false
+	Tenant's Work
+	tenant_work_description
+	string
+	false
+	false
+	Restoration Obligation
+	restoration_requirement
+	boolean
+	true
+	false
+	HVAC Responsibility
+	hvac_responsibility
+	string
+	true
+	true
+	Insurance and Indemnity
+Risk allocation is a central tenet of commercial leasing, effectuated through rigid insurance and indemnification covenants that protect the property and shield against third-party claims. The lease dictates the specific insurance policies each party must maintain. Tenants are universally required to carry Commercial General Liability (CGL) insurance on an occurrence basis rather than a claims-made basis, ensuring lifetime coverage for incidents that happen during the policy term regardless of when the claim is filed.28 The abstraction tool must meticulously capture the per occurrence limit and the general aggregate limit.28 Additionally, landlords strictly require tenants to name them as an additional insured and to secure a waiver of subrogation from the insurer, preventing the tenant's insurance company from suing the landlord to recover paid claims.30 The indemnification clause functions as a contractual transfer of risk, whereby the tenant agrees to defend and hold the landlord harmless from liabilities arising from the tenant's operations, capturing both active and passive negligence.28
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	CGL Occurrence Limit
+	cgl_occurrence_limit
+	currency
+	true
+	false
+	CGL Aggregate Limit
+	cgl_aggregate_limit
+	currency
+	true
+	false
+	Property Insurer
+	property_insurance_bearer
+	string
+	true
+	true
+	Waiver of Subrogation
+	waiver_of_subrogation
+	boolean
+	true
+	false
+	Additional Insured
+	additional_insured_req
+	boolean
+	true
+	false
+	Indemnification Scope
+	indemnification_scope
+	string
+	true
+	false
+	Assignment and Subletting
+Because business lifecycles rarely align perfectly with ten-year lease terms, tenants require the flexibility to assign their lease—transferring the entire leasehold interest to a new entity—or sublet the space, thereby creating a sub-landlord and sub-tenant relationship while retaining primary liability.21 Landlords, however, fiercely protect their right to control the tenant mix and credit profile within their buildings. Consequently, assignment and subletting clauses almost universally require prior written consent from the landlord.33 From an abstraction standpoint, it is vital to determine if the landlord's consent is bound by a standard of reasonableness, meaning it cannot be unreasonably withheld, conditioned, or delayed, or if it rests entirely in their sole discretion.34 Furthermore, landlords frequently negotiate the right to recapture the space if a transfer is requested, or demand a percentage of any bonus rent the tenant generates by subleasing the space at a premium over the contract rent.34 Corporate tenants negotiate permitted transferee carve-outs, allowing them to assign the lease during a merger, acquisition, or internal reorganization without triggering default or consent requirements.34
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Consent Required
+	consent_required
+	boolean
+	true
+	false
+	Consent Standard
+	consent_standard
+	string
+	true
+	false
+	Profit Sharing %
+	profit_sharing_percentage
+	percentage
+	false
+	false
+	Recapture Right
+	recapture_right
+	boolean
+	true
+	false
+	Permitted Transferees
+	permitted_transferees
+	array
+	false
+	false
+	Continuing Liability
+	continuing_liability
+	boolean
+	true
+	false
+	Default and Remedies
+The default and remedies section constructs the punitive framework that enforces the lease obligations. Defaults are bifurcated into monetary defaults, such as the failure to pay rent, and non-monetary defaults, which include the failure to maintain the premises, operating a prohibited business, or unauthorized subletting.27 The abstraction tool must capture the precise notice and cure periods provided to the tenant. A cure period defines the grace period a tenant has to rectify a breach after receiving formal notice before the landlord can initiate eviction or lawsuit proceedings, typically five days for rent and thirty days for maintenance issues.27 The schema must also log the presence of acceleration clauses and liquidated damages. An acceleration clause is a devastating remedy that makes the entire remaining rent balance for the duration of the lease immediately due and payable upon default, representing an immense latent financial liability.22 In retail settings, failure to surrender the premises in the required condition upon expiration can trigger an automatic, immediate default without a cure period, threatening the tenant with massive holdover penalties.27
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Monetary Cure Period
+	monetary_cure_period
+	number
+	true
+	false
+	Non-Monetary Cure
+	non_monetary_cure_period
+	number
+	true
+	false
+	Acceleration Clause
+	acceleration_clause
+	boolean
+	true
+	false
+	Liquidated Damages
+	liquidated_damages
+	currency
+	false
+	false
+	Late Fee %
+	late_fee_percentage
+	percentage
+	true
+	false
+	Holdover Rate
+	holdover_rate
+	percentage
+	true
+	false
+	Exclusivity and Co-tenancy
+Exclusive to the retail and mixed-use sectors, co-tenancy and exclusivity clauses are designed to protect a tenant's profitability by ensuring adequate foot traffic and minimizing direct competition.14 An exclusivity clause prohibits the landlord from leasing space within the same center to a direct competitor, such as a coffee shop securing the exclusive right to sell espresso beverages.20 Conversely, a radius restriction protects the landlord by preventing the tenant from opening a competing store within a certain geographic radius, which would cannibalize sales and reduce percentage rent.10 Co-tenancy clauses are categorized as either opening or ongoing. An opening co-tenancy condition allows a tenant to delay opening or pay a reduced rent until a certain threshold of the shopping center is built and occupied, usually requiring major anchors to be operational.41 Ongoing co-tenancy protects the tenant if anchors go bankrupt or if general occupancy drops below a critical threshold.39 If a co-tenancy failure occurs, the lease specifies remedies, which routinely include the right to pay an alternative rent, often switching from fixed base rent to pure percentage rent, or the ultimate right to terminate the lease entirely.39 As confirmed by jurisprudence such as the Supreme Court of California case JJD-HOV Elk Grove, LLC v. Jo-Ann Stores, LLC, the enforceability of these clauses relies heavily on the landlord's control over the center, making their accurate abstraction critical for risk mitigation.42 Overlooking these fields can cost corporate retail tenants millions of dollars in lost leverage.20
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Exclusive Use
+	exclusive_use_rights
+	string
+	false
+	false
+	Radius Restriction
+	radius_restriction_miles
+	number
+	false
+	false
+	Opening Co-tenancy
+	opening_cotenancy
+	string
+	false
+	false
+	Ongoing Co-tenancy
+	ongoing_cotenancy
+	string
+	false
+	false
+	Co-tenancy Remedy
+	cotenancy_remedy
+	string
+	false
+	false
+	Alternative Rent
+	alternative_rent_rate
+	string
+	false
+	false
+	Parking and Common Areas
+While seemingly mundane, parking allocations and common area rights are frequently the source of intense litigation and operational disputes. The lease dictates the parking ratio, expressing the number of allotted spaces per one thousand square feet of leased area.11 The abstraction architecture must separate unreserved surface parking from reserved designated parking, as reserved spaces usually incur separate monthly fees that supplement the base rent.43 In industrial settings, the abstraction must capture specialized parking parameters, such as the number of trailer parking stalls or staging areas available. Modern logistics operations demand substantial trailer storage, and capturing these physical dimensions is no longer just facilities management; it is a core valuation metric to assess if the asset meets modern e-commerce distribution standards.12
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Parking Ratio
+	parking_ratio
+	number
+	false
+	false
+	Unreserved Spaces
+	unreserved_parking_spaces
+	number
+	false
+	false
+	Reserved Spaces
+	reserved_parking_spaces
+	number
+	false
+	false
+	Monthly Parking Cost
+	monthly_parking_cost
+	currency
+	false
+	false
+	Trailer Parking
+	trailer_parking_spaces
+	number
+	false
+	false
+	Utilities and Building Systems
+The allocation of utility expenses and the technical capacities of building systems vary heavily by asset class and lease structure. In full-service gross office leases, utilities are typically bundled directly into the base rent.11 However, if a tenant consumes excess power, such as operating specialized server rooms, the lease will feature submetering clauses, holding the tenant directly responsible for their excess consumption.11 For NAIOP-governed industrial leases, the physical capability of the building is paramount to the tenant's operation. The abstraction schema must rigorously document the clear height, defined as the distance from the floor to the lowest hanging roof impediment, as well as the truss height.11 Furthermore, the system must extract the exact number of dock-high doors, which are elevated for semi-trucks, and drive-in doors, which provide grade-level access for forklifts.11 The electrical power capacity, often measured in amps and volts, must be extracted to confirm the facility can support heavy manufacturing or advanced refrigeration equipment.12
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Utilities Payment
+	utilities_payment_method
+	string
+	true
+	true
+	Janitorial Services
+	janitorial_responsibility
+	string
+	true
+	true
+	Clear Height (ft)
+	clear_height_feet
+	number
+	false
+	false
+	Dock-High Doors
+	dock_high_doors
+	number
+	false
+	false
+	Drive-In Doors
+	drive_in_doors
+	number
+	false
+	false
+	Power Capacity
+	power_capacity
+	string
+	false
+	false
+	Signage and Permitted Use
+A commercial lease strictly governs what business activities can be conducted within the space and how the business can advertise its presence. The permitted use clause acts as a rigid private zoning mechanism; an office space cannot be legally converted into a medical clinic, nor a standard retail store into an industrial facility, without violating this clause and risking immediate default.17 If a tenant changes their business model, it requires a formal lease amendment. Regarding visibility, signage rights dictate the placement, size, and illumination of the tenant's brand. Highly negotiated fields include the right to place signage on the building fascia, inclusion on a multi-tenant monument or pylon sign near the roadway, and the responsibilities for the maintenance, permitting, and eventual removal of these signs.
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Permitted Use
+	permitted_use_description
+	string
+	true
+	false
+	Prohibited Uses
+	prohibited_uses
+	array
+	false
+	false
+	Fascia Signage
+	fascia_signage_rights
+	boolean
+	false
+	false
+	Monument Signage
+	monument_signage_rights
+	boolean
+	false
+	false
+	Signage Maintenance
+	signage_maintenance
+	string
+	false
+	false
+	Miscellaneous
+The final abstraction category aggregates the remaining operational and financial security mechanisms embedded within the document.14 A primary field is the security deposit, which represents liquid capital held by the landlord to cure monetary defaults or repair physical damages.27 In modern commercial real estate, this frequently takes the form of an irrevocable letter of credit rather than cash. Furthermore, the schema must identify the presence of any personal or corporate guaranties, which pierce the corporate veil of the tenant entity to hold a parent company or individual financially accountable.13 Other miscellaneous provisions include the governing law, which dictates the state jurisdiction applying to the contract, subordination and non-disturbance agreements (SNDA), and the required turnaround days for estoppel certificates, which are critical during the sale or refinancing of the property.18
+Display Label
+	Field Name (snake_case)
+	Data Type
+	Required
+	CAM Relevant
+	Security Deposit
+	security_deposit_amount
+	currency
+	true
+	false
+	Deposit Type
+	security_deposit_type
+	string
+	true
+	false
+	Has Guaranty
+	has_guaranty
+	boolean
+	true
+	false
+	Governing Law
+	governing_law_state
+	string
+	true
+	false
+	SNDA Requirement
+	snda_requirement
+	boolean
+	false
+	false
+	Estoppel Turnaround
+	estoppel_turnaround_days
+	number
+	false
+	false
+	Master JSON Field Map Specification
+To satisfy the programmatic requirements of the AI-powered commercial lease abstraction tool, the following JSON array represents the absolute compendium of the field mappings detailed in the narrative analysis. This strict schema ensures that natural language processing models can systematically categorize the unstructured legal text into standardized data types, providing a seamless pipeline for financial reporting and asset management platforms.
+
+
+JSON
+
+
+
+
+,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "tenant_legal_name",
+   "category": "Parties & Property",
+   "display_label": "Tenant Name",
+   "description": "The legal corporate entity leasing the premises.",
+   "aliases": ["Lessee", "Occupant"],
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "guarantor_name",
+   "category": "Parties & Property",
+   "display_label": "Guarantor Name",
+   "description": "The entity or individual providing financial backing for the tenant.",
+   "aliases":,
+   "data_type": "array",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "premises_address",
+   "category": "Parties & Property",
+   "display_label": "Premises Address",
+   "description": "The full physical address of the leased space.",
+   "aliases":,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "suite_or_unit_number",
+   "category": "Parties & Property",
+   "display_label": "Suite/Unit Number",
+   "description": "The specific identifier for the tenant's space within a multi-tenant building.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "rentable_square_footage",
+   "category": "Parties & Property",
+   "display_label": "Rentable Area (RSF)",
+   "description": "The total area for which the tenant pays rent, including common area allocations.",
+   "aliases":,
+   "data_type": "number",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "usable_square_footage",
+   "category": "Parties & Property",
+   "display_label": "Usable Area (USF)",
+   "description": "The exact private physical space occupied by the tenant.",
+   "aliases":,
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "building_total_rsf",
+   "category": "Parties & Property",
+   "display_label": "Building Total RSF",
+   "description": "The total rentable square footage of the entire building or shopping center.",
+   "aliases":,
+   "data_type": "number",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "load_factor",
+   "category": "Parties & Property",
+   "display_label": "Load Factor",
+   "description": "The ratio mapping usable to rentable space to account for common areas.",
+   "aliases": ["Core Factor", "Common Area Factor"],
+   "data_type": "percentage",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "property_use_type",
+   "category": "Parties & Property",
+   "display_label": "Property Type",
+   "description": "The designated classification of the space.",
+   "aliases":,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "execution_date",
+   "category": "Key Dates & Term",
+   "display_label": "Execution Date",
+   "description": "The date the lease agreement was fully signed by all parties.",
+   "aliases":,
+   "data_type": "date",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "commencement_date",
+   "category": "Key Dates & Term",
+   "display_label": "Commencement Date",
+   "description": "The date the legal term of the lease officially begins.",
+   "aliases":,
+   "data_type": "date",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "rent_commencement_date",
+   "category": "Key Dates & Term",
+   "display_label": "Rent Commencement",
+   "description": "The date the tenant is legally obligated to begin paying base rent.",
+   "aliases":,
+   "data_type": "date",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "expiration_date",
+   "category": "Key Dates & Term",
+   "display_label": "Expiration Date",
+   "description": "The date the lease term naturally concludes without renewal.",
+   "aliases":,
+   "data_type": "date",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "lease_term_months",
+   "category": "Key Dates & Term",
+   "display_label": "Lease Term (Months)",
+   "description": "The total duration of the initial lease term expressed in months.",
+   "aliases":,
+   "data_type": "number",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "possession_date",
+   "category": "Key Dates & Term",
+   "display_label": "Possession Date",
+   "description": "The date the landlord grants the tenant physical access to the space.",
+   "aliases":,
+   "data_type": "date",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "rent_abatement_period",
+   "category": "Key Dates & Term",
+   "display_label": "Free Rent Period",
+   "description": "The duration during which the tenant is excused from paying base rent.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "base_rent_annual",
+   "category": "Rent & Escalations",
+   "display_label": "Annual Base Rent",
+   "description": "The total base rent payable for the first full lease year.",
+   "aliases":,
+   "data_type": "currency",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "rent_payment_frequency",
+   "category": "Rent & Escalations",
+   "display_label": "Payment Frequency",
+   "description": "The interval at which rent is due.",
+   "aliases": ["Installment Period"],
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "escalation_type",
+   "category": "Rent & Escalations",
+   "display_label": "Escalation Type",
+   "description": "The methodology used to increase rent over the term.",
+   "aliases":,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "fixed_escalation_rate",
+   "category": "Rent & Escalations",
+   "display_label": "Fixed Escalation %",
+   "description": "The static percentage by which rent increases annually, if applicable.",
+   "aliases":,
+   "data_type": "percentage",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "cpi_index_reference",
+   "category": "Rent & Escalations",
+   "display_label": "CPI Index Used",
+   "description": "The specific inflation index utilized for variable escalations.",
+   "aliases": ["Inflation Index", "Cost of Living"],
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "percentage_rent_rate",
+   "category": "Rent & Escalations",
+   "display_label": "Percentage Rent Rate",
+   "description": "The percentage of gross sales payable to the landlord.",
+   "aliases":,
+   "data_type": "percentage",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "sales_breakpoint_amount",
+   "category": "Rent & Escalations",
+   "display_label": "Breakpoint Amount",
+   "description": "The gross sales threshold that triggers percentage rent obligations.",
+   "aliases":,
+   "data_type": "currency",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "gross_sales_exclusions",
+   "category": "Rent & Escalations",
+   "display_label": "Sales Exclusions",
+   "description": "Specific revenue streams omitted from percentage rent calculations.",
+   "aliases":,
+   "data_type": "array",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "lease_structure_type",
+   "category": "CAM & Operating Expenses",
+   "display_label": "Lease Structure",
+   "description": "The categorization of expense sharing.",
+   "aliases":,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "pro_rata_share",
+   "category": "CAM & Operating Expenses",
+   "display_label": "Pro Rata Share",
+   "description": "The tenant's fractional responsibility for total building operating expenses.",
+   "aliases":,
+   "data_type": "percentage",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "base_year",
+   "category": "CAM & Operating Expenses",
+   "display_label": "Base Year",
+   "description": "The foundational year used to calculate operating expense increases in gross leases.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "cam_cap_percentage",
+   "category": "CAM & Operating Expenses",
+   "display_label": "CAM Cap %",
+   "description": "The maximum allowable annual increase for controllable operating expenses.",
+   "aliases": ["Expense Ceiling", "Controllable Cap"],
+   "data_type": "percentage",
+   "required": false,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "cam_cap_type",
+   "category": "CAM & Operating Expenses",
+   "display_label": "CAM Cap Type",
+   "description": "Specifies whether the CAM cap is cumulative and compounding or non-cumulative.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "gross_up_percentage",
+   "category": "CAM & Operating Expenses",
+   "display_label": "Gross-Up %",
+   "description": "The assumed occupancy level used to extrapolate variable operating expenses.",
+   "aliases": ["Gross-Up Provision"],
+   "data_type": "percentage",
+   "required": false,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "management_fee_cap",
+   "category": "CAM & Operating Expenses",
+   "display_label": "Management Fee Cap",
+   "description": "The maximum allowable percentage of gross revenues charged for property management.",
+   "aliases": ["Admin Fee Limit"],
+   "data_type": "percentage",
+   "required": false,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "cam_exclusions",
+   "category": "CAM & Operating Expenses",
+   "display_label": "CAM Exclusions",
+   "description": "Specific costs legally barred from being passed through to the tenant.",
+   "aliases": ["Unallowable Expenses", "Carve-outs"],
+   "data_type": "array",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "audit_rights",
+   "category": "CAM & Operating Expenses",
+   "display_label": "Audit Rights",
+   "description": "Indicates whether the tenant possesses the legal right to audit the landlord's CAM ledgers.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "has_renewal_option",
+   "category": "Options",
+   "display_label": "Has Renewal Option",
+   "description": "Indicates the presence of a contractual right to extend the lease term.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "renewal_terms",
+   "category": "Options",
+   "display_label": "Renewal Terms",
+   "description": "The specific parameters of the renewal.",
+   "aliases": ["Extension Periods"],
+   "data_type": "array",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "renewal_notice_days",
+   "category": "Options",
+   "display_label": "Renewal Notice (Days)",
+   "description": "The deadline prior to expiration by which the tenant must exercise the renewal.",
+   "aliases": ["Option Notice Period"],
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "has_termination_option",
+   "category": "Options",
+   "display_label": "Has Termination Option",
+   "description": "Indicates the right to break the lease prior to the natural expiration date.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "termination_penalty",
+   "category": "Options",
+   "display_label": "Termination Penalty",
+   "description": "The fee or liquidated damages required to execute an early termination.",
+   "aliases":,
+   "data_type": "currency",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "rofr_space",
+   "category": "Options",
+   "display_label": "Right of First Refusal",
+   "description": "Indicates a ROFR on specific adjacent or building spaces.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "rofo_space",
+   "category": "Options",
+   "display_label": "Right of First Offer",
+   "description": "Indicates a ROFO to lease space before it hits the open market.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "ti_allowance_amount",
+   "category": "Tenant Improvements & Construction",
+   "display_label": "TI Allowance",
+   "description": "The total monetary subsidy provided by the landlord for space customization.",
+   "aliases":,
+   "data_type": "currency",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "ti_allowance_per_rsf",
+   "category": "Tenant Improvements & Construction",
+   "display_label": "TIA per RSF",
+   "description": "The improvement allowance calculated on a per-square-foot basis.",
+   "aliases":,
+   "data_type": "currency",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "landlord_work_description",
+   "category": "Tenant Improvements & Construction",
+   "display_label": "Landlord's Work",
+   "description": "The specific construction obligations the landlord must complete prior to possession.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "tenant_work_description",
+   "category": "Tenant Improvements & Construction",
+   "display_label": "Tenant's Work",
+   "description": "The scope of construction the tenant is responsible for managing and funding.",
+   "aliases": ["Initial Alterations", "Fit-out"],
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "restoration_requirement",
+   "category": "Tenant Improvements & Construction",
+   "display_label": "Restoration Obligation",
+   "description": "The duty of the tenant to remove improvements and restore the space upon exit.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "hvac_responsibility",
+   "category": "Tenant Improvements & Construction",
+   "display_label": "HVAC Responsibility",
+   "description": "Identifies whether the landlord or tenant is responsible for replacing HVAC units.",
+   "aliases":,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "cgl_occurrence_limit",
+   "category": "Insurance & Indemnity",
+   "display_label": "CGL Occurrence Limit",
+   "description": "The minimum liability coverage required for a single incident.",
+   "aliases": ["Per Occurrence Cap"],
+   "data_type": "currency",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "cgl_aggregate_limit",
+   "category": "Insurance & Indemnity",
+   "display_label": "CGL Aggregate Limit",
+   "description": "The total maximum liability coverage required for the policy period.",
+   "aliases": ["General Aggregate"],
+   "data_type": "currency",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "property_insurance_bearer",
+   "category": "Insurance & Indemnity",
+   "display_label": "Property Insurer",
+   "description": "Specifies whether the landlord or tenant insures the physical building/improvements.",
+   "aliases": ["Casualty Insurance"],
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "waiver_of_subrogation",
+   "category": "Insurance & Indemnity",
+   "display_label": "Waiver of Subrogation",
+   "description": "A mutual agreement preventing insurers from suing the other party to recoup losses.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "additional_insured_req",
+   "category": "Insurance & Indemnity",
+   "display_label": "Additional Insured",
+   "description": "Requirement for the tenant to add the landlord to their liability policy.",
+   "aliases": ["Named Insured"],
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "indemnification_scope",
+   "category": "Insurance & Indemnity",
+   "display_label": "Indemnification Scope",
+   "description": "The extent to which the tenant holds the landlord harmless from liability claims.",
+   "aliases": ["Hold Harmless Agreement"],
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "consent_required",
+   "category": "Assignment & Subletting",
+   "display_label": "Consent Required",
+   "description": "Indicates if landlord approval is necessary for a transfer of the leasehold.",
+   "aliases": ["Permission to Assign"],
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "consent_standard",
+   "category": "Assignment & Subletting",
+   "display_label": "Consent Standard",
+   "description": "The legal standard governing the landlord's right to refuse a transfer request.",
+   "aliases":,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "profit_sharing_percentage",
+   "category": "Assignment & Subletting",
+   "display_label": "Profit Sharing %",
+   "description": "The portion of sublease profits payable to the landlord.",
+   "aliases":,
+   "data_type": "percentage",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "recapture_right",
+   "category": "Assignment & Subletting",
+   "display_label": "Recapture Right",
+   "description": "The landlord's right to terminate the lease and take back the space upon a transfer request.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "permitted_transferees",
+   "category": "Assignment & Subletting",
+   "display_label": "Permitted Transferees",
+   "description": "Exemptions allowing corporate restructurings or M&A without landlord consent.",
+   "aliases":,
+   "data_type": "array",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "continuing_liability",
+   "category": "Assignment & Subletting",
+   "display_label": "Continuing Liability",
+   "description": "Indicates if the original tenant remains financially liable post-assignment.",
+   "aliases": ["Ongoing Guaranty"],
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "monetary_cure_period",
+   "category": "Default & Remedies",
+   "display_label": "Monetary Cure Period",
+   "description": "The number of days allowed to remedy missed financial payments after notice.",
+   "aliases":,
+   "data_type": "number",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "non_monetary_cure_period",
+   "category": "Default & Remedies",
+   "display_label": "Non-Monetary Cure",
+   "description": "The number of days allowed to remedy operational or physical breaches after notice.",
+   "aliases": ["Performance Grace Period"],
+   "data_type": "number",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "acceleration_clause",
+   "category": "Default & Remedies",
+   "display_label": "Acceleration Clause",
+   "description": "Landlord's right to demand all future rent immediately upon a lease default.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "liquidated_damages",
+   "category": "Default & Remedies",
+   "display_label": "Liquidated Damages",
+   "description": "A predetermined penalty fee assessed for specific breaches of the contract.",
+   "aliases":,
+   "data_type": "currency",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "late_fee_percentage",
+   "category": "Default & Remedies",
+   "display_label": "Late Fee %",
+   "description": "The penalty percentage applied to overdue rent payments.",
+   "aliases":,
+   "data_type": "percentage",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "holdover_rate",
+   "category": "Default & Remedies",
+   "display_label": "Holdover Rate",
+   "description": "The multiplier applied to base rent if the tenant remains post-expiration.",
+   "aliases": ["Overstay Penalty"],
+   "data_type": "percentage",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "exclusive_use_rights",
+   "category": "Exclusivity & Co-tenancy",
+   "display_label": "Exclusive Use",
+   "description": "A covenant preventing the landlord from leasing to direct competitors in the center.",
+   "aliases": ["Non-compete Clause"],
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "radius_restriction_miles",
+   "category": "Exclusivity & Co-tenancy",
+   "display_label": "Radius Restriction",
+   "description": "The geographic distance within which a tenant cannot open a competing location.",
+   "aliases":,
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "opening_cotenancy",
+   "category": "Exclusivity & Co-tenancy",
+   "display_label": "Opening Co-tenancy",
+   "description": "Conditions requiring specific occupancy levels before the tenant is obligated to open.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "ongoing_cotenancy",
+   "category": "Exclusivity & Co-tenancy",
+   "display_label": "Ongoing Co-tenancy",
+   "description": "Conditions requiring the continuous operation of specific anchor tenants.",
+   "aliases": ["Operating Co-tenancy"],
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "cotenancy_remedy",
+   "category": "Exclusivity & Co-tenancy",
+   "display_label": "Co-tenancy Remedy",
+   "description": "The tenant's recourse if co-tenancy fails.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "alternative_rent_rate",
+   "category": "Exclusivity & Co-tenancy",
+   "display_label": "Alternative Rent",
+   "description": "The modified rent structure implemented during a co-tenancy failure period.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "parking_ratio",
+   "category": "Parking & Common Areas",
+   "display_label": "Parking Ratio",
+   "description": "The number of spaces allocated per 1,000 square feet of leased space.",
+   "aliases":,
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "unreserved_parking_spaces",
+   "category": "Parking & Common Areas",
+   "display_label": "Unreserved Spaces",
+   "description": "The raw number of non-specific parking spaces granted to the tenant.",
+   "aliases":,
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "reserved_parking_spaces",
+   "category": "Parking & Common Areas",
+   "display_label": "Reserved Spaces",
+   "description": "The number of explicitly designated, exclusive parking stalls for the tenant.",
+   "aliases": ["Executive Parking"],
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "monthly_parking_cost",
+   "category": "Parking & Common Areas",
+   "display_label": "Monthly Parking Cost",
+   "description": "The fee levied per space for utilizing the parking facilities.",
+   "aliases":,
+   "data_type": "currency",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "trailer_parking_spaces",
+   "category": "Parking & Common Areas",
+   "display_label": "Trailer Parking",
+   "description": "The number of oversized spaces dedicated to industrial semi-truck trailers.",
+   "aliases":,
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "utilities_payment_method",
+   "category": "Utilities",
+   "display_label": "Utilities Payment",
+   "description": "How utilities are billed to the tenant.",
+   "aliases": ["Utility Allocation"],
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "janitorial_responsibility",
+   "category": "Utilities",
+   "display_label": "Janitorial Services",
+   "description": "Identifies whether the landlord or tenant is responsible for cleaning the premises.",
+   "aliases":,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": true
+ },
+ {
+   "field_name": "clear_height_feet",
+   "category": "Utilities",
+   "display_label": "Clear Height (ft)",
+   "description": "The usable vertical clearance inside an industrial warehouse facility.",
+   "aliases": ["Clear Headway", "Ceiling Height"],
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "dock_high_doors",
+   "category": "Utilities",
+   "display_label": "Dock-High Doors",
+   "description": "The number of elevated loading bays designed to align with semi-truck beds.",
+   "aliases":,
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "drive_in_doors",
+   "category": "Utilities",
+   "display_label": "Drive-In Doors",
+   "description": "The number of grade-level doors allowing vehicle entry into the warehouse.",
+   "aliases":,
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "power_capacity",
+   "category": "Utilities",
+   "display_label": "Power Capacity",
+   "description": "The quantitative electrical capability delivered to the premises.",
+   "aliases": ["Electrical Load"],
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "permitted_use_description",
+   "category": "Signage & Permitted Use",
+   "display_label": "Permitted Use",
+   "description": "The specific, legally allowed business activities the tenant can conduct.",
+   "aliases": ["Authorized Use", "Use Clause"],
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "prohibited_uses",
+   "category": "Signage & Permitted Use",
+   "display_label": "Prohibited Uses",
+   "description": "Specific activities explicitly banned within the leased premises.",
+   "aliases":,
+   "data_type": "array",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "fascia_signage_rights",
+   "category": "Signage & Permitted Use",
+   "display_label": "Fascia Signage",
+   "description": "The right to affix branding directly onto the exterior wall of the building.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "monument_signage_rights",
+   "category": "Signage & Permitted Use",
+   "display_label": "Monument Signage",
+   "description": "The right to place the tenant's name on a shared roadside structure.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "signage_maintenance",
+   "category": "Signage & Permitted Use",
+   "display_label": "Signage Maintenance",
+   "description": "Determines if the landlord or tenant is financially responsible for sign upkeep.",
+   "aliases":,
+   "data_type": "string",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "security_deposit_amount",
+   "category": "Miscellaneous",
+   "display_label": "Security Deposit",
+   "description": "The total collateral held by the landlord to ensure lease performance.",
+   "aliases":,
+   "data_type": "currency",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "security_deposit_type",
+   "category": "Miscellaneous",
+   "display_label": "Deposit Type",
+   "description": "The form of the collateral provided.",
+   "aliases": ["Collateral Form"],
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "has_guaranty",
+   "category": "Miscellaneous",
+   "display_label": "Has Guaranty",
+   "description": "Indicates if an external party has guaranteed the lease obligations.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "governing_law_state",
+   "category": "Miscellaneous",
+   "display_label": "Governing Law",
+   "description": "The legal jurisdiction whose laws dictate the interpretation of the contract.",
+   "aliases":,
+   "data_type": "string",
+   "required": true,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "snda_requirement",
+   "category": "Miscellaneous",
+   "display_label": "SNDA Requirement",
+   "description": "Duty to sign a Subordination, Non-Disturbance, and Attornment agreement.",
+   "aliases":,
+   "data_type": "boolean",
+   "required": false,
+   "cam_relevant": false
+ },
+ {
+   "field_name": "estoppel_turnaround_days",
+   "category": "Miscellaneous",
+   "display_label": "Estoppel Turnaround",
+   "description": "The number of days the tenant has to return a signed estoppel certificate.",
+   "aliases":,
+   "data_type": "number",
+   "required": false,
+   "cam_relevant": false
+ }
+]
+
+Works cited
+1. ASC 842 Lease Accounting (Free Compliance Checklist) - Accruent, accessed March 3, 2026, https://www.accruent.com/resources/blog-posts/asc-842-what-why-it-important
+2. IFRS 16 – Illustrative disclosures - KPMG, accessed March 3, 2026, https://kpmg.com/xx/en/what-we-do/services/audit/corporate-reporting-institute/ifrs/illustrative-financial-statements/ifs-leases-ifrs16.html
+3. ASC 842 Technical Basics and Implementation Considerations - RSM US, accessed March 3, 2026, https://rsmus.com/content/dam/rsm/events/2022/pdf/asc-842-technical-basics-0516-webcast-slides.pdf
+4. ASC 842 Disclosure Requirements Guide | iLeasePro, accessed March 3, 2026, https://ileasepro.com/blog/asc-842-disclosure-requirements/
+5. 7.2 Determination of the Discount Rate for Lessees | DART, accessed March 3, 2026, https://dart.deloitte.com/USDART/home/codification/broad-transactions/asc842-10/roadmap-leasing/chapter-7-discount-rates/7-2-determination-discount-rate-for
+6. BOMA Standards | BOMA International, accessed March 3, 2026, https://boma.org/boma-standards/
+7. Blog – BOMA Measurements for Leasing Agreements: What To Know | Apex As-Builts, accessed March 3, 2026, https://apexab.com/blog/boma-measurements-for-leasing-agreements-what-to-know
+8. BOMA Standard for Measuring Office Space - Tenant Advisors, accessed March 3, 2026, https://tenantadvisors.com/boma-standard-for-measuring-office-space/
+9. BOMA 2017 Office Standard: What You Need to Know | Otten Johnson, accessed March 3, 2026, https://www.ottenjohnson.com/news/boma-2017-office-standard-what-you-need-to-know/
+10. ICSC's New Model Retail Lease; Staying Current with the New ..., accessed March 3, 2026, https://www.icsc.com/uploads/event_documents/Seminar_16_New_Model_Retail_Lease_Materials.pdf
+11. NAIOP Terms and Definitions: North American Office and Industrial Market, accessed March 3, 2026, https://www.naiop.org/globalassets/research-and-publications/report/terms-and-definitions-/researchreportnaiop-terms-and-definitions-2012.pdf
+12. Industrial Developers Think Outside the Big Box - NAIOP, accessed March 3, 2026, https://www.naiop.org/research-and-publications/magazine/2024/fall-2024/development-ownership/industrial-developers-think-outside-the-big-box/
+13. Abstract Checklist, accessed March 3, 2026, https://www.leaseprobe.com/Content/Downloads/AbstractChecklist22.pdf
+14. Ultimate Guide to Lease & Tenant Management (Updated 2025), accessed March 3, 2026, https://www.re-leased.com/lease-tenant-management/ultimate-guide-to-lease-tenant-management-2025
+15. Rental CAM reconciliation and Audit service - LPRD - Lease Probe, accessed March 3, 2026, https://www.leaseprobe.com/review
+16. Understanding CAM reconciliation: What you need to know - Agora, accessed March 3, 2026, https://agorareal.com/learn/cam-reconciliation/
+17. Lease Abstract Template: A Comprehensive Guide - Investor Relationship Management Purpose-Built for Real Estate | Homebase, accessed March 3, 2026, https://www.homebasecre.com/posts/lease-abstract-template-a-comprehensive-guide
+18. A Complete Guide to Commercial Lease Abstraction's Sections, accessed March 3, 2026, https://www.springbord.com/blog/complete-guide-to-commercial-lease-abstractions-sections/
+19. CAM Reconciliation Explained: Impact on Different Lease Types - Springbord, accessed March 3, 2026, https://www.springbord.com/blog/cam-reconciliation-explained-impact-on-different-lease-types/
+20. 5 Lease Abstraction Errors Corporate Tenants Can't Afford to Make - Springbord, accessed March 3, 2026, https://www.springbord.com/blog/lease-abstraction-errors-corporate-tenants-cant-afford-to-make/
+21. Breaking a Commercial Lease in 2026: Options and Deadlines - Hughes Marino, accessed March 3, 2026, https://hughesmarino.com/blog/2025/12/05/breaking-a-commercial-lease-in-2026-options-and-deadlines/
+22. Breaking a Commercial Lease: Things to Consider Before Termination - Lasher, accessed March 3, 2026, https://www.lasher.com/breaking-a-commercial-lease-things-to-consider-before-termination/
+23. Right of First Refusal: A Guide for Real Estate Agents - NAR.realtor, accessed March 3, 2026, https://www.nar.realtor/residential-real-estate/right-of-first-refusal
+24. Landlord Offering a Tenant Improvement Allowance? Here's What You Need to Know, accessed March 3, 2026, https://leasecake.com/blog/tenant-improvement-allowance
+25. Leases Navigating the guidance in ASC 842 | Grant Thornton, accessed March 3, 2026, https://www.grantthornton.com/content/dam/grantthornton/website/assets/content-page-files/audit/pdfs/2022/leases-navigating-the-guidance-in-asc-842-february-2022.pdf
+26. Lease Incentives under ASC 842 Explained with a Full Accounting Example - FinQuery, accessed March 3, 2026, https://finquery.com/blog/lease-incentives-asc-842-accounting-example/
+27. Surrender Condition: Your Lease May Lack a Key Automatic Default Provision | Insights, accessed March 3, 2026, https://www.hklaw.com/en/insights/publications/2025/01/surrender-condition-your-lease-may-lack-a-key-automatic
+28. EXHIBIT C Indemnification and Insurance Requirements (For Lease Agreements), accessed March 3, 2026, https://content.civicplus.com/api/assets/6d286d98-1fd8-4f61-ac4d-c6b34a7912dc?cache=1800
+29. The importance of lease insurance provisions - Brownstein Hyatt Farber Schreck, accessed March 3, 2026, https://www.bhfs.com/Templates/media/files/insights/CREJ%20Tal_Miranda%202_17_2022.pdf
+30. ANNOTATED RISK MANAGEMENT PROVISIONS: Indemnity and Liability Insurance (Focus on Texas Real Estate Forms Manual's Retail Lea, accessed March 3, 2026, http://www.gdhm.com/images/pdf/whl-annotatedriskmanagement.pdf
+31. League of California Cities City Attorneys Department Spring Conference Insurance and Indemnity in City Contracts By William Hol, accessed March 3, 2026, https://www.cacities.org/UploadedFiles/LeagueInternet/d0/d0ccc278-4b18-4b69-b4cb-bf2950e567d4.pdf
+32. Assignment and subletting in lease agreements - ReboLease, accessed March 3, 2026, https://www.rebolease.com/commercial-real-estate-lease-administration-glossary/assignment-and-subletting-in-lease-agreements
+33. Navigating Assignments, Subleases, and Landlord Consent in Commercial Leases, accessed March 3, 2026, https://www.bartonesq.com/news-article/navigating-assignments-subleases-and-landlord-consent-in-commercial-leases/
+34. COMMERCIAL LEASE ASSIGNMENTS AND SUBLEASES: POTENTIAL TRAPS AND PRACTICAL SOLUTIONS FOR TENANTS - Association of Corporate Counsel (ACC), accessed March 3, 2026, https://www.acc.com/sites/default/files/program-materials/upload/10.23-Commercial-Lease-Assignments-and-Subleases.pdf
+35. ASSIGNMENT AND SUBLETTING: BALANCING LANDLORD AND TENANT INTEREST - Wilson Cribbs Goren, accessed March 3, 2026, https://wcglaw.net/wp-content/uploads/assignment-and-subletting.pdf
+36. Assignments and Subletting in Commercial Lease Transactions - Cozen O'Connor, accessed March 3, 2026, https://www.cozen.com/news-resources/publications/2012/the-basics-assignments-and-subletting-in-commercial-lease-transactions-cozen-oconnor
+37. Defaults and Remedies in Retail Leases - Gill Ragon Owen, accessed March 3, 2026, http://gill-law.com/wp-content/uploads/2021/03/Lease-Defaults-and-Remedies.pdf
+38. Effective 5/9/2017 57-16-5 Cause required for terminating lease -- Causes -- Cure periods -- Notice. (1) An agreement for the le, accessed March 3, 2026, https://le.utah.gov/xcode/Title57/Chapter16/C57-16-S5_2017050920170509.pdf
+39. Commercial Leases: Co-Tenancy Clause (Retail Lease, Ongoing) | Practical Law - Westlaw, accessed March 3, 2026, https://content.next.westlaw.com/practical-law/document/I96971392939a11ea80afece799150095/Commercial-Leases-Co-Tenancy-Clause-Retail-Lease-Ongoing?viewType=FullText&transitionType=Default&contextData=(sc.Default)
+40. Top Ten Issues In Co-Tenancy Provisions In Retail Leases - Cox, Castle & Nicholson, accessed March 3, 2026, https://www.coxcastle.com/publication-top-ten-issues-in-co-tenancy-provisions-in-retail-leases
+41. Co-Tenancy & Its Triggers In The Retail Market, Simplified - RockStep Capital, accessed March 3, 2026, https://rockstep.com/blog/co-tenancy-clauses
+42. Co-Tenancy Clause Survives Challenge Before CA High Court - Phillips Lytle LLP, accessed March 3, 2026, https://phillipslytle.com/co-tenancy-clause-survives-challenge-before-california-high-court/
+43. Commercial Real Estate Terms and Definitions - NAIOP, accessed March 3, 2026, https://www.naiop.org/education-and-career/industry-terms-and-definitions/
+44. the Retail Experience - NAIOP, accessed March 3, 2026, https://www.naiop.org/globalassets/magazine/2025/summer-2025/2025_summer.pdf

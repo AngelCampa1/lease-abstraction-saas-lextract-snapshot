@@ -1,0 +1,69 @@
+# Local-only full stack: postgres + minio + redis + web + worker.
+# Usage: docker compose -f docker-compose.yml -f docker-compose.local.yml up
+# NOT for production. Real OpenRouter key comes from .env (gitignored).
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: lextract
+      POSTGRES_PASSWORD: lextract
+      POSTGRES_DB: lextract
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lextract"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+      # Throwaway key for the local MinIO container only. Regenerate with:
+      #   python -c "import base64,os;print(base64.b64encode(os.urandom(32)).decode())"
+      MINIO_KMS_SECRET_KEY: "lextract-local-key:DkRAP7FvG1AhgztvR6byisr6dEH4YXvK0nAVQToJoTI="
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    ports:
+      - "8001:8000"
+    environment:
+      NEON_DATABASE_URL: postgresql://lextract:lextract@postgres:5432/lextract
+      R2_ENDPOINT_URL: http://minio:9000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      redis:
+        condition: service_healthy
+
+  worker:
+    environment:
+      NEON_DATABASE_URL: postgresql://lextract:lextract@postgres:5432/lextract
+      R2_ENDPOINT_URL: http://minio:9000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      redis:
+        condition: service_healthy
+
+volumes:
+  postgres-data:
+  minio-data:

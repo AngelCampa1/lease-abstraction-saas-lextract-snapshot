@@ -1,0 +1,120 @@
+---
+title: How to Track Commercial Lease Critical Dates in Excel
+slug: track-commercial-lease-critical-dates-excel
+description: >-
+  A practical guide to building a commercial lease critical dates tracker in
+  Excel, including which dates to track and how to set up expiration alerts.
+publishedAt: '2026-03-19'
+updatedAt: '2026-03-19'
+author: 'Angel Campa, Founder'
+category: articles
+silo: lease-administration
+tags:
+  - lease critical dates
+  - lease expiration tracking
+  - lease administration
+readingTime: 7
+featured: false
+funnelStage: mofu
+faq:
+  - question: >-
+      What is the main takeaway from How to Track Commercial Lease Critical
+      Dates in Excel?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: >-
+      How does Lextract help with How to Track Commercial Lease Critical Dates
+      in Excel?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+Missing a critical lease date is one of the most expensive mistakes in commercial real estate. Losing a renewal option because the notice deadline passed while the lease was sitting in a file cabinet costs real money - the tenant either vacates or has leverage to renegotiate from scratch. Holdover rent, typically 125–150% of the last contractual rent, accumulates when no one noticed the expiration date approaching. Termination options expire silently.
+
+Excel is not the most sophisticated tool for critical date management, but it is widely available, requires no vendor relationship, and works well for portfolios of 10–200 leases when set up correctly. This guide covers which dates to track, how to structure the spreadsheet, and how to configure formulas and conditional formatting to surface upcoming deadlines.
+
+## The 10 Critical Dates Every Commercial Lease Tracker Must Include
+
+Not all lease dates are equal. These are the ones where missing the deadline has immediate financial or legal consequences.
+
+**1. Lease Expiration Date.** The date the lease term ends. Track this as the primary anchor date for all notice period calculations. For holdover risk management, you want to know this date 12 months out, minimum.
+
+**2. Renewal Option Notice Deadline.** Most renewal options require notice 6–12 months before lease expiration, with some requiring 9–18 months. Missing this date eliminates the option entirely in most jurisdictions. This is the most consequential date in the tracker.
+
+**3. Expansion Option Exercise Deadline.** If the tenant has a right of first offer, right of first refusal, or expansion option on adjacent space, there is typically a deadline by which the option must be exercised. These deadlines are often tied to specific space availability events, not fixed calendar dates - document the trigger carefully.
+
+**4. Termination Option Notice Deadline.** Early termination options allow the tenant (or sometimes landlord) to terminate the lease before expiration, usually with a termination fee. The notice deadline to exercise this option must be tracked; after it passes, the option expires.
+
+**5. Rent Escalation Dates.** Dates when base rent steps up to the next scheduled amount. Track these so billing is updated on time. Missed escalations may not be recoverable if the lease requires timely implementation.
+
+**6. CAM Reconciliation Deadline.** Most leases require the landlord to deliver the prior year's CAM reconciliation statement within 90–120 days after year-end. Tenants often have an audit rights window that opens upon delivery of the reconciliation. Track the delivery deadline and the audit deadline separately.
+
+**7. Audit Rights Expiration.** Tenant audit rights typically expire 90–180 days after delivery of the annual CAM statement. After this window closes, the tenant generally waives the right to dispute the reconciliation.
+
+**8. Security Deposit Burn-Down Dates.** Some leases include provisions where the security deposit amount decreases after the tenant meets certain performance conditions (typically years of on-time rent payment). Track these dates to ensure timely refund or credit to the tenant - failing to do so creates dispute risk.
+
+**9. Permitted Assignment/Subletting Notice Dates.** If a tenant submits a subletting or assignment request, the lease typically requires the landlord to respond within a specified window (commonly 10–30 days) or the request is deemed approved. Track incoming requests against this window.
+
+**10. Lender Notice Obligations.** Some leases require landlord to notify tenants of financing events, or require tenant notifications to be simultaneously copied to the lender. If the property is encumbered, these notice obligations create compliance dates.
+
+## How to Structure the Excel Tracker
+
+The most functional structure uses a flat table with one row per critical date event - not one row per lease. This means a lease with five critical date types generates five rows. The columns should be:
+
+| Column | Content |
+|---|---|
+| Lease_ID | Unique identifier for the lease |
+| Tenant_Name | Tenant legal entity name |
+| Property_Address | Property and suite |
+| Date_Type | Category from the list above |
+| Critical_Date | The actual calendar date |
+| Notice_Days_Required | How many days advance notice the lease requires |
+| Notice_Deadline | Formula: =Critical_Date - Notice_Days_Required |
+| Days_Until_Deadline | Formula: =Notice_Deadline - TODAY() |
+| Status | Auto-calculated (see conditional formatting below) |
+| Action_Required | Text description of what must be done |
+| Owner | Person responsible for taking action |
+| Completed | Yes/No checkbox or date completed |
+
+The **Notice_Deadline** column is the most important calculated field. It backs out from the critical date by the number of advance notice days required under the lease. If a renewal option requires 9 months' notice and the lease expires December 31, 2027, the notice deadline is March 31, 2027 - and that March date is what the tracker must flag, not December.
+
+The **Days_Until_Deadline** column uses `=Notice_Deadline - TODAY()` and produces a positive number when the deadline is in the future and a negative number when it has passed. Negative values mean you have missed the deadline and need to evaluate your legal exposure.
+
+## Conditional Formatting for Visual Alerts
+
+Conditional formatting turns the tracker from a static list into an active alert system. Apply these rules to the Days_Until_Deadline column:
+
+- **Red fill, bold text:** `=AND(Days_Until_Deadline>=0, Days_Until_Deadline<=30)` - Action required within 30 days. Urgent.
+- **Orange fill:** `=AND(Days_Until_Deadline>30, Days_Until_Deadline<=90)` - Coming up in 1–3 months. Plan now.
+- **Yellow fill:** `=AND(Days_Until_Deadline>90, Days_Until_Deadline<=180)` - 3–6 months out. On watch.
+- **Gray fill:** `=Days_Until_Deadline<0` - Past deadline. Review immediately.
+
+You can also use a Data Bar on the Days_Until_Deadline column for quick visual scanning across the full list.
+
+For the **Status** column, use a formula that automatically categorizes each row:
+
+```
+=IF(Completed="Yes","Done",IF(Days_Until_Deadline<0,"OVERDUE",IF(Days_Until_Deadline<=30,"URGENT",IF(Days_Until_Deadline<=90,"ACTION SOON","On Track"))))
+```
+
+This gives you a filterable Status column, so you can filter to "URGENT" and "ACTION SOON" for your weekly review.
+
+## Managing Amendments and Lease Modifications
+
+Every time a lease is amended, the tracker must be updated. An amendment might extend the lease expiration date (which shifts every downstream notice deadline), remove a termination option, or add an expansion right. Amendments are the most common source of stale data in critical date trackers.
+
+Establish a workflow: when an amendment is executed, update the relevant rows in the tracker the same day. Mark the old critical date row as superseded (add a "Superseded by Amendment 2" note in the Action_Required column). Add new rows for the updated dates.
+
+## Populating the Tracker from Lease Abstraction
+
+The most significant operational challenge with an Excel-based tracker is the initial data entry. Manually reading each lease, finding each critical date, computing each notice deadline, and entering everything correctly is time-consuming and error-prone.
+
+Lease abstraction tools like Lextract extract critical dates as part of the standard field set. The 126-field extraction includes lease expiration, renewal option terms and notice periods, termination option terms and dates, rent escalation schedules, and CAM reconciliation deadlines. The Excel export can be used to populate the tracker with minimal manual rekeying.
+
+The formula-based alert columns (Days_Until_Deadline, Status) auto-calculate from whatever dates are imported. Your setup effort shifts from manual date extraction - re-reading every page of every lease - to configuring the spreadsheet once and importing the structured data.
+
+For a portfolio of 25 leases, the time savings over manual entry is typically 15–25 hours of avoided work, plus ongoing accuracy improvement that reduces the risk of missing a deadline.

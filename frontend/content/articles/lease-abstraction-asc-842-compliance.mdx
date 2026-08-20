@@ -1,0 +1,106 @@
+---
+title: 'ASC 842 Lease Abstraction: What Your Auditors Actually Need'
+slug: lease-abstraction-asc-842-compliance
+description: >-
+  ASC 842 requires companies to put operating leases on the balance sheet. Here
+  are the exact fields your accounting team needs from every lease.
+publishedAt: '2026-03-18'
+updatedAt: '2026-03-18'
+author: 'Angel Campa, Founder'
+category: articles
+silo: compliance
+tags:
+  - ASC 842
+  - lease abstraction
+  - IFRS 16
+  - lease accounting
+readingTime: 7
+featured: false
+funnelStage: mofu
+faq:
+  - question: What is the main takeaway from ASC 842 Lease Abstraction?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: How does Lextract help with ASC 842 Lease Abstraction?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+Before ASC 842, operating leases were largely invisible on the balance sheet. Companies disclosed future minimum payments in footnotes, but the liability itself did not appear as a line item. Auditors, analysts, and investors who wanted the full picture had to do their own calculations from footnote disclosures.
+
+ASC 842, effective for public companies in 2019 and private companies in 2022, ended that era. Operating leases are now on the balance sheet as right-of-use assets paired with corresponding lease liabilities. For any company with a significant real estate footprint, this means accounting teams need accurate, granular lease data from every active lease - and that data has to come from the lease documents themselves.
+
+## What ASC 842 Actually Requires
+
+The core requirement is straightforward in concept and complex in execution. At lease commencement, a company must record:
+
+- A right-of-use asset representing the lessee's right to use the underlying asset over the lease term.
+- A lease liability equal to the present value of future lease payments.
+
+Both figures depend on inputs that must be extracted directly from the lease. If those inputs are wrong, the balance sheet is wrong.
+
+The standard applies to any lease with a term greater than 12 months. Short-term leases below that threshold can be exempted, but the 12-month threshold must be evaluated with renewal options in mind - not just the initial stated term.
+
+## The Exact Fields Your Accounting Team Needs
+
+Precision matters here. Here are the specific data points required to comply with ASC 842, where they live in a typical commercial lease, and why each one matters.
+
+**Commencement date.** The date the lessee obtains control of the underlying asset - typically the date the landlord delivers the space, which may differ from the lease execution date. This is usually defined in Article 2 or the Basic Lease Information section.
+
+**Lease term.** The non-cancellable period of the lease plus any renewal options the lessee is reasonably certain to exercise. This last phrase - reasonably certain - requires judgment. If a company intends to renew and has significant leasehold improvements that would be forfeited upon exit, renewal periods are included in the lease term for accounting purposes.
+
+**Renewal options.** Every renewal option must be extracted: how many, at what rent, and under what conditions. Options that are reasonably certain to be exercised extend the accounting lease term and increase both the ROU asset and the lease liability.
+
+**Base rent schedule.** The complete schedule of rent payments for every year of the lease term, not just Year 1. This is frequently buried in a rent schedule exhibit rather than the lease body. If the lease escalates annually, every step must be captured.
+
+**Escalation provisions.** Fixed percentage increases, CPI-linked escalations, and fair-market-value resets all affect the payment stream differently. CPI-linked escalations require the accounting team to make assumptions about future CPI at commencement; actual CPI adjustments are remeasured when they occur.
+
+**Lease vs. non-lease components.** Commercial leases often bundle rent with services - HVAC maintenance, janitorial services, parking, property management fees. Under ASC 842, companies must separate lease components (the use of space) from non-lease components (the services) unless they elect the practical expedient to combine them. The election needs to be documented at the lease level.
+
+**Implicit rate or incremental borrowing rate.** The present value calculation requires a discount rate. The lease's implicit rate is preferred but is rarely disclosed in commercial leases. Most companies use their incremental borrowing rate - the rate they would pay to borrow a similar amount over a similar term. This is a finance team determination, but the lease term inputs needed to support it come from abstraction.
+
+**Lease modifications.** Amendments that expand the scope of the lease (adding space, extending the term) trigger remeasurement. Amendments that reduce scope may be accounted for as partial or full lease terminations. The accounting treatment depends on the exact nature of the modification, which requires reading the amendment against the original lease.
+
+## The Challenge With Legacy Leases
+
+For companies that implemented ASC 842 at the transition date, many leases were already midway through their term. Extracting clean data from legacy documents - some executed 10 or 15 years earlier - is harder than working with new leases.
+
+Common problems:
+
+**Multiple amendments with conflicting terms.** An original lease with four amendments may have each amendment partially superseding, extending, or restating terms from earlier documents. Identifying the current rent schedule requires reconciling across all five documents.
+
+**Poor scan quality.** Older leases are often scanned from physical files with variable legibility. Dates and dollar amounts in degraded scans introduce error risk that demands careful QA.
+
+**Inconsistent formatting.** There is no standard format for commercial lease documents. One lease puts the rent schedule in Article 4; another puts it in Exhibit B; a third buries it in a defined term in Article 1. Abstractors - human or AI - must find the data regardless of where it sits.
+
+**Amendments filed separately.** A lease may have amendments stored in different folders, or attached as PDFs without a naming convention that makes clear they are related to the base lease. Missing an amendment means the accounting data is wrong.
+
+## How Lextract Maps to ASC 842
+
+Lextract extracts the specific fields that ASC 842 compliance requires:
+
+- Lease commencement date and expiration date, with the distinction between stated and actual commencement where applicable.
+- Rent schedule for every year of the lease term, including escalations and CPI adjustment clauses.
+- All renewal options with timing, rent terms, and exercise notice requirements.
+- Non-lease components where identifiable, flagged for the practical expedient election.
+- Amendment details with modification type noted.
+
+Confidence scores flag fields where the document quality or clause structure introduces uncertainty, allowing the accounting team to prioritize manual review on exactly the fields that need it.
+
+## IFRS 16: The International Equivalent
+
+Companies reporting under International Financial Reporting Standards follow IFRS 16 rather than ASC 842. The conceptual framework is similar: leases go on the balance sheet as ROU assets and lease liabilities. The key differences are that IFRS 16 eliminates the finance vs. operating lease distinction for lessees (all leases are treated as finance leases), and the short-term exemption threshold is also 12 months.
+
+The data requirements are essentially the same. Companies with operations in multiple jurisdictions often need to comply with both standards simultaneously, applying the correct accounting treatment for each entity based on the reporting standard it uses.
+
+## What Happens When the Data Is Wrong
+
+The consequences of inaccurate lease abstraction under ASC 842 are not merely cosmetic. If the lease term is wrong - for example, renewal options are excluded that should be included - both the ROU asset and lease liability are understated. If the rent schedule is incomplete, the liability calculation is wrong. If an amendment that modifies the lease term is missed, the remeasurement was never performed.
+
+Auditors finding these errors during year-end fieldwork require restatement. For public companies, restatements require 8-K filings and invite scrutiny of the internal controls that allowed the error. For private companies with bank covenants tied to balance sheet ratios, a corrected liability calculation may trigger technical default.
+
+Accurate abstraction is not an accounting nicety. It is financial reporting infrastructure. Getting it right at the beginning is materially cheaper than correcting it after the auditors find the problem.

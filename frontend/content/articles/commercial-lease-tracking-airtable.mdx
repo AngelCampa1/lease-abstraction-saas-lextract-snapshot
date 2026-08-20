@@ -1,0 +1,145 @@
+---
+title: 'Commercial Lease Tracking with Airtable: Complete Setup Guide'
+slug: commercial-lease-tracking-airtable
+description: >-
+  How to build a commercial lease tracking database in Airtable from scratch,
+  including field setup, views, and automations for critical date alerts.
+publishedAt: '2026-03-19'
+updatedAt: '2026-03-19'
+author: 'Angel Campa, Founder'
+category: articles
+silo: lease-administration
+tags:
+  - Airtable lease tracking
+  - lease database
+  - lease administration
+readingTime: 9
+featured: false
+funnelStage: bofu
+faq:
+  - question: What is the main takeaway from Commercial Lease Tracking with Airtable?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: How does Lextract help with Commercial Lease Tracking with Airtable?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+Airtable sits in a useful middle ground for lease tracking: more structured and automatable than Excel, but faster to set up and far less expensive than enterprise lease administration platforms like Yardi, MRI, or CoStar. For small-to-mid-size portfolios - typically 5 to 150 leases - it is a practical choice that a property manager can configure and maintain without an IT department.
+
+This guide walks through building the base from scratch: the tables, field types, linked records, formula fields, views, and automations.
+
+## Base Structure: Three Tables and How They Relate
+
+A commercial lease tracking base in Airtable should have three core tables: **Leases**, **Properties**, and **Tenants**. Keeping them separate as linked-record tables - rather than collapsing everything into one flat table - allows you to have one record per property and one record per tenant company, with multiple leases linking to both.
+
+**Properties table:** One record per property. Fields: Property Name, Address, City, State, Total Rentable SF, Building Type (office, retail, industrial, mixed-use), Ownership Entity, Property Manager, link to Leases.
+
+**Tenants table:** One record per tenant entity. Fields: Tenant Legal Name, DBA (if any), Primary Contact Name, Primary Contact Email, Primary Contact Phone, link to Leases.
+
+**Leases table:** One record per lease. This is the main table. Fields are covered in detail below. Links to both Properties and Tenants.
+
+The linked record structure means that when a tenant has multiple leases (a common scenario for multi-building portfolios or anchor tenants with multiple spaces), all their leases appear in one tenant record without duplication.
+
+## Leases Table: Field-by-Field Setup
+
+The Leases table is where most of the work happens. Configure these fields in this order:
+
+**Identification fields:**
+- Lease_ID (Autonumber field - auto-increments; serves as primary key)
+- Property (Link to Properties table)
+- Tenant (Link to Tenants table)
+- Suite_Number (Single line text)
+
+**Term fields:**
+- Lease_Commencement (Date field, include time: off)
+- Rent_Commencement (Date field - may differ from commencement if free rent period applies)
+- Lease_Expiration (Date field)
+- Lease_Term_Months (Formula: `DATETIME_DIFF({Lease_Expiration},{Lease_Commencement},'months')`)
+- Lease_Status (Single select: Active, Expired, Holdover, Terminated, Pending)
+
+**Size and economics:**
+- Rentable_SF (Number, integer)
+- Lease_Type (Single select: NNN, Modified Gross, Gross, Full Service)
+- Current_Monthly_Base_Rent (Currency field)
+- Current_Annual_Base_Rent (Formula: `{Current_Monthly_Base_Rent} * 12`)
+- Rent_PSF_Annual (Formula: `IF({Rentable_SF}>0, {Current_Annual_Base_Rent}/{Rentable_SF}, 0)`)
+- Security_Deposit (Currency field)
+
+**Operating expenses (for NNN/modified gross leases):**
+- CAM_Monthly_Estimate (Currency)
+- Tax_Monthly_Estimate (Currency)
+- Insurance_Monthly_Estimate (Currency)
+- Total_Monthly_Occupancy_Cost (Formula: `{Current_Monthly_Base_Rent} + {CAM_Monthly_Estimate} + {Tax_Monthly_Estimate} + {Insurance_Monthly_Estimate}`)
+- CAM_Cap_Percent (Number, decimal - the annual cap on CAM increases)
+- Pro_Rata_Share_Percent (Number, decimal)
+
+**Critical dates:**
+- Renewal_Option_Count (Number, integer)
+- Renewal_Option_Term_Years (Number, integer)
+- Renewal_Notice_Months_Required (Number, integer)
+- Renewal_Notice_Deadline (Formula: `DATEADD({Lease_Expiration}, -{Renewal_Notice_Months_Required}, 'months')`)
+- Termination_Option (Checkbox)
+- Termination_Option_Date (Date field)
+- Termination_Notice_Deadline (Date field - enter manually based on lease terms)
+
+**Alert calculation fields:**
+- Days_Until_Expiration (Formula: `DATETIME_DIFF({Lease_Expiration}, TODAY(), 'days')`)
+- Days_Until_Renewal_Notice (Formula: `DATETIME_DIFF({Renewal_Notice_Deadline}, TODAY(), 'days')`)
+- Expiration_Alert_Status (Formula: `IF({Days_Until_Expiration} < 0, "EXPIRED", IF({Days_Until_Expiration} <= 30, "CRITICAL", IF({Days_Until_Expiration} <= 90, "URGENT", IF({Days_Until_Expiration} <= 180, "WATCH", "OK")))`)
+- Renewal_Alert_Status (Formula with same logic applied to Days_Until_Renewal_Notice)
+
+**Documentation:**
+- Lease_Notes (Long text field)
+- Lease_Document (Attachment field - upload the signed lease PDF)
+- Amendments (Attachment field - amendment documents)
+- Last_Updated (Date field - update manually when record is modified)
+
+## The Five Most Useful Views
+
+Airtable views filter, sort, and display records from the same table in different ways without modifying the underlying data. Configure these five views on the Leases table:
+
+**View 1 - Grid: All Active Leases.** Filter: Lease_Status = "Active". Sort by Days_Until_Expiration ascending. This is the default working view - every active lease, sorted by which is expiring soonest.
+
+**View 2 - Grid: Critical Dates Dashboard.** Filter: Expiration_Alert_Status is any of "CRITICAL", "URGENT", "WATCH", OR Renewal_Alert_Status is any of "CRITICAL", "URGENT", "WATCH". This view surfaces only leases that require active monitoring. Review it weekly.
+
+**View 3 - Calendar: Lease Expirations.** Set the calendar date field to Lease_Expiration. This gives a visual calendar of when leases expire across the portfolio. Useful for planning renewal negotiations and capital projects tied to lease events.
+
+**View 4 - Gallery: By Property.** Group by Property (linked field). Shows all leases per property in a card layout. Useful for property-level reviews and when adding new leases to an existing property.
+
+**View 5 - Grid: Renewals Due Next 12 Months.** Filter: `Days_Until_Renewal_Notice <= 365 AND Days_Until_Renewal_Notice >= 0`. This is your prospective renewal pipeline. Every lease where the notice deadline is within the next year needs a decision: exercise the option, negotiate, or prepare for the tenant's departure.
+
+## Automations for Critical Date Email Alerts
+
+Airtable automations can send email notifications when records meet specified conditions. Set up the following automations:
+
+**Automation 1: Renewal Notice Deadline Within 90 Days**
+- Trigger: "At a scheduled time" - run daily at 8:00 AM
+- Condition: `Renewal_Alert_Status = "URGENT" AND Renewal_Option_Count > 0`
+- Action: Send email to property manager with lease record link, tenant name, property, renewal notice deadline date, and days remaining
+
+**Automation 2: Lease Expiration Within 60 Days**
+- Trigger: Scheduled daily
+- Condition: `Days_Until_Expiration <= 60 AND Days_Until_Expiration >= 0 AND Lease_Status = "Active"`
+- Action: Send email alert with expiration date and tenant contact information
+
+**Automation 3: Lease Expiration Past Due**
+- Trigger: Scheduled daily
+- Condition: `Days_Until_Expiration < 0 AND Lease_Status = "Active"`
+- Action: Send email with subject "HOLDOVER RISK: [Tenant Name]" - the lease has expired but the status has not been updated
+
+For automations to work correctly, the automation emails must go to the person responsible for acting on the alert. In a multi-property portfolio, that may mean a lookup field for the Property Manager's email from the Properties table, used as the recipient.
+
+## Populating the Base: Manual Entry vs. CSV Import
+
+The most efficient way to populate a new Airtable base is via CSV import. Airtable allows CSV import for any table, and it will map CSV columns to existing field names if they match.
+
+If you are abstracting leases with a tool like Lextract, export the 126-field Excel workbook. Save the relevant sheet as CSV to use Airtable's CSV import. Map the relevant columns to your Airtable field names (the mapping need only be done once; save it for future imports). The structured export covers all the field values listed above - dates, rent amounts, CAM structure, option terms - without manual re-reading of each lease.
+
+For the ongoing workflow: when a new lease is executed, run abstraction immediately, import the extracted data, attach the lease PDF to the record, and verify the critical date formulas are computing correctly. The entire setup should take less than 15 minutes per lease if the abstraction has already been completed.
+
+Airtable is not a substitute for a proper lease administration platform at scale. When your portfolio exceeds 150–200 leases, the operational overhead of maintaining an Airtable base - particularly amendment management and billing integration - starts to outweigh its flexibility advantages. But for the portfolios where it fits, it is a significant upgrade over disconnected spreadsheets and shared drives.

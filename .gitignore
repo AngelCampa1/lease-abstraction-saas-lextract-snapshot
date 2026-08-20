@@ -1,0 +1,70 @@
+# Worktrees
+.worktrees/
+.claude/worktrees/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.ai-secrets.local
+
+# Wrangler local secrets. The committed .dev.vars.example stays tracked.
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build outputs
+.next/
+.open-next/
+dist/
+build/
+*.egg-info/
+
+# Playwright
+.playwright-cli/
+.playwright-mcp/
+e2e-artifacts/
+
+# Coverage
+.coverage
+htmlcov/
+coverage/
+
+# Benchmark results (model evaluation outputs)
+packages/extract-sdk/tests/benchmark_results/
+
+# Cloudflare Wrangler build artifacts
+.wrangler/
+
+# Runtime locks
+.claude/scheduled_tasks.lock
+
+# Misc
+.DS_Store
+*.log
+
+# Repo-root screenshot artifacts (E2E / audit / verification captures).
+# Real assets belong under frontend/public/, not the repo root.
+/*.png
+/*.jpg
+/*.jpeg
+/*.gif
+/*.webp
+
+# Private registry auth (see frontend/.npmrc.example)
+.npmrc
+
+# Business-sensitive: never publish (see portfolio/ARCHITECTURE.md for what is public)
+docs/fundraising/
+outputs/
+
+# Screenshot archive: raw sweep output. Curated set lives in portfolio/screenshots/;
+# one uncurated working capture stays in docs/screenshots/.
+docs/screenshots/archive/

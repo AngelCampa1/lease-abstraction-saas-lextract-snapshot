@@ -1,0 +1,27 @@
+# Local secrets for `wrangler dev -c wrangler.dev.jsonc`.
+# Copy to `.dev.vars` (gitignored) and fill in. Never commit `.dev.vars`.
+
+# Auth. Point this at the local auth stub, started with:
+#   python scripts/seed-demo.py
+#   export DEMO_USER_ID=<uuid printed by the seed script>
+#   node scripts/local-auth-stub.mjs
+NEON_AUTH_BASE_URL=http://localhost:4000
+
+# Leave NEON_AUTH_JWKS_URL UNSET locally. When it is missing,
+# verifyNeonBearerToken() throws immediately and getAuthContext() falls back to
+# verifyNeonSessionToken(), which just calls NEON_AUTH_BASE_URL/get-session. That
+# is the path the stub implements, so no JWKS server and no JWT signing are
+# needed to run the signed-in app locally.
+# NEON_AUTH_JWKS_URL=
+# NEON_AUTH_ISSUER=
+
+# Extraction. Real calls cost money, so leave this unset unless you mean to run
+# the pipeline against OpenRouter.
+# OPENROUTER_API_KEY=
+
+# Payments. Use Stripe test-mode keys only.
+# STRIPE_SECRET_KEY=
+# STRIPE_WEBHOOK_SECRET=
+
+# Transactional email.
+# RESEND_API_KEY=

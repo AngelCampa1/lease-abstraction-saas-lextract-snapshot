@@ -1,0 +1,90 @@
+---
+title: What Lease Data Does Juniper Square Need for Fund Reporting?
+slug: juniper-square-lease-data-fund-reporting
+description: >-
+  The specific lease data fields required for accurate Juniper Square fund
+  reporting, investor distributions, and portfolio analytics.
+publishedAt: '2026-03-19'
+updatedAt: '2026-03-19'
+author: 'Angel Campa, Founder'
+category: articles
+silo: lease-abstraction
+tags:
+  - Juniper Square
+  - fund reporting
+  - lease abstraction
+readingTime: 7
+featured: false
+funnelStage: bofu
+faq:
+  - question: >-
+      What is the main takeaway from What Lease Data Does Juniper Square Need
+      for Fund Reporting??
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: >-
+      How does Lextract help with What Lease Data Does Juniper Square Need for
+      Fund Reporting??
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+Juniper Square is the back office for a large portion of the private CRE fund industry - investor onboarding, capital calls, distributions, waterfall calculations, and the quarterly and annual reporting that limited partners use to evaluate their portfolios. What most fund managers underestimate is how directly lease-level data quality flows through to the accuracy of that reporting.
+
+The connection is straightforward: investor returns in a CRE fund are driven by net operating income. NOI is driven primarily by rent from tenants. Rent from tenants is governed by executed leases. If the lease data in your system does not accurately reflect what the executed leases say, every NOI projection, every IRR calculation, and every distribution amount built on top of that data is potentially wrong.
+
+This article covers the specific lease data fields that drive Juniper Square reporting, how data quality errors propagate through fund financials, and how to systematically extract and maintain accurate lease data.
+
+## What Lease Data Drives Juniper Square Reporting
+
+Juniper Square aggregates data from the fund manager's accounting system, investor database, and property-level financials. The property-level inputs that feed the most visible investor-facing reports are sourced from lease data.
+
+**The rent roll.** The current rent roll is the foundation of most investor reporting. It shows, at a point in time, every tenant in the portfolio: tenant name, property, premises square footage, lease commencement date, lease expiration date, current annual rent, and rent per square foot. Investors and their advisors read rent rolls to assess current occupancy, tenant quality, weighted average lease term (WALT), and rent concentration risk. Every field on the rent roll must be sourced from executed leases, not from estimates or prior-period data.
+
+**The lease expiration schedule.** Investors in CRE funds are acutely aware of rollover risk - the risk that leases expire and cannot be renewed, or are renewed at lower rents. The lease expiration schedule shows expirations by year and by square footage or income amount, allowing investors to visualize when and how much of the portfolio income is at risk. This schedule is only accurate if every lease expiration date in the underlying data is correct. A lease with an unexercised renewal option looks like a near-term expiration risk; a lease where the renewal was exercised but the data was not updated looks identical.
+
+**NOI projections.** Forward-looking NOI projections in Juniper Square typically integrate lease expiration schedules with market rent assumptions. The current-year projection is straightforward: apply the current rent schedule to each occupied unit for each month, less operating expenses. The year-two through year-five projections introduce assumptions about renewals and new leasing. These assumptions are only calibrated correctly if the base-year lease data - especially rent escalation schedules and renewal option economics - is accurate.
+
+**Occupancy reporting.** Physical occupancy (what percentage of square footage is leased) and economic occupancy (what percentage of potential rent is being collected) are standard metrics in LP reporting. Physical occupancy requires accurate premises square footage for every lease and every vacant unit. Economic occupancy requires the full rent schedule, including free rent periods, abatements, and below-market leases.
+
+## The Specific Lease Fields Juniper Square Needs
+
+Fund managers who have experienced a Juniper Square audit or investor data request know that the questions get specific quickly. Here are the fields that matter.
+
+**Tenant legal name.** The exact legal name of the tenant entity - including entity type and state of formation - matters for tenant credit quality analysis. Investors distinguish between a lease signed by a Fortune 500 corporate entity versus a lease signed by a thinly-capitalized special purpose vehicle. Abbreviations, nicknames, and trade names are not substitutes for the legal entity name.
+
+**Rentable area.** The square footage of the leased premises, as defined in the executed lease. This is the denominator in rent-per-square-foot calculations and the numerator in occupancy calculations. Confirm that the measurement standard (BOMA, usable, rentable) is consistent across all leases when doing portfolio comparisons.
+
+**Commencement and expiration dates.** Both dates are required. The commencement date sets the beginning of the rent obligation. The expiration date drives the lease expiration schedule. For leases where a renewal option has been exercised, the expiration date should reflect the extended term, with a note documenting when the option was exercised.
+
+**Current annual base rent and rent per square foot.** These should reflect current contractual rent, not the rent as of the lease commencement date. For a lease with a rent escalation schedule, the current rent is the rent applicable in the current lease year, not the starting rent. Stale rent data is one of the most common data quality problems in fund reporting.
+
+**Rent escalation provisions.** Investors and their advisors model future NOI using the rent escalation provisions in each lease. The model needs to know: whether the escalation is fixed (e.g., 3% per year), CPI-linked (and if so, which CPI index and when it resets), or FMV-based at renewal. Each type has different implications for NOI modeling and risk assessment.
+
+**Renewal option terms.** Renewal options affect the weighted average lease term - a key metric investors use to assess portfolio stability. A lease expiring in 18 months with two 5-year renewal options at a stated rate is economically very different from a lease expiring in 18 months with no options. The renewal option terms must include: number of options, option period length, rent basis at exercise (fixed, FMV, capped FMV, or other), and the notice deadline for exercising each option.
+
+**Co-tenancy and early termination provisions.** These provisions create contingent downside scenarios that sophisticated investors want to model. A co-tenancy clause that allows a retail tenant to reduce rent or terminate the lease if an anchor tenant closes is a material risk in any retail portfolio. Early termination options with below-market penalties are effectively options to vacate that reduce the economic lease term. These provisions must be captured, disclosed in reporting, and modeled in stress scenarios.
+
+## How Data Quality Errors Propagate Through Fund Financials
+
+Consider a common error: a lease with a 3% annual fixed escalation was entered into the fund's accounting system with a flat rent - the escalation was noted in a comment but never loaded as a rent schedule. Over a 7-year lease term, the actual rent in year 7 is 21% higher than the year-1 rate. Every month from year 2 onward, the accounting system underinvokes rent, the collections report shows a deficit, and the management team is investigating "payment shortfalls" that are actually data entry errors.
+
+In Juniper Square, the rent roll for that tenant shows the incorrect (too low) rent, the per-square-foot yield looks lower than it should, and the WALT calculations use a lower income base. If distributions are calculated as a percentage of collected rent and the rent system is not invoicing the full contracted amount, LP distributions are understated - and the fund manager is carrying a liability for the underinvoiced amounts.
+
+This is not a hypothetical. It is a routine finding in CRE fund audits.
+
+## Systematically Extracting Lease Data for Juniper Square
+
+The most reliable way to get accurate lease data into Juniper Square (or any fund reporting system) is to extract it directly from executed PDF documents using AI-powered abstraction tools, then import the structured output into your accounting or reporting system.
+
+The extraction should produce, at minimum, every field listed above - in a structured, machine-readable format that can be imported rather than manually re-entered. Manual re-entry of lease data from PDF documents is slow and error-prone. A 60-page lease with a 10-year rent schedule and multiple amendment provisions will introduce errors when entered manually by anyone working under time pressure.
+
+For existing portfolios, a one-time re-abstraction of all active leases establishes a clean baseline. Compare the extraction output against what is currently in your system field by field. Correct discrepancies against the source documents. This process typically surfaces 10-15% error rates in portfolios that have been managed in spreadsheets or maintained through manual entry.
+
+For ongoing operations, run every new lease and every amendment through extraction at execution and update the system from the extraction output. Build this into the lease execution workflow - it takes 30 minutes to extract and verify a new lease, versus the hours of downstream reconciliation work that incorrect data requires.
+
+Investor reporting built on accurate lease data is straightforward. Investor reporting built on incorrect lease data eventually produces a conversation you do not want to have with your LP advisory board.

@@ -1,0 +1,36 @@
+diff --git a/node_modules/@opennextjs/cloudflare/dist/cli/build/patches/plugins/turbopack.js b/node_modules/@opennextjs/cloudflare/dist/cli/build/patches/plugins/turbopack.js
+index be832bf..48495a5 100644
+--- a/node_modules/@opennextjs/cloudflare/dist/cli/build/patches/plugins/turbopack.js
++++ b/node_modules/@opennextjs/cloudflare/dist/cli/build/patches/plugins/turbopack.js
+@@ -27,10 +27,12 @@ export const patchTurbopackRuntime = {
+ function getInlinableChunks(tracedFiles) {
+     const chunks = new Set();
+     for (const file of tracedFiles) {
+-        if (file === "[turbopack]_runtime.js") {
++        // Normalize to forward slashes for cross-platform comparison (Windows uses backslashes)
++        const normalized = file.replace(/\\/g, "/");
++        if (normalized === "[turbopack]_runtime.js") {
+             continue;
+         }
+-        if (file.includes(".next/server/chunks/")) {
++        if (normalized.includes(".next/server/chunks/")) {
+             chunks.add(file);
+         }
+     }
+@@ -43,9 +45,13 @@ function inlineChunksFn(tracedFiles) {
+   function requireChunk(chunkPath) {
+     switch(chunkPath) {
+ ${chunks
+-        .map((chunk) => `      case "${
+-    // we only want the path after /path/to/.next/
+-    chunk.replace(/.*\/\.next\//, "")}": return require("${chunk}");`)
++        .map((chunk) => {
++        // Normalize to forward slashes (Windows paths use backslashes)
++        const normalized = chunk.replace(/\\/g, "/");
++        // we only want the path after /path/to/.next/
++        const caseKey = normalized.replace(/.*\/\.next\//, "");
++        return `      case "${caseKey}": return require("${normalized}");`;
++    })
+         .join("\n")}
+       default:
+         throw new Error(\`Not found \${chunkPath}\`);

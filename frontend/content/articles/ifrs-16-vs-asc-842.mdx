@@ -1,0 +1,133 @@
+---
+title: 'IFRS 16 vs ASC 842: Key Differences for Real Estate Lease Data'
+slug: ifrs-16-vs-asc-842
+description: >-
+  Compare IFRS 16 and ASC 842 on lessee accounting, lessor models, variable
+  payments, subleases, and what each standard requires from lease abstracts.
+publishedAt: '2026-03-18'
+updatedAt: '2026-03-18'
+author: 'Angel Campa, Founder'
+category: articles
+silo: compliance
+tags:
+  - IFRS 16
+  - ASC 842
+  - lease accounting
+  - compliance
+  - lease abstraction
+readingTime: 9
+featured: false
+funnelStage: tofu
+faq:
+  - question: What is the main takeaway from IFRS 16 vs ASC 842?
+    answer: >-
+      The main takeaway is that commercial lease data should be extracted into
+      structured fields before teams make pricing, diligence, compliance, or
+      negotiation decisions from the document.
+  - question: How does Lextract help with IFRS 16 vs ASC 842?
+    answer: >-
+      Lextract reads commercial lease PDFs and returns 126 structured fields, 20
+      automated red flag checks, confidence scores, and export-ready outputs in
+      5-15 minutes for $15 per lease.
+---
+
+Both IFRS 16 and ASC 842 moved leases onto the balance sheet, fundamentally changing how companies report their lease obligations. Both standards apply to companies with material lease portfolios -- IFRS 16 for entities reporting under International Financial Reporting Standards, ASC 842 for entities reporting under US GAAP. Multinational companies frequently must comply with both.
+
+Despite covering the same subject matter, the two standards differ in ways that affect how lease data must be extracted, classified, and disclosed. Understanding these differences is essential for finance teams, lease administrators, and anyone responsible for lease data accuracy.
+
+## The Core Similarity: On-Balance-Sheet for Lessees
+
+Both standards require lessees to recognize a right-of-use (ROU) asset and a corresponding lease liability for leases exceeding 12 months. This represents a fundamental change from the prior standards (IAS 17 and ASC 840), under which most operating leases were off-balance-sheet obligations disclosed only in footnotes.
+
+The practical result is the same under both standards: a company with 50 office leases now shows lease liabilities on its balance sheet that were previously invisible to most financial statement readers. The measurement of those liabilities, however, differs in meaningful ways.
+
+## Key Differences
+
+### Lessee Classification
+
+**ASC 842** retains the dual lessee classification model. Leases are classified as either operating leases or finance leases based on five criteria (transfer of ownership, purchase option, lease term as a percentage of useful life, present value of payments as a percentage of asset value, and specialized nature). Most real estate leases classify as operating leases under ASC 842.
+
+**IFRS 16** eliminates the classification distinction for lessees. All leases (except short-term and low-value exceptions) are treated as finance leases for accounting purposes. There is no operating lease classification for lessees under IFRS 16. This means a company reporting under IFRS 16 will always show higher depreciation expense and interest expense -- and lower operating lease expense -- than the same company would show under ASC 842 for the same leases classified as operating.
+
+**Implication for lease data:** Under ASC 842, the lease abstract must capture data sufficient to apply the five classification criteria. Under IFRS 16, classification is irrelevant for lessee accounting, though the same five criteria still apply to lessor accounting.
+
+### Income Statement Presentation
+
+**ASC 842 (operating lease):** A single straight-line lease cost is recognized in operating expenses. There is no separate depreciation or interest line for operating leases.
+
+**IFRS 16:** All leases produce depreciation on the ROU asset (typically in operating expenses) and interest on the lease liability (in finance costs). The front-loading of expense under IFRS 16 results in higher total expense in early years and lower total expense in later years compared to straight-line recognition.
+
+**Implication for lease data:** Both standards require the same underlying data to measure the lease liability. The income statement presentation difference is a function of the accounting model, not the lease data.
+
+### Lessor Accounting
+
+**ASC 842:** Lessor accounting retains the dual classification model (operating vs. sales-type/direct financing leases). The classification criteria for lessors are similar to the prior standard (ASC 840). Most commercial real estate leases classify as operating leases in the hands of landlords.
+
+**IFRS 16:** Lessor accounting under IFRS 16 is largely unchanged from IAS 17. Lessors still classify leases as operating or finance leases using substantially the same criteria as before.
+
+Both standards treat lessor accounting similarly, and both result in commercial real estate leases being classified as operating leases in almost all cases from the landlord's perspective.
+
+### Variable Lease Payments
+
+**ASC 842:** Variable payments based on a rate or index (CPI, a specified interest rate) are included in the initial lease liability measurement using the rate or index at the commencement date. Variable payments based on performance (sales percentages, usage fees) are excluded from the lease liability and recognized as expense when incurred.
+
+**IFRS 16:** The treatment is identical. Variable payments linked to an index or rate are included at the commencement date rate; performance-based variable payments are excluded.
+
+**Implication for lease data:** Both standards require the abstract to identify whether each escalation provision is index-linked (included in the liability) or performance-linked (excluded). CPI escalations, SOFR-linked rents, and fixed percentage increases are included. Percentage rent provisions and sales-based rent adjustments are excluded.
+
+### Subleases
+
+**ASC 842:** An intermediate lessor (sublandlord) classifies a sublease based on the ROU asset of the head lease, not the underlying asset itself. If the head lease is classified as an operating lease by the sublandlord, the sublease is almost always also classified as an operating lease.
+
+**IFRS 16:** An intermediate lessor classifies a sublease based on the underlying asset (the physical space), not the ROU asset. This means that subleases can be classified as finance leases under IFRS 16 even when the head lease is an operating lease.
+
+**Implication for lease data:** Companies with significant sublease activity and IFRS 16 reporting obligations must capture additional data about sublease terms and underlying asset conditions to support classification.
+
+### Sale-Leaseback Transactions
+
+**ASC 842:** Whether a sale-leaseback qualifies as a sale is determined by ASC 606 (revenue recognition from contracts with customers). If the transfer qualifies as a sale, the seller-lessee derecognizes the asset, recognizes a gain or loss, and accounts for the leaseback as a new lease.
+
+**IFRS 16:** The same model applies, using IFRS 15 to determine whether a sale has occurred. The standards are broadly aligned on sale-leaseback, though differences in the revenue recognition standards (ASC 606 vs. IFRS 15) can create different conclusions in edge cases.
+
+### Lease Modifications
+
+**ASC 842 and IFRS 16** are broadly aligned on lease modification accounting. A modification that grants additional rights not included in the original lease at a commencement-date market rate is treated as a new, separate lease. Other modifications remeasure the existing lease liability and adjust the ROU asset accordingly.
+
+**Implication for lease data:** Every lease amendment must be reviewed to determine whether it constitutes a separate lease or a modification of the existing lease. The abstract must capture amendment dates, effective dates, and the nature of each amendment.
+
+## Comparison Table
+
+| Feature | ASC 842 | IFRS 16 |
+|---|---|---|
+| Lessee classification | Operating and finance | Single model (all finance) |
+| Short-term exemption | Leases under 12 months | Leases under 12 months |
+| Low-value exemption | No (practical expedient by class) | Yes (asset value under ~$5,000) |
+| Index/rate variable payments | Included at commencement | Included at commencement |
+| Performance variable payments | Excluded | Excluded |
+| Sublease classification basis | ROU asset | Underlying asset |
+| Sale-leaseback sale determination | ASC 606 | IFRS 15 |
+| Lessor accounting | Dual model (largely unchanged) | Dual model (largely unchanged) |
+| Effective date | December 15, 2018 (public), 2019 (private) | January 1, 2019 |
+
+## What Both Standards Require From Lease Abstracts
+
+Despite their differences, both ASC 842 and IFRS 16 require the same core data from each lease:
+
+- Lease commencement date (possession date)
+- Non-cancelable lease term
+- All renewal options with terms and notice requirements
+- All termination options with terms and notice requirements
+- Complete rent schedule including escalations
+- Free rent periods with exact dates
+- TI allowances and other lease incentives
+- Variable payment mechanisms (index-linked vs. performance-linked)
+- Purchase options if any
+- Initial direct costs
+
+For multinational companies, a single lease abstract that captures all of these fields satisfies the data requirements of both standards. The accounting treatment differs; the data inputs do not.
+
+## The Practical Challenge
+
+The challenge for most companies is not understanding the accounting standards -- it is having accurate, complete data for every lease in the portfolio. Lease documents are long, amendment trails are complex, and fields required by ASC 842 and IFRS 16 were not always captured in pre-adoption abstracts.
+
+A structured extraction process that produces validated, field-level data from the full lease document set -- including all amendments in chronological order -- is the prerequisite for accurate lease accounting under either standard. Errors in the source data flow directly to the balance sheet and income statement, making data quality at the extraction stage the most important control in the lease accounting process.

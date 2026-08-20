@@ -1,0 +1,18 @@
+# marketing-data Worker — local development secrets
+# Copy this file to .dev.vars and fill in real values.
+# .dev.vars is gitignored; never commit actual secrets.
+#
+# Set these via `wrangler secret put <NAME>` for production deployment.
+
+# Shared Bearer token that guards all worker endpoints (isAuthorized check).
+MARKETING_WORKER_SECRET=change-me
+
+# Resend API key for transactional lead-magnet delivery emails.
+RESEND_API_KEY=re_...
+
+# Cloudflare Zero Trust Access service-token for the Sequencer API.
+# Required for /lead-magnet to enroll contacts and obtain presigned R2 download URLs.
+# Without these, /lead-magnet returns 502 (graceful degradation — no enrollment or download).
+# Provision via Cloudflare Dashboard > Zero Trust > Access > Service Tokens (name: lextract).
+SEQUENCER_CF_ACCESS_CLIENT_ID=<client-id>.access
+SEQUENCER_CF_ACCESS_CLIENT_SECRET=<client-secret>

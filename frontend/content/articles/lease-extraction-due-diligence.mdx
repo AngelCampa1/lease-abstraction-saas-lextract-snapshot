@@ -1,0 +1,189 @@
+---
+title: 'Lease Extraction for Due Diligence: Processing Acquisition Lease Stacks'
+slug: lease-extraction-due-diligence
+description: >-
+  How to extract structured data from 50 to 500 leases in an acquisition data
+  room. Speed benchmarks, PDF quality issues, and rent roll reconciliation
+  workflows.
+publishedAt: '2026-04-01'
+author: 'Angel Campa, Founder'
+category: articles
+silo: due-diligence
+tags:
+  - lease extraction
+  - due diligence
+  - portfolio acquisition
+  - rent roll verification
+readingTime: 8
+featured: false
+funnelStage: mofu
+faq:
+  - question: How do you extract lease data during due diligence?
+    answer: >-
+      Upload each lease PDF from the data room to a lease extraction tool like
+      Lextract. The tool runs vision-capable AI against the PDF directly - no
+      separate OCR step - to produce 126 structured fields per lease with
+      confidence scores, plus an adversarial validation pass that catches
+      errors. Export the results to Excel to cross-reference against the
+      seller's rent roll and identify discrepancies in rent amounts, lease
+      terms, CAM structures, and option dates.
+  - question: How long does it take to extract data from an acquisition lease stack?
+    answer: >-
+      With purpose-built extraction software, each lease takes 5 to 15 minutes
+      to process. A 100-lease portfolio can be fully extracted in 1 to 2 days
+      including human review of low-confidence fields. Manual extraction of the
+      same portfolio would take 200 to 400 paralegal hours spread over 4 to 8
+      weeks.
+  - question: What lease data matters most for acquisition due diligence?
+    answer: >-
+      The critical extraction fields for due diligence are: base rent and
+      escalation schedule (to verify the rent roll), lease expiration dates and
+      renewal options (to model rollover risk), CAM structure and pro rata share
+      (to verify expense reimbursement income), tenant improvement allowances
+      and free rent (to calculate effective rent), and any termination or
+      contraction options that reduce income certainty.
+  - question: How do you reconcile extracted lease data against a seller rent roll?
+    answer: >-
+      Export extracted lease data to a spreadsheet and compare field by field
+      against the seller's rent roll. Key reconciliation checks: does the
+      extracted base rent match the rent roll amount? Do escalation dates align?
+      Are square footage figures consistent? Do operating expense structures
+      match the NNN/gross classification? Discrepancies indicate either seller
+      errors, outdated rent rolls, or amendment provisions that the rent roll
+      has not incorporated.
+updatedAt: '2026-04-01'
+---
+
+When you acquire a commercial property or portfolio, the data room contains 50 to 500 lease PDFs. Your underwriting model depends on accurate rent roll data: base rent, escalation schedules, expense structures, option dates, rollover risk. But rent rolls are seller-prepared summaries. They may be outdated by six months, missing amendment modifications, or optimistically rounded. The only way to verify the numbers is to go back to the source documents.
+
+Lease extraction turns those raw PDFs into structured data you can independently verify against the seller's figures. This article covers the full workflow: processing timelines by portfolio size, handling poor-quality scans, and reconciling extracted data against the rent roll to surface discrepancies before closing.
+
+## The Data Room Problem
+
+Data rooms are organized by the seller, and "organized" is a generous word. Lease PDFs arrive in varying states of quality and completeness. Base leases may be grouped with their amendments, or they may be scattered across folders labeled by year, by tenant, or by property. Side letters and guarantees may sit in separate directories or be appended to unrelated documents.
+
+Common issues include base leases uploaded without amendments, amendments uploaded without the base lease they modify, multiple versions of the same document (draft and executed), scanned documents at different resolutions from different copiers, and files named with internal codes that do not map to tenant names.
+
+Manual extraction of a 100-lease portfolio requires 200 to 400 paralegal hours. At $75 to $125 per hour, that is $15,000 to $50,000 in labor. Most acquisition timelines allow 30 to 60 days for all due diligence, covering environmental, title, physical inspection, financial analysis, and lease review. The lease review team rarely gets more than two to three weeks of that window.
+
+The math does not work. A team of four paralegals working full-time extracts 8 to 12 leases per day. A 100-lease portfolio takes 8 to 12 working days with no margin for re-reads, clarification requests, or complex amendments. Purpose-built extraction tools compress the processing phase from weeks to days.
+
+## Extraction Speed Benchmarks by Portfolio Size
+
+These benchmarks assume purpose-built extraction software (like Lextract) processing commercial lease PDFs with a mix of base leases and amendments. Human review time covers verification of low-confidence fields and flagged red flags.
+
+### Single Property (10 Leases)
+
+A multi-tenant office or retail property with 10 leases and associated amendments. Processing time: 1 to 2 hours. Human review: 2 to 4 hours. Total turnaround: 1 day.
+
+Manual comparison: 20 to 40 paralegal hours over 3 to 5 days.
+
+### Multi-Tenant Retail (50 Leases)
+
+A shopping center or strip mall with 50 tenants, each with a base lease and one to three amendments. Processing time: 4 to 8 hours. Human review: 1 to 2 days. Total turnaround: 2 to 3 days.
+
+Manual comparison: 100 to 200 paralegal hours over 2 to 4 weeks.
+
+### Portfolio Acquisition (200 Leases)
+
+A multi-property portfolio with 200 leases across several buildings and markets. Processing time: 1 to 2 days. Human review: 3 to 5 days. Total turnaround: 5 to 7 days.
+
+Manual comparison: 400 to 800 paralegal hours over 6 to 10 weeks, typically requiring a team of six to eight paralegals.
+
+### Large Portfolio (500 Leases)
+
+A REIT-scale acquisition or merger with 500 leases. Processing time: 2 to 4 days. Human review: 5 to 10 days. Total turnaround: 1 to 2 weeks.
+
+Manual comparison: 1,000 to 2,000 paralegal hours. At this scale, most firms outsource to a lease abstraction service, adding 4 to 8 weeks and $75,000 to $200,000 in cost.
+
+The extraction processing phase runs in parallel, not sequentially. The bottleneck shifts from "reading leases" to "reviewing flagged fields," which is a smaller and more focused task.
+
+## Common PDF Quality Issues in Data Rooms
+
+Data room PDFs are not clean originals. They are copies of copies, scanned by different offices on different equipment over a period of years. Understanding the quality issues helps set accuracy expectations and plan review effort.
+
+### Low-Resolution Scans (Below 200 DPI)
+
+Older leases scanned at 150 DPI or lower produce blurry text that degrades extraction. Vision-capable AI reads the PDF as images, so there is no upstream OCR step that fails first - but the underlying visual signal still matters. Characters blur together, table cell boundaries disappear, and dollar amounts lose digits. Accuracy on these documents drops to 85 to 90% for affected fields. Confidence scores flag the uncertainty.
+
+**Mitigation:** Re-scan the original if available. If not, review any field with a Medium or Low confidence score on these documents.
+
+### Photocopied Amendments with Handwritten Notes
+
+Amendments executed in the 1990s and early 2000s often include handwritten fill-in-the-blank sections, margin notes, and initialed corrections. Vision-capable AI reads handwritten notes natively because it sees the page as an image, but confidence drops on illegible cursive, smudged stamps, and faded margin annotations. The model may identify that a handwritten value exists (and flag it as Low confidence) but cannot always read the value correctly.
+
+**Mitigation:** Manually verify all handwritten sections. Prioritize amendments over base lease provisions, since amendments control conflicting terms.
+
+### Multi-Generational Copies
+
+A copy of a fax of a scan of the original. Each generation adds noise: speckles, skew, contrast loss. By the third generation the visual signal degrades enough that extraction accuracy drops to 75 to 85% on body text. Table structures may become unreadable.
+
+**Mitigation:** Request the seller provide the best available copy. If the only version is a third-generation photocopy, plan for manual extraction of critical financial fields.
+
+### Mixed Orientation Pages
+
+Leases often contain landscape-oriented pages (site plans, rent schedules, floor plans) mixed with portrait text. Some scanning workflows do not auto-rotate, producing sideways pages in the PDF. Vision-capable AI handles rotated pages natively because it reads the PDF as images and recognizes layout the way a human reviewer does, but complex pages with both orientations (a landscape table with portrait headers) may lose structural information.
+
+**Mitigation:** Spot-check any extraction from a mixed-orientation document. Rent schedule exhibits are the highest-risk pages.
+
+### Redacted Sections
+
+Sellers sometimes redact sensitive information: tenant financial statements, personal guarantor details, or negotiation correspondence. Redacted text produces blank fields in the extraction. The extraction tool reports these as "not found" rather than "not present in lease," so the distinction between a redacted field and a genuinely absent field requires human judgment.
+
+**Mitigation:** Request unredacted versions of documents with material redactions. If unavailable, note the gap in your due diligence findings.
+
+## Reconciling Extracted Data Against the Seller Rent Roll
+
+Extraction alone does not complete the due diligence lease review. The value comes from comparing extracted data against the seller's rent roll and financial projections. Discrepancies between the source documents and the seller's summary are where acquisition risk hides.
+
+### Step 1: Export and Normalize
+
+Export all extracted lease data to Excel. Normalize tenant names (the lease may say "ABC Corporation, a Delaware limited liability company" while the rent roll says "ABC Corp"). Match each extraction to the corresponding rent roll row by tenant name and suite number.
+
+### Step 2: Compare Base Rent
+
+For each tenant, compare the extracted current base rent against the rent roll amount. "Current" means the amount in effect as of the analysis date, accounting for all amendments and escalations. If the rent roll shows Tenant A paying $32/RSF but the extracted base rent is $28/RSF with a 3% annual escalation that reaches $32/RSF only in year 4, the rent roll may be using a future-year figure instead of current rent. That inflates the property's apparent income by 14%.
+
+### Step 3: Compare Expiration Dates and Lease Terms
+
+Verify that the lease term and expiration date match the rent roll. Discrepancies here affect rollover risk modeling. A rent roll showing a tenant with five years remaining when the lease expires in two years (with an unexercised renewal option) overstates income stability.
+
+### Step 4: Verify Square Footage and Pro Rata Share
+
+Compare extracted RSF against the rent roll. Discrepancies in square footage affect per-SF rent calculations, pro rata share of operating expenses, and total rental income projections. A 5% RSF discrepancy on a large tenant compounds across every financial metric.
+
+### Step 5: Confirm Expense Structures
+
+Verify that the extracted lease structure (NNN, gross, modified gross) matches the rent roll classification. A lease classified as NNN on the rent roll but extracted as modified gross with a CAM cap of 3% means the landlord's expense recovery is capped, and the rent roll may overstate reimbursement income.
+
+### Step 6: Flag Material Discrepancies
+
+Any discrepancy above a materiality threshold (typically 5% of annual rent or $10,000, whichever is greater) gets flagged for attorney review. Focus legal review on leases with material discrepancies rather than re-reading every document.
+
+## Five Fields That Catch the Most Due Diligence Issues
+
+Across hundreds of acquisition lease reviews, these five fields produce the most frequent and material discrepancies between source documents and seller representations.
+
+### 1. Escalation Schedule Mismatches
+
+The rent roll shows current rent. The lease specifies an escalation schedule. If the rent roll uses a future-year rent amount or applies escalations incorrectly, the in-place income figure is wrong. Fixed-percentage escalations are straightforward, but CPI-based escalations require an index reference date and a cap/floor structure. Missing the cap means overestimating future rent growth.
+
+### 2. Renewal Options Not Reflected in Projections
+
+A five-year DCF model that assumes tenant retention without accounting for renewal option terms overestimates income. If the renewal rate is "Fair Market Value" rather than a fixed rate, the projected rent may be higher or lower than the model assumes. Renewal options with below-market fixed rates benefit the tenant but reduce the landlord's upside.
+
+### 3. Termination and Contraction Options
+
+A tenant with a termination option can leave before the lease expires, creating vacancy risk not visible in the rent roll. Contraction options let tenants reduce their footprint, cutting rental income by 20 to 50% while maintaining occupancy. Both reduce income certainty and should be reflected in the underwriting model as probability-weighted scenarios.
+
+### 4. CAM Cap Structures
+
+A NNN lease with a 5% cumulative CAM cap limits the landlord's annual expense recovery growth to 5%. If operating expenses grow at 7% annually, the landlord absorbs the difference. Over a 10-year lease, that gap compounds. A rent roll that shows full expense recovery without accounting for the cap overstates net operating income.
+
+### 5. Free Rent and TI Allowances Not Fully Amortized
+
+A tenant who received 6 months of free rent and a $50/RSF tenant improvement allowance has an effective rent significantly below the face rent for the first several years. If the seller's projection uses face rent without adjusting for concessions, the buyer overpays relative to actual cash flow.
+
+Each of these fields is extracted automatically by Lextract with a confidence score. Low-confidence extractions on any of these five fields should trigger a manual review of the source document before the figures enter your underwriting model.
+
+Lextract extracts 126 fields per lease at $15 per document, including all five of the high-risk due diligence fields above. For portfolios in active due diligence, Portfolio workflow through [/upload](/upload) or see [lease extraction software](/lease-extraction-software) for the full platform overview.

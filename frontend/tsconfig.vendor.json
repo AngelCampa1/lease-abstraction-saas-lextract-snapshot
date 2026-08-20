@@ -1,0 +1,9 @@
+{
+  "//": "Type-checks against the REAL @ventora/ai-cs package instead of the local stub. tsconfig.json maps that specifier to components/ai-cs/vendor-stub.tsx so a clone without private-registry access can still typecheck; TypeScript `paths` always beats node_modules, so the base config never checks the actual vendor contract. Run this variant whenever the package is installed, so a breaking prop change in a version bump is caught here rather than in production: npx tsc -p tsconfig.vendor.json --noEmit",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}

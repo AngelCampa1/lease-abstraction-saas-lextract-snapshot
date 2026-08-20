@@ -1,0 +1,16 @@
+# Lint config for the repo-root `scripts/` directory.
+#
+# `backend/pyproject.toml` scopes ruff to `include = ["app*"]`, so nothing was
+# checking the Python under `scripts/`. This picks it up with the same rules the
+# backend uses, so release tooling is held to the project's standard.
+#
+#   python -m ruff check scripts/
+#   python -m black --check scripts/
+
+line-length = 88
+target-version = "py312"
+
+include = ["scripts/*.py"]
+
+[lint]
+select = ["E", "F", "I", "N", "W", "UP"]

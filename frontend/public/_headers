@@ -1,0 +1,29 @@
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+
+/pricing.md
+  Content-Type: text/markdown; charset=utf-8
+
+/.well-known/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/pricing.md
+  Content-Type: text/markdown; charset=utf-8
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_next/static/chunks/*.css
+  Content-Type: text/css; charset=utf-8
+
+/_next/static/css/*.css
+  Content-Type: text/css; charset=utf-8
+
+/_next/static/chunks/*.js
+  Content-Type: application/javascript; charset=utf-8
